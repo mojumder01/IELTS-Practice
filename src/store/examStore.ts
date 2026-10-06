@@ -28,6 +28,8 @@ export interface RemoteAttempts {
   save: (attempt: AttemptRecord) => Promise<void>;
   remove: (attemptId: string) => Promise<void>;
   get: (attemptId: string) => Promise<AttemptRecord | null>;
+  /** Every attempt, for history and bands. */
+  list: () => Promise<AttemptRecord[]>;
 }
 
 export interface ExamDeps {

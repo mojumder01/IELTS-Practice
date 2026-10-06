@@ -40,6 +40,7 @@ export function examWorld() {
       return Promise.resolve();
     }),
     get: vi.fn((id: string) => Promise.resolve(remoteData.get(id) ?? null)),
+    list: vi.fn(() => Promise.resolve([...remoteData.values()])),
   } satisfies RemoteAttempts;
 
   const newStore = () =>

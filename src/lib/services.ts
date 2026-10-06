@@ -1,9 +1,10 @@
 import { createContext, useContext } from 'react';
 import type { WritingFeedback } from '../schema/attempt';
-import type { TestFile } from '../schema/test';
+import type { Profile } from '../schema/profile';
+import type { TestFile, TestMeta } from '../schema/test';
 import { requestFeedback, type FeedbackRequest, type Generate } from './ai';
 import type { LocalAttempts, RemoteAttempts } from '../store/examStore';
-import { firestoreAttempts, getTest } from './db';
+import { firestoreAttempts, getProfile, getTest, listTests, saveProfile } from './db';
 import { firebaseApp, firestore, useEmulators } from './firebase';
 import { localAttempts } from './localAttempts';
 import { browserMicrophone, type Microphone } from './microphone';
@@ -12,6 +13,9 @@ import { idbRecordings, memoryRecordings, type RecordingStore } from './recordin
 /** What pages need from the outside world; tests provide fakes. */
 export interface Services {
   loadTest: (testId: string) => Promise<TestFile>;
+  /** Every live test's metadata. */
+  listTests: () => Promise<TestMeta[]>;
+  profile: (uid: string) => { get: () => Promise<Profile>; save: (p: Profile) => Promise<void> };
   attempts: (uid: string) => RemoteAttempts;
   local: LocalAttempts;
   now: () => number;
@@ -35,6 +39,11 @@ function generate(): Promise<Generate> {
 export function firebaseServices(): Services {
   return {
     loadTest: (testId) => getTest(firestore(), testId),
+    listTests: () => listTests(firestore()),
+    profile: (uid) => ({
+      get: () => getProfile(firestore(), uid),
+      save: (p) => saveProfile(firestore(), uid, p),
+    }),
     attempts: (uid) => firestoreAttempts(firestore(), uid),
     local: localAttempts,
     now: () => Date.now(),

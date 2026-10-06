@@ -13,7 +13,14 @@ import {
 import type { AttemptRecord } from '../engine/session';
 import { AttemptSchema } from '../schema/attempt';
 import { decodeSection } from '../schema/firestore';
-import { SECTION_IDS, TestMetaSchema, type Module, type TestFile } from '../schema/test';
+import { DEFAULT_PROFILE, ProfileSchema, type Profile } from '../schema/profile';
+import {
+  SECTION_IDS,
+  TestMetaSchema,
+  type Module,
+  type TestFile,
+  type TestMeta,
+} from '../schema/test';
 import type { RemoteAttempts } from '../store/examStore';
 
 // Every Firestore read and write goes through here, validated with Zod at the boundary.
@@ -33,6 +40,27 @@ export async function getTest(db: Firestore, testId: string): Promise<TestFile> 
     }
   }
   return { meta, sections };
+}
+
+/** Every live test's metadata, for the library and the dashboard. */
+export async function listTests(db: Firestore): Promise<TestMeta[]> {
+  const snapshot = await getDocs(query(collection(db, 'tests'), where('status', '==', 'live')));
+  return snapshot.docs.flatMap((d) => {
+    const parsed = TestMetaSchema.safeParse(d.data());
+    if (!parsed.success) console.warn(`Skipping test ${d.id}: it doesn't match the schema`);
+    return parsed.success ? [parsed.data] : [];
+  });
+}
+
+/** users/{uid}: target band and exam date; the defaults until the owner sets them. */
+export async function getProfile(db: Firestore, uid: string): Promise<Profile> {
+  const snapshot = await getDoc(doc(db, 'users', uid));
+  const parsed = ProfileSchema.safeParse(snapshot.data());
+  return parsed.success ? parsed.data : DEFAULT_PROFILE;
+}
+
+export function saveProfile(db: Firestore, uid: string, profile: Profile): Promise<void> {
+  return setDoc(doc(db, 'users', uid), ProfileSchema.parse(profile));
 }
 
 const toTimestamp = (ms: number) => Timestamp.fromMillis(ms);
@@ -79,6 +107,17 @@ export function firestoreAttempts(db: Firestore, uid: string): RemoteAttempts {
     save: (attempt) =>
       setDoc(doc(attempts, attempt.attemptId), AttemptSchema.parse(toFirestore(attempt))),
     remove: (attemptId) => deleteDoc(doc(attempts, attemptId)),
+    list: async () => {
+      const snapshot = await getDocs(attempts);
+      return snapshot.docs.flatMap((d) => {
+        try {
+          return [fromFirestore(d.data())];
+        } catch {
+          console.warn(`Skipping attempt ${d.id}: it doesn't match the schema`);
+          return [];
+        }
+      });
+    },
     get: async (attemptId) => {
       const snapshot = await getDoc(doc(attempts, attemptId));
       return snapshot.exists() ? fromFirestore(snapshot.data()) : null;
