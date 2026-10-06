@@ -21,5 +21,8 @@ app on Firebase Hosting and Firestore, on the free Spark plan.
 | `npm run test:e2e`  | End-to-end tests (Playwright, desktop and 390 px)             |
 | `npm run lint`      | ESLint and Prettier check (`npm run format` fixes formatting) |
 | `npm run typecheck` | TypeScript only                                               |
+| `npm run validate`  | Check `content/` against the schemas and publishing rules     |
+| `npm run media`     | Hash and convert new files in `public/media` (needs ffmpeg)   |
+| `npm run seed`      | Publish `content/` to Firestore (your laptop only, see SETUP) |
 
 Pushing to `main` runs every check and deploys; each pull request gets a preview URL.

@@ -290,6 +290,13 @@ interface Attempt {
 }
 ```
 
+**Implementation notes (Phase 1).** Firestore can't store an array inside an array, so
+`acceptedAnswers` is stored as `[{ answers: string[] }]` and converted back by
+`src/schema/firestore.ts`; content files keep `string[][]`. A `Question` may also carry its own
+`options` for multiple choice where each question has different choices (Listening Q7–8 on the
+canvas); group-level `options` remain for shared lists. The media manifest is
+`content/media-manifest.json` (not under `public/`, so the file list isn't published).
+
 **Vocabulary document:** `word`, `pos`, `ipa`, `topic`, `meaning`, `bangla`, `example`, `source`
 (`{ testId, question? }` or `"manual"`), `status` (`new`, `learning`, `mastered`), `srs`
 (`{ due, intervalDays, ease, reps }`).

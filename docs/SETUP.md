@@ -104,6 +104,32 @@ links expose test content: never share them.
 In **Hosting → (your site) → ⋮ → Release storage settings**, keep only the last **5** releases so
 old media doesn't fill the 10 GB.
 
+## 9. Publish the test content
+
+Test content lives in `content/` and reaches Firestore through `npm run seed`, run on your
+laptop with a service-account key:
+
+1. **Project settings → Service accounts → Generate new private key.** Save the JSON file
+   outside this repo (or as `service-account.json` in it, which `.gitignore` excludes). Never
+   commit it.
+2. Run:
+
+   ```sh
+   npm run validate
+   GOOGLE_APPLICATION_CREDENTIALS=/path/to/key.json npm run seed
+   ```
+
+`seed` refuses to write while `validate` reports problems. It overwrites each test and its
+sections, writes `media/manifest`, and adds the starter vocabulary to your account
+(`VITE_OWNER_UID` in `.env.local`) without touching words you already have.
+`npm run seed -- --dry-run` lists the documents without writing.
+
+**New audio or images:** put the file in `public/media/audio/` or `public/media/img/`, run
+`npm run media` (needs ffmpeg), then commit. A file named like an existing one (for example a
+real `b21t1-p1.mp3` recording replacing the placeholder) replaces it and updates the paths in
+`content/`. The Book 21 Test 1 Listening audio in the repo is 110 s of near-silence until you
+add the real recording.
+
 ## Open decision: Writing AI on the free plan (SPEC section 13)
 
 Checked on 6 Oct 2026, ahead of Phase 5:
