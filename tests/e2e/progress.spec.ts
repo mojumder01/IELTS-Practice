@@ -31,6 +31,8 @@ test('a finished test shows on the dashboard, history, bands and library', async
   await page.getByRole('button', { name: 'Edit goals' }).click();
   await page.getByRole('combobox', { name: 'Target band' }).selectOption('7.5');
   await page.getByRole('button', { name: 'Save goals' }).click();
+  // The form closes once Firestore has the goals; reloading sooner can beat the write.
+  await expect(page.getByRole('form', { name: 'Your goals' })).toBeHidden();
   await page.reload();
   await expect(page.getByText('Target band 7.5')).toBeVisible();
 
