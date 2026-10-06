@@ -1,0 +1,194 @@
+[
+  {
+    "word": "sustainable",
+    "pos": "adjective",
+    "ipa": "/səˈsteɪnəbl/",
+    "topic": "Environment",
+    "meaning": "able to continue for a long time without harming the environment",
+    "bangla": "টেকসই",
+    "example": "Cities need a more sustainable approach to transport.",
+    "source": {
+      "testId": "book21-test1"
+    },
+    "status": "mastered",
+    "srs": {
+      "due": "2026-10-27",
+      "intervalDays": 21,
+      "ease": 2.5,
+      "reps": 4
+    }
+  },
+  {
+    "word": "mitigate",
+    "pos": "verb",
+    "ipa": "/ˈmɪtɪɡeɪt/",
+    "topic": "Environment",
+    "meaning": "to make something harmful less serious",
+    "bangla": "প্রশমিত করা",
+    "example": "Planting trees can mitigate the effects of urban heat.",
+    "source": "manual",
+    "status": "learning",
+    "srs": {
+      "due": "2026-10-06",
+      "intervalDays": 1,
+      "ease": 2.5,
+      "reps": 1
+    }
+  },
+  {
+    "word": "embodied",
+    "pos": "adjective",
+    "ipa": "/ɪmˈbɒdid/",
+    "topic": "Environment",
+    "meaning": "contained within something as part of it, as in embodied carbon",
+    "bangla": "অন্তর্নিহিত",
+    "example": "Steel carries a high embodied carbon cost.",
+    "source": {
+      "testId": "book21-test1",
+      "question": 8
+    },
+    "status": "new",
+    "srs": {
+      "due": "2026-10-06",
+      "intervalDays": 0,
+      "ease": 2.5,
+      "reps": 0
+    }
+  },
+  {
+    "word": "infrastructure",
+    "pos": "noun",
+    "ipa": "/ˈɪnfrəstrʌktʃə/",
+    "topic": "Urban life",
+    "meaning": "the basic systems a city needs, such as roads, water and power",
+    "bangla": "অবকাঠামো",
+    "example": "Poor infrastructure slows economic growth.",
+    "source": "manual",
+    "status": "learning",
+    "srs": {
+      "due": "2026-10-06",
+      "intervalDays": 1,
+      "ease": 2.5,
+      "reps": 1
+    }
+  },
+  {
+    "word": "congestion",
+    "pos": "noun",
+    "ipa": "/kənˈdʒestʃən/",
+    "topic": "Urban life",
+    "meaning": "a situation in which a place is too crowded with traffic",
+    "bangla": "যানজট",
+    "example": "Congestion adds an hour to many commutes.",
+    "source": "manual",
+    "status": "mastered",
+    "srs": {
+      "due": "2026-10-27",
+      "intervalDays": 21,
+      "ease": 2.5,
+      "reps": 4
+    }
+  },
+  {
+    "word": "renovate",
+    "pos": "verb",
+    "ipa": "/ˈrenəveɪt/",
+    "topic": "Urban life",
+    "meaning": "to repair and improve an old building",
+    "bangla": "সংস্কার করা",
+    "example": "The pool was renovated last year.",
+    "source": "manual",
+    "status": "mastered",
+    "srs": {
+      "due": "2026-10-27",
+      "intervalDays": 21,
+      "ease": 2.5,
+      "reps": 4
+    }
+  },
+  {
+    "word": "curriculum",
+    "pos": "noun",
+    "ipa": "/kəˈrɪkjələm/",
+    "topic": "Education",
+    "meaning": "the subjects taught in a school or on a course",
+    "bangla": "পাঠ্যক্রম",
+    "example": "Coding is now part of the school curriculum.",
+    "source": "manual",
+    "status": "mastered",
+    "srs": {
+      "due": "2026-10-27",
+      "intervalDays": 21,
+      "ease": 2.5,
+      "reps": 4
+    }
+  },
+  {
+    "word": "vocational",
+    "pos": "adjective",
+    "ipa": "/vəʊˈkeɪʃənl/",
+    "topic": "Education",
+    "meaning": "relating to the skills needed for a particular job",
+    "bangla": "বৃত্তিমূলক",
+    "example": "Vocational training helps school leavers find work.",
+    "source": "manual",
+    "status": "learning",
+    "srs": {
+      "due": "2026-10-06",
+      "intervalDays": 1,
+      "ease": 2.5,
+      "reps": 1
+    }
+  },
+  {
+    "word": "obsolete",
+    "pos": "adjective",
+    "ipa": "/ˈɒbsəliːt/",
+    "topic": "Technology",
+    "meaning": "no longer used because something newer exists",
+    "bangla": "অপ্রচলিত",
+    "example": "Many office skills are becoming obsolete.",
+    "source": "manual",
+    "status": "new",
+    "srs": {
+      "due": "2026-10-06",
+      "intervalDays": 0,
+      "ease": 2.5,
+      "reps": 0
+    }
+  },
+  {
+    "word": "well-being",
+    "pos": "noun",
+    "ipa": "/ˌwelˈbiːɪŋ/",
+    "topic": "Health",
+    "meaning": "the state of being healthy and happy",
+    "bangla": "সুস্থতা",
+    "example": "Green spaces improve residents’ well-being.",
+    "source": "manual",
+    "status": "mastered",
+    "srs": {
+      "due": "2026-10-27",
+      "intervalDays": 21,
+      "ease": 2.5,
+      "reps": 4
+    }
+  },
+  {
+    "word": "remuneration",
+    "pos": "noun",
+    "ipa": "/rɪˌmjuːnəˈreɪʃn/",
+    "topic": "Work",
+    "meaning": "payment for work or services",
+    "bangla": "পারিশ্রমিক",
+    "example": "Remuneration should reflect experience and skill.",
+    "source": "manual",
+    "status": "new",
+    "srs": {
+      "due": "2026-10-06",
+      "intervalDays": 0,
+      "ease": 2.5,
+      "reps": 0
+    }
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "files": [
+    {
+      "path": "/media/audio/b21t1-p1.28d1e3ca.mp3",
+      "kind": "audio",
+      "bytes": 880684,
+      "durationSec": 110.1
+    },
+    {
+      "path": "/media/img/b21t1-w1.2e4b8323.png",
+      "kind": "image",
+      "bytes": 32211
+    }
+  ]
+}

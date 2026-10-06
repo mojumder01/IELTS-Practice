@@ -1,0 +1,416 @@
+{
+  "meta": {
+    "testId": "book21-test1",
+    "book": "Book 21",
+    "testNumber": 1,
+    "track": "academic",
+    "status": "live",
+    "timing": {
+      "listening": {
+        "singlePartMin": 8,
+        "fullMockMin": 30,
+        "checkMin": 2
+      },
+      "reading": {
+        "singlePartMin": 20,
+        "fullMockMin": 60
+      },
+      "writing": {
+        "task1Min": 20,
+        "task2Min": 40,
+        "fullMockMin": 60
+      }
+    },
+    "studentHelp": {
+      "allowReveal": true,
+      "showScriptInSinglePart": true,
+      "lockAudioInFullMock": true
+    }
+  },
+  "sections": {
+    "listening-1": {
+      "kind": "listening",
+      "part": 1,
+      "audio": "/media/audio/b21t1-p1.28d1e3ca.mp3",
+      "durationSec": 110,
+      "script": [
+        {
+          "start": 0,
+          "speaker": "Receptionist",
+          "text": "Good morning, Riverside Sports Centre. How can I help?"
+        },
+        {
+          "start": 5,
+          "speaker": "Daniel",
+          "text": "Hi, I’d like to join the centre. My name’s Daniel."
+        },
+        {
+          "start": 10,
+          "speaker": "Receptionist",
+          "text": "Lovely. And your surname?"
+        },
+        {
+          "start": 14,
+          "speaker": "Daniel",
+          "text": "It’s Morgan. That’s M-O-R-G-A-N.",
+          "answer": {
+            "question": 1,
+            "highlight": "Morgan"
+          }
+        },
+        {
+          "start": 21,
+          "speaker": "Receptionist",
+          "text": "Thanks. Are you joining on your own?"
+        },
+        {
+          "start": 26,
+          "speaker": "Daniel",
+          "text": "No, it’ll be a family membership: my wife and our two children.",
+          "answer": {
+            "question": 2,
+            "highlight": "family"
+          }
+        },
+        {
+          "start": 34,
+          "speaker": "Receptionist",
+          "text": "And what would you mainly use the centre for?"
+        },
+        {
+          "start": 39,
+          "speaker": "Daniel",
+          "text": "Swimming, mostly, and badminton at weekends.",
+          "answer": {
+            "question": 3,
+            "highlight": "badminton"
+          }
+        },
+        {
+          "start": 46,
+          "speaker": "Receptionist",
+          "text": "When would you like to start?"
+        },
+        {
+          "start": 50,
+          "speaker": "Daniel",
+          "text": "The first of March is too soon, so let’s say the fourteenth of March.",
+          "answer": {
+            "question": 4,
+            "highlight": "fourteenth"
+          }
+        },
+        {
+          "start": 58,
+          "speaker": "Receptionist",
+          "text": "Fine. The family rate is thirty-eight pounds a month.",
+          "answer": {
+            "question": 5,
+            "highlight": "thirty-eight pounds"
+          }
+        },
+        {
+          "start": 66,
+          "speaker": "Daniel",
+          "text": "Can we park at the centre?"
+        },
+        {
+          "start": 70,
+          "speaker": "Receptionist",
+          "text": "Yes, but you’ll need a permit from reception. It’s free for members.",
+          "answer": {
+            "question": 6,
+            "highlight": "permit"
+          }
+        },
+        {
+          "start": 78,
+          "speaker": "Receptionist",
+          "text": "Can I ask how you heard about us?"
+        },
+        {
+          "start": 82,
+          "speaker": "Daniel",
+          "text": "A friend of mine swims here and said it was great, so that’s really why.",
+          "answer": {
+            "question": 7,
+            "highlight": "A friend of mine swims here and said it was great"
+          }
+        },
+        {
+          "start": 90,
+          "speaker": "Receptionist",
+          "text": "Good to hear. The pool does get busy, though, especially in the evenings after six.",
+          "answer": {
+            "question": 8,
+            "highlight": "especially in the evenings after six"
+          }
+        },
+        {
+          "start": 98,
+          "speaker": "Daniel",
+          "text": "Thanks. We’ll try to come earlier, then."
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-1",
+          "type": "GAP_FILL",
+          "instructions": "Complete the form. Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": "ONE WORD AND/OR A NUMBER",
+          "maxWords": 1,
+          "allowNumber": true,
+          "layout": {
+            "kind": "form",
+            "title": "Riverside Sports Centre · New member",
+            "body": "Surname: {{1}}\nMembership type: {{2}}\nMain activities: swimming and {{3}}\nStart date: {{4}} March\nMonthly fee: £{{5}}\nParking: needs a {{6}} from reception"
+          },
+          "questions": [
+            {
+              "numbers": [1],
+              "prompt": "Surname",
+              "acceptedAnswers": [["Morgan"]]
+            },
+            {
+              "numbers": [2],
+              "prompt": "Membership type",
+              "acceptedAnswers": [["family"]]
+            },
+            {
+              "numbers": [3],
+              "prompt": "Main activities",
+              "acceptedAnswers": [["badminton"]]
+            },
+            {
+              "numbers": [4],
+              "prompt": "Start date",
+              "acceptedAnswers": [["14", "14th", "fourteenth"]]
+            },
+            {
+              "numbers": [5],
+              "prompt": "Monthly fee",
+              "acceptedAnswers": [["38"]]
+            },
+            {
+              "numbers": [6],
+              "prompt": "Parking",
+              "acceptedAnswers": [["permit"]]
+            }
+          ]
+        },
+        {
+          "groupId": "qg-2",
+          "type": "MULTIPLE_CHOICE_SINGLE",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "numbers": [7],
+              "prompt": "Why does the caller want to join the centre?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "to get fitter for a new job"
+                },
+                {
+                  "key": "B",
+                  "text": "a friend recommended it"
+                },
+                {
+                  "key": "C",
+                  "text": "to train for a competition"
+                }
+              ],
+              "acceptedAnswers": [["B"]]
+            },
+            {
+              "numbers": [8],
+              "prompt": "What does the receptionist say about the pool?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "It is closed on Monday mornings."
+                },
+                {
+                  "key": "B",
+                  "text": "It was renovated last year."
+                },
+                {
+                  "key": "C",
+                  "text": "It is busiest in the evenings."
+                }
+              ],
+              "acceptedAnswers": [["C"]]
+            }
+          ]
+        }
+      ]
+    },
+    "reading-1": {
+      "kind": "reading",
+      "part": 1,
+      "title": "Green Building Trends",
+      "subtitle": "How architects are rethinking the way buildings use energy and materials",
+      "paragraphs": [
+        {
+          "label": "A",
+          "text": "Green building refers to the practice of designing, constructing and operating structures in ways that reduce their impact on the environment across their entire life cycle. While early efforts in the 1970s focused narrowly on cutting energy bills after the oil crisis, the movement has since broadened to include water use, material sourcing and the health of the people inside."
+        },
+        {
+          "label": "B",
+          "text": "Energy efficiency nevertheless remains the primary objective for most architects. Heating and cooling account for the largest share of a typical building’s energy demand, so designers concentrate first on the building envelope: the walls, roof and windows that separate inside from outside. High-performance insulation and triple glazing can sharply reduce heating requirements in cold climates."
+        },
+        {
+          "label": "C",
+          "text": "Orientation is a cheaper but often overlooked tool. A building whose longest wall faces the sun can capture winter warmth through its windows, while overhanging roofs block the higher summer sun. Such passive design costs little to implement at the planning stage but is difficult and expensive to add later."
+        },
+        {
+          "label": "D",
+          "text": "Materials have attracted growing attention. Concrete and steel carry a heavy embodied carbon cost, released during their manufacture long before a building opens. Some architects are turning to engineered timber, which stores carbon rather than emitting it, although critics question whether forests could supply enough wood if the practice became widespread."
+        },
+        {
+          "label": "E",
+          "text": "Certification schemes have helped turn these ideas into market value. Buildings that meet recognised green standards often command higher rents, and in several cities public projects must now achieve a minimum rating. Yet some researchers warn that a certificate measures design intentions, not actual performance once the building is occupied."
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-1",
+          "type": "TRUE_FALSE_NOT_GIVEN",
+          "instructions": "Do the following statements agree with the information given in the passage?",
+          "questions": [
+            {
+              "numbers": [1],
+              "prompt": "The green building movement began partly as a response to rising energy costs.",
+              "acceptedAnswers": [["TRUE"]],
+              "location": {
+                "paragraph": "A",
+                "sentence": 2,
+                "highlight": "cutting energy bills after the oil crisis"
+              }
+            },
+            {
+              "numbers": [2],
+              "prompt": "Most architects now treat water conservation as more important than energy efficiency.",
+              "acceptedAnswers": [["FALSE"]],
+              "location": {
+                "paragraph": "B",
+                "sentence": 1,
+                "highlight": "Energy efficiency nevertheless remains the primary objective for most architects."
+              }
+            },
+            {
+              "numbers": [3],
+              "prompt": "Triple-glazed windows cost more to install than high-performance insulation.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "location": null
+            },
+            {
+              "numbers": [4],
+              "prompt": "Passive design features are easier to include at the start of a project.",
+              "acceptedAnswers": [["TRUE"]],
+              "location": {
+                "paragraph": "C",
+                "sentence": 3,
+                "highlight": "costs little to implement at the planning stage but is difficult and expensive to add later"
+              }
+            },
+            {
+              "numbers": [5],
+              "prompt": "Engineered timber is already used in most new buildings.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "location": null
+            }
+          ]
+        },
+        {
+          "groupId": "qg-2",
+          "type": "GAP_FILL",
+          "instructions": "Complete the summary. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "summary",
+            "title": "Designing greener buildings",
+            "body": "Designers usually focus first on the building’s {{6}}, because heating and cooling use the most energy. Placing the longest wall towards the sun captures warmth in {{7}}. Concrete and steel carry a high {{8}} carbon cost. Finally, a green {{9}} may reflect design aims rather than real performance."
+          },
+          "questions": [
+            {
+              "numbers": [6],
+              "prompt": "Designers usually focus first on the building’s ___",
+              "acceptedAnswers": [["envelope"]],
+              "location": {
+                "paragraph": "B",
+                "sentence": 2,
+                "highlight": "building envelope"
+              }
+            },
+            {
+              "numbers": [7],
+              "prompt": "Placing the longest wall towards the sun captures warmth in ___",
+              "acceptedAnswers": [["winter"]],
+              "location": {
+                "paragraph": "C",
+                "sentence": 2,
+                "highlight": "winter warmth"
+              }
+            },
+            {
+              "numbers": [8],
+              "prompt": "Concrete and steel carry a high ___ carbon cost",
+              "acceptedAnswers": [["embodied"]],
+              "location": {
+                "paragraph": "D",
+                "sentence": 2,
+                "highlight": "embodied carbon cost"
+              }
+            },
+            {
+              "numbers": [9],
+              "prompt": "A green ___ may reflect design aims rather than real performance",
+              "acceptedAnswers": [["certificate"]],
+              "location": {
+                "paragraph": "E",
+                "sentence": 3,
+                "highlight": "a certificate measures design intentions"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "kind": "writing",
+      "task1": {
+        "prompt": "The graph below shows the percentage of commuters using four types of transport in one city between 2005 and 2025. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+        "image": "/media/img/b21t1-w1.2e4b8323.png",
+        "imageDescription": "Line graph of the percentage of commuters using four types of transport in one city, every five years from 2005 to 2025. Car falls from 52% to 41% (52, 50, 47, 44, 41). Bus rises from 24% to 27% (24, 25, 26, 26, 27). Train rises from 14% to 22% (14, 15, 17, 20, 22). Bicycle stays at 10% throughout.",
+        "minWords": 150
+      },
+      "task2": {
+        "prompt": "Some people believe that cities should spend more on public transport than on building new roads. To what extent do you agree or disagree?",
+        "minWords": 250
+      }
+    },
+    "speaking": {
+      "kind": "speaking",
+      "part1": [
+        "Do you work, or are you a student?",
+        "What do you enjoy most about your work?",
+        "How do you usually spend your weekends?",
+        "Do you prefer mornings or evenings? Why?"
+      ],
+      "part2": {
+        "topic": "Describe a public place in your city that you enjoy visiting.",
+        "points": ["where it is", "how often you go there", "what people do there"],
+        "closing": "and explain why you enjoy visiting it.",
+        "prepSec": 60,
+        "speakSec": 120
+      },
+      "part3": [
+        "Why do some cities have more public spaces than others?",
+        "Should governments or private companies pay for public parks?",
+        "How might public places change in the next twenty years?"
+      ]
+    }
+  }
+}
