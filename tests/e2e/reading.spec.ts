@@ -29,12 +29,14 @@ test('answer, reveal, submit and see Results', async ({ page }, info) => {
 
   await ui.submit('Evaluate my Reading');
   await expect(page).toHaveURL(/\/results\//);
-  await expect(page.getByRole('heading', { name: /Reading band 5\.0/ })).toBeVisible();
-  await expect(page.getByText('4 / 9 correct', { exact: false })).toBeVisible();
+  const band = page.getByRole('region', { name: 'Band score' });
+  await expect(band.getByText('5.0', { exact: true })).toBeVisible();
+  await expect(band.getByText('4 / 9 correct', { exact: false })).toBeVisible();
   await expect(page.getByText(/Practice: answers were shown/)).toBeVisible();
 
   const review = page.getByRole('table');
   await expect(review.getByRole('row')).toHaveCount(10);
+  await expect(review.getByText('Paragraph A:', { exact: false })).toBeVisible();
   await page.getByRole('button', { name: /^Incorrect/ }).click();
   await expect(review.getByRole('row')).toHaveCount(2); // header + Q8 ("the embodied", over the limit)
   await expect(review.getByRole('row').nth(1)).toContainText('the embodied');

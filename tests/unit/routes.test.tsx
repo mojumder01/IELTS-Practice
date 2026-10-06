@@ -4,17 +4,21 @@ import { createMemoryRouter } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
 import { describe, expect, it } from 'vitest';
 import { AuthContext, createAuthStore } from '../../src/lib/auth';
+import { ServicesContext } from '../../src/lib/services';
 import { routes } from '../../src/routes';
 import { fakeAuth, owner, OWNER_UID, stranger } from './fakeAuth';
+import { fakeServices } from './fakeServices';
 
 function renderApp(path: string) {
   const auth = fakeAuth();
   const store = createAuthStore(auth.adapter, OWNER_UID);
   const router = createMemoryRouter(routes, { initialEntries: [path] });
   render(
-    <AuthContext value={store}>
-      <RouterProvider router={router} />
-    </AuthContext>,
+    <ServicesContext value={fakeServices().services}>
+      <AuthContext value={store}>
+        <RouterProvider router={router} />
+      </AuthContext>
+    </ServicesContext>,
   );
   return {
     ...auth,
@@ -37,11 +41,11 @@ describe('auth guard', () => {
     expect(screen.getByRole('button', { name: 'Sign in with Google' })).toBeInTheDocument();
   });
 
-  it('shows the owner the Hello page', () => {
+  it('shows the owner the dashboard', async () => {
     const { emit } = renderApp('/');
     emit(owner);
-    expect(screen.getByRole('heading', { name: 'Hello, Alex' })).toBeInTheDocument();
-    expect(screen.getByText(/owner@example.com is the only account/)).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: 'Welcome back, Alex' })).toBeInTheDocument();
+    expect(screen.getByRole('navigation', { name: 'Main' })).toBeInTheDocument();
   });
 
   it('refuses any other Google account', () => {
@@ -51,7 +55,7 @@ describe('auth guard', () => {
     expect(router.state.location.pathname).toBe('/signin');
     expect(screen.getByRole('alert')).toHaveTextContent('This app is private');
     expect(screen.getByRole('alert')).toHaveTextContent('stranger@example.com');
-    expect(screen.queryByRole('heading', { name: /Hello/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: /Welcome back/ })).not.toBeInTheDocument();
   });
 
   it('sends unknown paths home', () => {
