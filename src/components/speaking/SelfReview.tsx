@@ -127,7 +127,7 @@ export function SelfReview({
       </div>
 
       {points.length > 0 && (
-        <fieldset className="m-0 flex flex-col gap-1 border-0 p-0">
+        <fieldset className="m-0 flex min-w-0 flex-col gap-1 border-0 p-0">
           <legend className="mb-1 p-0 text-sm font-semibold text-navy">
             Did you cover every point?{' '}
             <span className="font-medium text-muted">
@@ -159,7 +159,7 @@ export function SelfReview({
         </p>
       )}
 
-      <fieldset className="m-0 flex flex-col gap-2 border-0 border-t border-border p-0 pt-4">
+      <fieldset className="m-0 flex min-w-0 flex-col gap-2 border-0 border-t border-border p-0 pt-4">
         <legend className="float-left mb-1 w-full p-0 text-sm font-semibold text-navy">
           Score yourself
         </legend>
