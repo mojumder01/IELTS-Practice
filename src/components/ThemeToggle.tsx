@@ -1,38 +1,22 @@
 import { Moon, Sun } from 'lucide-react';
 import { useState } from 'react';
+import { currentTheme, saveTheme } from '../lib/theme';
 
-const KEY = 'ielts:theme';
-
-function storedTheme(): 'light' | 'dark' {
-  try {
-    return localStorage.getItem(KEY) === 'dark' ? 'dark' : 'light';
-  } catch {
-    return 'light';
-  }
-}
-
-/** Sets data-theme on <html>; the dark token values arrive in Phase 10 (SPEC section 13). */
+/** Switches data-theme on <html> between the light and dark token sets, and remembers it. */
 export function ThemeToggle({ className }: { className: string }) {
-  const [theme, setTheme] = useState(storedTheme);
+  const [theme, setTheme] = useState(currentTheme);
   const dark = theme === 'dark';
-
-  const toggle = () => {
-    const next = dark ? 'light' : 'dark';
-    setTheme(next);
-    document.documentElement.dataset.theme = next;
-    try {
-      localStorage.setItem(KEY, next);
-    } catch {
-      // The choice just won't persist.
-    }
-  };
 
   return (
     <button
       type="button"
       aria-label="Dark theme"
       aria-pressed={dark}
-      onClick={toggle}
+      onClick={() => {
+        const next = dark ? 'light' : 'dark';
+        setTheme(next);
+        saveTheme(next);
+      }}
       className={className}
     >
       {dark ? (

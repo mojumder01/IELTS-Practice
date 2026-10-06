@@ -37,6 +37,13 @@
   --link: #1d4ed8;
   --link-hover: #1e3a8a;
 
+  /* Chrome: the app and exam headers and the admin sidebar, which stay dark in both themes */
+  --chrome: #0f172a;
+  --chrome-2: #1e293b;
+  --chrome-3: #334155;
+  --on-chrome: #ffffff;
+  --on-chrome-muted: #cbd5e1;
+
   /* Type: Plex Sans for the interface, Source Serif 4 for passages, essays and
      cue cards, Plex Mono for timers, scores and question numbers. */
   --type-ui: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
@@ -50,5 +57,46 @@
   --shape-pill: 999px;
 }
 
-/* Dark mode goes under [data-theme='dark']; its values are an open decision
-   for Phase 10 (SPEC section 13). */
+/*
+ * Dark mode (SPEC section 9). Navy keeps its job as the strongest colour, so it turns light:
+ * headings, selected controls and primary buttons read light-on-dark, and text "on navy"
+ * turns dark. Surfaces step up from a near-black canvas. Every pair keeps 4.5:1 or more.
+ */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --red: #e11b22;
+  --navy: #e2e8f0;
+  --navy-2: #cbd5e1;
+  --canvas: #0b1220;
+  --text: #e2e8f0;
+  --muted: #a3b0c2;
+  --border: #253148;
+  --answered: #8ab4ff;
+  --unanswered: #7c8aa0;
+  --flag: #f59e0b;
+  --flag-stroke: #fcd34d;
+  --answer-hl: #3a2a05;
+  --answer-hl-outline: #f59e0b;
+  --user-hl: #4d3d07;
+  --now-playing: #14254a;
+  --now-playing-border: #5b86ff;
+  --good: #0f3a24;
+  --good-text: #6ee7a0;
+  --warn: #3d1f0a;
+  --warn-text: #fdba74;
+
+  --surface: #111a2e;
+  --surface-muted: #1a2438;
+  --border-strong: #3a4862;
+  --navy-3: #cbd5e1;
+  --on-navy: #0f172a;
+  --on-navy-muted: #334155;
+  --link: #8ab4ff;
+  --link-hover: #b9d0ff;
+
+  --chrome: #020817;
+  --chrome-2: #1e293b;
+  --chrome-3: #334155;
+  --on-chrome: #ffffff;
+  --on-chrome-muted: #cbd5e1;
+}

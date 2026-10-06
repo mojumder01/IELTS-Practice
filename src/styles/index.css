@@ -33,6 +33,11 @@
   --color-on-navy-muted: var(--on-navy-muted);
   --color-link: var(--link);
   --color-link-hover: var(--link-hover);
+  --color-chrome: var(--chrome);
+  --color-chrome-2: var(--chrome-2);
+  --color-chrome-3: var(--chrome-3);
+  --color-on-chrome: var(--on-chrome);
+  --color-on-chrome-muted: var(--on-chrome-muted);
 
   --font-*: initial;
   --font-sans: var(--type-ui);

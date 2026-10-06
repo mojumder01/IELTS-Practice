@@ -22,22 +22,22 @@ export function PhoneExamHeader({
 }: PhoneExamHeaderProps) {
   const warning = secondsLeft !== null && isWarning(secondsLeft);
   return (
-    <header className="flex shrink-0 items-center gap-1.5 bg-navy py-2 pr-2.5 pl-1 text-on-navy">
+    <header className="flex shrink-0 items-center gap-1.5 bg-chrome py-2 pr-2.5 pl-1 text-on-chrome">
       <Link
         to="/"
         aria-label="Exit to dashboard"
-        className="flex size-11 shrink-0 items-center justify-center rounded-control text-on-navy"
+        className="flex size-11 shrink-0 items-center justify-center rounded-control text-on-chrome"
       >
         <X aria-hidden="true" className="size-5" />
       </Link>
       <div className="flex min-w-0 flex-1 flex-col">
-        <span className="text-xs text-unanswered">{title}</span>
+        <span className="text-xs text-on-chrome-muted">{title}</span>
         <span className="truncate text-sm font-semibold">{subtitle}</span>
       </div>
       {secondsLeft !== null && (
         <span
           className={`inline-flex min-h-9 items-center rounded-pill border px-2.5 font-mono text-[15px] font-semibold ${
-            warning ? 'border-red bg-red' : 'border-navy-3 bg-navy-2'
+            warning ? 'border-red bg-red' : 'border-chrome-3 bg-chrome-2'
           }`}
         >
           <span className="sr-only">Time left</span>
@@ -51,7 +51,7 @@ export function PhoneExamHeader({
         aria-label="Test options"
         aria-expanded={optionsOpen}
         onClick={onToggleOptions}
-        className="flex size-11 shrink-0 items-center justify-center rounded-control border border-navy-3 text-on-navy-muted"
+        className="flex size-11 shrink-0 items-center justify-center rounded-control border border-chrome-3 text-on-chrome-muted"
       >
         <SlidersHorizontal aria-hidden="true" className="size-[18px]" />
       </button>
@@ -59,7 +59,7 @@ export function PhoneExamHeader({
         <button
           type="button"
           onClick={action.onClick}
-          className="min-h-11 shrink-0 rounded-control bg-surface px-3 text-sm font-semibold text-navy"
+          className="min-h-11 shrink-0 rounded-control bg-on-chrome px-3 text-sm font-semibold text-chrome"
         >
           {action.label}
         </button>

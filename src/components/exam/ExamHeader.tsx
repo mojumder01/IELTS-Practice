@@ -38,20 +38,20 @@ interface ExamHeaderProps {
 }
 
 const iconButton =
-  'flex size-11 shrink-0 items-center justify-center rounded-control border border-navy-3 bg-transparent text-on-navy-muted hover:text-on-navy';
+  'flex size-11 shrink-0 items-center justify-center rounded-control border border-chrome-3 bg-transparent text-on-chrome-muted hover:text-on-chrome';
 const textButton =
-  'inline-flex min-h-11 items-center gap-2 rounded-control border border-navy-3 bg-transparent px-3.5 text-sm font-semibold text-on-navy-muted hover:text-on-navy';
+  'inline-flex min-h-11 items-center gap-2 rounded-control border border-chrome-3 bg-transparent px-3.5 text-sm font-semibold text-on-chrome-muted hover:text-on-chrome';
 
 export function ExamHeader(props: ExamHeaderProps) {
   const warning = props.secondsLeft !== null && isWarning(props.secondsLeft);
   const labels = props.modeLabels;
   return (
-    <header className="flex shrink-0 flex-wrap items-center justify-between gap-x-4 gap-y-2.5 bg-navy px-4 py-2.5 text-on-navy sm:px-5">
+    <header className="flex shrink-0 flex-wrap items-center justify-between gap-x-4 gap-y-2.5 bg-chrome px-4 py-2.5 text-on-chrome sm:px-5">
       <div className="flex min-w-0 items-center gap-3">
         <Link
           to="/library"
           aria-label="Back to test library"
-          className={`${iconButton} text-on-navy`}
+          className={`${iconButton} text-on-chrome`}
         >
           <ArrowLeft aria-hidden="true" className="size-[18px]" />
         </Link>
@@ -63,7 +63,7 @@ export function ExamHeader(props: ExamHeaderProps) {
         </span>
         <div className="flex min-w-0 flex-col">
           <span className="truncate text-[15px] font-semibold">{props.title}</span>
-          <span className="text-xs tracking-[0.06em] text-unanswered uppercase">
+          <span className="text-xs tracking-[0.06em] text-on-chrome-muted uppercase">
             {props.partLabel}
           </span>
         </div>
@@ -72,10 +72,10 @@ export function ExamHeader(props: ExamHeaderProps) {
       <div className="flex flex-wrap items-center gap-2">
         {labels && (
           <>
-            <span className="text-[11px] font-semibold tracking-[0.1em] text-unanswered">
+            <span className="text-[11px] font-semibold tracking-[0.1em] text-on-chrome-muted">
               TIMER
             </span>
-            <div className="flex gap-0.5 rounded-pill bg-navy-2 p-[3px]">
+            <div className="flex gap-0.5 rounded-pill bg-chrome-2 p-[3px]">
               {(['single', 'full'] as const).map((m) => (
                 <button
                   key={m}
@@ -83,7 +83,9 @@ export function ExamHeader(props: ExamHeaderProps) {
                   aria-pressed={props.mode === m}
                   onClick={() => props.mode !== m && props.onModeChange(m)}
                   className={`min-h-[38px] rounded-pill px-3.5 text-[13px] font-semibold ${
-                    props.mode === m ? 'bg-surface text-navy' : 'bg-transparent text-on-navy-muted'
+                    props.mode === m
+                      ? 'bg-on-chrome text-chrome'
+                      : 'bg-transparent text-on-chrome-muted'
                   }`}
                 >
                   {labels[m]}
@@ -100,7 +102,7 @@ export function ExamHeader(props: ExamHeaderProps) {
             onClick={props.onToggleNotes}
             className={
               props.notesOpen
-                ? `${iconButton} border-surface bg-surface text-navy hover:text-navy`
+                ? `${iconButton} border-on-chrome bg-on-chrome text-chrome hover:text-chrome`
                 : iconButton
             }
           >
@@ -125,7 +127,7 @@ export function ExamHeader(props: ExamHeaderProps) {
         {props.secondsLeft !== null && (
           <div
             className={`inline-flex min-h-11 items-center gap-2 rounded-pill border px-3.5 font-mono text-lg font-semibold ${
-              warning ? 'border-red bg-red text-on-navy' : 'border-navy-3 bg-navy-2'
+              warning ? 'border-red bg-red text-on-chrome' : 'border-chrome-3 bg-chrome-2'
             }`}
           >
             <Timer aria-hidden="true" className="size-[17px]" />
@@ -159,7 +161,7 @@ export function ExamHeader(props: ExamHeaderProps) {
           aria-label="Focus mode"
           aria-pressed={props.focus}
           onClick={props.onToggleFocus}
-          className={props.focus ? `${iconButton} bg-navy-2` : iconButton}
+          className={props.focus ? `${iconButton} bg-chrome-2` : iconButton}
         >
           <Maximize2 aria-hidden="true" className="size-[17px]" />
         </button>
