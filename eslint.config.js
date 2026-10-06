@@ -26,6 +26,11 @@ export default defineConfig([
     languageOptions: { globals: globals.node },
   },
   {
+    // The service worker runs in the browser's worker scope.
+    files: ['public/sw.js'],
+    languageOptions: { globals: globals.serviceworker },
+  },
+  {
     files: ['**/*.{ts,tsx}'],
     extends: [js.configs.recommended, tseslint.configs.recommendedTypeChecked],
     languageOptions: {
