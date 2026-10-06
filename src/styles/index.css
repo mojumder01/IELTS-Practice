@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+/* Tailwind reads the tokens; the default palette, fonts and radii are removed
+   so utilities can only use design-system values. */
+@theme inline {
+  --color-*: initial;
+  --color-red: var(--red);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-navy-3: var(--navy-3);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-answered: var(--answered);
+  --color-unanswered: var(--unanswered);
+  --color-flag: var(--flag);
+  --color-flag-stroke: var(--flag-stroke);
+  --color-answer-hl: var(--answer-hl);
+  --color-answer-hl-outline: var(--answer-hl-outline);
+  --color-user-hl: var(--user-hl);
+  --color-now-playing: var(--now-playing);
+  --color-now-playing-border: var(--now-playing-border);
+  --color-good: var(--good);
+  --color-good-text: var(--good-text);
+  --color-warn: var(--warn);
+  --color-warn-text: var(--warn-text);
+  --color-on-navy: var(--on-navy);
+  --color-on-navy-muted: var(--on-navy-muted);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+
+  --font-*: initial;
+  --font-sans: var(--type-ui);
+  --font-serif: var(--type-reading);
+  --font-mono: var(--type-numeric);
+  --font-bangla: var(--type-bangla);
+
+  --radius-*: initial;
+  --radius-control: var(--shape-control);
+  --radius-card: var(--shape-card);
+  --radius-pill: var(--shape-pill);
+}
+
+@layer base {
+  html {
+    background: var(--canvas);
+    color: var(--text);
+    font-family: var(--type-ui);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+  }
+
+  a:hover {
+    color: var(--link-hover);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--answered);
+    outline-offset: 2px;
+  }
+}

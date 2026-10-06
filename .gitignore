@@ -1,0 +1,32 @@
+# Dependencies and builds
+node_modules/
+dist/
+dist-e2e/
+coverage/
+*.tsbuildinfo
+
+# Env files hold project config; never commit them (.env.example is the template)
+.env
+.env.*
+!.env.example
+
+# Firebase
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
+# Service-account keys used by scripts/seed.ts stay on your laptop
+service-account*.json
+*-firebase-adminsdk-*.json
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json

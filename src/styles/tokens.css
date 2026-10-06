@@ -1,0 +1,54 @@
+/*
+ * Design tokens (docs/SPEC.md section 9). Components read these through the
+ * Tailwind theme in index.css and never hard-code colours.
+ * Navy and slate carry the interface; red is only for the brand mark, Submit,
+ * the timer at 5:00 or less and the band target marker.
+ */
+:root {
+  /* Section 9 */
+  --red: #e11b22;
+  --navy: #0f172a;
+  --navy-2: #1e293b;
+  --canvas: #f8fafc;
+  --text: #1e293b;
+  --muted: #475569;
+  --border: #e2e8f0;
+  --answered: #1d4ed8;
+  --unanswered: #94a3b8;
+  --flag: #f59e0b;
+  --flag-stroke: #92400e;
+  --answer-hl: #fef3c7;
+  --answer-hl-outline: #b45309;
+  --user-hl: #fef08a;
+  --now-playing: #eff6ff;
+  --now-playing-border: #3b82f6;
+  --good: #dcfce7;
+  --good-text: #166534;
+  --warn: #ffedd5;
+  --warn-text: #9a3412;
+
+  /* Supporting values used throughout the design canvas (docs/design) */
+  --surface: #ffffff;
+  --surface-muted: #f1f5f9;
+  --border-strong: #cbd5e1;
+  --navy-3: #334155;
+  --on-navy: #ffffff;
+  --on-navy-muted: #cbd5e1;
+  --link: #1d4ed8;
+  --link-hover: #1e3a8a;
+
+  /* Type: Plex Sans for the interface, Source Serif 4 for passages, essays and
+     cue cards, Plex Mono for timers, scores and question numbers. */
+  --type-ui: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+  --type-reading: 'Source Serif 4', Georgia, serif;
+  --type-numeric: 'IBM Plex Mono', ui-monospace, monospace;
+  --type-bangla: 'Hind Siliguri', 'IBM Plex Sans', sans-serif;
+
+  /* Shape: 8px controls, 12–16px cards, 999px pills */
+  --shape-control: 8px;
+  --shape-card: 12px;
+  --shape-pill: 999px;
+}
+
+/* Dark mode goes under [data-theme='dark']; its values are an open decision
+   for Phase 10 (SPEC section 13). */
