@@ -1,4 +1,5 @@
 import { initializeApp, type FirebaseApp } from 'firebase/app';
+import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 import { connectAuthEmulator, getAuth, type Auth } from 'firebase/auth';
 import {
   connectFirestoreEmulator,
@@ -17,8 +18,22 @@ let db: Firestore | undefined;
 export const useEmulators = import.meta.env.VITE_USE_EMULATORS === 'true';
 
 export function initFirebase(config: FirebaseWebConfig): FirebaseApp {
-  app ??= initializeApp(config);
+  if (!app) {
+    app = initializeApp(config);
+    // App Check keeps the free Gemini quota for this app only (SPEC section 5).
+    const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+    if (siteKey && !useEmulators) {
+      initializeAppCheck(app, {
+        provider: new ReCaptchaV3Provider(siteKey),
+        isTokenAutoRefreshEnabled: true,
+      });
+    }
+  }
   return app;
+}
+
+export function firebaseApp(): FirebaseApp {
+  return requireApp();
 }
 
 function requireApp(): FirebaseApp {
