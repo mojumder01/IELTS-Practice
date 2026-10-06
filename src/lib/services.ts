@@ -4,7 +4,15 @@ import type { Profile } from '../schema/profile';
 import type { TestFile, TestMeta } from '../schema/test';
 import { requestFeedback, type FeedbackRequest, type Generate } from './ai';
 import type { LocalAttempts, RemoteAttempts } from '../store/examStore';
-import { firestoreAttempts, getProfile, getTest, listTests, saveProfile } from './db';
+import {
+  firestoreAttempts,
+  firestoreVocab,
+  getProfile,
+  getTest,
+  listTests,
+  saveProfile,
+  type VocabStore,
+} from './db';
 import { firebaseApp, firestore, useEmulators } from './firebase';
 import { localAttempts } from './localAttempts';
 import { browserMicrophone, type Microphone } from './microphone';
@@ -16,6 +24,7 @@ export interface Services {
   /** Every live test's metadata. */
   listTests: () => Promise<TestMeta[]>;
   profile: (uid: string) => { get: () => Promise<Profile>; save: (p: Profile) => Promise<void> };
+  vocab: (uid: string) => VocabStore;
   attempts: (uid: string) => RemoteAttempts;
   local: LocalAttempts;
   now: () => number;
@@ -40,6 +49,7 @@ export function firebaseServices(): Services {
   return {
     loadTest: (testId) => getTest(firestore(), testId),
     listTests: () => listTests(firestore()),
+    vocab: (uid) => firestoreVocab(firestore(), uid),
     profile: (uid) => ({
       get: () => getProfile(firestore(), uid),
       save: (p) => saveProfile(firestore(), uid, p),

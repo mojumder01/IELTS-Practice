@@ -14,6 +14,7 @@ import type { AttemptRecord } from '../engine/session';
 import { AttemptSchema } from '../schema/attempt';
 import { decodeSection } from '../schema/firestore';
 import { DEFAULT_PROFILE, ProfileSchema, type Profile } from '../schema/profile';
+import { vocabIdOf, VocabWordSchema, type VocabWord } from '../schema/vocab';
 import {
   SECTION_IDS,
   TestMetaSchema,
@@ -62,6 +63,25 @@ export async function getProfile(db: Firestore, uid: string): Promise<Profile> {
 export function saveProfile(db: Firestore, uid: string, profile: Profile): Promise<void> {
   return setDoc(doc(db, 'users', uid), ProfileSchema.parse(profile));
 }
+
+/** users/{uid}/vocab: the saved words, one document per word. */
+export function firestoreVocab(db: Firestore, uid: string) {
+  const words = collection(db, 'users', uid, 'vocab');
+  return {
+    list: async (): Promise<VocabWord[]> => {
+      const snapshot = await getDocs(words);
+      return snapshot.docs.flatMap((d) => {
+        const parsed = VocabWordSchema.safeParse(d.data());
+        if (!parsed.success) console.warn(`Skipping word ${d.id}: it doesn't match the schema`);
+        return parsed.success ? [parsed.data] : [];
+      });
+    },
+    save: (word: VocabWord) =>
+      setDoc(doc(words, vocabIdOf(word.word)), VocabWordSchema.parse(word)),
+  };
+}
+
+export type VocabStore = ReturnType<typeof firestoreVocab>;
 
 const toTimestamp = (ms: number) => Timestamp.fromMillis(ms);
 

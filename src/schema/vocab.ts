@@ -15,11 +15,12 @@ export const SrsSchema = z.strictObject({
 /** users/{uid}/vocab/{wordId} (SPEC section 4). */
 export const VocabWordSchema = z.strictObject({
   word: text,
-  pos: text,
+  // A word saved from a passage may wait for its part of speech and Bangla.
+  pos: z.string().trim(),
   ipa: z.string(),
   topic: text,
   meaning: text,
-  bangla: text,
+  bangla: z.string().trim(),
   example: z.string(),
   source: z.union([
     z.literal('manual'),
@@ -30,21 +31,23 @@ export const VocabWordSchema = z.strictObject({
 });
 
 /** content/vocab/seed.json: the starter word list. */
-export const VocabSeedSchema = z.array(VocabWordSchema).superRefine((words, ctx) => {
-  const seen = new Map<string, number>();
-  words.forEach((w, i) => {
-    const id = vocabIdOf(w.word);
-    const first = seen.get(id);
-    if (first !== undefined) {
-      ctx.addIssue({
-        code: 'custom',
-        path: [i, 'word'],
-        message: `duplicates entry ${first} ("${w.word}")`,
-      });
-    }
-    seen.set(id, i);
+export const VocabSeedSchema = z
+  .array(VocabWordSchema.extend({ pos: text, bangla: text }))
+  .superRefine((words, ctx) => {
+    const seen = new Map<string, number>();
+    words.forEach((w, i) => {
+      const id = vocabIdOf(w.word);
+      const first = seen.get(id);
+      if (first !== undefined) {
+        ctx.addIssue({
+          code: 'custom',
+          path: [i, 'word'],
+          message: `duplicates entry ${first} ("${w.word}")`,
+        });
+      }
+      seen.set(id, i);
+    });
   });
-});
 
 /** Document ID for a word: "well-being" → "well-being", "Carbon Footprint" → "carbon-footprint". */
 export function vocabIdOf(word: string): string {
