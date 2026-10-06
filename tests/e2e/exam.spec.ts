@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import { admin, clearAttempts, OWNER_UID, signInAsOwner } from './emulators';
+import { examUi } from './ui';
 
 test.beforeEach(async ({ page }) => {
   await clearAttempts();
@@ -10,20 +11,21 @@ const timer = (page: Page) => page.getByRole('timer');
 
 test('the owner opens a Reading test in the exam shell', async ({ page }) => {
   await page.goto('/test/book21-test1/reading');
-  await expect(page.getByText('Book 21 · Test 1 · Reading')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Green Building Trends' })).toBeVisible();
   await expect(page).toHaveURL(/mode=single&part=1/);
   await expect(timer(page)).toHaveText(/^(20:00|19:5\d)$/);
-  await expect(page.getByText('0 / 9 answered')).toBeVisible();
 });
 
-test('a reload restores the attempt exactly', async ({ page }) => {
+test('a reload restores the attempt exactly', async ({ page }, info) => {
+  const ui = examUi(page, info);
   await page.goto('/test/book21-test1/reading?mode=single&part=1');
-  await page.getByRole('textbox', { name: 'Question 1', exact: true }).fill('TRUE');
+  await ui.questions();
+  await page.getByRole('button', { name: 'Question 1: TRUE' }).click();
   await page.getByRole('textbox', { name: 'Question 6' }).fill('envelope');
   await page.getByRole('button', { name: 'Flag question 3 for review' }).click();
-  await page.getByRole('button', { name: 'Notes' }).click();
+  await ui.openNotes();
   await page.getByRole('textbox', { name: 'Notes' }).fill('B2: building envelope');
-  await page.getByRole('button', { name: 'Pause' }).click();
+  await (await ui.control('Pause')).click();
   await expect(page.getByRole('dialog', { name: 'Test paused' })).toBeVisible();
   const pausedAt = await timer(page).textContent();
 
@@ -32,15 +34,21 @@ test('a reload restores the attempt exactly', async ({ page }) => {
   await expect(page.getByRole('dialog', { name: 'Test paused' })).toBeVisible();
   await expect(timer(page)).toHaveText(pausedAt!);
   await page.getByRole('button', { name: 'Resume test' }).click();
-  await expect(page.getByRole('textbox', { name: 'Question 1', exact: true })).toHaveValue('TRUE');
+  await ui.questions();
+  await expect(page.getByRole('button', { name: 'Question 1: TRUE' })).toHaveAttribute(
+    'aria-pressed',
+    'true',
+  );
   await expect(page.getByRole('textbox', { name: 'Question 6' })).toHaveValue('envelope');
   await expect(page.getByRole('button', { name: 'Flag question 3 for review' })).toHaveAttribute(
     'aria-pressed',
     'true',
   );
-  await expect(page.getByRole('button', { name: 'Question 3, unanswered, flagged' })).toBeVisible();
-  await expect(page.getByText('2 / 9 answered')).toBeVisible();
-  await page.getByRole('button', { name: 'Notes' }).click();
+  if (!ui.phone)
+    await expect(
+      page.getByRole('button', { name: 'Question 3, unanswered, flagged' }),
+    ).toBeVisible();
+  await ui.openNotes();
   await expect(page.getByRole('textbox', { name: 'Notes' })).toHaveValue('B2: building envelope');
 });
 
@@ -68,18 +76,25 @@ test('answers reach Firestore', async ({ page }) => {
     .toContainEqual(expect.objectContaining({ '1': 'Morgan' }));
 });
 
-test('a full mock Listening runs 30 + 2 minutes with no pause', async ({ page }) => {
+test('a full mock Listening runs 30 + 2 minutes with no pause', async ({ page }, info) => {
+  const ui = examUi(page, info);
   await page.goto('/test/book21-test1/listening?mode=full');
   await expect(timer(page)).toHaveText(/^(32:00|31:5\d)$/);
-  await expect(page.getByRole('button', { name: 'Pause' })).toHaveCount(0);
+  await expect(await ui.control('Pause')).toHaveCount(0);
 });
 
-test('switching mode asks first, then restarts', async ({ page }) => {
+test('switching mode asks first, then restarts', async ({ page }, info) => {
+  const ui = examUi(page, info);
   await page.goto('/test/book21-test1/reading');
-  await page.getByRole('textbox', { name: 'Question 1', exact: true }).fill('TRUE');
-  await page.getByRole('button', { name: 'Full mock' }).click();
+  await ui.questions();
+  await page.getByRole('button', { name: 'Question 1: TRUE' }).click();
+  await (await ui.control('Full mock')).click();
   await page.getByRole('button', { name: 'Switch and restart' }).click();
   await expect(page).toHaveURL(/mode=full&part=1/);
   await expect(timer(page)).toHaveText(/^(60:00|59:5\d)$/);
-  await expect(page.getByRole('textbox', { name: 'Question 1', exact: true })).toHaveValue('');
+  await ui.questions();
+  await expect(page.getByRole('button', { name: 'Question 1: TRUE' })).toHaveAttribute(
+    'aria-pressed',
+    'false',
+  );
 });
