@@ -1,7 +1,7 @@
 import { ArrowLeft, CircleCheck, Target } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
-import { FullPageStatus } from '../components/FullPageStatus';
+import { PageSkeleton } from '../components/PageSkeleton';
 import { card } from '../components/progress/styles';
 import { ScoredResults } from '../components/results/ScoredResults';
 import { SpeakingResults } from '../components/results/SpeakingResults';
@@ -72,7 +72,7 @@ export function Results() {
       </main>
     );
   }
-  if (!loaded) return <FullPageStatus label="Loading results…" />;
+  if (!loaded) return <PageSkeleton label="Loading results…" />;
 
   const { attempt, test, profile, marked } = loaded;
   const module = attempt.module;

@@ -10,13 +10,15 @@ import { Dashboard } from './pages/Dashboard';
 import { History } from './pages/History';
 import { Library } from './pages/Library';
 import { Results } from './pages/Results';
+import { RouteError } from './pages/RouteError';
 import { SignIn } from './pages/SignIn';
 import { Vocabulary } from './pages/Vocabulary';
 
 export const routes: RouteObject[] = [
-  { path: '/signin', element: <SignIn /> },
+  { path: '/signin', element: <SignIn />, errorElement: <RouteError /> },
   {
     element: <AuthGuard />,
+    errorElement: <RouteError />,
     children: [
       {
         element: <AppShell />,

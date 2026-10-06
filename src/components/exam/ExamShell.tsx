@@ -13,6 +13,7 @@ import { canPause, hasAnswers } from '../../engine/session';
 import { timeLeftSec, type ExamMode } from '../../engine/timer';
 import { useIsPhone } from '../../lib/useMediaQuery';
 import { useExam } from '../../store/examContext';
+import { OfflineBanner } from '../OfflineBanner';
 import { SpeakingTabs } from '../speaking/SpeakingTabs';
 import { useFeedbackRequest } from '../writing/useFeedbackRequest';
 import { ConfirmDialog } from './ConfirmDialog';
@@ -275,6 +276,7 @@ export function ExamShell({
         </div>
       )}
 
+      <OfflineBanner />
       {notice && (
         <p
           role="status"

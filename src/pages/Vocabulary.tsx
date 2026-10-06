@@ -1,6 +1,6 @@
 import { BookmarkPlus, Plus, Search } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { FullPageStatus } from '../components/FullPageStatus';
+import { PageSkeleton } from '../components/PageSkeleton';
 import { card } from '../components/progress/styles';
 import { DailyReview } from '../components/vocab/DailyReview';
 import { WordForm } from '../components/vocab/WordForm';
@@ -42,7 +42,7 @@ export function Vocabulary() {
     };
   }, [services]);
 
-  if (state.status === 'loading') return <FullPageStatus label="Loading your words…" />;
+  if (state.status === 'loading') return <PageSkeleton label="Loading your words…" />;
   if (state.status === 'error') {
     return (
       <main className="mx-auto w-full max-w-[1200px] px-4 py-9 sm:px-8">
@@ -221,7 +221,9 @@ export function Vocabulary() {
             })}
             {shown.length === 0 && (
               <li className="px-4 py-8 text-center text-sm text-muted">
-                No words match. Try another topic or clear the search.
+                {words.length === 0
+                  ? 'No words yet. Add one, or double-tap a word in a Reading passage or Listening transcript.'
+                  : 'No words match. Try another topic or clear the search.'}
               </li>
             )}
           </ul>

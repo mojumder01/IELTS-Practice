@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FullPageStatus } from '../components/FullPageStatus';
+import { PageSkeleton } from '../components/PageSkeleton';
 import { AttemptTable } from '../components/progress/AttemptTable';
 import { card } from '../components/progress/styles';
 import { moduleName, MODULE_ORDER } from '../engine/parts';
@@ -13,7 +13,7 @@ export function History() {
   const { state } = useProgress();
   const [filter, setFilter] = useState<Module | 'all'>('all');
 
-  if (state.status === 'loading') return <FullPageStatus label="Loading your history…" />;
+  if (state.status === 'loading') return <PageSkeleton label="Loading your history…" />;
   if (state.status === 'error') {
     return (
       <main className="mx-auto w-full max-w-[1200px] px-4 py-9 sm:px-8">

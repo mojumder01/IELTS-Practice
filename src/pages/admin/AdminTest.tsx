@@ -201,7 +201,13 @@ export function AdminTest() {
             <h2 id="json-h" className="m-0 text-base font-semibold text-navy">
               {TAB_LABEL[current]} JSON
             </h2>
-            <pre className="m-0 max-h-80 overflow-auto rounded-control bg-canvas p-3 font-mono text-xs leading-relaxed text-navy-3">
+            <pre
+              // A scrolling box must take keyboard focus so its content can be scrolled (WCAG 2.1.1).
+              // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+              tabIndex={0}
+              aria-labelledby="json-h"
+              className="m-0 max-h-80 overflow-auto rounded-control bg-canvas p-3 font-mono text-xs leading-relaxed text-navy-3"
+            >
               {JSON.stringify(tabJson(draft, current), null, 2)}
             </pre>
           </section>

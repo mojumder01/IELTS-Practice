@@ -10,7 +10,7 @@ import {
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { ConfirmDialog } from '../components/exam/ConfirmDialog';
-import { FullPageStatus } from '../components/FullPageStatus';
+import { PageSkeleton } from '../components/PageSkeleton';
 import { BandBar } from '../components/progress/BandBar';
 import { AttemptTable } from '../components/progress/AttemptTable';
 import { GoalsEditor } from '../components/progress/GoalsEditor';
@@ -46,7 +46,7 @@ export function Dashboard() {
   const [editingGoals, setEditingGoals] = useState(false);
   const [discarding, setDiscarding] = useState<AttemptRecord | null>(null);
 
-  if (state.status === 'loading') return <FullPageStatus label="Loading your progress…" />;
+  if (state.status === 'loading') return <PageSkeleton label="Loading your progress…" />;
   if (state.status === 'error') {
     return (
       <main className="mx-auto w-full max-w-[1200px] px-4 py-9 sm:px-8">

@@ -1,7 +1,7 @@
 import { ArrowRight, Search } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
-import { FullPageStatus } from '../components/FullPageStatus';
+import { PageSkeleton } from '../components/PageSkeleton';
 import { card } from '../components/progress/styles';
 import { moduleName, MODULE_ORDER } from '../engine/parts';
 import { byNewest, moduleState, progressLine, sortTests } from '../engine/progress';
@@ -35,7 +35,7 @@ export function Library() {
     setParams(next, { replace: true });
   };
 
-  if (state.status === 'loading') return <FullPageStatus label="Loading the library…" />;
+  if (state.status === 'loading') return <PageSkeleton label="Loading the library…" />;
   if (state.status === 'error') {
     return (
       <main className="mx-auto w-full max-w-[1200px] px-4 py-9 sm:px-8">
