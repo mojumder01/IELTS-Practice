@@ -304,6 +304,16 @@ tasks, 60 min) modes, and its URL uses `part=` like the other modules rather tha
 "Evaluate my essay" and "Submit writing" submit and stay on the page, which then shows the
 read-only essays with their feedback.
 
+**Implementation notes (Phase 6).** Speaking is one sitting across its three parts (stored as
+`mode: 'full'`, no timer); the URL takes `?part=`. Each take is a record in the IndexedDB database
+`ielts-practice`, store `recordings`, keyed `{attemptId}:p{part}:t{n}`, holding the audio Blob,
+its length and its transcript; the attempt lists the keys in `speaking.recordingKeys`. Part 2
+prepares for 60 s, then records up to 120 s and stops itself; Parts 1 and 3 record straight away,
+up to 5 minutes. Pace and filler words come from the transcript, so they show "—" where there is
+none. `speaking.covered` holds the ticked Part 2 points (`point-1` … the closing line last), and
+`speaking.selfScores` may be partial until all four whole bands are chosen. "Finish speaking"
+submits and stays on the page.
+
 **Vocabulary document:** `word`, `pos`, `ipa`, `topic`, `meaning`, `bangla`, `example`, `source`
 (`{ testId, question? }` or `"manual"`), `status` (`new`, `learning`, `mastered`), `srs`
 (`{ due, intervalDays, ease, reps }`).
