@@ -24,11 +24,11 @@ const HIDDEN_WHILE_PAUSED = {
   writing: 'task',
   speaking: 'cue card',
 };
-const REVEAL_WHERE = {
-  reading: 'passage',
-  listening: 'audioscript',
-  writing: 'task',
-  speaking: 'cue card',
+const REVEAL_MESSAGE = {
+  reading: 'Answers are showing and their location is highlighted in the passage.',
+  listening: 'Answers are showing, and each one is marked in the audioscript.',
+  writing: 'Answers are showing.',
+  speaking: 'Answers are showing.',
 };
 
 const clockTime = (ms: number) =>
@@ -228,7 +228,7 @@ export function ExamShell({ children }: { children: ReactNode }) {
         </div>
       )}
 
-      {revealing && <RevealBanner where={REVEAL_WHERE[module]} onHide={actions.hideAnswers} />}
+      {revealing && <RevealBanner message={REVEAL_MESSAGE[module]} onHide={actions.hideAnswers} />}
 
       <div className="relative min-h-0 flex-1">
         <div className="h-full overflow-auto">

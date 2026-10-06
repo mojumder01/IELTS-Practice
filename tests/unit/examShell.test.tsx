@@ -4,7 +4,7 @@ import { createMemoryRouter } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
 import { describe, expect, it } from 'vitest';
 import { ExamShell } from '../../src/components/exam/ExamShell';
-import { ListeningQuestions } from '../../src/components/listening/ListeningQuestions';
+import { ListeningContent } from '../../src/components/listening/ListeningContent';
 import { ReadingContent } from '../../src/components/reading/ReadingContent';
 import type { Module } from '../../src/schema/test';
 import { ExamStoreContext, useExam } from '../../src/store/examContext';
@@ -14,7 +14,7 @@ function Content() {
   const session = useExam((s) => s.session)!;
   const section = sample.sections[`${session.module}-1` as 'reading-1'];
   if (section?.kind === 'reading') return <ReadingContent section={section} />;
-  if (section?.kind === 'listening') return <ListeningQuestions section={section} />;
+  if (section?.kind === 'listening') return <ListeningContent section={section} />;
   return null;
 }
 

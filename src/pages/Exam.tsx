@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, Navigate, useParams, useSearchParams } from 'react-router';
 import { FullPageStatus } from '../components/FullPageStatus';
 import { ExamShell } from '../components/exam/ExamShell';
-import { ListeningQuestions } from '../components/listening/ListeningQuestions';
+import { ListeningContent } from '../components/listening/ListeningContent';
 import { ReadingContent } from '../components/reading/ReadingContent';
 import type { ExamMode } from '../engine/timer';
 import { useAuth } from '../lib/auth';
@@ -130,7 +130,7 @@ function ModuleContent() {
       : undefined;
   if (section?.kind === 'reading') return <ReadingContent key={section.part} section={section} />;
   if (section?.kind === 'listening')
-    return <ListeningQuestions key={section.part} section={section} />;
+    return <ListeningContent key={section.part} section={section} />;
   return (
     <p className="mx-auto max-w-[520px] px-6 py-12 text-center text-[15px] text-muted">
       This {session.module === 'writing' ? 'task' : 'part'} isn’t in this test yet.

@@ -1,6 +1,6 @@
 import { Lightbulb } from 'lucide-react';
 
-export function RevealBanner({ where, onHide }: { where: string; onHide: () => void }) {
+export function RevealBanner({ message, onHide }: { message: string; onHide: () => void }) {
   return (
     <div
       role="status"
@@ -8,8 +8,7 @@ export function RevealBanner({ where, onHide }: { where: string; onHide: () => v
     >
       <span className="inline-flex items-center gap-2 font-medium">
         <Lightbulb aria-hidden="true" className="size-4 shrink-0" />
-        Answers are showing and their location is highlighted in the {where}. This attempt won’t
-        count toward your band history.
+        {message} This attempt won’t count toward your band history.
       </span>
       <button
         type="button"
