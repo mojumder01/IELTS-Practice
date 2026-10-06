@@ -62,7 +62,7 @@ export function PassagePanel({ section, highlights, textSize, onTextSize }: Pass
             <span className="w-5 shrink-0 font-sans text-[15px] leading-[inherit] font-bold text-navy">
               {p.label}
             </span>
-            <p className="m-0">
+            <p data-word-root className="m-0">
               <HighlightedText text={p.text} highlights={highlights[p.label] ?? []} />
             </p>
           </div>

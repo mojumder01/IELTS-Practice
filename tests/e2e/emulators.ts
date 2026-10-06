@@ -60,10 +60,37 @@ export async function signInAsOwner(page: Page) {
     token,
   );
   await page.waitForURL((url) => url.pathname === '/');
+  // Let the dashboard's Firestore reads finish: a full page load that cuts them off can leave the
+  // next page waiting on the old one's offline cache.
+  await page.getByRole('heading', { name: /Welcome back/ }).waitFor();
 }
 
 /** Each test starts with no saved attempts. */
 export async function clearAttempts() {
   const { db } = admin();
   await db.recursiveDelete(db.collection(`users/${OWNER_UID}/attempts`));
+}
+
+/** The starter words again, with the unmastered ones due today and the rest in three weeks. */
+export async function resetVocab() {
+  const { db } = admin();
+  const words = `users/${OWNER_UID}/vocab`;
+  await db.recursiveDelete(db.collection(words));
+  const seed = JSON.parse(
+    await readFile(path.resolve(import.meta.dirname, '../../content/vocab/seed.json'), 'utf8'),
+  ) as { word: string; status: string; srs: { due: string } }[];
+  const day = (offset: number) => {
+    const d = new Date();
+    d.setDate(d.getDate() + offset);
+    const pad = (n: number) => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  };
+  const batch = db.batch();
+  for (const w of seed) {
+    const id = w.word.toLowerCase().replace(/[^a-z0-9]+/g, '-'); // vocabIdOf
+    const due = w.status === 'mastered' ? day(21) : day(0);
+    batch.set(db.doc(`${words}/${id}`), { ...w, srs: { ...w.srs, due } });
+  }
+  await batch.commit();
+  return seed.filter((w) => w.status !== 'mastered').length;
 }

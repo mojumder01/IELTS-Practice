@@ -108,7 +108,9 @@ export function Audioscript({
                   {isNow && <span className="sr-only"> (now playing)</span>}
                   {marked && <span className="sr-only"> (highlighted)</span>}
                 </span>
-                <span className="text-[15px] leading-[1.55] text-text">{body}</span>
+                <span data-word-root className="text-[15px] leading-[1.55] text-text">
+                  {body}
+                </span>
               </span>
             </>
           );

@@ -3,6 +3,7 @@ import type { Highlight } from '../../engine/passage';
 import { useIsPhone } from '../../lib/useMediaQuery';
 import type { Question, ReadingSection } from '../../schema/test';
 import { useExam } from '../../store/examContext';
+import { WordSaver } from '../vocab/WordSaver';
 import { AnswerSourceContext } from '../questions/answerContext';
 import { QuestionGroupView } from '../questions/QuestionGroupView';
 import { useQuestionState } from '../questions/useQuestionState';
@@ -32,6 +33,7 @@ export function ReadingContent({ section }: { section: ReadingSection }) {
   const phone = useIsPhone();
   const q = useQuestionState();
   const current = useExam((s) => s.session?.current ?? null);
+  const testId = useExam((s) => s.test?.meta.testId ?? '');
   const [tab, setTab] = useState<'passage' | 'questions'>('passage');
   const [textSize, setTextSize] = useState(storedSize);
 
@@ -77,12 +79,14 @@ export function ReadingContent({ section }: { section: ReadingSection }) {
   const answered = numbers.filter((n) => q.value(n).trim()).length;
 
   const passage = (
-    <PassagePanel
-      section={section}
-      highlights={highlights}
-      textSize={textSize}
-      onTextSize={changeSize}
-    />
+    <WordSaver testId={testId}>
+      <PassagePanel
+        section={section}
+        highlights={highlights}
+        textSize={textSize}
+        onTextSize={changeSize}
+      />
+    </WordSaver>
   );
   const questions = (
     <section aria-label="Questions" className="flex flex-col gap-7">

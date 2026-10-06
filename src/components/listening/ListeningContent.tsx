@@ -3,6 +3,7 @@ import { audioFinished, audioRules, formatAudioTime } from '../../engine/audio';
 import { useIsPhone } from '../../lib/useMediaQuery';
 import type { ListeningSection } from '../../schema/test';
 import { useExam } from '../../store/examContext';
+import { WordSaver } from '../vocab/WordSaver';
 import { AnswerSourceContext } from '../questions/answerContext';
 import { QuestionGroupView } from '../questions/QuestionGroupView';
 import { useQuestionState } from '../questions/useQuestionState';
@@ -74,20 +75,22 @@ export function ListeningContent({ section }: { section: ListeningSection }) {
     </section>
   );
   const script = (
-    <Audioscript
-      part={section.part}
-      script={section.script}
-      time={audio.time}
-      revealed={revealed}
-      marks={session.scriptMarks}
-      highlighter={highlighter}
-      interactive={rules.interactiveScript}
-      onSeek={(t) => {
-        audio.seek(t);
-        if (clockRunning) audio.play();
-      }}
-      onToggleMark={toggleScriptMark}
-    />
+    <WordSaver testId={session.testId}>
+      <Audioscript
+        part={section.part}
+        script={section.script}
+        time={audio.time}
+        revealed={revealed}
+        marks={session.scriptMarks}
+        highlighter={highlighter}
+        interactive={rules.interactiveScript}
+        onSeek={(t) => {
+          audio.seek(t);
+          if (clockRunning) audio.play();
+        }}
+        onToggleMark={toggleScriptMark}
+      />
+    </WordSaver>
   );
 
   return (

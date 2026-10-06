@@ -8,6 +8,7 @@ import { History } from './pages/History';
 import { Library } from './pages/Library';
 import { Results } from './pages/Results';
 import { SignIn } from './pages/SignIn';
+import { Vocabulary } from './pages/Vocabulary';
 
 export const routes: RouteObject[] = [
   { path: '/signin', element: <SignIn /> },
@@ -21,6 +22,7 @@ export const routes: RouteObject[] = [
           { path: '/library', element: <Library /> },
           { path: '/history', element: <History /> },
           { path: '/bands', element: <Bands /> },
+          { path: '/vocabulary', element: <Vocabulary /> },
           { path: '/results/:attemptId', element: <Results /> },
         ],
       },

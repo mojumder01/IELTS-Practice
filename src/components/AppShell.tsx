@@ -6,6 +6,7 @@ import { BrandMark } from './BrandMark';
 const NAV = [
   { to: '/', label: 'Dashboard', end: true },
   { to: '/library', label: 'Test library', end: false },
+  { to: '/vocabulary', label: 'Vocabulary', end: false },
   { to: '/bands', label: 'Band breakdown', end: false },
   { to: '/history', label: 'History', end: false },
 ];
