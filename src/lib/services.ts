@@ -1,16 +1,22 @@
 import { createContext, useContext } from 'react';
 import type { WritingFeedback } from '../schema/attempt';
 import type { Profile } from '../schema/profile';
+import type { MediaManifest } from '../schema/media';
 import type { TestFile, TestMeta } from '../schema/test';
 import { requestFeedback, type FeedbackRequest, type Generate } from './ai';
 import type { LocalAttempts, RemoteAttempts } from '../store/examStore';
 import {
   firestoreAttempts,
+  firestoreDrafts,
   firestoreVocab,
+  getManifest,
   getProfile,
   getTest,
+  listAllTests,
   listTests,
+  publishTest,
   saveProfile,
+  type DraftStore,
   type VocabStore,
 } from './db';
 import { firebaseApp, firestore, useEmulators } from './firebase';
@@ -25,6 +31,13 @@ export interface Services {
   listTests: () => Promise<TestMeta[]>;
   profile: (uid: string) => { get: () => Promise<Profile>; save: (p: Profile) => Promise<void> };
   vocab: (uid: string) => VocabStore;
+  /** The admin panel: drafts, every test, the media manifest and publishing. */
+  admin: {
+    drafts: DraftStore;
+    listAllTests: () => Promise<TestMeta[]>;
+    manifest: () => Promise<MediaManifest | null>;
+    publish: (draft: TestFile) => Promise<void>;
+  };
   attempts: (uid: string) => RemoteAttempts;
   local: LocalAttempts;
   now: () => number;
@@ -50,6 +63,14 @@ export function firebaseServices(): Services {
     loadTest: (testId) => getTest(firestore(), testId),
     listTests: () => listTests(firestore()),
     vocab: (uid) => firestoreVocab(firestore(), uid),
+    get admin() {
+      return {
+        drafts: firestoreDrafts(firestore()),
+        listAllTests: () => listAllTests(firestore()),
+        manifest: () => getManifest(firestore()),
+        publish: (draft: TestFile) => publishTest(firestore(), draft),
+      };
+    },
     profile: (uid) => ({
       get: () => getProfile(firestore(), uid),
       save: (p) => saveProfile(firestore(), uid, p),

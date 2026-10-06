@@ -9,9 +9,19 @@ import { WritingContent } from '../components/writing/WritingContent';
 import type { ExamMode } from '../engine/timer';
 import { useAuth } from '../lib/auth';
 import { useServices } from '../lib/services';
-import { ModuleSchema, type Module } from '../schema/test';
+import { ModuleSchema, TestFileSchema, type Module } from '../schema/test';
 import { ExamStoreContext, useExam } from '../store/examContext';
-import { createExamStore } from '../store/examStore';
+import { createExamStore, type LocalAttempts } from '../store/examStore';
+
+/** Device storage that forgets on reload: previews leave nothing behind. */
+function memoryLocal(): LocalAttempts {
+  const data = new Map<string, unknown>();
+  return {
+    load: (key) => data.get(key) ?? null,
+    save: (key, session) => data.set(key, structuredClone(session)),
+    remove: (key) => data.delete(key),
+  };
+}
 
 /** /test/:testId/:module — a fresh store per test and module. */
 export function ExamRoute() {
@@ -26,13 +36,15 @@ function Exam({ testId, module }: { testId: string; module: Module }) {
   const { state } = useAuth();
   const [params, setParams] = useSearchParams();
   const uid = state.status === 'owner' ? state.user.uid : null;
+  // ?preview=draft (from the admin): the draft, with nothing saved on the device or in Firestore.
+  const [preview] = useState(() => params.get('preview') === 'draft');
 
   const [store] = useState(() =>
     createExamStore({
       now: services.now,
       newId: services.newId,
-      local: services.local,
-      remote: uid ? services.attempts(uid) : null,
+      local: preview ? memoryLocal() : services.local,
+      remote: uid && !preview ? services.attempts(uid) : null,
       setTimer: (fn, ms) => window.setTimeout(fn, ms),
       clearTimer: (handle) => window.clearTimeout(handle as number),
     }),
@@ -47,8 +59,16 @@ function Exam({ testId, module }: { testId: string; module: Module }) {
     const mode: ExamMode =
       module === 'speaking' || params.get('mode') === 'full' ? 'full' : 'single';
     const part = Math.max(1, Number.parseInt(params.get('part') ?? '1', 10) || 1);
-    services
-      .loadTest(testId)
+    const load = preview
+      ? services.admin.drafts.get(testId).then((draft) => {
+          const parsed = TestFileSchema.safeParse(draft);
+          if (!parsed.success) {
+            throw new Error('Fix the draft’s schema problems in the admin before previewing it.');
+          }
+          return parsed.data;
+        })
+      : services.loadTest(testId);
+    load
       .then((test) => store.getState().open({ test, module, mode, part }))
       .then(() => !cancelled && setReady(true))
       .catch((e: unknown) => {
@@ -97,7 +117,7 @@ function Exam({ testId, module }: { testId: string; module: Module }) {
   return (
     <ExamStoreContext value={store}>
       <SyncUrl params={params} setParams={setParams} />
-      <ExamShell>
+      <ExamShell notice={preview ? 'Preview of the draft: nothing you do here is saved.' : null}>
         <ModuleContent />
       </ExamShell>
     </ExamStoreContext>

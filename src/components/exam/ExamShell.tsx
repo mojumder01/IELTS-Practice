@@ -48,7 +48,14 @@ const clockTime = (ms: number) =>
   });
 
 /** The frame every exam page shares (SPEC section 6); `children` is the module's own content. */
-export function ExamShell({ children }: { children: ReactNode }) {
+export function ExamShell({
+  children,
+  notice = null,
+}: {
+  children: ReactNode;
+  /** A line under the header, such as the admin's preview warning. */
+  notice?: string | null;
+}) {
   const test = useExam((s) => s.test);
   const session = useExam((s) => s.session);
   const clockNow = useExam((s) => s.clockNow);
@@ -268,6 +275,14 @@ export function ExamShell({ children }: { children: ReactNode }) {
         </div>
       )}
 
+      {notice && (
+        <p
+          role="status"
+          className="m-0 shrink-0 border-b border-answer-hl-outline bg-answer-hl px-4 py-2 text-sm font-medium text-flag-stroke sm:px-5"
+        >
+          {notice}
+        </p>
+      )}
       {revealing && <RevealBanner message={REVEAL_MESSAGE[module]} onHide={actions.hideAnswers} />}
 
       <div className="relative min-h-0 flex-1">
