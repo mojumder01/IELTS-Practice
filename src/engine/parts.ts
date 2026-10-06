@@ -1,4 +1,5 @@
 import type { ListeningSection, Module, ReadingSection, TestFile } from '../schema/test';
+import type { ExamMode } from './timer';
 
 /** One question-grid cell: a single number, or paired numbers that share one ("21–22"). */
 export interface GridItem {
@@ -71,6 +72,13 @@ export function rangeLabel(info: PartInfo): string {
 }
 
 export const MODULE_ORDER: Module[] = ['listening', 'reading', 'writing', 'speaking'];
+
+/** What the two timer modes are called: Writing says Practice and Exam (Writing artboard). */
+export function modeLabels(module: Module): Record<ExamMode, string> {
+  return module === 'writing'
+    ? { single: 'Practice', full: 'Exam' }
+    : { single: 'Single part', full: 'Full mock' };
+}
 
 export function moduleName(module: Module): string {
   return module.charAt(0).toUpperCase() + module.slice(1);

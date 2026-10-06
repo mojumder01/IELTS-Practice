@@ -6,6 +6,8 @@ import { markParts, scoreResults } from '../engine/scoring';
 import * as engine from '../engine/session';
 import type { AttemptRecord, Session } from '../engine/session';
 import { durationSec, stopTimer, type ExamMode } from '../engine/timer';
+import type { FeedbackStatus } from '../engine/writing';
+import { WritingFeedbackSchema, type WritingFeedback } from '../schema/attempt';
 import { ModuleSchema, type Module, type TestFile } from '../schema/test';
 
 /** Device storage for the live sitting (localStorage in the app). */
@@ -52,6 +54,9 @@ export interface ExamState {
   /** Answers shown for everything (header lightbulb), or per question or group key. Not saved. */
   revealAll: boolean;
   shown: Record<string, boolean>;
+  /** AI feedback requests per task, and whether the panel is open. Not saved. */
+  feedbackStatus: { task1?: FeedbackStatus; task2?: FeedbackStatus };
+  feedbackOpen: boolean;
   open: (params: OpenParams) => Promise<Session>;
   answer: (n: number, value: string) => void;
   toggleFlag: (n: number) => void;
@@ -67,6 +72,10 @@ export interface ExamState {
   setRevealAll: (on: boolean) => void;
   toggleShown: (key: string) => void;
   toggleScriptMark: (line: number) => void;
+  setEssay: (task: 1 | 2, text: string) => void;
+  setFeedback: (feedback: WritingFeedback) => void;
+  setFeedbackStatus: (task: 1 | 2, status: FeedbackStatus) => void;
+  setFeedbackOpen: (open: boolean) => void;
   /** Saved on the device as the audio plays; Firestore doesn't need it. */
   setAudioPosition: (part: number, seconds: number) => void;
   hideAnswers: () => void;
@@ -97,6 +106,15 @@ export const SessionSchema = z.strictObject({
   notes: z.string(),
   scriptMarks: z.array(z.number().int()),
   audioPositions: z.record(z.string(), z.number().nonnegative()).default({}),
+  essays: z
+    .strictObject({ task1: z.string(), task2: z.string() })
+    .default({ task1: '', task2: '' }),
+  feedback: z
+    .strictObject({
+      task1: WritingFeedbackSchema.optional(),
+      task2: WritingFeedbackSchema.optional(),
+    })
+    .default({}),
   revealUsed: z.boolean(),
   paused: z.boolean(),
   status: z.enum(['in_progress', 'submitted']),
@@ -151,6 +169,8 @@ export function createExamStore(deps: ExamDeps) {
       return remoteWrites;
     };
 
+    const writeRemoteNow = () => writeRemote();
+
     const scheduleRemote = (reason: SaveReason) => {
       if (!deps.remote) return;
       const delay = remoteSaveDelay(lastRemoteAt, deps.now(), reason);
@@ -196,6 +216,8 @@ export function createExamStore(deps: ExamDeps) {
       saveError: null,
       revealAll: false,
       shown: {},
+      feedbackStatus: {},
+      feedbackOpen: false,
 
       open: async ({ test, module, mode, part }) => {
         const testId = test.meta.testId;
@@ -236,6 +258,8 @@ export function createExamStore(deps: ExamDeps) {
           session: running,
           clockNow: now,
           lastSavedAt: resumed ? resumed.updatedAt : null,
+          feedbackStatus: {},
+          feedbackOpen: false,
         });
         saveLocal(running);
         return running;
@@ -263,6 +287,12 @@ export function createExamStore(deps: ExamDeps) {
       clearPart: () => {
         const { test, session } = get();
         if (!test || !session) return;
+        if (session.module === 'writing') {
+          const task = session.part === 2 ? 2 : 1;
+          update((s, now) => engine.clearEssay(s, task, now), 'change');
+          set({ feedbackStatus: { ...get().feedbackStatus, [`task${task}`]: { kind: 'idle' } } });
+          return;
+        }
         const numbers =
           partsOf(test, session.module).find((p) => p.part === session.part)?.numbers ?? [];
         // The highlighter only works in single-part mode, so its marks all belong to this part.
@@ -293,7 +323,14 @@ export function createExamStore(deps: ExamDeps) {
         pending = null;
         lastRemoteAt = null;
         const running = engine.runClock(fresh, visible, now);
-        set({ session: running, lastSavedAt: null, revealAll: false, shown: {} });
+        set({
+          session: running,
+          lastSavedAt: null,
+          revealAll: false,
+          shown: {},
+          feedbackStatus: {},
+          feedbackOpen: false,
+        });
         saveLocal(running);
       },
 
@@ -327,6 +364,15 @@ export function createExamStore(deps: ExamDeps) {
         if (on) update((s, now) => engine.markRevealUsed(s, now), 'change');
       },
       hideAnswers: () => set({ revealAll: false, shown: {} }),
+      setEssay: (task, text) => update((s, now) => engine.setEssay(s, task, text, now), 'change'),
+      setFeedback: (feedback) => {
+        update((s, now) => engine.setFeedback(s, feedback, now), 'change');
+        // A submitted sitting has left the device; Firestore still gets the feedback.
+        if (get().session?.status === 'submitted') void writeRemoteNow();
+      },
+      setFeedbackStatus: (task, status) =>
+        set({ feedbackStatus: { ...get().feedbackStatus, [`task${task}`]: status } }),
+      setFeedbackOpen: (feedbackOpen) => set({ feedbackOpen }),
       toggleScriptMark: (line) =>
         update((s, now) => engine.toggleScriptMark(s, line, now), 'change'),
       setAudioPosition: (part, seconds) =>

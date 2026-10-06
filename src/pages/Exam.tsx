@@ -4,6 +4,7 @@ import { FullPageStatus } from '../components/FullPageStatus';
 import { ExamShell } from '../components/exam/ExamShell';
 import { ListeningContent } from '../components/listening/ListeningContent';
 import { ReadingContent } from '../components/reading/ReadingContent';
+import { WritingContent } from '../components/writing/WritingContent';
 import type { ExamMode } from '../engine/timer';
 import { useAuth } from '../lib/auth';
 import { useServices } from '../lib/services';
@@ -131,6 +132,10 @@ function ModuleContent() {
   if (section?.kind === 'reading') return <ReadingContent key={section.part} section={section} />;
   if (section?.kind === 'listening')
     return <ListeningContent key={section.part} section={section} />;
+  const writing = test.sections.writing;
+  if (session.module === 'writing' && writing?.kind === 'writing') {
+    return <WritingContent key={session.part} section={writing} />;
+  }
   return (
     <p className="mx-auto max-w-[520px] px-6 py-12 text-center text-[15px] text-muted">
       This {session.module === 'writing' ? 'task' : 'part'} isn’t in this test yet.

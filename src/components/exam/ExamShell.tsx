@@ -1,11 +1,19 @@
 import { Check, CloudOff } from 'lucide-react';
 import { useState, type ReactNode } from 'react';
 import { useNavigate } from 'react-router';
-import { moduleName, neighbourModules, partWord, partsOf, rangeLabel } from '../../engine/parts';
+import {
+  modeLabels,
+  moduleName,
+  neighbourModules,
+  partWord,
+  partsOf,
+  rangeLabel,
+} from '../../engine/parts';
 import { canPause, hasAnswers } from '../../engine/session';
 import { timeLeftSec, type ExamMode } from '../../engine/timer';
 import { useIsPhone } from '../../lib/useMediaQuery';
 import { useExam } from '../../store/examContext';
+import { useFeedbackRequest } from '../writing/useFeedbackRequest';
 import { ConfirmDialog } from './ConfirmDialog';
 import { ExamHeader } from './ExamHeader';
 import { ExamOptions } from './ExamOptions';
@@ -50,6 +58,7 @@ export function ExamShell({ children }: { children: ReactNode }) {
   const actions = useExam((s) => s);
   const navigate = useNavigate();
   const phone = useIsPhone();
+  const requestFeedback = useFeedbackRequest();
 
   const [notesOpen, setNotesOpen] = useState(false);
   const [optionsOpen, setOptionsOpen] = useState(false);
@@ -88,14 +97,18 @@ export function ExamShell({ children }: { children: ReactNode }) {
   const moduleHref = (m: string) =>
     `/test/${test.meta.testId}/${m}?mode=${mode}${single ? '&part=1' : ''}`;
   const lastPart = parts[parts.length - 1]?.part ?? 1;
-  const evaluate = () =>
-    void actions.submit().then(() => navigate(`/results/${session.attemptId}`));
+  const writing = module === 'writing';
+  // Writing stays on the page after submitting: the essays and their AI feedback are the result.
+  const evaluate = writing
+    ? () => void actions.submit().then(() => requestFeedback(session.part === 2 ? 2 : 1))
+    : () => void actions.submit().then(() => navigate(`/results/${session.attemptId}`));
+  const labels = modeLabels(module);
 
   const action = submitted
     ? null
     : single
       ? {
-          label: `Evaluate my ${moduleName(module)}`,
+          label: writing ? 'Evaluate my essay' : `Evaluate my ${moduleName(module)}`,
           short: 'Submit',
           kind: 'evaluate' as const,
           onClick: evaluate,
@@ -107,14 +120,19 @@ export function ExamShell({ children }: { children: ReactNode }) {
             kind: 'next' as const,
             onClick: () => actions.goToPart(session.part + 1),
           }
-        : next
+        : next && !writing
           ? {
               label: `Next: ${moduleName(next)}`,
               short: 'Next',
               kind: 'next' as const,
               onClick: () => void actions.submit().then(() => navigate(moduleHref(next))),
             }
-          : { label: 'Submit test', short: 'Submit', kind: 'evaluate' as const, onClick: evaluate };
+          : {
+              label: writing ? 'Submit writing' : 'Submit test',
+              short: 'Submit',
+              kind: 'evaluate' as const,
+              onClick: evaluate,
+            };
 
   const changeMode = (target: ExamMode) => {
     setOptionsOpen(false);
@@ -123,6 +141,7 @@ export function ExamShell({ children }: { children: ReactNode }) {
   };
   const controls = {
     mode,
+    modeLabels: labels,
     onModeChange: changeMode,
     notesOpen,
     onToggleNotes: () => {
@@ -182,7 +201,9 @@ export function ExamShell({ children }: { children: ReactNode }) {
       ) : (
         <ExamHeader
           title={`${test.meta.book} · Test ${test.meta.testNumber} · ${moduleName(module)}`}
-          partLabel={`${word} ${session.part} of ${single ? 1 : parts.length}`}
+          partLabel={
+            single ? `${word} ${session.part}` : `${word} ${session.part} of ${parts.length}`
+          }
           {...controls}
           secondsLeft={secondsLeft}
           focus={focus}
@@ -231,8 +252,9 @@ export function ExamShell({ children }: { children: ReactNode }) {
       {revealing && <RevealBanner message={REVEAL_MESSAGE[module]} onHide={actions.hideAnswers} />}
 
       <div className="relative min-h-0 flex-1">
-        <div className="h-full overflow-auto">
-          {submitted ? (
+        {/* Relative, so screen-reader-only text deep in the content can't stretch the page. */}
+        <div className="relative h-full overflow-auto">
+          {submitted && !writing ? (
             <div
               role="status"
               className="mx-auto flex max-w-[520px] flex-col gap-2 px-6 py-12 text-center"
@@ -271,13 +293,15 @@ export function ExamShell({ children }: { children: ReactNode }) {
         )
       ) : (
         <>
-          <QuestionGrid
-            parts={shownParts}
-            answers={session.answers}
-            flagged={session.flagged}
-            current={session.current}
-            onPick={actions.goTo}
-          />
+          {items.length > 0 && (
+            <QuestionGrid
+              parts={shownParts}
+              answers={session.answers}
+              flagged={session.flagged}
+              current={session.current}
+              onPick={actions.goTo}
+            />
+          )}
           {sectionNav}
         </>
       )}
@@ -297,7 +321,7 @@ export function ExamShell({ children }: { children: ReactNode }) {
 
       {confirm?.kind === 'mode' && (
         <ConfirmDialog
-          title={`Switch to ${confirm.mode === 'full' ? 'Full mock' : 'Single part'}?`}
+          title={`Switch to ${labels[confirm.mode]}?`}
           message="This starts the module again: your answers, flags and notes are cleared and the timer restarts."
           confirmLabel="Switch and restart"
           onCancel={() => setConfirm(null)}
@@ -310,7 +334,11 @@ export function ExamShell({ children }: { children: ReactNode }) {
       {confirm?.kind === 'clear' && (
         <ConfirmDialog
           title={`Clear ${word.toLowerCase()} ${session.part}?`}
-          message={`This removes your answers, flags and highlights for ${word.toLowerCase()} ${session.part}.`}
+          message={
+            writing
+              ? `This removes your essay for task ${session.part}.`
+              : `This removes your answers, flags and highlights for ${word.toLowerCase()} ${session.part}.`
+          }
           confirmLabel="Clear"
           onCancel={() => setConfirm(null)}
           onConfirm={() => {

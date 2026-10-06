@@ -4,6 +4,7 @@ import { ThemeToggle } from '../ThemeToggle';
 
 interface ExamOptionsProps {
   mode: ExamMode;
+  modeLabels: Record<ExamMode, string>;
   onModeChange: (mode: ExamMode) => void;
   notesOpen: boolean;
   onToggleNotes: () => void;
@@ -36,7 +37,7 @@ export function ExamOptions(props: ExamOptionsProps) {
             onClick={() => props.mode !== m && props.onModeChange(m)}
             className={`min-h-10 rounded-pill text-[13px] font-semibold ${props.mode === m ? 'bg-navy text-on-navy' : 'text-navy'}`}
           >
-            {m === 'single' ? 'Single part' : 'Full mock'}
+            {props.modeLabels[m]}
           </button>
         ))}
       </div>

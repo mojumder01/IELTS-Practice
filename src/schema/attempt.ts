@@ -72,8 +72,18 @@ export const AttemptSchema = z.strictObject({
       ),
     })
     .optional(),
+  // Feedback is kept per task (the SPEC sketch has a single `ai`).
   writing: z
-    .strictObject({ task1: z.string(), task2: z.string(), ai: WritingFeedbackSchema.optional() })
+    .strictObject({
+      task1: z.string(),
+      task2: z.string(),
+      ai: z
+        .strictObject({
+          task1: WritingFeedbackSchema.optional(),
+          task2: WritingFeedbackSchema.optional(),
+        })
+        .optional(),
+    })
     .optional(),
   speaking: z
     .strictObject({

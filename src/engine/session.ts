@@ -1,4 +1,5 @@
 import type { Attempt } from '../schema/attempt';
+import type { WritingFeedback } from '../schema/attempt';
 import type { Module } from '../schema/test';
 import type { Score } from './scoring';
 import {
@@ -24,6 +25,9 @@ export interface Session {
   flagged: number[];
   notes: string;
   scriptMarks: number[];
+  /** Writing: the two essays and any AI feedback on them. */
+  essays: { task1: string; task2: string };
+  feedback: { task1?: WritingFeedback; task2?: WritingFeedback };
   /** Where each Listening part's audio got to, by part number; restored on reload. */
   audioPositions: Record<string, number>;
   revealUsed: boolean;
@@ -62,6 +66,8 @@ export function createSession(s: NewSession): Session {
     notes: '',
     scriptMarks: [],
     audioPositions: {},
+    essays: { task1: '', task2: '' },
+    feedback: {},
     revealUsed: false,
     paused: false,
     status: 'in_progress',
@@ -116,7 +122,7 @@ export function goToPart(
 }
 
 export function hasAnswers(s: Session): boolean {
-  return Object.keys(s.answers).length > 0;
+  return Object.keys(s.answers).length > 0 || !!s.essays.task1.trim() || !!s.essays.task2.trim();
 }
 
 /** Clear removes answers, flags and script marks for the current part. */
@@ -132,6 +138,25 @@ export function clearPart(
   const flagged = s.flagged.filter((n) => !drop.has(String(n)));
   const scriptMarks = s.scriptMarks.filter((line) => !scriptLines.includes(line));
   return changed(s, now, { answers, flagged, scriptMarks });
+}
+
+/** Clear in Writing empties the current task's essay and drops its feedback. */
+export function clearEssay(s: Session, task: 1 | 2, now: number): Session {
+  if (!open(s)) return s;
+  const key = `task${task}` as const;
+  const feedback = { ...s.feedback };
+  delete feedback[key];
+  return changed(s, now, { essays: { ...s.essays, [key]: '' }, feedback });
+}
+
+export function setEssay(s: Session, task: 1 | 2, text: string, now: number): Session {
+  if (!open(s)) return s;
+  return changed(s, now, { essays: { ...s.essays, [`task${task}`]: text } });
+}
+
+/** Feedback can arrive after submitting: in Exam mode that's when it unlocks. */
+export function setFeedback(s: Session, feedback: WritingFeedback, now: number): Session {
+  return { ...s, feedback: { ...s.feedback, [`task${feedback.task}`]: feedback }, updatedAt: now };
 }
 
 /** Highlighter marks in the audioscript, by line index (single-part mode only). */
@@ -216,6 +241,7 @@ export function toAttempt(s: Session, now: number): AttemptRecord {
     scriptMarks: s.scriptMarks,
     revealUsed: s.revealUsed,
     ...(s.score ? { score: s.score } : {}),
+    ...(s.module === 'writing' ? { writing: { ...s.essays, ai: s.feedback } } : {}),
   };
 }
 
@@ -233,6 +259,8 @@ export function fromAttempt(a: AttemptRecord): Session {
     notes: a.notes ?? '',
     scriptMarks: a.scriptMarks ?? [],
     audioPositions: {},
+    essays: { task1: a.writing?.task1 ?? '', task2: a.writing?.task2 ?? '' },
+    feedback: a.writing?.ai ?? {},
     revealUsed: a.revealUsed,
     paused: false,
     status: a.status,

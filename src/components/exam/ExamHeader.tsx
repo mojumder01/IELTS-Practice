@@ -16,6 +16,7 @@ interface ExamHeaderProps {
   title: string;
   partLabel: string;
   mode: ExamMode;
+  modeLabels: Record<ExamMode, string>;
   onModeChange: (mode: ExamMode) => void;
   notesOpen: boolean;
   onToggleNotes: () => void;
@@ -32,11 +33,6 @@ interface ExamHeaderProps {
   focus: boolean;
   onToggleFocus: () => void;
 }
-
-const MODES: { id: ExamMode; label: string }[] = [
-  { id: 'single', label: 'Single part' },
-  { id: 'full', label: 'Full mock' },
-];
 
 const iconButton =
   'flex size-11 shrink-0 items-center justify-center rounded-control border border-navy-3 bg-transparent text-on-navy-muted hover:text-on-navy';
@@ -72,17 +68,17 @@ export function ExamHeader(props: ExamHeaderProps) {
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-[11px] font-semibold tracking-[0.1em] text-unanswered">TIMER</span>
         <div className="flex gap-0.5 rounded-pill bg-navy-2 p-[3px]">
-          {MODES.map((m) => (
+          {(['single', 'full'] as const).map((m) => (
             <button
-              key={m.id}
+              key={m}
               type="button"
-              aria-pressed={props.mode === m.id}
-              onClick={() => props.mode !== m.id && props.onModeChange(m.id)}
+              aria-pressed={props.mode === m}
+              onClick={() => props.mode !== m && props.onModeChange(m)}
               className={`min-h-[38px] rounded-pill px-3.5 text-[13px] font-semibold ${
-                props.mode === m.id ? 'bg-surface text-navy' : 'bg-transparent text-on-navy-muted'
+                props.mode === m ? 'bg-surface text-navy' : 'bg-transparent text-on-navy-muted'
               }`}
             >
-              {m.label}
+              {props.modeLabels[m]}
             </button>
           ))}
         </div>

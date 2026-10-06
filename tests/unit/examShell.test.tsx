@@ -47,7 +47,7 @@ describe('exam shell', () => {
   it('shows the test, the countdown and a cell per question', async () => {
     await renderShell();
     expect(screen.getByText('Book 21 · Test 1 · Reading')).toBeInTheDocument();
-    expect(screen.getByText('Passage 1 of 1')).toBeInTheDocument();
+    expect(within(screen.getByRole('banner')).getByText('Passage 1')).toBeInTheDocument();
     expect(screen.getByRole('timer')).toHaveTextContent('20:00');
     expect(screen.getByText('0 / 9 answered')).toBeInTheDocument();
     expect(

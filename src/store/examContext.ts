@@ -10,3 +10,10 @@ export function useExam<T>(selector: (state: ExamState) => T): T {
   if (!store) throw new Error('useExam() needs an ExamStoreContext provider');
   return useStore(store, selector);
 }
+
+/** The store itself, for handlers that read the latest state when they run. */
+export function useExamStore(): ExamStore {
+  const store = useContext(ExamStoreContext);
+  if (!store) throw new Error('useExamStore() needs an ExamStoreContext provider');
+  return store;
+}
