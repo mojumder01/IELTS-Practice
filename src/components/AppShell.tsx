@@ -43,6 +43,12 @@ export function AppShell() {
           </nav>
         </div>
         <div className="flex items-center gap-3">
+          <Link
+            to="/admin"
+            className="inline-flex min-h-11 items-center rounded-control px-3 text-sm font-medium text-on-navy-muted no-underline hover:text-on-navy"
+          >
+            Admin
+          </Link>
           <button
             type="button"
             onClick={() => void signOut()}
