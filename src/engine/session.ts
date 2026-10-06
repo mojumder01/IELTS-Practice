@@ -1,5 +1,6 @@
 import type { Attempt } from '../schema/attempt';
 import type { Module } from '../schema/test';
+import type { Score } from './scoring';
 import {
   createTimer,
   isExpired,
@@ -29,6 +30,8 @@ export interface Session {
   status: 'in_progress' | 'submitted';
   /** null for Speaking, which has no module timer. */
   timer: TimerState | null;
+  /** Set on submit for Listening and Reading. */
+  score: Score | null;
   startedAt: number;
   updatedAt: number;
   submittedAt: number | null;
@@ -60,6 +63,7 @@ export function createSession(s: NewSession): Session {
     paused: false,
     status: 'in_progress',
     timer: s.totalSec === null ? null : createTimer(s.totalSec),
+    score: null,
     startedAt: s.now,
     updatedAt: s.now,
     submittedAt: null,
@@ -193,6 +197,7 @@ export function toAttempt(s: Session, now: number): AttemptRecord {
     notes: s.notes,
     scriptMarks: s.scriptMarks,
     revealUsed: s.revealUsed,
+    ...(s.score ? { score: s.score } : {}),
   };
 }
 
@@ -213,6 +218,7 @@ export function fromAttempt(a: AttemptRecord): Session {
     paused: false,
     status: a.status,
     timer: a.module === 'speaking' ? null : createTimer(a.timeLeftSec),
+    score: a.score ? { estimate: false, ...a.score } : null,
     startedAt: a.startedAt,
     updatedAt: a.updatedAt,
     submittedAt: a.submittedAt ?? null,

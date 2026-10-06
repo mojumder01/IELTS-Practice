@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { createStore } from 'zustand/vanilla';
 import { remoteSaveDelay, type SaveReason } from '../engine/autosave';
 import { partsOf } from '../engine/parts';
+import { markParts, scoreResults } from '../engine/scoring';
 import * as engine from '../engine/session';
 import type { AttemptRecord, Session } from '../engine/session';
 import { durationSec, stopTimer, type ExamMode } from '../engine/timer';
@@ -19,6 +20,7 @@ export interface RemoteAttempts {
   findInProgress: (testId: string, module: Module) => Promise<AttemptRecord | null>;
   save: (attempt: AttemptRecord) => Promise<void>;
   remove: (attemptId: string) => Promise<void>;
+  get: (attemptId: string) => Promise<AttemptRecord | null>;
 }
 
 export interface ExamDeps {
@@ -47,6 +49,9 @@ export interface ExamState {
   /** Last time a change was saved, for "Autosaved at hh:mm:ss". */
   lastSavedAt: number | null;
   saveError: string | null;
+  /** Answers shown for everything (header lightbulb), or per question or group key. Not saved. */
+  revealAll: boolean;
+  shown: Record<string, boolean>;
   open: (params: OpenParams) => Promise<Session>;
   answer: (n: number, value: string) => void;
   toggleFlag: (n: number) => void;
@@ -59,7 +64,9 @@ export interface ExamState {
   resume: () => void;
   setVisible: (visible: boolean) => void;
   tick: () => void;
-  reveal: () => void;
+  setRevealAll: (on: boolean) => void;
+  toggleShown: (key: string) => void;
+  hideAnswers: () => void;
   submit: () => Promise<void>;
   flush: () => Promise<void>;
 }
@@ -90,10 +97,19 @@ export const SessionSchema = z.strictObject({
   paused: z.boolean(),
   status: z.enum(['in_progress', 'submitted']),
   timer: TimerSchema.nullable(),
+  score: z
+    .strictObject({
+      raw: z.number(),
+      total: z.number(),
+      band: z.number(),
+      estimate: z.boolean(),
+      byType: z.record(z.string(), z.strictObject({ correct: z.number(), total: z.number() })),
+    })
+    .nullable(),
   startedAt: z.number(),
   updatedAt: z.number(),
   submittedAt: z.number().nullable(),
-}) satisfies z.ZodType<Session>;
+}) satisfies z.ZodType<Omit<Session, 'score'> & { score: unknown }>;
 
 export type ExamStore = ReturnType<typeof createExamStore>;
 
@@ -138,13 +154,23 @@ export function createExamStore(deps: ExamDeps) {
       else if (pending === null) pending = deps.setTimer(() => void writeRemote(), delay);
     };
 
+    /** Listening and Reading are marked the moment they're submitted, however that happens. */
+    const withScore = (s: Session): Session => {
+      const { test } = get();
+      if (!test || (s.module !== 'reading' && s.module !== 'listening')) return s;
+      const parts = partsOf(test, s.module).filter((p) => s.mode === 'full' || p.part === s.part);
+      const results = markParts(test, s.module, parts, s.answers);
+      return results.length ? { ...s, score: scoreResults(results, s.module, test.meta.track) } : s;
+    };
+
     /** Applies an engine step, saves it on the device at once and queues Firestore. */
     const update = (step: (s: Session, now: number) => Session, reason: SaveReason | null) => {
       const s = get().session;
       if (!s) return;
       const now = deps.now();
-      const next = step(s, now);
+      let next = step(s, now);
       if (next === s) return;
+      if (next.status === 'submitted' && s.status !== 'submitted') next = withScore(next);
       set({ session: next, ...(reason ? { lastSavedAt: now } : {}) });
       saveLocal(next);
       if (next.status === 'submitted' && s.status !== 'submitted') scheduleRemote('submit');
@@ -164,6 +190,8 @@ export function createExamStore(deps: ExamDeps) {
       clockNow: deps.now(),
       lastSavedAt: null,
       saveError: null,
+      revealAll: false,
+      shown: {},
 
       open: async ({ test, module, mode, part }) => {
         const testId = test.meta.testId;
@@ -261,7 +289,7 @@ export function createExamStore(deps: ExamDeps) {
         pending = null;
         lastRemoteAt = null;
         const running = engine.runClock(fresh, visible, now);
-        set({ session: running, lastSavedAt: null });
+        set({ session: running, lastSavedAt: null, revealAll: false, shown: {} });
         saveLocal(running);
       },
 
@@ -284,7 +312,17 @@ export function createExamStore(deps: ExamDeps) {
         else if (s.timer?.runningSince != null) saveLocal(s); // keeps time left current on the device
       },
 
-      reveal: () => update((s, now) => engine.markRevealUsed(s, now), 'change'),
+      // Showing any answer before submitting keeps the attempt out of band history.
+      setRevealAll: (on) => {
+        set({ revealAll: on });
+        if (on) update((s, now) => engine.markRevealUsed(s, now), 'change');
+      },
+      toggleShown: (key) => {
+        const on = !get().shown[key];
+        set({ shown: { ...get().shown, [key]: on } });
+        if (on) update((s, now) => engine.markRevealUsed(s, now), 'change');
+      },
+      hideAnswers: () => set({ revealAll: false, shown: {} }),
 
       submit: async () => {
         update((s, now) => engine.submit(s, now), 'submit');

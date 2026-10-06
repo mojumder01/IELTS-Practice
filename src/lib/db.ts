@@ -79,5 +79,9 @@ export function firestoreAttempts(db: Firestore, uid: string): RemoteAttempts {
     save: (attempt) =>
       setDoc(doc(attempts, attempt.attemptId), AttemptSchema.parse(toFirestore(attempt))),
     remove: (attemptId) => deleteDoc(doc(attempts, attemptId)),
+    get: async (attemptId) => {
+      const snapshot = await getDoc(doc(attempts, attemptId));
+      return snapshot.exists() ? fromFirestore(snapshot.data()) : null;
+    },
   };
 }

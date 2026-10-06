@@ -62,6 +62,7 @@ export const AttemptSchema = z.strictObject({
       raw: z.number().int().nonnegative(),
       total: z.number().int().positive(),
       band,
+      estimate: z.boolean().optional(), // scaled from a single part
       byType: z.partialRecord(
         QuestionTypeSchema,
         z.strictObject({

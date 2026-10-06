@@ -177,7 +177,7 @@ describe('exam store', () => {
   it('records that answers were revealed', async () => {
     const world = examWorld();
     const store = await openReading(world);
-    store.getState().reveal();
+    store.getState().toggleShown('q1');
     expect(store.getState().session!.revealUsed).toBe(true);
   });
 

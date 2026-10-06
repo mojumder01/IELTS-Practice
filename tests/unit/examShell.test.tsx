@@ -4,28 +4,18 @@ import { createMemoryRouter } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
 import { describe, expect, it } from 'vitest';
 import { ExamShell } from '../../src/components/exam/ExamShell';
-import { QuestionsPlaceholder } from '../../src/components/exam/QuestionsPlaceholder';
+import { ListeningQuestions } from '../../src/components/listening/ListeningQuestions';
+import { ReadingContent } from '../../src/components/reading/ReadingContent';
 import type { Module } from '../../src/schema/test';
 import { ExamStoreContext, useExam } from '../../src/store/examContext';
 import { examWorld, sample } from './examHarness';
 
 function Content() {
   const session = useExam((s) => s.session)!;
-  const answer = useExam((s) => s.answer);
-  const toggleFlag = useExam((s) => s.toggleFlag);
-  const goTo = useExam((s) => s.goTo);
   const section = sample.sections[`${session.module}-1` as 'reading-1'];
-  if (section?.kind !== 'reading' && section?.kind !== 'listening') return null;
-  return (
-    <QuestionsPlaceholder
-      section={section}
-      answers={session.answers}
-      flagged={session.flagged}
-      onAnswer={answer}
-      onFlag={toggleFlag}
-      onFocusQuestion={goTo}
-    />
-  );
+  if (section?.kind === 'reading') return <ReadingContent section={section} />;
+  if (section?.kind === 'listening') return <ListeningQuestions section={section} />;
+  return null;
 }
 
 async function renderShell(module: Module = 'reading', mode: 'single' | 'full' = 'single') {
@@ -113,7 +103,7 @@ describe('exam shell', () => {
   it('asks before switching mode once an answer is filled', async () => {
     const user = userEvent.setup();
     const { store } = await renderShell();
-    await user.type(screen.getByRole('textbox', { name: 'Question 1' }), 'TRUE');
+    await user.click(screen.getByRole('button', { name: 'Question 1: TRUE' }));
     await user.click(screen.getByRole('button', { name: 'Full mock' }));
     expect(screen.getByRole('alertdialog', { name: 'Switch to Full mock?' })).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: 'Cancel' }));
@@ -140,7 +130,7 @@ describe('exam shell', () => {
   it('clears the part after a confirm', async () => {
     const user = userEvent.setup();
     const { store } = await renderShell();
-    await user.type(screen.getByRole('textbox', { name: 'Question 1' }), 'TRUE');
+    await user.click(screen.getByRole('button', { name: 'Question 1: TRUE' }));
     await user.click(screen.getByRole('button', { name: 'Clear' }));
     await user.click(
       within(screen.getByRole('alertdialog')).getByRole('button', { name: 'Clear' }),
@@ -167,12 +157,15 @@ describe('exam shell', () => {
     ).not.toBeInTheDocument();
   });
 
-  it('evaluates in single-part mode and moves on in a full mock', async () => {
+  it('evaluates in single-part mode: scores the attempt and opens Results', async () => {
     const user = userEvent.setup();
-    const { store } = await renderShell();
+    const { store, router } = await renderShell();
+    await user.click(screen.getByRole('button', { name: 'Question 1: TRUE' }));
     await user.click(screen.getByRole('button', { name: 'Evaluate my Reading' }));
-    expect(store.getState().session!.status).toBe('submitted');
-    expect(screen.getByText('Your Reading answers are submitted')).toBeInTheDocument();
+    const session = store.getState().session!;
+    expect(session.status).toBe('submitted');
+    expect(session.score).toMatchObject({ raw: 1, total: 9, estimate: true });
+    expect(router.state.location.pathname).toBe(`/results/${session.attemptId}`);
   });
 
   it('ends a full mock module with Next: <module>', async () => {

@@ -39,6 +39,7 @@ export function examWorld() {
       remoteData.delete(id);
       return Promise.resolve();
     }),
+    get: vi.fn((id: string) => Promise.resolve(remoteData.get(id) ?? null)),
   } satisfies RemoteAttempts;
 
   const newStore = () =>

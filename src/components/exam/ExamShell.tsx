@@ -4,12 +4,17 @@ import { useNavigate } from 'react-router';
 import { moduleName, neighbourModules, partWord, partsOf, rangeLabel } from '../../engine/parts';
 import { canPause, hasAnswers } from '../../engine/session';
 import { timeLeftSec, type ExamMode } from '../../engine/timer';
+import { useIsPhone } from '../../lib/useMediaQuery';
 import { useExam } from '../../store/examContext';
 import { ConfirmDialog } from './ConfirmDialog';
 import { ExamHeader } from './ExamHeader';
+import { ExamOptions } from './ExamOptions';
 import { NotesPopover } from './NotesPopover';
 import { PausedOverlay } from './PausedOverlay';
+import { PhoneExamHeader } from './PhoneExamHeader';
+import { PhoneQuestionNav } from './PhoneQuestionNav';
 import { QuestionGrid } from './QuestionGrid';
+import { QuestionSheet } from './QuestionSheet';
 import { RevealBanner } from './RevealBanner';
 import { SectionNav } from './SectionNav';
 
@@ -40,12 +45,16 @@ export function ExamShell({ children }: { children: ReactNode }) {
   const clockNow = useExam((s) => s.clockNow);
   const lastSavedAt = useExam((s) => s.lastSavedAt);
   const saveError = useExam((s) => s.saveError);
+  const revealAll = useExam((s) => s.revealAll);
+  const shown = useExam((s) => s.shown);
   const actions = useExam((s) => s);
   const navigate = useNavigate();
+  const phone = useIsPhone();
 
   const [notesOpen, setNotesOpen] = useState(false);
+  const [optionsOpen, setOptionsOpen] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState(false);
   const [focus, setFocus] = useState(false);
-  const [revealing, setRevealing] = useState(false);
   const [confirm, setConfirm] = useState<
     null | { kind: 'mode'; mode: ExamMode } | { kind: 'clear' }
   >(null);
@@ -61,6 +70,7 @@ export function ExamShell({ children }: { children: ReactNode }) {
     ? timeLeftSec(session.timer, Math.max(clockNow, session.timer.runningSince ?? 0))
     : null;
   const submitted = session.status === 'submitted';
+  const revealing = !submitted && (revealAll || Object.values(shown).some(Boolean));
 
   const range = currentPart ? rangeLabel(currentPart) : '';
   const minutes = module === 'reading' ? test.meta.timing.reading.singlePartMin : null;
@@ -78,70 +88,115 @@ export function ExamShell({ children }: { children: ReactNode }) {
   const moduleHref = (m: string) =>
     `/test/${test.meta.testId}/${m}?mode=${mode}${single ? '&part=1' : ''}`;
   const lastPart = parts[parts.length - 1]?.part ?? 1;
+  const evaluate = () =>
+    void actions.submit().then(() => navigate(`/results/${session.attemptId}`));
 
   const action = submitted
     ? null
     : single
       ? {
           label: `Evaluate my ${moduleName(module)}`,
+          short: 'Submit',
           kind: 'evaluate' as const,
-          onClick: () => void actions.submit(),
+          onClick: evaluate,
         }
       : session.part < lastPart
         ? {
             label: `Next ${word.toLowerCase()}`,
+            short: 'Next',
             kind: 'next' as const,
             onClick: () => actions.goToPart(session.part + 1),
           }
         : next
           ? {
               label: `Next: ${moduleName(next)}`,
+              short: 'Next',
               kind: 'next' as const,
               onClick: () => void actions.submit().then(() => navigate(moduleHref(next))),
             }
-          : {
-              label: 'Submit test',
-              kind: 'evaluate' as const,
-              onClick: () => void actions.submit(),
-            };
+          : { label: 'Submit test', short: 'Submit', kind: 'evaluate' as const, onClick: evaluate };
 
   const changeMode = (target: ExamMode) => {
+    setOptionsOpen(false);
     if (hasAnswers(session)) setConfirm({ kind: 'mode', mode: target });
     else actions.switchMode(target, target === 'full' ? 1 : session.part);
   };
-
-  const toggleReveal = () => {
-    if (!revealing) actions.reveal();
-    setRevealing(!revealing);
+  const controls = {
+    mode,
+    onModeChange: changeMode,
+    notesOpen,
+    onToggleNotes: () => {
+      setNotesOpen(!notesOpen);
+      setOptionsOpen(false);
+    },
+    revealLabel,
+    revealing: revealAll,
+    onToggleReveal: () => (revealAll ? actions.hideAnswers() : actions.setRevealAll(true)),
+    canPause: canPause(session),
+    paused: session.paused,
+    onTogglePause: () => {
+      setOptionsOpen(false);
+      if (session.paused) actions.resume();
+      else actions.pause();
+    },
+    onClear: () => {
+      setOptionsOpen(false);
+      setConfirm({ kind: 'clear' });
+    },
   };
+  const trackName =
+    module === 'reading'
+      ? test.meta.track === 'general'
+        ? 'General Training Reading'
+        : 'Academic Reading'
+      : moduleName(module);
+  const items = shownParts.flatMap((p) => p.items);
+  const answered = shownParts
+    .flatMap((p) => p.numbers)
+    .filter((n) => session.answers[String(n)]?.trim()).length;
+  const sectionNav = (
+    <SectionNav
+      parts={shownParts}
+      currentPart={session.part}
+      onPickPart={actions.goToPart}
+      previous={previous ? { label: moduleName(previous), href: moduleHref(previous) } : null}
+      next={next ? { label: moduleName(next), href: moduleHref(next) } : null}
+      action={action}
+    />
+  );
 
   return (
-    <div className="relative flex h-dvh min-h-[600px] flex-col bg-canvas text-text">
-      <ExamHeader
-        title={`${test.meta.book} · Test ${test.meta.testNumber} · ${moduleName(module)}`}
-        partLabel={`${word} ${session.part} of ${single ? 1 : parts.length}`}
-        mode={mode}
-        onModeChange={changeMode}
-        notesOpen={notesOpen}
-        onToggleNotes={() => setNotesOpen(!notesOpen)}
-        revealLabel={revealLabel}
-        revealing={revealing}
-        onToggleReveal={toggleReveal}
-        secondsLeft={secondsLeft}
-        canPause={canPause(session)}
-        paused={session.paused}
-        onTogglePause={session.paused ? actions.resume : actions.pause}
-        onClear={() => setConfirm({ kind: 'clear' })}
-        focus={focus}
-        onToggleFocus={() => setFocus(!focus)}
-      />
+    <div className="relative flex h-dvh min-h-[560px] flex-col bg-canvas text-text">
+      {phone ? (
+        <PhoneExamHeader
+          title={trackName}
+          subtitle={`${word} ${session.part}${range ? ` · Q${range}` : ''}`}
+          secondsLeft={secondsLeft}
+          optionsOpen={optionsOpen}
+          onToggleOptions={() => {
+            setOptionsOpen(!optionsOpen);
+            setNotesOpen(false); // the panel and the notes share the space under the header
+          }}
+          action={action && { label: action.short, onClick: action.onClick }}
+        />
+      ) : (
+        <ExamHeader
+          title={`${test.meta.book} · Test ${test.meta.testNumber} · ${moduleName(module)}`}
+          partLabel={`${word} ${session.part} of ${single ? 1 : parts.length}`}
+          {...controls}
+          secondsLeft={secondsLeft}
+          focus={focus}
+          onToggleFocus={() => setFocus(!focus)}
+        />
+      )}
 
-      {/* Anchored to the header's bottom edge, which moves as the header wraps on a phone. */}
-      <div className="relative z-[6] h-0">
+      {/* Anchored to the header's bottom edge, which moves as the header wraps. */}
+      <div className="relative z-[7] h-0">
+        {phone && optionsOpen && <ExamOptions {...controls} />}
         {notesOpen && <NotesPopover notes={session.notes} onChange={actions.setNotes} />}
       </div>
 
-      {!focus && (
+      {!focus && !phone && (
         <div className="flex shrink-0 flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-border bg-surface px-4 py-2 sm:px-5">
           <div className="flex flex-col gap-px">
             <span className="text-sm font-semibold text-navy">
@@ -173,9 +228,7 @@ export function ExamShell({ children }: { children: ReactNode }) {
         </div>
       )}
 
-      {revealing && (
-        <RevealBanner where={REVEAL_WHERE[module]} onHide={() => setRevealing(false)} />
-      )}
+      {revealing && <RevealBanner where={REVEAL_WHERE[module]} onHide={actions.hideAnswers} />}
 
       <div className="relative min-h-0 flex-1">
         <div className="h-full overflow-auto">
@@ -203,21 +256,44 @@ export function ExamShell({ children }: { children: ReactNode }) {
         )}
       </div>
 
-      <QuestionGrid
-        parts={shownParts}
-        answers={session.answers}
-        flagged={session.flagged}
-        current={session.current}
-        onPick={actions.goTo}
-      />
-      <SectionNav
-        parts={shownParts}
-        currentPart={session.part}
-        onPickPart={actions.goToPart}
-        previous={previous ? { label: moduleName(previous), href: moduleHref(previous) } : null}
-        next={next ? { label: moduleName(next), href: moduleHref(next) } : null}
-        action={action}
-      />
+      {phone ? (
+        items.length > 0 ? (
+          <PhoneQuestionNav
+            items={items}
+            answered={answered}
+            current={session.current}
+            onPick={actions.goTo}
+            onOpenSheet={() => setSheetOpen(true)}
+            sheetOpen={sheetOpen}
+          />
+        ) : (
+          sectionNav
+        )
+      ) : (
+        <>
+          <QuestionGrid
+            parts={shownParts}
+            answers={session.answers}
+            flagged={session.flagged}
+            current={session.current}
+            onPick={actions.goTo}
+          />
+          {sectionNav}
+        </>
+      )}
+
+      {phone && sheetOpen && (
+        <QuestionSheet
+          parts={shownParts}
+          answers={session.answers}
+          flagged={session.flagged}
+          current={session.current}
+          onPick={actions.goTo}
+          onClose={() => setSheetOpen(false)}
+        >
+          {sectionNav}
+        </QuestionSheet>
+      )}
 
       {confirm?.kind === 'mode' && (
         <ConfirmDialog
@@ -227,7 +303,6 @@ export function ExamShell({ children }: { children: ReactNode }) {
           onCancel={() => setConfirm(null)}
           onConfirm={() => {
             actions.switchMode(confirm.mode, confirm.mode === 'full' ? 1 : session.part);
-            setRevealing(false);
             setConfirm(null);
           }}
         />

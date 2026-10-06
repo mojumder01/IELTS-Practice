@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link, Navigate, useParams, useSearchParams } from 'react-router';
 import { FullPageStatus } from '../components/FullPageStatus';
 import { ExamShell } from '../components/exam/ExamShell';
-import { QuestionsPlaceholder } from '../components/exam/QuestionsPlaceholder';
+import { ListeningQuestions } from '../components/listening/ListeningQuestions';
+import { ReadingContent } from '../components/reading/ReadingContent';
 import type { ExamMode } from '../engine/timer';
 import { useAuth } from '../lib/auth';
 import { useServices } from '../lib/services';
@@ -121,27 +122,15 @@ function SyncUrl({
 function ModuleContent() {
   const test = useExam((s) => s.test);
   const session = useExam((s) => s.session);
-  const answer = useExam((s) => s.answer);
-  const toggleFlag = useExam((s) => s.toggleFlag);
-  const goTo = useExam((s) => s.goTo);
   if (!test || !session) return null;
 
   const section =
     session.module === 'reading' || session.module === 'listening'
       ? test.sections[`${session.module}-${session.part}` as 'reading-1']
       : undefined;
-  if (section?.kind === 'reading' || section?.kind === 'listening') {
-    return (
-      <QuestionsPlaceholder
-        section={section}
-        answers={session.answers}
-        flagged={session.flagged}
-        onAnswer={answer}
-        onFlag={toggleFlag}
-        onFocusQuestion={goTo}
-      />
-    );
-  }
+  if (section?.kind === 'reading') return <ReadingContent key={section.part} section={section} />;
+  if (section?.kind === 'listening')
+    return <ListeningQuestions key={section.part} section={section} />;
   return (
     <p className="mx-auto max-w-[520px] px-6 py-12 text-center text-[15px] text-muted">
       This {session.module === 'writing' ? 'task' : 'part'} isn’t in this test yet.
