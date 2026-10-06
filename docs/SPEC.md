@@ -343,6 +343,15 @@ deleting sections the draft no longer has. Preview as student opens
 in-memory device storage). The test ID is fixed when the test is created (`book21-test1` from
 "Book 21", test 1). Import accepts only a file that passes the schema and has the same test ID.
 
+**Implementation notes (Phase 10).** Dark mode is a second token set under `[data-theme='dark']`
+in `src/styles/tokens.css`; it follows the system setting until the owner picks one with the theme
+button. Navy stays the strongest colour, so it turns light in dark mode. Headers and the admin
+sidebar use separate `chrome` tokens and stay dark in both themes. `public/sw.js` (no build plugin)
+caches the app, its hashed files and `/media/**` (audio is cached whole and served in ranges), so
+a test opened once works offline; Firestore's own offline cache holds the test and attempts.
+Accessibility is checked in e2e with axe (WCAG 2.1 AA, no serious or critical issues) on every
+main page in both themes; Lighthouse scores the sign-in page 100.
+
 **Vocabulary document:** `word`, `pos`, `ipa`, `topic`, `meaning`, `bangla`, `example`, `source`
 (`{ testId, question? }` or `"manual"`), `status` (`new`, `learning`, `mastered`), `srs`
 (`{ due, intervalDays, ease, reps }`).
@@ -824,4 +833,4 @@ plan before Phase 5, because everything else runs inside proven free limits.
       `docs/SETUP.md`
 - [ ] General Training Writing Task 1 (letter) prompt format, if you will practise GT
 - [ ] Whether Speaking self-scores should also get an AI estimate from the transcript later
-- [ ] Dark-mode token values (Phase 10)
+- [x] Dark-mode token values (Phase 10): in `src/styles/tokens.css`
