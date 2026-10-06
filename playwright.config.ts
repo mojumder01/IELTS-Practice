@@ -7,21 +7,24 @@ const port = 4173;
 const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE;
 const launchOptions = executablePath ? { executablePath } : {};
 
-// e2e runs its own production build against a placeholder Firebase project,
-// so results never depend on real credentials or a developer's .env.local.
-// Values set here beat .env files when Vite builds.
+// e2e runs its own production build against the Firebase emulators (a "demo-" project
+// that exists nowhere else), so results never depend on real credentials or a
+// developer's .env.local. Values set here beat .env files when Vite builds.
 const e2eEnv = {
   VITE_FIREBASE_API_KEY: 'e2e-placeholder-api-key',
   VITE_FIREBASE_AUTH_DOMAIN: 'demo-ielts-practice.firebaseapp.com',
   VITE_FIREBASE_PROJECT_ID: 'demo-ielts-practice',
   VITE_FIREBASE_APP_ID: '1:000000000000:web:0000000000000000',
   VITE_FIREBASE_MESSAGING_SENDER_ID: '000000000000',
-  VITE_OWNER_UID: 'e2eOwnerUid000000000000000000',
+  VITE_OWNER_UID: 'e2eOwnerUid000000000000000000', // tests/e2e/emulators.ts OWNER_UID
+  VITE_USE_EMULATORS: 'true',
 };
 
 export default defineConfig({
   testDir: 'tests/e2e',
-  fullyParallel: true,
+  globalSetup: './tests/e2e/global-setup.ts',
+  // One owner and one emulator database: tests run one at a time.
+  workers: 1,
   forbidOnly: !!process.env.CI,
   reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]] : 'list',
   use: {
@@ -44,11 +47,22 @@ export default defineConfig({
       },
     },
   ],
-  webServer: {
-    command: `npx vite build --outDir dist-e2e && npx vite preview --outDir dist-e2e --port ${port} --strictPort`,
-    url: `http://localhost:${port}`,
-    env: e2eEnv,
-    reuseExistingServer: !process.env.CI,
-    timeout: 180_000,
-  },
+  webServer: [
+    {
+      command:
+        'npx firebase-tools@15.32.1 emulators:start --only auth,firestore --project demo-ielts-practice',
+      url: 'http://127.0.0.1:9099/', // Auth: the Firestore port alone can be a leftover
+      reuseExistingServer: !process.env.CI,
+      timeout: 240_000,
+      // SIGINT lets the Firebase CLI stop its Java emulators too; a hard kill orphans them.
+      gracefulShutdown: { signal: 'SIGINT', timeout: 15_000 },
+    },
+    {
+      command: `npx vite build --outDir dist-e2e && npx vite preview --outDir dist-e2e --port ${port} --strictPort`,
+      url: `http://localhost:${port}`,
+      env: e2eEnv,
+      reuseExistingServer: !process.env.CI,
+      timeout: 180_000,
+    },
+  ],
 });

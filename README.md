@@ -18,7 +18,7 @@ app on Firebase Hosting and Firestore, on the free Spark plan.
 | `npm run dev`       | Start the dev server (needs `.env.local`, see SETUP)          |
 | `npm run build`     | Type-check and build to `dist/`                               |
 | `npm test`          | Unit tests (Vitest)                                           |
-| `npm run test:e2e`  | End-to-end tests (Playwright, desktop and 390 px)             |
+| `npm run test:e2e`  | End-to-end tests on the Firebase emulators (needs Java 21)    |
 | `npm run lint`      | ESLint and Prettier check (`npm run format` fixes formatting) |
 | `npm run typecheck` | TypeScript only                                               |
 | `npm run validate`  | Check `content/` against the schemas and publishing rules     |

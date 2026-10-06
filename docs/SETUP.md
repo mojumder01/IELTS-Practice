@@ -154,6 +154,13 @@ npm run lint && npm run typecheck && npm test
 npm run test:e2e
 ```
 
-`test:e2e` builds its own copy of the app (into `dist-e2e/`) against a placeholder Firebase
-project, so it needs no secrets. Playwright needs Chromium: run `npx playwright install chromium`
-once, or, where a Chromium is already installed, point `PLAYWRIGHT_CHROMIUM_EXECUTABLE` at it.
+`test:e2e` needs no secrets or Firebase project. It starts the Firebase Auth and Firestore
+emulators (a `demo-ielts-practice` project that exists only on your machine), loads the real
+`firestore.rules` with a test owner, seeds `content/` exactly as `npm run seed` does, and builds
+its own copy of the app into `dist-e2e/` that signs in through the emulator. It needs:
+
+- **Java 21** for the emulators (the first run downloads them into `~/.cache/firebase`).
+- **Chromium** for Playwright: run `npx playwright install chromium` once, or, where a Chromium
+  is already installed, point `PLAYWRIGHT_CHROMIUM_EXECUTABLE` at it.
+
+Tests run one at a time because they share one emulator database and owner.
