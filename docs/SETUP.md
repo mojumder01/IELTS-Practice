@@ -130,6 +130,14 @@ real `b21t1-p1.mp3` recording replacing the placeholder) replaces it and updates
 `content/`. The Book 21 Test 1 Listening audio in the repo is 110 s of near-silence until you
 add the real recording.
 
+## Entering tests in the admin
+
+Open **Admin** from the top bar. Create a test, fill each tab, and watch **Before publishing** in
+the right column; **Publish test** unlocks when every line passes. Drafts save themselves. To keep
+a test in the repo as well, use **Download this test as JSON**, save it as
+`content/tests/<test-id>.json`, and run `npm run validate`. New audio or images still go through
+step 9 (`npm run media`, commit, deploy, `npm run seed`) before the pickers list them.
+
 ## 10. Writing AI feedback
 
 Writing feedback calls Gemini through **Firebase AI Logic** with the **Gemini Developer API**

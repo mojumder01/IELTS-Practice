@@ -332,6 +332,17 @@ by double-tap (Reading passage or Listening audioscript) takes its sentence as t
 test as its source, and is due today; its part of speech and Bangla may be left blank (the seed
 file still needs both). Pronunciation uses the browser's speech synthesis, so it costs nothing.
 
+**Implementation notes (Phase 9).** Drafts live in `drafts/{testId}` with one document per section
+under it, each holding the JSON as text (`{ json }`), so half-finished content saves even before it
+passes the schema. Editing autosaves 1.2 s after typing stops. Opening a live test with no draft
+starts the draft from the live copy. The checklist runs the schema first; the section 8 checks run
+once it passes, and anything they find that no checklist line covers still blocks Publish. Publish
+re-validates, sets `status: 'live'` and writes `tests/{testId}` and its sections in one batch,
+deleting sections the draft no longer has. Preview as student opens
+`/test/{testId}/{module}?preview=draft`, which reads the draft and saves nothing (no Firestore,
+in-memory device storage). The test ID is fixed when the test is created (`book21-test1` from
+"Book 21", test 1). Import accepts only a file that passes the schema and has the same test ID.
+
 **Vocabulary document:** `word`, `pos`, `ipa`, `topic`, `meaning`, `bangla`, `example`, `source`
 (`{ testId, question? }` or `"manual"`), `status` (`new`, `learning`, `mastered`), `srs`
 (`{ due, intervalDays, ease, reps }`).
