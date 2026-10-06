@@ -5,7 +5,9 @@ import { createRoot } from 'react-dom/client';
 import { App } from './App';
 import { createAuthStore, createFirebaseAuthAdapter } from './lib/auth';
 import { readEnv } from './lib/env';
-import { firebaseAuth, initFirebase } from './lib/firebase';
+import { signInWithCustomToken } from 'firebase/auth';
+import { firebaseAuth, initFirebase, useEmulators } from './lib/firebase';
+import { firebaseServices } from './lib/services';
 import { SetupNeeded } from './pages/SetupNeeded';
 
 const container = document.getElementById('root');
@@ -16,9 +18,14 @@ const config = readEnv(import.meta.env);
 if (config.ok) {
   initFirebase(config.env.firebase);
   const authStore = createAuthStore(createFirebaseAuthAdapter(firebaseAuth()), config.env.ownerUid);
+  if (useEmulators) {
+    // e2e only: Playwright signs in with an emulator token. Never compiled into a real build.
+    (window as unknown as { e2eSignIn: (token: string) => Promise<unknown> }).e2eSignIn = (token) =>
+      signInWithCustomToken(firebaseAuth(), token);
+  }
   root.render(
     <StrictMode>
-      <App authStore={authStore} />
+      <App authStore={authStore} services={firebaseServices()} />
     </StrictMode>,
   );
 } else {

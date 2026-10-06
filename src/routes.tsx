@@ -1,6 +1,7 @@
 import { Navigate, type RouteObject } from 'react-router';
 import { AppShell } from './components/AppShell';
 import { AuthGuard } from './components/AuthGuard';
+import { ExamRoute } from './pages/Exam';
 import { Hello } from './pages/Hello';
 import { SignIn } from './pages/SignIn';
 
@@ -13,6 +14,7 @@ export const routes: RouteObject[] = [
         element: <AppShell />,
         children: [{ index: true, element: <Hello /> }],
       },
+      { path: '/test/:testId/:module', element: <ExamRoute /> },
     ],
   },
   { path: '*', element: <Navigate to="/" replace /> },
