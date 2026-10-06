@@ -324,6 +324,14 @@ the saved answers, and when a question has no `explanation` the review shows whe
 attempts; the one in progress is on the Dashboard and in the Library's Continue banner. Starting a
 module from the Dashboard opens the first test that module hasn't been finished on.
 
+**Implementation notes (Phase 8).** Review dates are local calendar days. "Got it" moves a word
+1 day, then 6, then its interval times its ease (2.5 to start); "Again" brings it back tomorrow at
+the start of the ladder with its ease 0.2 lower (never below 1.3). A word at 21 days or more is
+mastered; "Mark as mastered" jumps it to 21 days, "Move back to learning" to tomorrow. A word saved
+by double-tap (Reading passage or Listening audioscript) takes its sentence as the example and the
+test as its source, and is due today; its part of speech and Bangla may be left blank (the seed
+file still needs both). Pronunciation uses the browser's speech synthesis, so it costs nothing.
+
 **Vocabulary document:** `word`, `pos`, `ipa`, `topic`, `meaning`, `bangla`, `example`, `source`
 (`{ testId, question? }` or `"manual"`), `status` (`new`, `learning`, `mastered`), `srs`
 (`{ due, intervalDays, ease, reps }`).
