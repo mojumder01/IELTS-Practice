@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Test library</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1D4ED8}a:hover{color:#1E3A8A}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F8FAFC; color: #1E293B; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; display: flex; flex-direction: column">
+
+<header style="background: #0F172A; color: #FFFFFF; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 32px">
+<div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; color: #FFFFFF; text-decoration: none; min-height: 44px">
+<span style="width: 34px; height: 34px; border-radius: 8px; background: {{accent}}; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px">IP</span>
+<span style="font-weight: 600; font-size: 17px">IELTS Practice</span>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px">
+<a href="Main.dc.html" style="color: #CBD5E1; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">Dashboard</a>
+<a href="Library.dc.html" aria-current="page" style="color: #FFFFFF; background: #1E293B; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">Test library</a>
+<a href="Vocabulary.dc.html" style="color: #CBD5E1; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">Vocabulary</a>
+<a href="Bands.dc.html" style="color: #CBD5E1; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">Band breakdown</a>
+<a href="Results.dc.html" style="color: #CBD5E1; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">History</a>
+</nav>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<a href="Admin.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 14px; border-radius: 8px; border: 1px solid #334155; color: #E2E8F0; text-decoration: none; font-size: 14px; font-weight: 500">Admin</a>
+<div style="width: 38px; height: 38px; border-radius: 50%; background: #334155; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px">M</div>
+</div>
+</header>
+
+<main style="width: 100%; max-width: 1240px; margin: 0 auto; padding: 32px 32px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<section style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h1 style="margin: 0; font-size: 30px; line-height: 1.2; font-weight: 600; color: #0F172A">Test library</h1>
+<p style="margin: 0; font-size: 15px; color: #475569">Take a full mock in exam order, or practise one module at a time.</p>
+</div>
+<div style="position: relative; flex: 0 1 320px; min-width: 220px">
+<label for="lib-search" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Search tests</label>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position: absolute; left: 12px; top: 14px"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+<input id="lib-search" type="search" placeholder="Search book or test" value="{{query}}" onChange="{{onQuery}}" style="width: 100%; height: 44px; box-sizing: border-box; padding: 0 12px 0 36px; border-radius: 8px; border: 1px solid #CBD5E1; background: #FFFFFF; font-family: inherit; font-size: 14px; color: #0F172A">
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: #E2E8F0">
+<sc-for list="{{tracks}}" as="t" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}" style="min-height: 40px; padding: 0 18px; border-radius: 999px; border: none; background: {{t.bg}}; color: {{t.fg}}; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">{{t.label}}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{modules}}" as="m" hint-placeholder-count="5">
+<button type="button" aria-pressed="{{m.pressed}}" onClick="{{m.pick}}" style="min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid {{m.bd}}; background: {{m.bg}}; color: {{m.fg}}; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer">{{m.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<a href="Reading.dc.html" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; border-radius: 14px; background: #0F172A; color: #FFFFFF; text-decoration: none">
+<span style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #93C5FD">Continue</span>
+<span style="font-size: 16px; font-weight: 600">Book 21 · Test 1 · Reading</span>
+<span style="font-size: 13px; color: #CBD5E1">Passage 1 · 4 of 13 answered · 19:54 left</span>
+</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 10px; background: #FFFFFF; color: #0F172A; font-size: 14px; font-weight: 600">Resume<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+</a>
+
+<sc-for list="{{books}}" as="b" hint-placeholder-count="2">
+<section style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px">
+<h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0F172A">{{b.name}}</h2>
+<span style="font-size: 13px; color: #475569">{{b.summary}}</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px">
+<sc-for list="{{b.tests}}" as="c" hint-placeholder-count="4">
+<article style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+<div style="background: {{c.tile}}; padding: 16px 18px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: {{c.ink}}">{{c.book}}</span>
+<span style="padding: 3px 10px; border-radius: 999px; background: #FFFFFF; color: {{c.ink}}; font-size: 12px; font-weight: 600">{{c.status}}</span>
+</div>
+<div style="display: flex; align-items: baseline; gap: 8px; color: {{c.ink}}">
+<span style="font-size: 16px; font-weight: 600">Test</span>
+<span style="font-size: 46px; line-height: 1; font-weight: 700">{{c.num}}</span>
+</div>
+</div>
+<div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 2px">
+<sc-for list="{{c.mods}}" as="m" hint-placeholder-count="4">
+<a href="{{m.href}}" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 40px; padding: 0 8px; border-radius: 8px; background: {{m.rowBg}}; color: #1E293B; text-decoration: none; font-size: 14px">
+<span style="font-weight: {{m.weight}}">{{m.name}}</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; font-weight: 600; color: {{m.stateColor}}">{{m.state}}</span>
+</a>
+</sc-for>
+<a href="{{c.ctaHref}}" style="margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; border-radius: 10px; background: #0F172A; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600">{{c.cta}}</a>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+</sc-for>
+
+<sc-if value="{{empty}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; padding: 40px 0; text-align: center; font-size: 15px; color: #475569">No tests match your search.</p>
+</sc-if>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#E11B22","options":["#E11B22","#0F172A","#1D4ED8"]},"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+data() {
+return [
+{ name: 'Book 21', track: 'academic', tile: '#E0E7FF', ink: '#312E81', tests: [
+{ num: 1, L: '7.0', R: 'busy', W: '', S: '' },
+{ num: 2, L: '', R: '', W: '', S: '' },
+{ num: 3, L: '', R: '', W: '', S: '' },
+{ num: 4, L: '', R: '', W: '', S: '' }
+] },
+{ name: 'Book 20', track: 'academic', tile: '#DCFCE7', ink: '#14532D', tests: [
+{ num: 1, L: '6.5', R: '6.5', W: '6.5', S: '6.0' },
+{ num: 2, L: '6.5', R: '', W: '', S: '' },
+{ num: 3, L: '', R: '', W: '', S: '' },
+{ num: 4, L: '', R: '', W: '', S: '' }
+] },
+{ name: 'Book 21 General Training', track: 'general', tile: '#FEF3C7', ink: '#78350F', tests: [
+{ num: 1, L: '', R: '', W: '', S: '' },
+{ num: 2, L: '', R: '', W: '', S: '' }
+] }
+];
+}
+getS() {
+const s = this.state || {};
+return { track: s.track || 'academic', module: s.module || 'all', q: s.q || '' };
+}
+renderVals() {
+const s = this.getS();
+const accent = this.props.accent ?? '#E11B22';
+const pages = { L: 'Listening.dc.html', R: 'Reading.dc.html', W: 'Writing.dc.html', S: 'Speaking.dc.html' };
+const names = { L: 'Listening', R: 'Reading', W: 'Writing', S: 'Speaking' };
+const keyOf = { listening: 'L', reading: 'R', writing: 'W', speaking: 'S' };
+const q = s.q.trim().toLowerCase();
+const pick = keyOf[s.module];
+const books = this.data().filter((b) => b.track === s.track).map((b) => {
+const tests = b.tests.filter((t) => !q || (b.name + ' test ' + t.num).toLowerCase().indexOf(q) !== -1).map((t) => {
+const vals = ['L', 'R', 'W', 'S'].map((k) => t[k]);
+const done = vals.filter((v) => v && v !== 'busy').length;
+const busy = vals.indexOf('busy') !== -1;
+const status = done === 4 ? 'Completed' : ((done > 0 || busy) ? 'In progress' : 'Not started');
+const mods = ['L', 'R', 'W', 'S'].map((k) => {
+const v = t[k];
+const focus = pick === k;
+return {
+name: names[k],
+href: pages[k],
+state: v === 'busy' ? 'Resume' : (v ? v : 'Start'),
+stateColor: v === 'busy' ? '#1D4ED8' : (v ? '#166534' : '#475569'),
+rowBg: focus ? '#EFF6FF' : 'transparent',
+weight: focus ? '600' : '400'
+};
+});
+return {
+book: b.name,
+num: String(t.num),
+tile: b.tile,
+ink: b.ink,
+status: status,
+mods: mods,
+cta: pick ? 'Start ' + names[pick] : 'Start full mock',
+ctaHref: pick ? pages[pick] : pages.L
+};
+});
+return { name: b.name, summary: tests.length + (tests.length === 1 ? ' test' : ' tests') + ' · full mock about 2 h 45 min', tests: tests };
+}).filter((b) => b.tests.length > 0);
+const trackDefs = [{ id: 'academic', label: 'Academic' }, { id: 'general', label: 'General Training' }];
+const tracks = trackDefs.map((t) => {
+const on = s.track === t.id;
+return { label: t.label, pressed: on ? 'true' : 'false', bg: on ? '#0F172A' : 'transparent', fg: on ? '#FFFFFF' : '#334155', pick: () => this.setState({ track: t.id }) };
+});
+const modDefs = [{ id: 'all', label: 'All modules' }, { id: 'listening', label: 'Listening' }, { id: 'reading', label: 'Reading' }, { id: 'writing', label: 'Writing' }, { id: 'speaking', label: 'Speaking' }];
+const modules = modDefs.map((m) => {
+const on = s.module === m.id;
+return { label: m.label, pressed: on ? 'true' : 'false', bg: on ? '#0F172A' : '#FFFFFF', fg: on ? '#FFFFFF' : '#0F172A', bd: on ? '#0F172A' : '#CBD5E1', pick: () => this.setState({ module: m.id }) };
+});
+return {
+accent: accent,
+query: s.q,
+onQuery: (e) => this.setState({ q: e.target.value }),
+tracks: tracks,
+modules: modules,
+books: books,
+empty: books.length === 0
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dashboard</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1D4ED8}a:hover{color:#1E3A8A}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F8FAFC; color: #1E293B; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; display: flex; flex-direction: column">
+
+<header style="background: #0F172A; color: #FFFFFF; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 32px">
+<div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap">
+<div style="display: flex; align-items: center; gap: 10px">
+<div style="width: 34px; height: 34px; border-radius: 8px; background: {{accent}}; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; letter-spacing: 0.02em">IP</div>
+<span style="font-weight: 600; font-size: 17px">IELTS Practice</span>
+</div>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px">
+<a href="Main.dc.html" aria-current="page" style="color: #FFFFFF; background: #1E293B; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">Dashboard</a>
+<a href="Library.dc.html" style="color: #CBD5E1; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">Test library</a>
+<a href="Vocabulary.dc.html" style="color: #CBD5E1; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">Vocabulary</a>
+<a href="Bands.dc.html" style="color: #CBD5E1; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">Band breakdown</a>
+<a href="Results.dc.html" style="color: #CBD5E1; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">History</a>
+</nav>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #CBD5E1">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+Synced
+</span>
+<a href="Admin.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 14px; border-radius: 8px; border: 1px solid #334155; color: #E2E8F0; text-decoration: none; font-size: 14px; font-weight: 500">Admin</a>
+<button type="button" aria-label="Switch to dark theme" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid #334155; background: transparent; color: #E2E8F0; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<div style="width: 38px; height: 38px; border-radius: 50%; background: #334155; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px">M</div>
+</div>
+</header>
+
+<main style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 36px 32px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px">
+
+<section style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<p style="margin: 0; font-size: 14px; font-weight: 500; color: #475569">Tuesday, 6 October</p>
+<h1 style="margin: 0; font-size: 30px; line-height: 1.2; font-weight: 600; color: #0F172A">Welcome back, Muntasir</h1>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E2E8F0; font-size: 14px; color: #1E293B">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: {{accent}}"></span>
+Target band <strong style="font-weight: 600; color: #0F172A">7.0</strong>
+</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E2E8F0; font-size: 14px; color: #1E293B">
+Exam date <strong style="font-weight: 600; color: #0F172A">[YOUR EXAM DATE]</strong>
+</span>
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+
+<section aria-labelledby="continue-h" style="flex: 3 1 520px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 28px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #1D4ED8">In progress</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500; color: #0F172A">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+42:18 left
+</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 id="continue-h" style="margin: 0; font-size: 22px; line-height: 1.3; font-weight: 600; color: #0F172A">Academic Reading: Sustainable Architecture</h2>
+<p style="margin: 0; font-size: 15px; color: #475569">Passage 1 of 3 · 4 of 40 answered · 1 flagged for review</p>
+</div>
+<div style="height: 8px; border-radius: 999px; background: #E2E8F0; overflow: hidden">
+<div style="width: 10%; height: 100%; border-radius: 999px; background: #1D4ED8"></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="Reading.dc.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 12px 20px; border-radius: 8px; background: #0F172A; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px">
+Resume test
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</a>
+<button type="button" style="min-height: 44px; padding: 12px 18px; border-radius: 8px; border: 1px solid #CBD5E1; background: #FFFFFF; color: #334155; font-family: inherit; font-weight: 500; font-size: 15px; cursor: pointer">Discard attempt</button>
+</div>
+</section>
+
+<section aria-labelledby="bands-h" style="flex: 2 1 340px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 28px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap">
+<h2 id="bands-h" style="margin: 0; font-size: 17px; font-weight: 600; color: #0F172A">Latest band by module</h2>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #475569"><span style="width: 2px; height: 14px; background: {{accent}}"></span>Target 7.0</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span>Listening</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 600; color: #0F172A">7.0</span></div>
+<div style="position: relative; height: 8px; border-radius: 999px; background: #E2E8F0">
+<div style="width: 77.8%; height: 100%; border-radius: 999px; background: #0F172A"></div>
+<div style="position: absolute; left: 77.8%; top: -4px; width: 2px; height: 16px; background: {{accent}}"></div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span>Reading</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 600; color: #0F172A">6.5</span></div>
+<div style="position: relative; height: 8px; border-radius: 999px; background: #E2E8F0">
+<div style="width: 72.2%; height: 100%; border-radius: 999px; background: #0F172A"></div>
+<div style="position: absolute; left: 77.8%; top: -4px; width: 2px; height: 16px; background: {{accent}}"></div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span>Writing</span><span style="color: #475569">Not attempted</span></div>
+<div style="position: relative; height: 8px; border-radius: 999px; background: #E2E8F0">
+<div style="position: absolute; left: 77.8%; top: -4px; width: 2px; height: 16px; background: {{accent}}"></div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span>Speaking</span><span style="color: #475569">Not attempted</span></div>
+<div style="position: relative; height: 8px; border-radius: 999px; background: #E2E8F0">
+<div style="position: absolute; left: 77.8%; top: -4px; width: 2px; height: 16px; background: {{accent}}"></div>
+</div>
+</div>
+
+<p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5">Overall band appears once all four modules have a score.</p>
+<a href="Bands.dc.html" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 500">See full band breakdown</a>
+</section>
+</div>
+
+<section id="modules" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px">
+<h2 style="margin: 0; font-size: 20px; font-weight: 600; color: #0F172A">Start a mock test</h2>
+<span style="font-size: 14px; color: #475569">Timed, exam-style, scored instantly</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 14px">
+<div style="width: 44px; height: 44px; border-radius: 10px; background: #F1F5F9; color: #0F172A; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #0F172A">Listening</h3>
+<p style="margin: 0; font-size: 14px; color: #475569">4 parts · 40 questions · about 30 min</p>
+</div>
+<a href="Listening.dc.html" style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 12px 14px; border-radius: 8px; border: 1px solid #CBD5E1; color: #0F172A; text-decoration: none; font-weight: 600; font-size: 14px">
+Start Listening
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</a>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 14px">
+<div style="width: 44px; height: 44px; border-radius: 10px; background: #F1F5F9; color: #0F172A; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #0F172A">Reading</h3>
+<p style="margin: 0; font-size: 14px; color: #475569">3 passages · 40 questions · 60 min</p>
+</div>
+<a href="Reading.dc.html" style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 12px 14px; border-radius: 8px; border: 1px solid #CBD5E1; color: #0F172A; text-decoration: none; font-weight: 600; font-size: 14px">
+Start Reading
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</a>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 14px">
+<div style="width: 44px; height: 44px; border-radius: 10px; background: #F1F5F9; color: #0F172A; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #0F172A">Writing</h3>
+<p style="margin: 0; font-size: 14px; color: #475569">2 tasks · 60 min · live word count</p>
+</div>
+<a href="Writing.dc.html" style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 12px 14px; border-radius: 8px; border: 1px solid #CBD5E1; color: #0F172A; text-decoration: none; font-weight: 600; font-size: 14px">
+Start Writing
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</a>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 14px">
+<div style="width: 44px; height: 44px; border-radius: 10px; background: #F1F5F9; color: #0F172A; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #0F172A">Speaking</h3>
+<p style="margin: 0; font-size: 14px; color: #475569">3 parts · 11–14 min · record yourself</p>
+</div>
+<a href="Speaking.dc.html" style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 12px 14px; border-radius: 8px; border: 1px solid #CBD5E1; color: #0F172A; text-decoration: none; font-weight: 600; font-size: 14px">
+Start Speaking
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</a>
+</div>
+
+</div>
+</section>
+
+<section aria-labelledby="recent-h" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px">
+<h2 id="recent-h" style="margin: 0; font-size: 17px; font-weight: 600; color: #0F172A">Recent attempts</h2>
+<a href="Results.dc.html" style="font-size: 14px; font-weight: 500; padding: 10px 0">View all history</a>
+</div>
+<div style="overflow-x: auto">
+<table style="width: 100%; min-width: 640px; border-collapse: collapse; font-size: 14px">
+<thead>
+<tr>
+<th scope="col" style="text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #475569; border-bottom: 1px solid #E2E8F0">Date</th>
+<th scope="col" style="text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #475569; border-bottom: 1px solid #E2E8F0">Test</th>
+<th scope="col" style="text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #475569; border-bottom: 1px solid #E2E8F0">Module</th>
+<th scope="col" style="text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #475569; border-bottom: 1px solid #E2E8F0">Score</th>
+<th scope="col" style="text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #475569; border-bottom: 1px solid #E2E8F0">Band</th>
+<th scope="col" style="text-align: right; padding: 10px 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #475569; border-bottom: 1px solid #E2E8F0">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 14px 12px; border-bottom: 1px solid #F1F5F9; color: #475569">3 Oct 2026</td>
+<td style="padding: 14px 12px; border-bottom: 1px solid #F1F5F9; font-weight: 500; color: #0F172A">Listening Practice Test 03</td>
+<td style="padding: 14px 12px; border-bottom: 1px solid #F1F5F9">Listening</td>
+<td style="padding: 14px 12px; border-bottom: 1px solid #F1F5F9; font-family: 'IBM Plex Mono', ui-monospace, monospace">31 / 40</td>
+<td style="padding: 14px 12px; border-bottom: 1px solid #F1F5F9"><span style="display: inline-block; padding: 4px 10px; border-radius: 6px; background: #F1F5F9; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 600; color: #0F172A">7.0</span></td>
+<td style="padding: 14px 12px; border-bottom: 1px solid #F1F5F9; text-align: right"><a href="Results.dc.html" style="font-weight: 500">Review</a></td>
+</tr>
+<tr>
+<td style="padding: 14px 12px; border-bottom: 1px solid #F1F5F9; color: #475569">29 Sep 2026</td>
+<td style="padding: 14px 12px; border-bottom: 1px solid #F1F5F9; font-weight: 500; color: #0F172A">Academic Reading Test 02</td>
+<td style="padding: 14px 12px; border-bottom: 1px solid #F1F5F9">Reading</td>
+<td style="padding: 14px 12px; border-bottom: 1px solid #F1F5F9; font-family: 'IBM Plex Mono', ui-monospace, monospace">28 / 40</td>
+<td style="padding: 14px 12px; border-bottom: 1px solid #F1F5F9"><span style="display: inline-block; padding: 4px 10px; border-radius: 6px; background: #F1F5F9; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 600; color: #0F172A">6.5</span></td>
+<td style="padding: 14px 12px; border-bottom: 1px solid #F1F5F9; text-align: right"><a href="Results.dc.html" style="font-weight: 500">Review</a></td>
+</tr>
+<tr>
+<td style="padding: 14px 12px; color: #475569">24 Sep 2026</td>
+<td style="padding: 14px 12px; font-weight: 500; color: #0F172A">Listening Practice Test 02</td>
+<td style="padding: 14px 12px">Listening</td>
+<td style="padding: 14px 12px; font-family: 'IBM Plex Mono', ui-monospace, monospace">27 / 40</td>
+<td style="padding: 14px 12px"><span style="display: inline-block; padding: 4px 10px; border-radius: 6px; background: #F1F5F9; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 600; color: #0F172A">6.5</span></td>
+<td style="padding: 14px 12px; text-align: right"><a href="Results.dc.html" style="font-weight: 500">Review</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#E11B22","options":["#E11B22","#0F172A","#1D4ED8"]},"$preview":{"width":1440,"height":1080}}'>
+class Component extends DCLogic {
+renderVals() {
+return { accent: this.props.accent ?? '#E11B22' };
+}
+}
+</script>
+</body>
+</html>

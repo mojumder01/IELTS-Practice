@@ -1,0 +1,167 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Listening.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "is_interactive": true,
+      "title": "Listening test",
+      "w": 1440,
+      "x": 0,
+      "y": 1200
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 1080,
+      "is_interactive": true,
+      "title": "Dashboard",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Reading.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "is_interactive": true,
+      "title": "Reading test",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "Results.dc.html": {
+      "expand": "fill",
+      "h": 1450,
+      "is_interactive": true,
+      "title": "Results",
+      "w": 1440,
+      "x": 1520,
+      "y": 1200
+    },
+    "Writing.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "is_interactive": true,
+      "title": "Writing test (AI feedback)",
+      "w": 1440,
+      "x": 0,
+      "y": 2770
+    },
+    "Speaking.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "is_interactive": true,
+      "title": "Speaking test",
+      "w": 1440,
+      "x": 1520,
+      "y": 2770
+    },
+    "ReadingPhone.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Reading test (phone)",
+      "w": 390,
+      "x": 3040,
+      "y": 0
+    },
+    "Vocabulary.dc.html": {
+      "expand": "fill",
+      "h": 1400,
+      "is_interactive": true,
+      "title": "Vocabulary",
+      "w": 1440,
+      "x": 0,
+      "y": 3790
+    },
+    "Bands.dc.html": {
+      "expand": "fill",
+      "h": 1800,
+      "is_interactive": true,
+      "title": "Band breakdown",
+      "w": 1440,
+      "x": 1520,
+      "y": 3790
+    },
+    "Admin.dc.html": {
+      "expand": "fill",
+      "h": 1900,
+      "is_interactive": true,
+      "title": "Admin: Reading answers and locations",
+      "w": 1440,
+      "x": 0,
+      "y": 5710
+    },
+    "AdminListening.dc.html": {
+      "expand": "fill",
+      "h": 1900,
+      "is_interactive": true,
+      "title": "Admin: Listening audio and audioscript",
+      "w": 1440,
+      "x": 1520,
+      "y": 5710
+    },
+    "ReadingAnswers.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "is_interactive": true,
+      "title": "Reading test (answers shown)",
+      "w": 1440,
+      "x": 3510,
+      "y": 0
+    },
+    "ListeningAnswers.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "is_interactive": true,
+      "title": "Listening test (answers in script)",
+      "w": 1440,
+      "x": 3040,
+      "y": 1200
+    },
+    "Library.dc.html": {
+      "expand": "fill",
+      "h": 1180,
+      "is_interactive": true,
+      "title": "Test library",
+      "w": 1440,
+      "x": 3040,
+      "y": 2770
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-06T09:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "flowtitle": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "IELTS Practice Platform: core screens",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Reading.dc.html",
+    "Listening.dc.html",
+    "Results.dc.html",
+    "Writing.dc.html",
+    "Speaking.dc.html",
+    "ReadingPhone.dc.html",
+    "Vocabulary.dc.html",
+    "Bands.dc.html",
+    "Admin.dc.html",
+    "AdminListening.dc.html",
+    "ReadingAnswers.dc.html",
+    "ListeningAnswers.dc.html",
+    "Library.dc.html"
+  ],
+  "pages": [],
+  "title": "IELTS Practice Platform UI"
+}

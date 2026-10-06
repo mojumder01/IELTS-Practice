@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Speaking test</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1D4ED8}a:hover{color:#1E3A8A}
+</style>
+</helmet>
+<div style="position: relative; height: 100vh; min-height: 640px; background: #F8FAFC; color: #1E293B; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; display: flex; flex-direction: column">
+
+<header style="flex: 0 0 auto; background: #0F172A; color: #FFFFFF; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 10px 24px">
+<div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; color: #FFFFFF; text-decoration: none; min-height: 44px">
+<span style="width: 32px; height: 32px; border-radius: 8px; background: {{accent}}; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px">IP</span>
+<span style="font-weight: 600; font-size: 16px">IELTS Practice</span>
+</a>
+<nav aria-label="Module" style="display: flex; flex-wrap: wrap; gap: 2px; padding: 3px; border-radius: 10px; background: #1E293B">
+<a href="Listening.dc.html" style="padding: 11px 14px; border-radius: 7px; color: #CBD5E1; text-decoration: none; font-size: 13px; font-weight: 500">Listening</a>
+<a href="Reading.dc.html" style="padding: 11px 14px; border-radius: 7px; color: #CBD5E1; text-decoration: none; font-size: 13px; font-weight: 500">Reading</a>
+<a href="Writing.dc.html" style="padding: 11px 14px; border-radius: 7px; color: #CBD5E1; text-decoration: none; font-size: 13px; font-weight: 500">Writing</a>
+<a href="Speaking.dc.html" aria-current="page" style="padding: 11px 14px; border-radius: 7px; background: #FFFFFF; color: #0F172A; text-decoration: none; font-size: 13px; font-weight: 600">Speaking</a>
+</nav>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 12px; letter-spacing: 0.04em; color: #94A3B8">Speaking</span>
+<span style="font-size: 14px; font-weight: 500; color: #F1F5F9">Practice Test 01</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap">
+<button type="button" aria-label="Switch to dark theme" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid #334155; background: transparent; color: #E2E8F0; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a href="Main.dc.html" style="min-height: 44px; box-sizing: border-box; padding: 12px 18px; border-radius: 8px; background: {{accent}}; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px">Finish test</a>
+</div>
+</header>
+
+<div style="flex: 0 0 auto; background: #FFFFFF; border-bottom: 1px solid #E2E8F0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 10px 24px">
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{parts}}" as="t" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}" style="min-height: 48px; padding: 6px 16px; border-radius: 8px; border: 1.5px solid {{t.bd}}; background: {{t.bg}}; color: {{t.fg}}; font-family: inherit; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 1px; cursor: pointer">
+<span style="font-size: 14px; font-weight: 600">{{t.label}}</span>
+<span style="font-size: 12px; color: {{t.subFg}}">{{t.sub}}</span>
+</button>
+</sc-for>
+</div>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #475569">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+Recordings stay on this device
+</span>
+</div>
+
+<div style="flex: 1 1 auto; min-height: 0; display: flex; flex-wrap: wrap; overflow: auto">
+
+<aside aria-label="Questions" style="flex: 1 1 340px; min-width: 0; max-height: 100%; overflow-y: auto; background: #FFFFFF; border-right: 1px solid #E2E8F0; padding: 28px 28px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px">
+
+<sc-if value="{{isPart2}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #475569">Part 2 · Cue card</p>
+<div style="border: 1px solid #CBD5E1; border-radius: 14px; padding: 22px 24px; background: #F8FAFC; font-family: 'Source Serif 4', Georgia, serif; color: #0F172A">
+<p style="margin: 0 0 14px; font-size: 19px; line-height: 1.45; font-weight: 600">Describe a public place in your city that you enjoy visiting.</p>
+<p style="margin: 0 0 6px; font-size: 16px; color: #334155">You should say:</p>
+<ul style="margin: 0 0 12px; padding-left: 22px; display: flex; flex-direction: column; gap: 4px; font-size: 16px; line-height: 1.5">
+<li>where it is</li>
+<li>how often you go there</li>
+<li>what people do there</li>
+</ul>
+<p style="margin: 0; font-size: 16px; line-height: 1.5">and explain why you enjoy visiting it.</p>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #475569">You have one minute to prepare. Then speak for one to two minutes.</p>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="prep-notes" style="font-size: 14px; font-weight: 600; color: #0F172A">Preparation notes</label>
+<textarea id="prep-notes" placeholder="riverside park · twice a week · walkers, food stalls · quiet after work" style="min-height: 120px; width: 100%; box-sizing: border-box; resize: vertical; padding: 12px 14px; border-radius: 10px; border: 1px solid #CBD5E1; background: #FFFFFF; font-family: inherit; font-size: 14px; line-height: 1.5; color: #1E293B"></textarea>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isPart1}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #475569">Part 1 · Interview</p>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #475569">Answer each question in two or three sentences.</p>
+<div style="display: flex; gap: 12px; padding: 14px 16px; border-radius: 10px; border: 1px solid #E2E8F0; font-size: 15px; line-height: 1.5"><strong style="font-weight: 600; color: #0F172A">Q1</strong>Do you work, or are you a student?</div>
+<div style="display: flex; gap: 12px; padding: 14px 16px; border-radius: 10px; border: 1.5px solid #93C5FD; background: #EFF6FF; font-size: 15px; line-height: 1.5"><strong style="font-weight: 600; color: #0F172A">Q2</strong>What do you enjoy most about your work?</div>
+<div style="display: flex; gap: 12px; padding: 14px 16px; border-radius: 10px; border: 1px solid #E2E8F0; font-size: 15px; line-height: 1.5"><strong style="font-weight: 600; color: #0F172A">Q3</strong>How do you usually spend your weekends?</div>
+<div style="display: flex; gap: 12px; padding: 14px 16px; border-radius: 10px; border: 1px solid #E2E8F0; font-size: 15px; line-height: 1.5"><strong style="font-weight: 600; color: #0F172A">Q4</strong>Do you prefer mornings or evenings? Why?</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isPart3}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #475569">Part 3 · Discussion</p>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #475569">Give longer answers with reasons and examples.</p>
+<div style="display: flex; gap: 12px; padding: 14px 16px; border-radius: 10px; border: 1.5px solid #93C5FD; background: #EFF6FF; font-size: 15px; line-height: 1.5"><strong style="font-weight: 600; color: #0F172A">Q1</strong>Why do some cities have more public spaces than others?</div>
+<div style="display: flex; gap: 12px; padding: 14px 16px; border-radius: 10px; border: 1px solid #E2E8F0; font-size: 15px; line-height: 1.5"><strong style="font-weight: 600; color: #0F172A">Q2</strong>Should governments or private companies pay for public parks?</div>
+<div style="display: flex; gap: 12px; padding: 14px 16px; border-radius: 10px; border: 1px solid #E2E8F0; font-size: 15px; line-height: 1.5"><strong style="font-weight: 600; color: #0F172A">Q3</strong>How might public places change in the next twenty years?</div>
+</div>
+</sc-if>
+</aside>
+
+<section aria-label="Recorder" style="flex: 1.3 1 420px; min-width: 0; max-height: 100%; overflow-y: auto; padding: 28px 28px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px">
+
+<ol aria-label="Steps" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{steps}}" as="st" hint-placeholder-count="3">
+<li style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; border: 1px solid {{st.bd}}; background: {{st.bg}}; color: {{st.fg}}">
+<span style="width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid currentColor; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex: 0 0 auto">{{st.num}}</span>
+<span style="display: flex; flex-direction: column; min-width: 0">
+<span style="font-size: 14px; font-weight: 600">{{st.label}}</span>
+<span style="font-size: 12px">{{st.sub}}</span>
+</span>
+</li>
+</sc-for>
+</ol>
+
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center">
+
+<sc-if value="{{isPrep}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 16px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #475569">Preparation time left</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 56px; line-height: 1; font-weight: 600; color: #0F172A">00:42</span>
+<button type="button" onClick="{{startSpeaking}}" style="min-height: 48px; padding: 0 22px; border-radius: 999px; border: none; background: #0F172A; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; cursor: pointer">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line></svg>
+Start speaking now
+</button>
+</div>
+</sc-if>
+
+<sc-if value="{{isRec}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px">
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #991B1B"><span style="width: 10px; height: 10px; border-radius: 50%; background: {{accent}}"></span>Recording</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 56px; line-height: 1; font-weight: 600; color: #0F172A">01:24</span>
+<span style="font-size: 13px; color: #475569">of 2:00 maximum</span>
+</div>
+</sc-if>
+
+<sc-if value="{{isReview}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px">
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #15803D">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+Take 2 saved
+</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 56px; line-height: 1; font-weight: 600; color: #0F172A">01:58</span>
+<span style="font-size: 13px; color: #475569">Listen back before checking the points</span>
+</div>
+</sc-if>
+
+<sc-if value="{{showWave}}" hint-placeholder-val="{{ true }}">
+<div aria-hidden="true" style="width: 100%; max-width: 440px; height: 64px; display: flex; align-items: center; justify-content: center; gap: 4px">
+<sc-for list="{{bars}}" as="b" hint-placeholder-count="32">
+<span style="flex: 1 1 0; max-width: 8px; height: {{b.h}}px; border-radius: 999px; background: {{b.color}}"></span>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{isRec}}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{stopRec}}" style="min-height: 48px; padding: 0 22px; border-radius: 999px; border: none; background: {{accent}}; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+Stop recording
+</button>
+</sc-if>
+
+<sc-if value="{{isReview}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px">
+<button type="button" style="min-height: 48px; padding: 0 22px; border-radius: 999px; border: none; background: #0F172A; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
+Play take
+</button>
+<button type="button" onClick="{{reRecord}}" style="min-height: 48px; padding: 0 20px; border-radius: 999px; border: 1px solid #CBD5E1; background: #FFFFFF; color: #0F172A; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Record again</button>
+</div>
+</sc-if>
+</div>
+
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #475569; text-align: center">Speak until the two minutes run out. The examiner stops you, so you never need to finish early.</p>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; color: #0F172A">Your takes</h2>
+<div style="display: flex; flex-direction: column; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; background: #FFFFFF">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 14px">
+<button type="button" aria-label="Play take 1" style="width: 44px; height: 44px; flex: 0 0 auto; border-radius: 50%; border: 1px solid #CBD5E1; background: #FFFFFF; color: #0F172A; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
+</button>
+<span style="flex: 1; font-size: 14px; font-weight: 500; color: #0F172A">Take 1</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; color: #475569">01:31</span>
+<span style="font-size: 13px; color: #475569">Today 10:12</span>
+</div>
+<sc-if value="{{isReview}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-top: 1px solid #E2E8F0; background: #EFF6FF">
+<button type="button" aria-label="Play take 2" style="width: 44px; height: 44px; flex: 0 0 auto; border-radius: 50%; border: 1px solid #93C5FD; background: #FFFFFF; color: #0F172A; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
+</button>
+<span style="flex: 1; font-size: 14px; font-weight: 500; color: #0F172A">Take 2</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; color: #475569">01:58</span>
+<span style="font-size: 13px; color: #475569">Just now</span>
+</div>
+</sc-if>
+</div>
+</div>
+</section>
+
+<aside aria-label="Self-review" style="flex: 1 1 340px; min-width: 0; max-height: 100%; overflow-y: auto; background: #FFFFFF; border-left: 1px solid #E2E8F0; padding: 28px 26px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600; color: #0F172A">Self-review</h2>
+<span style="font-size: 13px; color: #475569">Take 1</span>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<div style="padding: 12px; border-radius: 10px; background: #F8FAFC; border: 1px solid #E2E8F0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; color: #475569">Speaking time</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; font-weight: 600; color: #0F172A">1:31</span>
+</div>
+<div style="padding: 12px; border-radius: 10px; background: #F8FAFC; border: 1px solid #E2E8F0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; color: #475569">Pace</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; font-weight: 600; color: #0F172A">124 <span style="font-size: 12px; font-weight: 500; color: #475569">wpm</span></span>
+</div>
+<div style="padding: 12px; border-radius: 10px; background: #FFFBEB; border: 1px solid #FDE68A; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; color: #92400E">Filler words</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; font-weight: 600; color: #92400E">4</span>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; font-weight: 600; color: #0F172A">Transcript</h3>
+<p style="margin: 0; padding: 14px 16px; border-radius: 10px; border: 1px solid #E2E8F0; font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; line-height: 1.7; color: #1E293B">One public place I really enjoy is the riverside park near my office. It is, <mark style="background: #FEF3C7; color: #92400E; padding: 0 3px; border-radius: 3px">um</mark>, about ten minutes from my home, and I go there, <mark style="background: #FEF3C7; color: #92400E; padding: 0 3px; border-radius: 3px">like</mark>, twice a week, usually after work. In the evenings it is full of people walking, jogging and, <mark style="background: #FEF3C7; color: #92400E; padding: 0 3px; border-radius: 3px">you know</mark>, buying snacks from the food stalls. <mark style="background: #FEF3C7; color: #92400E; padding: 0 3px; border-radius: 3px">Um</mark>, there is also a small stage where students sometimes play music.</p>
+<span style="font-size: 12px; color: #475569">Filler words are highlighted.</span>
+</div>
+
+<fieldset style="margin: 0; padding: 0; border: none; display: flex; flex-direction: column; gap: 6px">
+<legend style="padding: 0; margin: 0 0 8px; font-size: 14px; font-weight: 600; color: #0F172A">Did you cover every point? <span style="font-weight: 400; color: #475569">{{coveredText}}</span></legend>
+<sc-for list="{{points}}" as="p" hint-placeholder-count="4">
+<label for="{{p.id}}" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 4px 12px; border-radius: 8px; border: 1px solid #E2E8F0; font-size: 14px; color: #1E293B; cursor: pointer">
+<input type="checkbox" id="{{p.id}}" checked="{{p.checked}}" onChange="{{p.toggle}}" style="width: 18px; height: 18px; margin: 0; accent-color: #1D4ED8">
+{{p.label}}
+</label>
+</sc-for>
+</fieldset>
+
+<p style="margin: 0; padding: 12px 14px; border-radius: 10px; background: #F1F5F9; font-size: 14px; line-height: 1.5; color: #334155">Take 1 stopped at 1:31 and skipped why you enjoy the place. Use the full two minutes.</p>
+</aside>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#E11B22","options":["#E11B22","#0F172A","#1D4ED8"]},"startPhase":{"editor":"enum","options":["prepare","record","review"],"default":"record"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+getS() {
+const s = this.state || {};
+return {
+part: s.part || 2,
+phase: s.phase || (this.props.startPhase ?? 'record'),
+checks: s.checks || { where: true, often: true, what: true, why: false }
+};
+}
+renderVals() {
+const s = this.getS();
+const accent = this.props.accent ?? '#E11B22';
+const partDefs = [
+{ id: 1, label: 'Part 1', sub: 'Interview · 4–5 min' },
+{ id: 2, label: 'Part 2', sub: 'Long turn · 3–4 min' },
+{ id: 3, label: 'Part 3', sub: 'Discussion · 4–5 min' }
+];
+const parts = partDefs.map((d) => {
+const on = s.part === d.id;
+return {
+label: d.label,
+sub: d.sub,
+pressed: on ? 'true' : 'false',
+bg: on ? '#0F172A' : '#FFFFFF',
+fg: on ? '#FFFFFF' : '#0F172A',
+bd: on ? '#0F172A' : '#CBD5E1',
+subFg: on ? '#CBD5E1' : '#475569',
+pick: () => this.setState({ part: d.id })
+};
+});
+const order = ['prepare', 'record', 'review'];
+const idx = Math.max(0, order.indexOf(s.phase));
+const stepDefs = [
+{ label: 'Prepare', sub: '1 min' },
+{ label: 'Speak', sub: '1–2 min' },
+{ label: 'Review', sub: 'Self-check' }
+];
+const steps = stepDefs.map((d, i) => {
+const now = i === idx;
+const done = i < idx;
+return {
+num: String(i + 1),
+label: d.label,
+sub: d.sub,
+bg: now ? '#0F172A' : (done ? '#DBEAFE' : '#FFFFFF'),
+fg: now ? '#FFFFFF' : (done ? '#1E40AF' : '#475569'),
+bd: now ? '#0F172A' : (done ? '#BFDBFE' : '#E2E8F0')
+};
+});
+const isRec = order[idx] === 'record';
+const heights = [10, 18, 28, 14, 36, 22, 44, 30, 16, 40, 26, 52, 34, 20, 46, 28, 12, 38, 24, 48, 32, 18, 42, 26, 14, 34, 22, 40, 16, 30, 20, 12];
+const bars = heights.map((h, i) => {
+const pending = isRec && i > 22;
+return { h: pending ? 6 : h, color: pending ? '#E2E8F0' : (isRec ? accent : '#0F172A') };
+});
+const pointDefs = [
+{ id: 'where', label: 'Where it is' },
+{ id: 'often', label: 'How often you go there' },
+{ id: 'what', label: 'What people do there' },
+{ id: 'why', label: 'Why you enjoy visiting it' }
+];
+const points = pointDefs.map((p) => ({
+id: 'pt-' + p.id,
+label: p.label,
+checked: !!s.checks[p.id],
+toggle: () => {
+const c = Object.assign({}, s.checks);
+c[p.id] = !c[p.id];
+this.setState({ checks: c });
+}
+}));
+const covered = points.filter((p) => p.checked).length;
+return {
+accent: accent,
+parts: parts,
+isPart1: s.part === 1,
+isPart2: s.part === 2,
+isPart3: s.part === 3,
+steps: steps,
+isPrep: order[idx] === 'prepare',
+isRec: isRec,
+isReview: order[idx] === 'review',
+showWave: order[idx] !== 'prepare',
+bars: bars,
+startSpeaking: () => this.setState({ phase: 'record' }),
+stopRec: () => this.setState({ phase: 'review' }),
+reRecord: () => this.setState({ phase: 'prepare' }),
+points: points,
+coveredText: covered + ' of 4'
+};
+}
+}
+</script>
+</body>
+</html>

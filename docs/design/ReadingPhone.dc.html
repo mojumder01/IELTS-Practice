@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reading test on phone</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1D4ED8}a:hover{color:#1E3A8A}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 844px; overflow: hidden; background: #F8FAFC; color: #1E293B; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; display: flex; flex-direction: column">
+
+<header style="flex: 0 0 auto; background: #0F172A; color: #FFFFFF; display: flex; align-items: center; gap: 6px; padding: 8px 10px 8px 4px">
+<a href="Main.dc.html" aria-label="Exit to dashboard" style="width: 44px; height: 44px; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; color: #FFFFFF; border-radius: 8px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</a>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+<span style="font-size: 12px; color: #94A3B8">Academic Reading</span>
+<span style="font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Passage 1 · Q1–13</span>
+</div>
+<span style="display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border-radius: 8px; background: {{timerBg}}; color: #FFFFFF; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; font-weight: 600">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Time left</span>
+<span>{{timerText}}</span>
+</span>
+<a href="Results.dc.html" style="min-height: 44px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 8px; background: {{accent}}; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600">Submit</a>
+</header>
+
+<div style="flex: 0 0 auto; background: #FFFFFF; border-bottom: 1px solid #E2E8F0; padding: 8px 12px">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 10px; background: #F1F5F9">
+<sc-for list="{{viewTabs}}" as="v" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{v.pressed}}" onClick="{{v.pick}}" style="min-height: 40px; border: none; border-radius: 7px; background: {{v.bg}}; color: {{v.fg}}; font-family: inherit; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer">{{v.label}}<span style="font-size: 12px; font-weight: 500; color: {{v.subFg}}">{{v.sub}}</span></button>
+</sc-for>
+</div>
+</div>
+
+<div style="flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 16px 16px 24px; box-sizing: border-box">
+
+<sc-if value="{{showPassage}}" hint-placeholder-val="{{ false }}">
+<article aria-labelledby="p-title" style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<p style="margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #475569">Reading passage 1</p>
+<h1 id="p-title" style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 23px; line-height: 1.25; font-weight: 600; color: #0F172A">Green Building Trends</h1>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; font-family: 'Source Serif 4', Georgia, serif; font-size: 16px; line-height: 1.7; color: #1E293B">
+<div style="display: flex; gap: 10px"><span style="flex: 0 0 24px; height: 24px; margin-top: 3px; border-radius: 6px; background: #0F172A; color: #FFFFFF; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center">A</span><p style="margin: 0">Green building refers to the practice of designing, constructing and operating structures in ways that reduce their impact on the environment across their entire life cycle. While early efforts in the 1970s focused narrowly on cutting energy bills after the oil crisis, the movement has since broadened to include water use, material sourcing and the health of the people inside.</p></div>
+<div style="display: flex; gap: 10px"><span style="flex: 0 0 24px; height: 24px; margin-top: 3px; border-radius: 6px; background: #0F172A; color: #FFFFFF; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center">B</span><p style="margin: 0">Energy efficiency nevertheless remains the primary objective for most architects. Heating and cooling account for the largest share of a typical building's energy demand, so designers concentrate first on the building envelope: the walls, roof and windows that separate inside from outside. High-performance insulation and triple glazing can sharply reduce heating requirements in cold climates.</p></div>
+<div style="display: flex; gap: 10px"><span style="flex: 0 0 24px; height: 24px; margin-top: 3px; border-radius: 6px; background: #0F172A; color: #FFFFFF; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center">C</span><p style="margin: 0">Orientation is a cheaper but often overlooked tool. A building whose longest wall faces the sun can capture winter warmth through its windows, while overhanging roofs block the higher summer sun. Such passive design costs little to implement at the planning stage but is difficult and expensive to add later.</p></div>
+<div style="display: flex; gap: 10px"><span style="flex: 0 0 24px; height: 24px; margin-top: 3px; border-radius: 6px; background: #0F172A; color: #FFFFFF; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center">D</span><p style="margin: 0">Materials have attracted growing attention. Concrete and steel carry a heavy embodied carbon cost, released during their manufacture long before a building opens. Some architects are turning to engineered timber, which stores carbon rather than emitting it, although critics question whether forests could supply enough wood if the practice became widespread.</p></div>
+<div style="display: flex; gap: 10px"><span style="flex: 0 0 24px; height: 24px; margin-top: 3px; border-radius: 6px; background: #0F172A; color: #FFFFFF; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center">E</span><p style="margin: 0">Certification schemes have helped turn these ideas into market value. Buildings that meet recognised green standards often command higher rents, and in several cities public projects must now achieve a minimum rating. Yet some researchers warn that a certificate measures design intentions, not actual performance once the building is occupied.</p></div>
+</div>
+</article>
+</sc-if>
+
+<sc-if value="{{showQuestions}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600; color: #0F172A">Questions 1–5</h2>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #334155">Do the statements agree with the passage? Choose TRUE, FALSE or NOT GIVEN.</p>
+</div>
+<sc-for list="{{tfItems}}" as="q" hint-placeholder-count="5">
+<div style="background: {{q.rowBg}}; border: 1px solid {{q.rowBorder}}; border-radius: 12px; padding: 12px 12px 12px 14px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; gap: 10px; align-items: flex-start">
+<span style="flex: 0 0 auto; min-width: 26px; height: 26px; padding: 0 5px; box-sizing: border-box; border-radius: 6px; background: #F1F5F9; color: #0F172A; font-weight: 600; font-size: 13px; display: flex; align-items: center; justify-content: center">{{q.n}}</span>
+<p style="margin: 0; flex: 1; padding-top: 2px; font-size: 15px; line-height: 1.5; color: #1E293B">{{q.text}}</p>
+<button type="button" aria-label="{{q.flagAria}}" aria-pressed="{{q.flagPressed}}" onClick="{{q.toggleFlag}}" style="flex: 0 0 44px; width: 44px; height: 44px; margin: -8px -4px 0 0; border-radius: 8px; border: none; background: transparent; color: {{q.flagColor}}; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="{{q.flagFill}}" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+</button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+<sc-for list="{{q.options}}" as="o" hint-placeholder-count="3">
+<button type="button" aria-label="{{o.aria}}" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-height: 44px; padding: 0 4px; border-radius: 8px; border: 1.5px solid {{o.bd}}; background: {{o.bg}}; color: {{o.fg}}; font-family: inherit; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; cursor: pointer">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+</sc-for>
+
+<div style="display: flex; flex-direction: column; gap: 6px; margin-top: 8px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600; color: #0F172A">Questions 6–9</h2>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #334155">Complete the summary. Use <strong style="font-weight: 600; color: #0F172A">ONE WORD ONLY</strong> from the passage.</p>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 16px">
+<p style="margin: 0; font-size: 15px; line-height: 2.6; color: #1E293B">Designers focus first on the building's <input aria-label="Question 6" placeholder="6" value="{{gaps.q6.value}}" onChange="{{gaps.q6.change}}" onFocus="{{gaps.q6.focus}}" style="width: 104px; height: 40px; padding: 0 8px; box-sizing: border-box; border-radius: 6px; border: 1.5px solid {{gaps.q6.border}}; background: {{gaps.q6.bg}}; font-family: inherit; font-size: 15px; color: #0F172A; vertical-align: middle">. A wall facing the sun captures warmth in <input aria-label="Question 7" placeholder="7" value="{{gaps.q7.value}}" onChange="{{gaps.q7.change}}" onFocus="{{gaps.q7.focus}}" style="width: 104px; height: 40px; padding: 0 8px; box-sizing: border-box; border-radius: 6px; border: 1.5px solid {{gaps.q7.border}}; background: {{gaps.q7.bg}}; font-family: inherit; font-size: 15px; color: #0F172A; vertical-align: middle">. Concrete has a high <input aria-label="Question 8" placeholder="8" value="{{gaps.q8.value}}" onChange="{{gaps.q8.change}}" onFocus="{{gaps.q8.focus}}" style="width: 104px; height: 40px; padding: 0 8px; box-sizing: border-box; border-radius: 6px; border: 1.5px solid {{gaps.q8.border}}; background: {{gaps.q8.bg}}; font-family: inherit; font-size: 15px; color: #0F172A; vertical-align: middle"> carbon cost. A green <input aria-label="Question 9" placeholder="9" value="{{gaps.q9.value}}" onChange="{{gaps.q9.change}}" onFocus="{{gaps.q9.focus}}" style="width: 104px; height: 40px; padding: 0 8px; box-sizing: border-box; border-radius: 6px; border: 1.5px solid {{gaps.q9.border}}; background: {{gaps.q9.bg}}; font-family: inherit; font-size: 15px; color: #0F172A; vertical-align: middle"> may not show real performance.</p>
+<sc-if value="{{anyTooLong}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 500; color: #9A3412">One answer has more than one word.</p>
+</sc-if>
+</div>
+</div>
+</sc-if>
+</div>
+
+<nav aria-label="Question navigation" style="flex: 0 0 auto; background: #FFFFFF; border-top: 1px solid #E2E8F0; display: flex; align-items: center; gap: 8px; padding: 8px 12px 14px">
+<button type="button" aria-label="Previous question" onClick="{{prev}}" style="width: 44px; height: 44px; flex: 0 0 auto; border-radius: 8px; border: 1px solid #CBD5E1; background: #FFFFFF; color: #0F172A; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<button type="button" onClick="{{openSheet}}" aria-expanded="{{sheetExpanded}}" style="flex: 1; min-width: 0; min-height: 44px; border-radius: 8px; border: 1px solid #CBD5E1; background: #F8FAFC; color: #0F172A; font-family: inherit; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+{{currentLabel}}
+<span style="font-weight: 400; color: #475569">· {{answeredCount}}/40</span>
+</button>
+<button type="button" aria-label="Next question" onClick="{{next}}" style="width: 44px; height: 44px; flex: 0 0 auto; border-radius: 8px; border: 1px solid #0F172A; background: #0F172A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+</nav>
+
+<sc-if value="{{sheetOpen}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: 10; background: rgba(15, 23, 42, 0.45); display: flex; flex-direction: column; justify-content: flex-end">
+<section aria-label="All questions" style="background: #FFFFFF; border-radius: 18px 18px 0 0; padding: 10px 16px 22px; box-sizing: border-box; max-height: 86%; overflow-y: auto; display: flex; flex-direction: column; gap: 14px">
+<div style="align-self: center; width: 40px; height: 4px; border-radius: 999px; background: #CBD5E1"></div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 600; color: #0F172A">All questions</h2>
+<span style="font-size: 13px; color: #475569">{{answeredCount}} answered · {{flaggedCount}} flagged</span>
+</div>
+<button type="button" aria-label="Close question list" onClick="{{closeSheet}}" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid #E2E8F0; background: #FFFFFF; color: #334155; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+</button>
+</div>
+<div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: 12px; color: #334155">
+<span style="display: inline-flex; align-items: center; gap: 6px"><span style="width: 12px; height: 12px; border-radius: 3px; background: #1D4ED8"></span>Answered</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span style="width: 12px; height: 12px; border-radius: 3px; border: 1.5px solid #94A3B8; box-sizing: border-box; background: #FFFFFF"></span>Unanswered</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="13" height="13" viewBox="0 0 24 24" fill="#F59E0B" stroke="#92400E" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Flagged</span>
+</div>
+<sc-for list="{{parts}}" as="p" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 13px">
+<span style="font-weight: 600; color: #0F172A">{{p.label}}</span>
+<span style="color: #475569">{{p.summary}}</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px">
+<sc-for list="{{p.cells}}" as="c" hint-placeholder-count="13">
+<button type="button" aria-label="{{c.aria}}" onClick="{{c.pick}}" style="position: relative; height: 44px; border-radius: 8px; border: 1.5px solid {{c.bd}}; background: {{c.bg}}; color: {{c.fg}}; box-shadow: {{c.ring}}; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; font-weight: 600; cursor: pointer">{{c.n}}<sc-if value="{{c.flagged}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B" stroke="#92400E" stroke-width="2" stroke-linejoin="round" aria-hidden="true" style="position: absolute; top: -6px; right: -6px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></sc-if></button>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</section>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#E11B22","options":["#E11B22","#0F172A","#1D4ED8"]},"timerState":{"editor":"enum","options":["normal","under 5 min"],"default":"normal"},"sheetOpen":{"editor":"boolean","default":false},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+getS() {
+const s = this.state || {};
+return {
+answers: s.answers || { 1: 'TRUE', 2: 'NOT GIVEN', 6: 'envelope' },
+flagged: s.flagged || { 3: true },
+current: s.current || 3,
+view: s.view || 'questions',
+sheet: s.sheet === undefined ? !!(this.props.sheetOpen ?? false) : s.sheet
+};
+}
+setAnswer(n, v) {
+const s = this.getS();
+const answers = Object.assign({}, s.answers);
+if (v === '' || v == null) { delete answers[n]; } else { answers[n] = v; }
+this.setState({ answers: answers, current: n });
+}
+toggleFlag(n) {
+const s = this.getS();
+const flagged = Object.assign({}, s.flagged);
+if (flagged[n]) { delete flagged[n]; } else { flagged[n] = true; }
+this.setState({ flagged: flagged, current: n });
+}
+go(n) {
+this.setState({ current: Math.max(1, Math.min(40, n)) });
+}
+renderVals() {
+const s = this.getS();
+const accent = this.props.accent ?? '#E11B22';
+const warn = (this.props.timerState ?? 'normal') === 'under 5 min';
+const statements = [
+{ n: 1, text: 'The green building movement began partly as a response to rising energy costs.' },
+{ n: 2, text: 'Most architects now treat water conservation as more important than energy efficiency.' },
+{ n: 3, text: 'Triple-glazed windows cost more to install than high-performance insulation.' },
+{ n: 4, text: 'Passive design features are easier to include at the start of a project.' },
+{ n: 5, text: 'Engineered timber is already used in most new buildings.' }
+];
+const opts = ['TRUE', 'FALSE', 'NOT GIVEN'];
+const tfItems = statements.map((q) => {
+const isCur = s.current === q.n;
+const isFlag = !!s.flagged[q.n];
+return {
+n: q.n,
+text: q.text,
+rowBg: isCur ? '#EFF6FF' : '#FFFFFF',
+rowBorder: isCur ? '#93C5FD' : '#E2E8F0',
+flagColor: isFlag ? '#92400E' : '#64748B',
+flagFill: isFlag ? '#F59E0B' : 'none',
+flagPressed: isFlag ? 'true' : 'false',
+flagAria: 'Flag question ' + q.n + ' for review',
+toggleFlag: () => this.toggleFlag(q.n),
+options: opts.map((o) => {
+const sel = s.answers[q.n] === o;
+return {
+label: o,
+aria: 'Question ' + q.n + ': ' + o,
+pressed: sel ? 'true' : 'false',
+bg: sel ? '#1D4ED8' : '#FFFFFF',
+fg: sel ? '#FFFFFF' : '#1E293B',
+bd: sel ? '#1D4ED8' : '#CBD5E1',
+pick: () => this.setAnswer(q.n, sel ? '' : o)
+};
+})
+};
+});
+const gap = (n) => {
+const v = s.answers[n] || '';
+const t = String(v).trim();
+const words = t ? t.split(/\s+/).length : 0;
+const isCur = s.current === n;
+return {
+value: v,
+tooLong: words > 1,
+border: words > 1 ? '#B45309' : (isCur ? '#1D4ED8' : '#94A3B8'),
+bg: t ? '#EFF6FF' : '#FFFFFF',
+change: (e) => this.setAnswer(n, e.target.value),
+focus: () => this.go(n)
+};
+};
+const gaps = { q6: gap(6), q7: gap(7), q8: gap(8), q9: gap(9) };
+const anyTooLong = gaps.q6.tooLong || gaps.q7.tooLong || gaps.q8.tooLong || gaps.q9.tooLong;
+const ranges = [{ id: 1, from: 1, to: 13 }, { id: 2, from: 14, to: 26 }, { id: 3, from: 27, to: 40 }];
+let answeredCount = 0;
+let flaggedCount = 0;
+const parts = ranges.map((p) => {
+const cells = [];
+let done = 0;
+for (let n = p.from; n <= p.to; n++) {
+const val = s.answers[n];
+const a = val != null && String(val).trim() !== '';
+const f = !!s.flagged[n];
+const cur = s.current === n;
+if (a) { done++; answeredCount++; }
+if (f) { flaggedCount++; }
+cells.push({
+n: n,
+bg: a ? '#1D4ED8' : '#FFFFFF',
+fg: a ? '#FFFFFF' : '#1E293B',
+bd: a ? '#1D4ED8' : '#94A3B8',
+ring: cur ? '0 0 0 2px #FFFFFF, 0 0 0 4px #0F172A' : 'none',
+flagged: f,
+aria: 'Question ' + n + (a ? ', answered' : ', unanswered') + (f ? ', flagged' : '') + (cur ? ', current' : ''),
+pick: () => this.setState({ current: n, sheet: false })
+});
+}
+return {
+label: 'Part ' + p.id + ' · Q' + p.from + '–' + p.to,
+summary: done + ' of ' + (p.to - p.from + 1) + ' answered',
+cells: cells
+};
+});
+const viewDefs = [
+{ id: 'passage', label: 'Passage', sub: 'A–E' },
+{ id: 'questions', label: 'Questions', sub: answeredCount + '/40' }
+];
+const viewTabs = viewDefs.map((d) => {
+const on = s.view === d.id;
+return {
+label: d.label,
+sub: d.sub,
+pressed: on ? 'true' : 'false',
+bg: on ? '#FFFFFF' : 'transparent',
+fg: on ? '#0F172A' : '#475569',
+subFg: on ? '#475569' : '#64748B',
+pick: () => this.setState({ view: d.id })
+};
+});
+return {
+accent: accent,
+timerText: warn ? '04:37' : '42:18',
+timerBg: warn ? accent : '#1E293B',
+viewTabs: viewTabs,
+showPassage: s.view === 'passage',
+showQuestions: s.view === 'questions',
+tfItems: tfItems,
+gaps: gaps,
+anyTooLong: anyTooLong,
+parts: parts,
+answeredCount: answeredCount,
+flaggedCount: flaggedCount,
+currentLabel: 'Question ' + s.current,
+sheetOpen: s.sheet,
+sheetExpanded: s.sheet ? 'true' : 'false',
+openSheet: () => this.setState({ sheet: true }),
+closeSheet: () => this.setState({ sheet: false }),
+prev: () => this.go(s.current - 1),
+next: () => this.go(s.current + 1)
+};
+}
+}
+</script>
+</body>
+</html>

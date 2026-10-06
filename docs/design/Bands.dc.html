@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Band breakdown</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1D4ED8}a:hover{color:#1E3A8A}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F8FAFC; color: #1E293B; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; display: flex; flex-direction: column">
+
+<header style="background: #0F172A; color: #FFFFFF; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 32px">
+<div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; color: #FFFFFF; text-decoration: none; min-height: 44px">
+<span style="width: 34px; height: 34px; border-radius: 8px; background: {{accent}}; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; letter-spacing: 0.02em">IP</span>
+<span style="font-weight: 600; font-size: 17px">IELTS Practice</span>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px">
+<a href="Main.dc.html" style="color: #CBD5E1; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">Dashboard</a>
+<a href="Library.dc.html" style="color: #CBD5E1; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">Test library</a>
+<a href="Vocabulary.dc.html" style="color: #CBD5E1; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">Vocabulary</a>
+<a href="Bands.dc.html" aria-current="page" style="color: #FFFFFF; background: #1E293B; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">Band breakdown</a>
+<a href="Results.dc.html" style="color: #CBD5E1; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500">History</a>
+</nav>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<a href="Admin.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 14px; border-radius: 8px; border: 1px solid #334155; color: #E2E8F0; text-decoration: none; font-size: 14px; font-weight: 500">Admin</a>
+<button type="button" aria-label="Switch to dark theme" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid #334155; background: transparent; color: #E2E8F0; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<div style="width: 38px; height: 38px; border-radius: 50%; background: #334155; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px">M</div>
+</div>
+</header>
+
+<main style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 32px 32px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<section style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h1 style="margin: 0; font-size: 30px; line-height: 1.2; font-weight: 600; color: #0F172A">Band breakdown</h1>
+<p style="margin: 0; font-size: 15px; color: #475569">How each module adds up to your overall band, and where the next half band comes from.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E2E8F0; font-size: 14px"><span style="width: 8px; height: 8px; border-radius: 50%; background: {{accent}}"></span>Target band <strong style="font-weight: 600; color: #0F172A">7.0</strong></span>
+<span style="display: inline-flex; align-items: center; padding: 8px 14px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E2E8F0; font-size: 14px; color: #475569">Latest scores · 6 Oct 2026</span>
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<section aria-label="Overall band" style="flex: 1 1 280px; min-width: 0; background: #0F172A; color: #FFFFFF; border-radius: 16px; padding: 26px 28px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color: #CBD5E1">Overall band (estimate)</span>
+<span style="font-size: 72px; line-height: 1; font-weight: 600; letter-spacing: -0.02em">6.5</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; color: #E2E8F0">(7.0 + 7.0 + 6.5 + 6.0) ÷ 4 = 6.625</span>
+<span style="font-size: 14px; color: #CBD5E1">6.625 rounds down to 6.5</span>
+<span style="align-self: flex-start; margin-top: 4px; padding: 6px 12px; border-radius: 999px; background: #FFEDD5; color: #9A3412; font-size: 13px; font-weight: 600">0.5 below target</span>
+</section>
+
+<div style="flex: 3 1 640px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; font-weight: 600; color: #0F172A">Listening</span>
+<span style="font-size: 38px; line-height: 1; font-weight: 600; color: #0F172A">7.0</span>
+<span style="font-size: 13px; color: #475569">31 / 40 correct · auto-scored</span>
+<span style="align-self: flex-start; padding: 4px 10px; border-radius: 999px; background: #DCFCE7; color: #166534; font-size: 12px; font-weight: 600">On target</span>
+<span style="font-size: 13px; color: #475569; margin-top: auto">Up 0.5 from last test</span>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; font-weight: 600; color: #0F172A">Reading</span>
+<span style="font-size: 38px; line-height: 1; font-weight: 600; color: #0F172A">7.0</span>
+<span style="font-size: 13px; color: #475569">31 / 40 correct · auto-scored</span>
+<span style="align-self: flex-start; padding: 4px 10px; border-radius: 999px; background: #DCFCE7; color: #166534; font-size: 12px; font-weight: 600">On target</span>
+<span style="font-size: 13px; color: #475569; margin-top: auto">Up 0.5 from last test</span>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; font-weight: 600; color: #0F172A">Writing</span>
+<span style="font-size: 38px; line-height: 1; font-weight: 600; color: #0F172A">6.5</span>
+<span style="font-size: 13px; color: #475569">AI estimate · Task 2 only</span>
+<span style="align-self: flex-start; padding: 4px 10px; border-radius: 999px; background: #FFEDD5; color: #9A3412; font-size: 12px; font-weight: 600">0.5 to target</span>
+<span style="font-size: 13px; color: #475569; margin-top: auto">First attempt</span>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; font-weight: 600; color: #0F172A">Speaking</span>
+<span style="font-size: 38px; line-height: 1; font-weight: 600; color: #0F172A">6.0</span>
+<span style="font-size: 13px; color: #475569">Self-assessed · 2 takes</span>
+<span style="align-self: flex-start; padding: 4px 10px; border-radius: 999px; background: #FFEDD5; color: #9A3412; font-size: 12px; font-weight: 600">1.0 to target</span>
+<span style="font-size: 13px; color: #475569; margin-top: auto">First attempt</span>
+</div>
+</div>
+</div>
+
+<section aria-labelledby="whatif-h" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 26px 28px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h2 id="whatif-h" style="margin: 0; font-size: 19px; font-weight: 600; color: #0F172A">What if?</h2>
+<p style="margin: 0; font-size: 14px; color: #475569">Change any module by half a band to see how the overall band rounds.</p>
+</div>
+<button type="button" onClick="{{reset}}" disabled="{{resetDisabled}}" style="min-height: 44px; padding: 0 16px; border-radius: 8px; border: 1px solid #CBD5E1; background: #FFFFFF; color: {{resetFg}}; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Reset to my scores</button>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
+<div style="flex: 2 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
+<sc-for list="{{steppers}}" as="m" hint-placeholder-count="4">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: 12px; border: 1px solid {{m.bd}}; background: {{m.bg}}">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 600; color: #0F172A">{{m.label}}</span>
+<span style="font-size: 12px; color: #475569">{{m.note}}</span>
+</div>
+<div style="display: flex; align-items: center; gap: 6px">
+<button type="button" aria-label="{{m.downAria}}" onClick="{{m.down}}" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid #CBD5E1; background: #FFFFFF; color: #0F172A; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+</button>
+<span style="min-width: 44px; text-align: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 20px; font-weight: 600; color: {{m.valueColor}}">{{m.value}}</span>
+<button type="button" aria-label="{{m.upAria}}" onClick="{{m.up}}" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid #CBD5E1; background: #FFFFFF; color: #0F172A; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+</button>
+</div>
+</div>
+</sc-for>
+</div>
+
+<div aria-live="polite" style="flex: 1 1 280px; min-width: 0; border-radius: 14px; background: {{resultBg}}; color: #FFFFFF; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; color: #CBD5E1">Overall band</span>
+<span style="font-size: 56px; line-height: 1; font-weight: 600">{{overallText}}</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #E2E8F0">{{formula}}</span>
+<span style="font-size: 14px; color: #E2E8F0">{{ruleText}}</span>
+<span style="align-self: flex-start; margin-top: 4px; padding: 6px 12px; border-radius: 999px; background: {{targetChipBg}}; color: {{targetChipFg}}; font-size: 13px; font-weight: 600">{{targetText}}</span>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px 24px; padding: 14px 16px; border-radius: 10px; background: #F8FAFC; font-size: 13px; line-height: 1.5; color: #334155">
+<strong style="font-weight: 600; color: #0F172A">How rounding works</strong>
+<span>Average ending in .25 rounds up to .5</span>
+<span>Ending in .75 rounds up to the next whole band</span>
+<span>Anything else rounds down to the nearest half</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace">6.125→6.0 · 6.25→6.5 · 6.625→6.5 · 6.75→7.0</span>
+</div>
+</section>
+
+<section aria-labelledby="route-h" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 26px 28px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h2 id="route-h" style="margin: 0; font-size: 19px; font-weight: 600; color: #0F172A">Fastest route to 7.0</h2>
+<p style="margin: 0; font-size: 14px; color: #475569">Half a band in Speaking or Writing lifts your average to 6.75, which rounds up to 7.0.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px">
+<div style="padding: 18px; border-radius: 12px; border: 1.5px solid #0F172A; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #475569">Option 1 · Biggest gap</span>
+<span style="font-size: 17px; font-weight: 600; color: #0F172A">Speaking 6.0 → 6.5</span>
+<span style="font-size: 14px; line-height: 1.5; color: #334155">Cut filler words and use the full two minutes in Part 2. Fluency is your lowest criterion.</span>
+<a href="Speaking.dc.html" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 600">Practise Speaking</a>
+</div>
+<div style="padding: 18px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #475569">Option 2</span>
+<span style="font-size: 17px; font-weight: 600; color: #0F172A">Writing 6.5 → 7.0</span>
+<span style="font-size: 14px; line-height: 1.5; color: #334155">State your position in the introduction and pass 250 words. Task response is holding you back.</span>
+<a href="Writing.dc.html" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 600">Practise Writing</a>
+</div>
+<div style="padding: 18px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #475569">Keep steady</span>
+<span style="font-size: 17px; font-weight: 600; color: #0F172A">Listening and Reading at 7.0</span>
+<span style="font-size: 14px; line-height: 1.5; color: #334155">One wrong answer can drop either to 6.5. Matching headings is your weakest Reading type.</span>
+<a href="Results.dc.html" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 600">Review last Reading test</a>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="detail-h" style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px">
+<h2 id="detail-h" style="margin: 0; font-size: 19px; font-weight: 600; color: #0F172A">Inside each module</h2>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #475569"><span style="width: 2px; height: 14px; background: {{accent}}"></span>Red mark = band 7.0</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 16px">
+
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><h3 style="margin: 0; font-size: 16px; font-weight: 600; color: #0F172A">Listening · correct by part</h3><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; font-weight: 600">7.0</span></div>
+<div style="display: grid; grid-template-columns: 70px 1fr 48px; align-items: center; gap: 12px; font-size: 14px"><span>Part 1</span><div style="height: 8px; border-radius: 999px; background: #E2E8F0; overflow: hidden"><div style="width: 90%; height: 100%; border-radius: 999px; background: #0F172A"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">9/10</span></div>
+<div style="display: grid; grid-template-columns: 70px 1fr 48px; align-items: center; gap: 12px; font-size: 14px"><span>Part 2</span><div style="height: 8px; border-radius: 999px; background: #E2E8F0; overflow: hidden"><div style="width: 80%; height: 100%; border-radius: 999px; background: #0F172A"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">8/10</span></div>
+<div style="display: grid; grid-template-columns: 70px 1fr 48px; align-items: center; gap: 12px; font-size: 14px"><span>Part 3</span><div style="height: 8px; border-radius: 999px; background: #E2E8F0; overflow: hidden"><div style="width: 70%; height: 100%; border-radius: 999px; background: #0F172A"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">7/10</span></div>
+<div style="display: grid; grid-template-columns: 70px 1fr 48px; align-items: center; gap: 12px; font-size: 14px"><span>Part 4</span><div style="height: 8px; border-radius: 999px; background: #E2E8F0; overflow: hidden"><div style="width: 70%; height: 100%; border-radius: 999px; background: #0F172A"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">7/10</span></div>
+<p style="margin: 0; font-size: 13px; color: #334155">1 more correct answer (32) reaches 7.5.</p>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><h3 style="margin: 0; font-size: 16px; font-weight: 600; color: #0F172A">Reading · accuracy by type</h3><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; font-weight: 600">7.0</span></div>
+<div style="display: grid; grid-template-columns: 150px 1fr 48px; align-items: center; gap: 12px; font-size: 14px"><span>True/False/NG</span><div style="height: 8px; border-radius: 999px; background: #E2E8F0; overflow: hidden"><div style="width: 82%; height: 100%; border-radius: 999px; background: #0F172A"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">9/11</span></div>
+<div style="display: grid; grid-template-columns: 150px 1fr 48px; align-items: center; gap: 12px; font-size: 14px"><span style="color: #9A3412; font-weight: 600">Matching headings</span><div style="height: 8px; border-radius: 999px; background: #E2E8F0; overflow: hidden"><div style="width: 67%; height: 100%; border-radius: 999px; background: #EA580C"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #9A3412">4/6</span></div>
+<div style="display: grid; grid-template-columns: 150px 1fr 48px; align-items: center; gap: 12px; font-size: 14px"><span>Summary completion</span><div style="height: 8px; border-radius: 999px; background: #E2E8F0; overflow: hidden"><div style="width: 88%; height: 100%; border-radius: 999px; background: #0F172A"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">7/8</span></div>
+<div style="display: grid; grid-template-columns: 150px 1fr 48px; align-items: center; gap: 12px; font-size: 14px"><span>Multiple choice</span><div style="height: 8px; border-radius: 999px; background: #E2E8F0; overflow: hidden"><div style="width: 71%; height: 100%; border-radius: 999px; background: #0F172A"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">5/7</span></div>
+<div style="display: grid; grid-template-columns: 150px 1fr 48px; align-items: center; gap: 12px; font-size: 14px"><span>Sentence completion</span><div style="height: 8px; border-radius: 999px; background: #E2E8F0; overflow: hidden"><div style="width: 75%; height: 100%; border-radius: 999px; background: #0F172A"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">6/8</span></div>
+<p style="margin: 0; font-size: 13px; color: #334155">2 more correct answers (33) reach 7.5.</p>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><h3 style="margin: 0; font-size: 16px; font-weight: 600; color: #0F172A">Writing · marking criteria</h3><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; font-weight: 600">6.5</span></div>
+<div style="display: grid; grid-template-columns: 170px 1fr 40px; align-items: center; gap: 12px; font-size: 14px"><span style="color: #9A3412; font-weight: 600">Task response</span><div style="position: relative; height: 8px; border-radius: 999px; background: #E2E8F0"><div style="width: 66.7%; height: 100%; border-radius: 999px; background: #EA580C"></div><div style="position: absolute; left: 77.8%; top: -4px; width: 2px; height: 16px; background: {{accent}}"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #9A3412">6.0</span></div>
+<div style="display: grid; grid-template-columns: 170px 1fr 40px; align-items: center; gap: 12px; font-size: 14px"><span>Coherence and cohesion</span><div style="position: relative; height: 8px; border-radius: 999px; background: #E2E8F0"><div style="width: 77.8%; height: 100%; border-radius: 999px; background: #0F172A"></div><div style="position: absolute; left: 77.8%; top: -4px; width: 2px; height: 16px; background: {{accent}}"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">7.0</span></div>
+<div style="display: grid; grid-template-columns: 170px 1fr 40px; align-items: center; gap: 12px; font-size: 14px"><span>Lexical resource</span><div style="position: relative; height: 8px; border-radius: 999px; background: #E2E8F0"><div style="width: 72.2%; height: 100%; border-radius: 999px; background: #0F172A"></div><div style="position: absolute; left: 77.8%; top: -4px; width: 2px; height: 16px; background: {{accent}}"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">6.5</span></div>
+<div style="display: grid; grid-template-columns: 170px 1fr 40px; align-items: center; gap: 12px; font-size: 14px"><span>Grammar range and accuracy</span><div style="position: relative; height: 8px; border-radius: 999px; background: #E2E8F0"><div style="width: 72.2%; height: 100%; border-radius: 999px; background: #0F172A"></div><div style="position: absolute; left: 77.8%; top: -4px; width: 2px; height: 16px; background: {{accent}}"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">6.5</span></div>
+<p style="margin: 0; font-size: 13px; color: #334155">Task 2 counts twice as much as Task 1. Task 1 not attempted yet.</p>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><h3 style="margin: 0; font-size: 16px; font-weight: 600; color: #0F172A">Speaking · marking criteria</h3><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; font-weight: 600">6.0</span></div>
+<div style="display: grid; grid-template-columns: 170px 1fr 40px; align-items: center; gap: 12px; font-size: 14px"><span style="color: #9A3412; font-weight: 600">Fluency and coherence</span><div style="position: relative; height: 8px; border-radius: 999px; background: #E2E8F0"><div style="width: 66.7%; height: 100%; border-radius: 999px; background: #EA580C"></div><div style="position: absolute; left: 77.8%; top: -4px; width: 2px; height: 16px; background: {{accent}}"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #9A3412">6.0</span></div>
+<div style="display: grid; grid-template-columns: 170px 1fr 40px; align-items: center; gap: 12px; font-size: 14px"><span>Lexical resource</span><div style="position: relative; height: 8px; border-radius: 999px; background: #E2E8F0"><div style="width: 72.2%; height: 100%; border-radius: 999px; background: #0F172A"></div><div style="position: absolute; left: 77.8%; top: -4px; width: 2px; height: 16px; background: {{accent}}"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">6.5</span></div>
+<div style="display: grid; grid-template-columns: 170px 1fr 40px; align-items: center; gap: 12px; font-size: 14px"><span>Grammar range and accuracy</span><div style="position: relative; height: 8px; border-radius: 999px; background: #E2E8F0"><div style="width: 66.7%; height: 100%; border-radius: 999px; background: #0F172A"></div><div style="position: absolute; left: 77.8%; top: -4px; width: 2px; height: 16px; background: {{accent}}"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">6.0</span></div>
+<div style="display: grid; grid-template-columns: 170px 1fr 40px; align-items: center; gap: 12px; font-size: 14px"><span>Pronunciation</span><div style="position: relative; height: 8px; border-radius: 999px; background: #E2E8F0"><div style="width: 66.7%; height: 100%; border-radius: 999px; background: #0F172A"></div><div style="position: absolute; left: 77.8%; top: -4px; width: 2px; height: 16px; background: {{accent}}"></div></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: right; color: #475569">6.0</span></div>
+<p style="margin: 0; font-size: 13px; color: #334155">Self-assessed from 2 takes. Filler words pulled fluency down.</p>
+</div>
+
+</div>
+</section>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#E11B22","options":["#E11B22","#0F172A","#1D4ED8"]},"$preview":{"width":1440,"height":1800}}'>
+class Component extends DCLogic {
+base() {
+return { L: 7, R: 7, W: 6.5, S: 6 };
+}
+getS() {
+const s = this.state || {};
+return { v: s.v || this.base() };
+}
+setVal(k, x) {
+const s = this.getS();
+const v = Object.assign({}, s.v);
+v[k] = Math.max(4, Math.min(9, x));
+this.setState({ v: v });
+}
+renderVals() {
+const s = this.getS();
+const accent = this.props.accent ?? '#E11B22';
+const base = this.base();
+const v = s.v;
+const fmt = (x) => x.toFixed(1);
+const mods = [
+{ k: 'L', label: 'Listening' },
+{ k: 'R', label: 'Reading' },
+{ k: 'W', label: 'Writing' },
+{ k: 'S', label: 'Speaking' }
+];
+let changed = false;
+const steppers = mods.map((m) => {
+const diff = v[m.k] !== base[m.k];
+if (diff) { changed = true; }
+return {
+label: m.label,
+value: fmt(v[m.k]),
+valueColor: diff ? '#1D4ED8' : '#0F172A',
+note: diff ? 'Your score: ' + fmt(base[m.k]) : 'Your score',
+bg: diff ? '#EFF6FF' : '#FFFFFF',
+bd: diff ? '#93C5FD' : '#E2E8F0',
+downAria: 'Lower ' + m.label + ' by half a band',
+upAria: 'Raise ' + m.label + ' by half a band',
+down: () => this.setVal(m.k, v[m.k] - 0.5),
+up: () => this.setVal(m.k, v[m.k] + 0.5)
+};
+});
+const avg = (v.L + v.R + v.W + v.S) / 4;
+const whole = Math.floor(avg);
+const frac = avg - whole;
+let overall;
+let rule;
+if (frac < 0.25) {
+overall = whole;
+rule = frac === 0 ? 'exact' : 'rounds down';
+} else if (frac < 0.75) {
+overall = whole + 0.5;
+rule = frac === 0.5 ? 'exact' : (frac < 0.5 ? 'rounds up' : 'rounds down');
+} else {
+overall = whole + 1;
+rule = 'rounds up';
+}
+let avgText = avg.toFixed(3).replace(/0+$/, '');
+if (avgText.charAt(avgText.length - 1) === '.') { avgText += '0'; }
+const met = overall >= 7;
+return {
+accent: accent,
+steppers: steppers,
+overallText: fmt(overall),
+formula: '(' + fmt(v.L) + ' + ' + fmt(v.R) + ' + ' + fmt(v.W) + ' + ' + fmt(v.S) + ') ÷ 4 = ' + avgText,
+ruleText: rule === 'exact' ? 'Average ' + avgText + ' needs no rounding.' : 'Average ' + avgText + ' ' + rule + ' to ' + fmt(overall) + '.',
+targetText: met ? 'Target 7.0 reached' : fmt(7 - overall) + ' below target',
+targetChipBg: met ? '#DCFCE7' : '#FFEDD5',
+targetChipFg: met ? '#166534' : '#9A3412',
+resultBg: met ? '#14532D' : '#0F172A',
+resetDisabled: !changed,
+resetFg: changed ? '#0F172A' : '#94A3B8',
+reset: () => this.setState({ v: this.base() })
+};
+}
+}
+</script>
+</body>
+</html>

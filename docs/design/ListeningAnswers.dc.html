@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Listening test with answers shown</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1D4ED8}a:hover{color:#1E3A8A}
+</style>
+</helmet>
+<div style="position: relative; height: 100vh; min-height: 680px; background: #F8FAFC; color: #1E293B; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; display: flex; flex-direction: column">
+
+<header style="flex: 0 0 auto; background: #0F172A; color: #FFFFFF; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; padding: 10px 20px">
+<div style="display: flex; align-items: center; gap: 12px; min-width: 0">
+<a href="Library.dc.html" aria-label="Back to test library" style="width: 44px; height: 44px; flex: 0 0 auto; border-radius: 8px; border: 1px solid #334155; color: #FFFFFF; display: flex; align-items: center; justify-content: center">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+</a>
+<span style="width: 32px; height: 32px; flex: 0 0 auto; border-radius: 8px; background: {{accent}}; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px">IP</span>
+<div style="display: flex; flex-direction: column; min-width: 0">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap">Book 21 · Test 1 · Listening</span>
+<span style="font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #94A3B8">{{partLabel}}</span>
+</div>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap">
+<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: #94A3B8">TIMER</span>
+<div style="display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: #1E293B">
+<sc-for list="{{modes}}" as="m" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{m.pressed}}" onClick="{{m.pick}}" style="min-height: 38px; padding: 0 14px; border-radius: 999px; border: none; background: {{m.bg}}; color: {{m.fg}}; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer">{{m.label}}</button>
+</sc-for>
+</div>
+<button type="button" aria-label="Show answers" aria-pressed="{{revealPressed}}" onClick="{{toggleReveal}}" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid {{revealBd}}; background: {{revealBg}}; color: {{revealFg}}; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>
+</button>
+<div style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 0 14px; border-radius: 999px; background: {{timerBg}}; border: 1px solid {{timerBd}}; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; font-weight: 600">
+<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Time left</span>
+<span>{{timerText}}</span>
+</div>
+<button type="button" onClick="{{togglePause}}" style="min-height: 44px; padding: 0 14px; border-radius: 8px; border: 1px solid #334155; background: transparent; color: #E2E8F0; display: inline-flex; align-items: center; gap: 8px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">{{pauseLabel}}</button>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px">
+<button type="button" onClick="{{clearAll}}" style="min-height: 44px; padding: 0 14px; border-radius: 8px; border: 1px solid #334155; background: transparent; color: #E2E8F0; display: inline-flex; align-items: center; gap: 8px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"></path><path d="M22 21H7"></path><path d="m5 11 9 9"></path></svg>
+Clear
+</button>
+<button type="button" aria-label="Switch to dark theme" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid #334155; background: transparent; color: #E2E8F0; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</header>
+
+<section aria-label="Audio player" style="flex: 0 0 auto; background: #FFFFFF; border-bottom: 1px solid #E2E8F0; padding: 12px 20px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px">
+<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.04em; color: #0F172A; min-width: 56px">PART {{part}}</span>
+<button type="button" aria-label="Back 5 seconds" onClick="{{back5}}" disabled="{{locked}}" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #CBD5E1; background: #FFFFFF; color: {{ctrlFg}}; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+</button>
+<button type="button" aria-label="{{playAria}}" onClick="{{togglePlay}}" disabled="{{playDisabled}}" style="width: 52px; height: 52px; border-radius: 50%; border: none; background: {{playBg}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<sc-if value="{{playing}}" hint-placeholder-val="{{ false }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg></sc-if>
+<sc-if value="{{notPlaying}}" hint-placeholder-val="{{ true }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg></sc-if>
+</button>
+<button type="button" aria-label="Forward 5 seconds" onClick="{{fwd5}}" disabled="{{locked}}" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #CBD5E1; background: #FFFFFF; color: {{ctrlFg}}; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+</button>
+<label for="seek" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Audio position</label>
+<input id="seek" type="range" min="0" max="{{dur}}" step="1" value="{{tRounded}}" onChange="{{onSeek}}" disabled="{{locked}}" style="flex: 1 1 260px; min-width: 160px; height: 44px; accent-color: #0F172A">
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; color: #334155; white-space: nowrap">{{timeText}}</span>
+<label for="speed" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Playback speed</label>
+<select id="speed" value="{{speedVal}}" onChange="{{onSpeed}}" disabled="{{locked}}" style="height: 44px; padding: 0 10px; border-radius: 8px; border: 1px solid #CBD5E1; background: #FFFFFF; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; color: #0F172A">
+<option value="0.75">0.75x</option>
+<option value="1">1x</option>
+<option value="1.25">1.25x</option>
+<option value="1.5">1.5x</option>
+</select>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<sc-if value="{{practice}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<button type="button" aria-expanded="{{scriptExpanded}}" onClick="{{toggleScript}}" style="min-height: 40px; padding: 0 12px; border-radius: 8px; border: 1px solid {{scriptBd}}; background: {{scriptBg}}; color: #0F172A; font-family: inherit; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+{{scriptLabel}}
+</button>
+<sc-if value="{{showScript}}" hint-placeholder-val="{{ true }}">
+<button type="button" aria-pressed="{{penPressed}}" onClick="{{togglePen}}" style="min-height: 40px; padding: 0 12px; border-radius: 8px; border: 1px solid {{penBd}}; background: {{penBg}}; color: {{penFg}}; font-family: inherit; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 11-6 6v3h9l3-3"></path><path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4"></path></svg>
+Highlighter
+</button>
+</sc-if>
+</div>
+</sc-if>
+<sc-if value="{{full}}" hint-placeholder-val="{{ false }}">
+<span style="display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 12px; border-radius: 8px; background: #F1F5F9; font-size: 13px; color: #334155">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+Full mock: audio plays once, no seeking. Audioscript unlocks after you submit.
+</span>
+</sc-if>
+</div>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #475569">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline></svg>
+Autosaved at 14:13:07
+</span>
+</div>
+</section>
+
+<sc-if value="{{reveal}}" hint-placeholder-val="{{ false }}">
+<div style="flex: 0 0 auto; background: #FEF3C7; border-bottom: 1px solid #FDE68A; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding: 6px 20px; font-size: 13px; color: #92400E">
+<span style="font-weight: 500">Answers are showing, and each one is marked in the audioscript. This attempt won’t count toward your band history.</span>
+<button type="button" onClick="{{toggleReveal}}" style="min-height: 36px; padding: 0 12px; border-radius: 6px; border: 1px solid #D97706; background: #FFFFFF; color: #92400E; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Hide answers</button>
+</div>
+</sc-if>
+
+<div style="position: relative; flex: 1 1 auto; min-height: 0; display: flex; flex-wrap: wrap; overflow: auto">
+
+<section aria-label="Questions" style="flex: 3 1 560px; min-width: 0; max-height: 100%; overflow-y: auto; padding: 22px 28px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0; font-size: 18px; font-weight: 600; color: #0F172A">Questions 1–6</h2>
+<p style="margin: 0; font-size: 15px; color: #334155">Complete the form. Write <strong style="font-weight: 600; color: #0F172A">ONE WORD AND/OR A NUMBER</strong> for each answer.</p>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 18px 22px; display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0 0 12px; font-size: 16px; font-weight: 600; color: #0F172A; text-align: center">Riverside Sports Centre · New member</h3>
+<sc-for list="{{formRows}}" as="r" hint-placeholder-count="6">
+<div style="display: grid; grid-template-columns: minmax(130px, 170px) 1fr; gap: 6px 16px; align-items: center; padding: 6px 0; border-top: 1px solid #F1F5F9">
+<label for="{{r.id}}" style="font-size: 15px; color: #475569">{{r.label}}</label>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font-size: 15px">
+<span>{{r.before}}</span>
+<span style="width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid #475569; font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center">{{r.n}}</span>
+<input id="{{r.id}}" value="{{r.value}}" onChange="{{r.change}}" style="width: 150px; height: 40px; padding: 0 10px; box-sizing: border-box; border-radius: 6px; border: 1.5px solid {{r.border}}; background: {{r.bg}}; font-family: inherit; font-size: 15px; color: #0F172A">
+<span>{{r.after}}</span>
+<sc-if value="{{r.showAns}}" hint-placeholder-val="{{ false }}">
+<span style="padding: 3px 10px; border-radius: 6px; background: {{r.vBg}}; color: {{r.vFg}}; font-size: 13px; font-weight: 600">{{r.vText}}</span>
+</sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0; font-size: 18px; font-weight: 600; color: #0F172A">Questions 7–8</h2>
+<p style="margin: 0; font-size: 15px; color: #334155">Choose the correct letter, <strong style="font-weight: 600; color: #0F172A">A, B or C</strong>.</p>
+</div>
+<sc-for list="{{mcq}}" as="q" hint-placeholder-count="2">
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0 0 4px; font-size: 16px; line-height: 1.5; color: #1E293B"><strong style="font-weight: 600; color: #0F172A; margin-right: 8px">{{q.n}}</strong>{{q.text}}</p>
+<sc-for list="{{q.options}}" as="o" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 8px 14px; border-radius: 8px; border: 1.5px solid {{o.bd}}; background: {{o.bg}}; color: #1E293B; font-family: inherit; font-size: 15px; text-align: left; cursor: pointer">
+<span style="width: 26px; height: 26px; flex: 0 0 auto; border-radius: 50%; background: {{o.dotBg}}; color: {{o.dotFg}}; border: 1.5px solid {{o.dotBd}}; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{o.letter}}</span>
+{{o.text}}
+</button>
+</sc-for>
+<sc-if value="{{q.showAns}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 13px">
+<span style="padding: 3px 10px; border-radius: 6px; background: {{q.vBg}}; color: {{q.vFg}}; font-weight: 600">{{q.vText}}</span>
+<span style="color: #334155">Answer <strong style="font-weight: 600; color: #0F172A">{{q.correct}}</strong> · marked at {{q.at}} in the audioscript</span>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</section>
+
+<sc-if value="{{showScript}}" hint-placeholder-val="{{ true }}">
+<aside aria-label="Audioscript" style="flex: 2 1 420px; min-width: 0; max-height: 100%; overflow-y: auto; background: #FFFFFF; border-left: 1px solid #E2E8F0; padding: 18px 20px 36px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600; color: #0F172A">Audioscript · Part {{part}}</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: #334155">
+<span style="display: inline-flex; align-items: center; gap: 6px"><span style="width: 14px; height: 14px; border-radius: 4px; background: #EFF6FF; border: 1.5px solid #3B82F6; box-sizing: border-box"></span>Now playing</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span style="width: 14px; height: 14px; border-radius: 4px; background: #FEF08A"></span>Your highlight</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span style="width: 14px; height: 14px; border-radius: 4px; background: #FEF3C7; box-shadow: 0 0 0 1.5px #B45309"></span>Answer</span>
+</div>
+<p style="margin: 0; font-size: 12px; color: #475569">{{scriptHint}}</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<sc-for list="{{lines}}" as="l" hint-placeholder-count="12">
+<button type="button" aria-label="{{l.aria}}" onClick="{{l.pick}}" style="display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: start; width: 100%; padding: 8px 10px; border-radius: 8px; border: 1.5px solid {{l.bd}}; background: {{l.bg}}; font-family: inherit; text-align: left; cursor: pointer">
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #475569; padding-top: 3px">{{l.time}}</span>
+<span style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: {{l.whoColor}}">{{l.who}}</span>
+<span style="font-size: 15px; line-height: 1.55; color: #1E293B">{{l.pre}}<sc-if value="{{l.hasAns}}" hint-placeholder-val="{{ false }}"><mark style="background: {{l.markBg}}; box-shadow: {{l.markRing}}; color: inherit; border-radius: 3px; padding: 0 2px">{{l.ans}}</mark></sc-if><sc-if value="{{l.badge}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; margin: 0 2px 0 5px; border-radius: 50%; background: #0F172A; color: #FFFFFF; font-size: 11px; font-weight: 700; vertical-align: 2px">{{l.q}}</span></sc-if>{{l.post}}</span>
+</span>
+</button>
+</sc-for>
+</div>
+</aside>
+</sc-if>
+
+<sc-if value="{{paused}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: 5; background: rgba(248, 250, 252, 0.97); display: flex; align-items: center; justify-content: center; padding: 24px">
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 32px 36px; max-width: 380px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
+<h2 style="margin: 0; font-size: 20px; font-weight: 600; color: #0F172A">Test paused</h2>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #475569">The timer and the audio have stopped. Your answers are saved.</p>
+<button type="button" onClick="{{togglePause}}" style="min-height: 48px; padding: 0 24px; border-radius: 999px; border: none; background: #0F172A; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Resume test</button>
+</div>
+</div>
+</sc-if>
+</div>
+
+<div style="flex: 0 0 auto; background: #F8FAFC; border-top: 1px solid #E2E8F0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 10px 20px">
+<span style="font-size: 13px; font-weight: 600; color: #334155; white-space: nowrap">{{answeredText}}</span>
+<div style="display: flex; flex-wrap: wrap; gap: 5px">
+<sc-for list="{{cells}}" as="c" hint-placeholder-count="10">
+<button type="button" aria-label="{{c.aria}}" style="min-width: 40px; height: 40px; padding: 0 6px; border-radius: 8px; border: 1.5px solid {{c.bd}}; background: {{c.bg}}; color: {{c.fg}}; box-shadow: {{c.ring}}; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; font-weight: 600; cursor: pointer">{{c.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<nav aria-label="Test sections" style="flex: 0 0 auto; background: #FFFFFF; border-top: 1px solid #E2E8F0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; padding: 10px 20px">
+<span style="flex: 1 1 0; min-width: 0"></span>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px">
+<sc-for list="{{partTabs}}" as="p" hint-placeholder-count="1">
+<button type="button" aria-pressed="{{p.pressed}}" onClick="{{p.pick}}" style="min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid {{p.bd}}; background: {{p.bg}}; color: {{p.fg}}; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">{{p.label}}</button>
+</sc-for>
+<a href="Reading.dc.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 0 16px; border-radius: 10px; border: 1px solid #CBD5E1; background: #FFFFFF; color: #0F172A; text-decoration: none; font-size: 14px; font-weight: 600">
+Reading
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+<div style="flex: 1 1 0; display: flex; justify-content: flex-end">
+<sc-if value="{{practice}}" hint-placeholder-val="{{ true }}">
+<a href="Results.dc.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 0 18px; border-radius: 10px; background: #0F172A; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600; white-space: nowrap">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"></path></svg>
+Evaluate my Listening
+</a>
+</sc-if>
+<sc-if value="{{showToReading}}" hint-placeholder-val="{{ false }}">
+<a href="Reading.dc.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 0 18px; border-radius: 10px; background: #0F172A; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600; white-space: nowrap">Next: Reading</a>
+</sc-if>
+<sc-if value="{{showNextPart}}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{nextPart}}" style="min-height: 44px; padding: 0 18px; border-radius: 10px; border: none; background: #0F172A; color: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer">{{nextLabel}}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+</sc-if>
+</div>
+</nav>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#E11B22","options":["#E11B22","#0F172A","#1D4ED8"]},"startMode":{"editor":"enum","options":["single","full"],"default":"single"},"startReveal":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+componentDidMount() {
+this._clock = setInterval(() => {
+const s = this.getS();
+if (s.paused || s.left <= 0) { return; }
+this.setState({ left: s.left - 1 });
+}, 1000);
+this._audio = setInterval(() => {
+const s = this.getS();
+if (!s.playing || s.paused) { return; }
+const t = s.t + 0.25 * s.speed;
+if (t >= this.dur()) { this.setState({ t: this.dur(), playing: false, played: true }); return; }
+this.setState({ t: t });
+}, 250);
+}
+componentWillUnmount() {
+clearInterval(this._clock);
+clearInterval(this._audio);
+}
+dur() {
+return 110;
+}
+script() {
+return [
+{ t: 0, who: 'Receptionist', pre: 'Good morning, Riverside Sports Centre. How can I help?' },
+{ t: 5, who: 'Daniel', pre: 'Hi, I’d like to join the centre. My name’s Daniel.' },
+{ t: 10, who: 'Receptionist', pre: 'Lovely. And your surname?' },
+{ t: 14, who: 'Daniel', pre: 'It’s ', ans: 'Morgan', post: '. That’s M-O-R-G-A-N.', q: 1 },
+{ t: 21, who: 'Receptionist', pre: 'Thanks. Are you joining on your own?' },
+{ t: 26, who: 'Daniel', pre: 'No, it’ll be a ', ans: 'family', post: ' membership: my wife and our two children.', q: 2 },
+{ t: 34, who: 'Receptionist', pre: 'And what would you mainly use the centre for?' },
+{ t: 39, who: 'Daniel', pre: 'Swimming, mostly, and ', ans: 'badminton', post: ' at weekends.', q: 3 },
+{ t: 46, who: 'Receptionist', pre: 'When would you like to start?' },
+{ t: 50, who: 'Daniel', pre: 'The first of March is too soon, so let’s say the ', ans: 'fourteenth', post: ' of March.', q: 4 },
+{ t: 58, who: 'Receptionist', pre: 'Fine. The family rate is ', ans: 'thirty-eight pounds', post: ' a month.', q: 5 },
+{ t: 66, who: 'Daniel', pre: 'Can we park at the centre?' },
+{ t: 70, who: 'Receptionist', pre: 'Yes, but you’ll need a ', ans: 'permit', post: ' from reception. It’s free for members.', q: 6 },
+{ t: 78, who: 'Receptionist', pre: 'Can I ask how you heard about us?' },
+{ t: 82, who: 'Daniel', pre: '', ans: 'A friend of mine swims here and said it was great', post: ', so that’s really why.', q: 7 },
+{ t: 90, who: 'Receptionist', pre: 'Good to hear. The pool does get busy, though, ', ans: 'especially in the evenings after six', post: '.', q: 8 },
+{ t: 98, who: 'Daniel', pre: 'Thanks. We’ll try to come earlier, then.' }
+];
+}
+getS() {
+const s = this.state || {};
+const mode = s.mode || (this.props.startMode ?? 'single');
+return {
+mode: mode,
+left: s.left !== undefined ? s.left : (mode === 'full' ? 1800 : 480),
+paused: !!s.paused,
+playing: !!s.playing,
+played: !!s.played,
+t: s.t !== undefined ? s.t : 42,
+speed: s.speed || 1,
+showScript: s.showScript !== undefined ? s.showScript : true,
+pen: !!s.pen,
+marks: s.marks || { 9: true },
+reveal: s.reveal !== undefined ? s.reveal : !!(this.props.startReveal ?? true),
+answers: s.answers || { 1: 'Morgan', 2: 'family', 4: '14', 7: 'B' },
+part: s.part || 1
+};
+}
+setAnswer(n, v) {
+const s = this.getS();
+const a = Object.assign({}, s.answers);
+if (v === '' || v == null) { delete a[n]; } else { a[n] = v; }
+this.setState({ answers: a });
+}
+renderVals() {
+const s = this.getS();
+const accent = this.props.accent ?? '#E11B22';
+const full = s.mode === 'full';
+const pad = (x) => (x < 10 ? '0' : '') + x;
+const clock = (x) => Math.floor(x / 60) + ':' + pad(Math.floor(x % 60));
+const accept = { 1: ['morgan'], 2: ['family'], 3: ['badminton'], 4: ['14', '14th', 'fourteenth'], 5: ['38'], 6: ['permit'], 7: ['b'], 8: ['c'] };
+const display = { 1: 'Morgan', 2: 'family', 3: 'badminton', 4: '14', 5: '38', 6: 'permit', 7: 'B', 8: 'C' };
+const verdict = (n) => {
+const u = s.answers[n];
+if (u == null || String(u).trim() === '') { return { vText: 'Answer: ' + display[n], vBg: '#F1F5F9', vFg: '#334155' }; }
+if (accept[n].indexOf(String(u).trim().toLowerCase()) !== -1) { return { vText: 'Correct', vBg: '#DCFCE7', vFg: '#166534' }; }
+return { vText: 'Answer: ' + display[n], vBg: '#FFEDD5', vFg: '#9A3412' };
+};
+const lines = this.script();
+let cur = 0;
+lines.forEach((l, i) => { if (s.t >= l.t) { cur = i; } });
+const lineView = lines.map((l, i) => {
+const isCur = i === cur;
+const mine = !!s.marks[i];
+const hasAns = !!l.ans;
+return {
+time: clock(l.t),
+who: l.who,
+whoColor: l.who === 'Daniel' ? '#1D4ED8' : '#334155',
+pre: l.pre,
+ans: l.ans || '',
+post: l.post || '',
+q: l.q ? String(l.q) : '',
+hasAns: hasAns,
+badge: hasAns && s.reveal,
+markBg: hasAns && s.reveal ? '#FEF3C7' : 'transparent',
+markRing: hasAns && s.reveal ? '0 0 0 1.5px #B45309' : 'none',
+bg: mine ? '#FEF08A' : (isCur ? '#EFF6FF' : 'transparent'),
+bd: isCur ? '#3B82F6' : 'transparent',
+aria: (s.pen ? 'Highlight line at ' : 'Play from ') + clock(l.t),
+pick: () => {
+if (s.pen) {
+const m = Object.assign({}, s.marks);
+if (m[i]) { delete m[i]; } else { m[i] = true; }
+this.setState({ marks: m });
+} else {
+this.setState({ t: l.t, playing: true });
+}
+}
+};
+});
+const ansAt = {};
+lines.forEach((l) => { if (l.q) { ansAt[l.q] = clock(l.t); } });
+const rowDefs = [
+{ n: 1, label: 'Surname', before: '', after: '' },
+{ n: 2, label: 'Membership type', before: '', after: '' },
+{ n: 3, label: 'Main activities', before: 'swimming and', after: '' },
+{ n: 4, label: 'Start date', before: '', after: 'March' },
+{ n: 5, label: 'Monthly fee', before: '£', after: '' },
+{ n: 6, label: 'Parking', before: 'needs a', after: 'from reception' }
+];
+const formRows = rowDefs.map((r) => {
+const val = s.answers[r.n] || '';
+const v = verdict(r.n);
+let border = '#94A3B8';
+if (s.reveal && String(val).trim()) { border = v.vText === 'Correct' ? '#15803D' : '#C2410C'; }
+return Object.assign({
+id: 'l-q' + r.n,
+n: String(r.n),
+label: r.label,
+before: r.before,
+after: r.after,
+value: val,
+border: border,
+bg: String(val).trim() ? '#EFF6FF' : '#FFFFFF',
+showAns: s.reveal,
+change: (e) => this.setAnswer(r.n, e.target.value)
+}, v);
+});
+const mcqDefs = [
+{ n: 7, text: 'Why does the caller want to join the centre?', options: [['A', 'to get fitter for a new job'], ['B', 'a friend recommended it'], ['C', 'to train for a competition']] },
+{ n: 8, text: 'What does the receptionist say about the pool?', options: [['A', 'It is closed on Monday mornings.'], ['B', 'It was renovated last year.'], ['C', 'It is busiest in the evenings.']] }
+];
+const mcq = mcqDefs.map((q) => Object.assign({
+n: String(q.n),
+text: q.text,
+correct: display[q.n],
+at: ansAt[q.n],
+showAns: s.reveal,
+options: q.options.map((o) => {
+const sel = s.answers[q.n] === o[0];
+return {
+letter: o[0],
+text: o[1],
+pressed: sel ? 'true' : 'false',
+bg: sel ? '#EFF6FF' : '#FFFFFF',
+bd: sel ? '#1D4ED8' : '#E2E8F0',
+dotBg: sel ? '#1D4ED8' : '#FFFFFF',
+dotFg: sel ? '#FFFFFF' : '#0F172A',
+dotBd: sel ? '#1D4ED8' : '#94A3B8',
+pick: () => this.setAnswer(q.n, sel ? '' : o[0])
+};
+})
+}, verdict(q.n)));
+const labels = full ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, '21–22', '23–24', 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40] : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let answered = 0;
+const cells = labels.map((lb) => {
+const a = typeof lb === 'number' && s.answers[lb] != null && String(s.answers[lb]).trim() !== '';
+if (a) { answered++; }
+return {
+label: String(lb),
+bg: a ? '#1D4ED8' : '#FFFFFF',
+fg: a ? '#FFFFFF' : '#1E293B',
+bd: a ? '#1D4ED8' : '#94A3B8',
+ring: lb === 5 ? '0 0 0 2px #FFFFFF, 0 0 0 4px #0F172A' : 'none',
+aria: 'Question ' + lb + (a ? ', answered' : ', unanswered')
+};
+});
+const partTabs = (full ? [1, 2, 3, 4] : [1]).map((p) => {
+const on = s.part === p;
+return { label: 'Part ' + p, pressed: on ? 'true' : 'false', bg: on ? '#0F172A' : '#FFFFFF', fg: on ? '#FFFFFF' : '#0F172A', bd: on ? '#0F172A' : '#CBD5E1', pick: () => this.setState({ part: p }) };
+});
+const modeDefs = [{ id: 'single', label: 'Single part' }, { id: 'full', label: 'Full mock' }];
+const modes = modeDefs.map((m) => {
+const on = s.mode === m.id;
+return { label: m.label, pressed: on ? 'true' : 'false', bg: on ? '#FFFFFF' : 'transparent', fg: on ? '#0F172A' : '#CBD5E1', pick: () => this.setState({ mode: m.id, left: m.id === 'full' ? 1800 : 480, part: 1, t: 0, playing: false, played: false }) };
+});
+const warn = s.left <= 300;
+const showScript = !full && s.showScript;
+const playDisabled = full && (s.playing || s.played);
+return {
+accent: accent,
+modes: modes,
+full: full,
+practice: !full,
+part: s.part,
+partLabel: 'Part ' + s.part + ' of ' + (full ? 4 : 1),
+timerText: pad(Math.floor(s.left / 60)) + ':' + pad(s.left % 60),
+timerBg: warn ? accent : '#1E293B',
+timerBd: warn ? accent : '#334155',
+paused: s.paused,
+pauseLabel: s.paused ? 'Resume' : 'Pause',
+togglePause: () => this.setState({ paused: !s.paused }),
+clearAll: () => this.setState({ answers: {}, marks: {} }),
+reveal: s.reveal,
+revealPressed: s.reveal ? 'true' : 'false',
+revealBg: s.reveal ? '#FEF3C7' : 'transparent',
+revealBd: s.reveal ? '#FDE68A' : '#334155',
+revealFg: s.reveal ? '#92400E' : '#E2E8F0',
+toggleReveal: () => this.setState({ reveal: !s.reveal }),
+playing: s.playing,
+notPlaying: !s.playing,
+playAria: s.playing ? 'Pause audio' : 'Play audio',
+playBg: playDisabled ? '#94A3B8' : '#0F172A',
+playDisabled: playDisabled,
+togglePlay: () => this.setState({ playing: !s.playing, t: s.t >= this.dur() ? 0 : s.t }),
+locked: full,
+ctrlFg: full ? '#94A3B8' : '#0F172A',
+back5: () => this.setState({ t: Math.max(0, s.t - 5) }),
+fwd5: () => this.setState({ t: Math.min(this.dur(), s.t + 5) }),
+dur: this.dur(),
+tRounded: Math.floor(s.t),
+onSeek: (e) => this.setState({ t: Number(e.target.value) }),
+timeText: clock(s.t) + ' / ' + clock(this.dur()),
+speedVal: String(s.speed),
+onSpeed: (e) => this.setState({ speed: Number(e.target.value) }),
+showScript: showScript,
+scriptExpanded: showScript ? 'true' : 'false',
+scriptLabel: s.showScript ? 'Hide audioscript' : 'Show audioscript',
+scriptBg: s.showScript ? '#F1F5F9' : '#FFFFFF',
+scriptBd: s.showScript ? '#94A3B8' : '#CBD5E1',
+toggleScript: () => this.setState({ showScript: !s.showScript }),
+penPressed: s.pen ? 'true' : 'false',
+penBg: s.pen ? '#FEF08A' : '#FFFFFF',
+penBd: s.pen ? '#CA8A04' : '#CBD5E1',
+penFg: s.pen ? '#713F12' : '#0F172A',
+togglePen: () => this.setState({ pen: !s.pen }),
+scriptHint: s.pen ? 'Highlighter on: click lines to mark or unmark them.' : 'Click any line to play from there. The current line follows the audio.',
+lines: lineView,
+formRows: formRows,
+mcq: mcq,
+cells: cells,
+answeredText: answered + ' / ' + labels.length + ' answered',
+partTabs: partTabs,
+nextLabel: 'Next part',
+showNextPart: full && s.part < 4,
+showToReading: full && s.part === 4,
+nextPart: () => this.setState({ part: Math.min(4, s.part + 1) })
+};
+}
+}
+</script>
+</body>
+</html>
