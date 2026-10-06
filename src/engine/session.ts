@@ -24,6 +24,8 @@ export interface Session {
   flagged: number[];
   notes: string;
   scriptMarks: number[];
+  /** Where each Listening part's audio got to, by part number; restored on reload. */
+  audioPositions: Record<string, number>;
   revealUsed: boolean;
   /** Paused by the student (the clock also stops while the page is closed). */
   paused: boolean;
@@ -59,6 +61,7 @@ export function createSession(s: NewSession): Session {
     flagged: [],
     notes: '',
     scriptMarks: [],
+    audioPositions: {},
     revealUsed: false,
     paused: false,
     status: 'in_progress',
@@ -129,6 +132,21 @@ export function clearPart(
   const flagged = s.flagged.filter((n) => !drop.has(String(n)));
   const scriptMarks = s.scriptMarks.filter((line) => !scriptLines.includes(line));
   return changed(s, now, { answers, flagged, scriptMarks });
+}
+
+/** Highlighter marks in the audioscript, by line index (single-part mode only). */
+export function toggleScriptMark(s: Session, line: number, now: number): Session {
+  if (!open(s)) return s;
+  const scriptMarks = s.scriptMarks.includes(line)
+    ? s.scriptMarks.filter((l) => l !== line)
+    : [...s.scriptMarks, line].sort((a, b) => a - b);
+  return changed(s, now, { scriptMarks });
+}
+
+/** Not a change to the answers, so it doesn't move updatedAt. */
+export function setAudioPosition(s: Session, part: number, seconds: number): Session {
+  if (s.audioPositions[String(part)] === seconds) return s;
+  return { ...s, audioPositions: { ...s.audioPositions, [String(part)]: seconds } };
 }
 
 /** Full mock Listening plays straight through, so it can't be paused. */
@@ -214,6 +232,7 @@ export function fromAttempt(a: AttemptRecord): Session {
     flagged: a.flagged,
     notes: a.notes ?? '',
     scriptMarks: a.scriptMarks ?? [],
+    audioPositions: {},
     revealUsed: a.revealUsed,
     paused: false,
     status: a.status,

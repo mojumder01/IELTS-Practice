@@ -66,6 +66,9 @@ export interface ExamState {
   tick: () => void;
   setRevealAll: (on: boolean) => void;
   toggleShown: (key: string) => void;
+  toggleScriptMark: (line: number) => void;
+  /** Saved on the device as the audio plays; Firestore doesn't need it. */
+  setAudioPosition: (part: number, seconds: number) => void;
   hideAnswers: () => void;
   submit: () => Promise<void>;
   flush: () => Promise<void>;
@@ -93,6 +96,7 @@ export const SessionSchema = z.strictObject({
   flagged: z.array(z.number().int()),
   notes: z.string(),
   scriptMarks: z.array(z.number().int()),
+  audioPositions: z.record(z.string(), z.number().nonnegative()).default({}),
   revealUsed: z.boolean(),
   paused: z.boolean(),
   status: z.enum(['in_progress', 'submitted']),
@@ -323,6 +327,10 @@ export function createExamStore(deps: ExamDeps) {
         if (on) update((s, now) => engine.markRevealUsed(s, now), 'change');
       },
       hideAnswers: () => set({ revealAll: false, shown: {} }),
+      toggleScriptMark: (line) =>
+        update((s, now) => engine.toggleScriptMark(s, line, now), 'change'),
+      setAudioPosition: (part, seconds) =>
+        update((s) => engine.setAudioPosition(s, part, seconds), null),
 
       submit: async () => {
         update((s, now) => engine.submit(s, now), 'submit');
