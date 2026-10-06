@@ -130,22 +130,35 @@ real `b21t1-p1.mp3` recording replacing the placeholder) replaces it and updates
 `content/`. The Book 21 Test 1 Listening audio in the repo is 110 s of near-silence until you
 add the real recording.
 
-## Open decision: Writing AI on the free plan (SPEC section 13)
+## 10. Writing AI feedback
 
-Checked on 6 Oct 2026, ahead of Phase 5:
+Writing feedback calls Gemini through **Firebase AI Logic** with the **Gemini Developer API**
+provider, whose free tier needs no billing account (the Vertex AI provider needs Blaze: don't
+pick it). Checked on 6 Oct 2026.
 
-- **Spark works.** Firebase AI Logic is free to use, and with the **Gemini Developer API**
-  provider its free tier needs no billing account. The Vertex AI provider needs Blaze, so don't
-  pick it.
-- **Model:** choose a current stable **Flash** model when Phase 5 starts and keep its name in one
-  constant in `src/lib/ai.ts`. The Gemini 2.5 models retire on 20 October 2026, so don't build on
-  them.
-- **Quota:** Flash models' free limits are in the order of 10 requests a minute and a few hundred
-  or more a day, far above one person's essays. Google changes these often: confirm the current
-  limits in Google AI Studio and in the Firebase console's AI Logic page before Phase 5, and keep
-  the paste-your-own-key fallback from SPEC section 13 in mind.
-- Turn on **App Check** (reCAPTCHA) for AI Logic in Phase 5, so only the deployed app can spend
-  the quota.
+1. **Build → AI Logic → Get started**, choose **Gemini Developer API**, and let it enable the
+   APIs it lists. No API key goes into the app: AI Logic holds it.
+2. **Model.** The app uses `gemini-3.6-flash` (`WRITING_MODEL` in `src/lib/aiFirebase.ts`). To
+   use another current Flash model without a code change, add a repository secret
+   `VITE_WRITING_MODEL` with its name (and the same line in `.env.local`). Don't pick a Gemini 2.5
+   model: they retire on 20 October 2026.
+3. **Quota.** Flash models' free limits are in the order of 10 requests a minute and a few
+   hundred a day, far above one person's essays, but Google changes them often. Check the
+   current limits in Google AI Studio and on the console's AI Logic page. If a request is
+   refused, the app says "The AI couldn’t be reached" and offers Try again.
+4. **App Check (recommended).** It keeps the free quota for this app only.
+   - At [google.com/recaptcha/admin](https://www.google.com/recaptcha/admin/create) create a
+     **reCAPTCHA v3** key (free, no billing) for your Hosting domains (`<project>.web.app`,
+     `<project>.firebaseapp.com`, plus `localhost` if you want it locally).
+   - Firebase console: **Build → App Check → Apps →** your web app **→ reCAPTCHA**, paste the
+     **secret key**, save.
+   - Add the **site key** as the repository secret `VITE_RECAPTCHA_SITE_KEY` (and in `.env.local`),
+     then push so the next deploy includes it.
+   - Once the console shows verified requests for a day, **App Check → APIs → Firebase AI Logic →
+     Enforce**. Don't enforce before the deployed app sends tokens, or feedback stops working.
+
+Without the site key the app still works; App Check simply isn't on. The e2e tests never call
+the model: they answer with `src/lib/aiFake.ts`.
 
 ## Running the tests
 

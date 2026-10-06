@@ -297,6 +297,13 @@ interface Attempt {
 canvas); group-level `options` remain for shared lists. The media manifest is
 `content/media-manifest.json` (not under `public/`, so the file list isn't published).
 
+**Implementation notes (Phase 5).** Writing feedback is per task:
+`writing: { task1, task2, ai?: { task1?: WritingFeedback; task2?: WritingFeedback } }`. Writing's
+Practice and Exam modes are the engine's `single` (one task, 20 or 40 min) and `full` (both
+tasks, 60 min) modes, and its URL uses `part=` like the other modules rather than `task=`.
+"Evaluate my essay" and "Submit writing" submit and stay on the page, which then shows the
+read-only essays with their feedback.
+
 **Vocabulary document:** `word`, `pos`, `ipa`, `topic`, `meaning`, `bangla`, `example`, `source`
 (`{ testId, question? }` or `"manual"`), `status` (`new`, `learning`, `mastered`), `srs`
 (`{ due, intervalDays, ease, reps }`).
