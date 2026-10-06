@@ -1,0 +1,77 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-main
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+    with:
+      upload-dist: true
+    secrets: inherit
+
+  deploy:
+    name: Deploy Hosting and Firestore rules
+    needs: ci
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+      OWNER_UID: ${{ secrets.VITE_OWNER_UID }}
+      # firebase init hosting:github names this secret FIREBASE_SERVICE_ACCOUNT_<PROJECT_ID>;
+      # docs/SETUP.md step 6 explains matching it here and in preview.yml.
+      SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+
+      - name: Check deploy secrets
+        run: |
+          missing=()
+          for name in VITE_FIREBASE_API_KEY VITE_FIREBASE_AUTH_DOMAIN VITE_FIREBASE_APP_ID; do
+            [ -n "${!name}" ] || missing+=("$name")
+          done
+          [ -n "$PROJECT_ID" ] || missing+=(VITE_FIREBASE_PROJECT_ID)
+          [ -n "$SERVICE_ACCOUNT" ] || missing+=(FIREBASE_SERVICE_ACCOUNT)
+          if [ ${#missing[@]} -gt 0 ]; then
+            echo "::error::Missing repository secrets: ${missing[*]} (see docs/SETUP.md)"
+            exit 1
+          fi
+          if [[ ! "$OWNER_UID" =~ ^[A-Za-z0-9]{10,128}$ ]]; then
+            echo "::error::VITE_OWNER_UID is missing or is not a Firebase user ID (see docs/SETUP.md)"
+            exit 1
+          fi
+        env:
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist
+
+      - name: Put the owner UID into the Firestore rules
+        run: |
+          sed -i "s/\"OWNER_UID\"/\"$OWNER_UID\"/" firestore.rules
+          grep -q "\"$OWNER_UID\"" firestore.rules
+
+      - name: Deploy
+        run: |
+          key="$RUNNER_TEMP/service-account.json"
+          printf '%s' "$SERVICE_ACCOUNT" > "$key"
+          GOOGLE_APPLICATION_CREDENTIALS="$key" npx --yes firebase-tools@15.32.1 deploy \
+            --only hosting,firestore:rules,firestore:indexes \
+            --project "$PROJECT_ID" --non-interactive --message "${GITHUB_SHA::7}"
+          rm -f "$key"

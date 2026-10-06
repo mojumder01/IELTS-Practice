@@ -1,0 +1,14 @@
+// Only the owner's account can read or write anything (SPEC section 5).
+// The deploy workflow swaps the quoted placeholder below for the
+// VITE_OWNER_UID repository secret. Deployed as-is, it locks everyone out.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner() {
+      return request.auth != null && request.auth.uid == "OWNER_UID";
+    }
+    match /{document=**} {
+      allow read, write: if isOwner();
+    }
+  }
+}
