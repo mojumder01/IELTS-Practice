@@ -19,3 +19,9 @@ if (typeof HTMLMediaElement !== 'undefined') {
 afterEach(() => {
   cleanup();
 });
+
+// jsdom has no object URLs (Speaking plays takes from Blobs).
+if (typeof URL.createObjectURL !== 'function') {
+  URL.createObjectURL = () => 'blob:test';
+  URL.revokeObjectURL = () => {};
+}

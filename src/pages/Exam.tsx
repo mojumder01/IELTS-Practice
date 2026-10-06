@@ -4,6 +4,7 @@ import { FullPageStatus } from '../components/FullPageStatus';
 import { ExamShell } from '../components/exam/ExamShell';
 import { ListeningContent } from '../components/listening/ListeningContent';
 import { ReadingContent } from '../components/reading/ReadingContent';
+import { SpeakingContent } from '../components/speaking/SpeakingContent';
 import { WritingContent } from '../components/writing/WritingContent';
 import type { ExamMode } from '../engine/timer';
 import { useAuth } from '../lib/auth';
@@ -42,7 +43,9 @@ function Exam({ testId, module }: { testId: string; module: Module }) {
   // Load the test, then resume the unfinished sitting or start one from the URL.
   useEffect(() => {
     let cancelled = false;
-    const mode: ExamMode = params.get('mode') === 'full' ? 'full' : 'single';
+    // Speaking is one sitting across its three parts, with no timer to choose.
+    const mode: ExamMode =
+      module === 'speaking' || params.get('mode') === 'full' ? 'full' : 'single';
     const part = Math.max(1, Number.parseInt(params.get('part') ?? '1', 10) || 1);
     services
       .loadTest(testId)
@@ -135,6 +138,10 @@ function ModuleContent() {
   const writing = test.sections.writing;
   if (session.module === 'writing' && writing?.kind === 'writing') {
     return <WritingContent key={session.part} section={writing} />;
+  }
+  const speaking = test.sections.speaking;
+  if (session.module === 'speaking' && speaking?.kind === 'speaking') {
+    return <SpeakingContent key={session.part} section={speaking} />;
   }
   return (
     <p className="mx-auto max-w-[520px] px-6 py-12 text-center text-[15px] text-muted">

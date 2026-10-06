@@ -5,7 +5,11 @@ const port = 4173;
 // Containers with a preinstalled Chromium (whose build differs from this
 // Playwright version) point here instead of running `playwright install`.
 const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE;
-const launchOptions = executablePath ? { executablePath } : {};
+// Speaking records from Chromium's fake microphone (a steady tone), with no permission prompt.
+const launchOptions = {
+  ...(executablePath ? { executablePath } : {}),
+  args: ['--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream'],
+};
 
 // e2e runs its own production build against the Firebase emulators (a "demo-" project
 // that exists nowhere else), so results never depend on real credentials or a
@@ -29,6 +33,7 @@ export default defineConfig({
   reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]] : 'list',
   use: {
     baseURL: `http://localhost:${port}`,
+    permissions: ['microphone'],
     trace: 'retain-on-failure',
   },
   projects: [

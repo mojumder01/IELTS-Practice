@@ -13,6 +13,7 @@ import { canPause, hasAnswers } from '../../engine/session';
 import { timeLeftSec, type ExamMode } from '../../engine/timer';
 import { useIsPhone } from '../../lib/useMediaQuery';
 import { useExam } from '../../store/examContext';
+import { SpeakingTabs } from '../speaking/SpeakingTabs';
 import { useFeedbackRequest } from '../writing/useFeedbackRequest';
 import { ConfirmDialog } from './ConfirmDialog';
 import { ExamHeader } from './ExamHeader';
@@ -98,41 +99,50 @@ export function ExamShell({ children }: { children: ReactNode }) {
     `/test/${test.meta.testId}/${m}?mode=${mode}${single ? '&part=1' : ''}`;
   const lastPart = parts[parts.length - 1]?.part ?? 1;
   const writing = module === 'writing';
+  // Speaking is one sitting for all three parts with no timer, marked by self-assessment.
+  const speaking = module === 'speaking';
   // Writing stays on the page after submitting: the essays and their AI feedback are the result.
   const evaluate = writing
     ? () => void actions.submit().then(() => requestFeedback(session.part === 2 ? 2 : 1))
     : () => void actions.submit().then(() => navigate(`/results/${session.attemptId}`));
-  const labels = modeLabels(module);
+  const labels = speaking ? null : modeLabels(module);
 
   const action = submitted
     ? null
-    : single
+    : speaking
       ? {
-          label: writing ? 'Evaluate my essay' : `Evaluate my ${moduleName(module)}`,
-          short: 'Submit',
+          label: 'Finish speaking',
+          short: 'Finish',
           kind: 'evaluate' as const,
-          onClick: evaluate,
+          onClick: () => void actions.submit(),
         }
-      : session.part < lastPart
+      : single
         ? {
-            label: `Next ${word.toLowerCase()}`,
-            short: 'Next',
-            kind: 'next' as const,
-            onClick: () => actions.goToPart(session.part + 1),
+            label: writing ? 'Evaluate my essay' : `Evaluate my ${moduleName(module)}`,
+            short: 'Submit',
+            kind: 'evaluate' as const,
+            onClick: evaluate,
           }
-        : next && !writing
+        : session.part < lastPart
           ? {
-              label: `Next: ${moduleName(next)}`,
+              label: `Next ${word.toLowerCase()}`,
               short: 'Next',
               kind: 'next' as const,
-              onClick: () => void actions.submit().then(() => navigate(moduleHref(next))),
+              onClick: () => actions.goToPart(session.part + 1),
             }
-          : {
-              label: writing ? 'Submit writing' : 'Submit test',
-              short: 'Submit',
-              kind: 'evaluate' as const,
-              onClick: evaluate,
-            };
+          : next && !writing
+            ? {
+                label: `Next: ${moduleName(next)}`,
+                short: 'Next',
+                kind: 'next' as const,
+                onClick: () => void actions.submit().then(() => navigate(moduleHref(next))),
+              }
+            : {
+                label: writing ? 'Submit writing' : 'Submit test',
+                short: 'Submit',
+                kind: 'evaluate' as const,
+                onClick: evaluate,
+              };
 
   const changeMode = (target: ExamMode) => {
     setOptionsOpen(false);
@@ -144,10 +154,12 @@ export function ExamShell({ children }: { children: ReactNode }) {
     modeLabels: labels,
     onModeChange: changeMode,
     notesOpen,
-    onToggleNotes: () => {
-      setNotesOpen(!notesOpen);
-      setOptionsOpen(false);
-    },
+    onToggleNotes: speaking
+      ? null
+      : () => {
+          setNotesOpen(!notesOpen);
+          setOptionsOpen(false);
+        },
     revealLabel,
     revealing: revealAll,
     onToggleReveal: () => (revealAll ? actions.hideAnswers() : actions.setRevealAll(true)),
@@ -158,10 +170,12 @@ export function ExamShell({ children }: { children: ReactNode }) {
       if (session.paused) actions.resume();
       else actions.pause();
     },
-    onClear: () => {
-      setOptionsOpen(false);
-      setConfirm({ kind: 'clear' });
-    },
+    onClear: speaking
+      ? null
+      : () => {
+          setOptionsOpen(false);
+          setConfirm({ kind: 'clear' });
+        },
   };
   const trackName =
     module === 'reading'
@@ -175,7 +189,8 @@ export function ExamShell({ children }: { children: ReactNode }) {
     .filter((n) => session.answers[String(n)]?.trim()).length;
   const sectionNav = (
     <SectionNav
-      parts={shownParts}
+      // Speaking's part tabs sit above the page on a wide screen.
+      parts={speaking && !phone ? [] : shownParts}
       currentPart={session.part}
       onPickPart={actions.goToPart}
       previous={previous ? { label: moduleName(previous), href: moduleHref(previous) } : null}
@@ -219,18 +234,22 @@ export function ExamShell({ children }: { children: ReactNode }) {
 
       {!focus && !phone && (
         <div className="flex shrink-0 flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-border bg-surface px-4 py-2 sm:px-5">
-          <div className="flex flex-col gap-px">
-            <span className="text-sm font-semibold text-navy">
-              {word} {session.part}
-              {range && ` · Questions ${range}`}
-            </span>
-            {minutes && range && (
-              <span className="text-[13px] text-muted">
-                Spend about {minutes} minutes on Questions {range}, which are based on the passage
-                below.
+          {speaking ? (
+            <SpeakingTabs part={session.part} onPick={actions.goToPart} />
+          ) : (
+            <div className="flex flex-col gap-px">
+              <span className="text-sm font-semibold text-navy">
+                {word} {session.part}
+                {range && ` · Questions ${range}`}
               </span>
-            )}
-          </div>
+              {minutes && range && (
+                <span className="text-[13px] text-muted">
+                  Spend about {minutes} minutes on Questions {range}, which are based on the passage
+                  below.
+                </span>
+              )}
+            </div>
+          )}
           <span role="status" className="inline-flex items-center gap-1.5 text-xs text-muted">
             {saveError ? (
               <>
@@ -254,7 +273,7 @@ export function ExamShell({ children }: { children: ReactNode }) {
       <div className="relative min-h-0 flex-1">
         {/* Relative, so screen-reader-only text deep in the content can't stretch the page. */}
         <div className="relative h-full overflow-auto">
-          {submitted && !writing ? (
+          {submitted && !writing && !speaking ? (
             <div
               role="status"
               className="mx-auto flex max-w-[520px] flex-col gap-2 px-6 py-12 text-center"
@@ -321,7 +340,7 @@ export function ExamShell({ children }: { children: ReactNode }) {
 
       {confirm?.kind === 'mode' && (
         <ConfirmDialog
-          title={`Switch to ${labels[confirm.mode]}?`}
+          title={`Switch to ${modeLabels(module)[confirm.mode]}?`}
           message="This starts the module again: your answers, flags and notes are cleared and the timer restarts."
           confirmLabel="Switch and restart"
           onCancel={() => setConfirm(null)}

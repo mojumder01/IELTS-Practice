@@ -16,10 +16,12 @@ interface ExamHeaderProps {
   title: string;
   partLabel: string;
   mode: ExamMode;
-  modeLabels: Record<ExamMode, string>;
+  /** Null hides the mode switch (Speaking has one sitting for all three parts). */
+  modeLabels: Record<ExamMode, string> | null;
   onModeChange: (mode: ExamMode) => void;
   notesOpen: boolean;
-  onToggleNotes: () => void;
+  /** Null hides Notes (Speaking keeps its notes on the cue card). */
+  onToggleNotes: (() => void) | null;
   /** Null hides the lightbulb (Full mock, or the test doesn't allow it). */
   revealLabel: string | null;
   revealing: boolean;
@@ -29,7 +31,8 @@ interface ExamHeaderProps {
   canPause: boolean;
   paused: boolean;
   onTogglePause: () => void;
-  onClear: () => void;
+  /** Null hides Clear. */
+  onClear: (() => void) | null;
   focus: boolean;
   onToggleFocus: () => void;
 }
@@ -41,6 +44,7 @@ const textButton =
 
 export function ExamHeader(props: ExamHeaderProps) {
   const warning = props.secondsLeft !== null && isWarning(props.secondsLeft);
+  const labels = props.modeLabels;
   return (
     <header className="flex shrink-0 flex-wrap items-center justify-between gap-x-4 gap-y-2.5 bg-navy px-4 py-2.5 text-on-navy sm:px-5">
       <div className="flex min-w-0 items-center gap-3">
@@ -66,35 +70,43 @@ export function ExamHeader(props: ExamHeaderProps) {
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
-        <span className="text-[11px] font-semibold tracking-[0.1em] text-unanswered">TIMER</span>
-        <div className="flex gap-0.5 rounded-pill bg-navy-2 p-[3px]">
-          {(['single', 'full'] as const).map((m) => (
-            <button
-              key={m}
-              type="button"
-              aria-pressed={props.mode === m}
-              onClick={() => props.mode !== m && props.onModeChange(m)}
-              className={`min-h-[38px] rounded-pill px-3.5 text-[13px] font-semibold ${
-                props.mode === m ? 'bg-surface text-navy' : 'bg-transparent text-on-navy-muted'
-              }`}
-            >
-              {props.modeLabels[m]}
-            </button>
-          ))}
-        </div>
-        <button
-          type="button"
-          aria-label="Notes"
-          aria-expanded={props.notesOpen}
-          onClick={props.onToggleNotes}
-          className={
-            props.notesOpen
-              ? `${iconButton} border-surface bg-surface text-navy hover:text-navy`
-              : iconButton
-          }
-        >
-          <NotebookPen aria-hidden="true" className="size-[18px]" />
-        </button>
+        {labels && (
+          <>
+            <span className="text-[11px] font-semibold tracking-[0.1em] text-unanswered">
+              TIMER
+            </span>
+            <div className="flex gap-0.5 rounded-pill bg-navy-2 p-[3px]">
+              {(['single', 'full'] as const).map((m) => (
+                <button
+                  key={m}
+                  type="button"
+                  aria-pressed={props.mode === m}
+                  onClick={() => props.mode !== m && props.onModeChange(m)}
+                  className={`min-h-[38px] rounded-pill px-3.5 text-[13px] font-semibold ${
+                    props.mode === m ? 'bg-surface text-navy' : 'bg-transparent text-on-navy-muted'
+                  }`}
+                >
+                  {labels[m]}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+        {props.onToggleNotes && (
+          <button
+            type="button"
+            aria-label="Notes"
+            aria-expanded={props.notesOpen}
+            onClick={props.onToggleNotes}
+            className={
+              props.notesOpen
+                ? `${iconButton} border-surface bg-surface text-navy hover:text-navy`
+                : iconButton
+            }
+          >
+            <NotebookPen aria-hidden="true" className="size-[18px]" />
+          </button>
+        )}
         {props.revealLabel && (
           <button
             type="button"
@@ -136,10 +148,12 @@ export function ExamHeader(props: ExamHeaderProps) {
       </div>
 
       <div className="flex items-center gap-2">
-        <button type="button" onClick={props.onClear} className={textButton}>
-          <Eraser aria-hidden="true" className="size-4" />
-          Clear
-        </button>
+        {props.onClear && (
+          <button type="button" onClick={props.onClear} className={textButton}>
+            <Eraser aria-hidden="true" className="size-4" />
+            Clear
+          </button>
+        )}
         <button
           type="button"
           aria-label="Focus mode"
