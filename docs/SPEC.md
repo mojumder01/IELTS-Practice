@@ -314,6 +314,16 @@ none. `speaking.covered` holds the ticked Part 2 points (`point-1` … the closi
 `speaking.selfScores` may be partial until all four whole bands are chosen. "Finish speaking"
 submits and stays on the page.
 
+**Implementation notes (Phase 7).** `users/{uid}` holds `{ targetBand, examDate? }` (target 7.0
+until set; edited from the Dashboard's "Edit goals"). A module's band comes from its latest
+submitted attempt with no answers revealed: Listening and Reading from the score, Writing from
+the AI feedback ((Task 1 + 2 × Task 2) ÷ 3, or Task 2 alone as an estimate), Speaking from all
+four self-scores; attempts without a band don't count. Results re-mark Reading and Listening from
+the saved answers, and when a question has no `explanation` the review shows where the answer is
+(the paragraph and its words, or the audioscript time and words). History lists finished
+attempts; the one in progress is on the Dashboard and in the Library's Continue banner. Starting a
+module from the Dashboard opens the first test that module hasn't been finished on.
+
 **Vocabulary document:** `word`, `pos`, `ipa`, `topic`, `meaning`, `bangla`, `example`, `source`
 (`{ testId, question? }` or `"manual"`), `status` (`new`, `learning`, `mastered`), `srs`
 (`{ due, intervalDays, ease, reps }`).
