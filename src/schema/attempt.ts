@@ -87,7 +87,8 @@ export const AttemptSchema = z.strictObject({
     .optional(),
   speaking: z
     .strictObject({
-      selfScores: z.record(SpeakingCriterionSchema, band),
+      // Partial while the attempt is in progress; the band needs all four.
+      selfScores: z.partialRecord(SpeakingCriterionSchema, band),
       covered: z.array(z.string()),
       recordingKeys: z.array(z.string()),
     })

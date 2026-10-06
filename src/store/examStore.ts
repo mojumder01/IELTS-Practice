@@ -6,8 +6,13 @@ import { markParts, scoreResults } from '../engine/scoring';
 import * as engine from '../engine/session';
 import type { AttemptRecord, Session } from '../engine/session';
 import { durationSec, stopTimer, type ExamMode } from '../engine/timer';
+import type { SpeakingCriterion } from '../engine/speaking';
 import type { FeedbackStatus } from '../engine/writing';
-import { WritingFeedbackSchema, type WritingFeedback } from '../schema/attempt';
+import {
+  SpeakingCriterionSchema,
+  WritingFeedbackSchema,
+  type WritingFeedback,
+} from '../schema/attempt';
 import { ModuleSchema, type Module, type TestFile } from '../schema/test';
 
 /** Device storage for the live sitting (localStorage in the app). */
@@ -76,6 +81,9 @@ export interface ExamState {
   setFeedback: (feedback: WritingFeedback) => void;
   setFeedbackStatus: (task: 1 | 2, status: FeedbackStatus) => void;
   setFeedbackOpen: (open: boolean) => void;
+  setSelfScore: (criterion: SpeakingCriterion, band: number | null) => void;
+  toggleCovered: (point: string) => void;
+  addRecording: (key: string) => void;
   /** Saved on the device as the audio plays; Firestore doesn't need it. */
   setAudioPosition: (part: number, seconds: number) => void;
   hideAnswers: () => void;
@@ -115,6 +123,13 @@ export const SessionSchema = z.strictObject({
       task2: WritingFeedbackSchema.optional(),
     })
     .default({}),
+  speaking: z
+    .strictObject({
+      selfScores: z.partialRecord(SpeakingCriterionSchema, z.number()),
+      covered: z.array(z.string()),
+      recordingKeys: z.array(z.string()),
+    })
+    .default({ selfScores: {}, covered: [], recordingKeys: [] }),
   revealUsed: z.boolean(),
   paused: z.boolean(),
   status: z.enum(['in_progress', 'submitted']),
@@ -373,6 +388,10 @@ export function createExamStore(deps: ExamDeps) {
       setFeedbackStatus: (task, status) =>
         set({ feedbackStatus: { ...get().feedbackStatus, [`task${task}`]: status } }),
       setFeedbackOpen: (feedbackOpen) => set({ feedbackOpen }),
+      setSelfScore: (criterion, band) =>
+        update((s, now) => engine.setSelfScore(s, criterion, band, now), 'change'),
+      toggleCovered: (point) => update((s, now) => engine.toggleCovered(s, point, now), 'change'),
+      addRecording: (key) => update((s, now) => engine.addRecording(s, key, now), 'change'),
       toggleScriptMark: (line) =>
         update((s, now) => engine.toggleScriptMark(s, line, now), 'change'),
       setAudioPosition: (part, seconds) =>

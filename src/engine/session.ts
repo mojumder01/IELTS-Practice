@@ -2,6 +2,7 @@ import type { Attempt } from '../schema/attempt';
 import type { WritingFeedback } from '../schema/attempt';
 import type { Module } from '../schema/test';
 import type { Score } from './scoring';
+import type { SelfScores, SpeakingCriterion } from './speaking';
 import {
   createTimer,
   isExpired,
@@ -28,6 +29,8 @@ export interface Session {
   /** Writing: the two essays and any AI feedback on them. */
   essays: { task1: string; task2: string };
   feedback: { task1?: WritingFeedback; task2?: WritingFeedback };
+  /** Speaking: self-scores, ticked cue-card points and the takes kept on this device. */
+  speaking: SpeakingState;
   /** Where each Listening part's audio got to, by part number; restored on reload. */
   audioPositions: Record<string, number>;
   revealUsed: boolean;
@@ -41,6 +44,12 @@ export interface Session {
   startedAt: number;
   updatedAt: number;
   submittedAt: number | null;
+}
+
+export interface SpeakingState {
+  selfScores: SelfScores;
+  covered: string[];
+  recordingKeys: string[];
 }
 
 export interface NewSession {
@@ -68,6 +77,7 @@ export function createSession(s: NewSession): Session {
     audioPositions: {},
     essays: { task1: '', task2: '' },
     feedback: {},
+    speaking: { selfScores: {}, covered: [], recordingKeys: [] },
     revealUsed: false,
     paused: false,
     status: 'in_progress',
@@ -159,6 +169,35 @@ export function setFeedback(s: Session, feedback: WritingFeedback, now: number):
   return { ...s, feedback: { ...s.feedback, [`task${feedback.task}`]: feedback }, updatedAt: now };
 }
 
+/** A self-assessed band for one criterion, or null to clear it; final once submitted. */
+export function setSelfScore(
+  s: Session,
+  criterion: SpeakingCriterion,
+  band: number | null,
+  now: number,
+): Session {
+  if (!open(s)) return s;
+  const selfScores = { ...s.speaking.selfScores };
+  if (band === null) delete selfScores[criterion];
+  else selfScores[criterion] = band;
+  return changed(s, now, { speaking: { ...s.speaking, selfScores } });
+}
+
+export function toggleCovered(s: Session, point: string, now: number): Session {
+  if (!open(s)) return s;
+  const { covered } = s.speaking;
+  const next = covered.includes(point) ? covered.filter((p) => p !== point) : [...covered, point];
+  return changed(s, now, { speaking: { ...s.speaking, covered: next } });
+}
+
+/** A take saved on this device; the attempt lists its key so Results can find it later. */
+export function addRecording(s: Session, key: string, now: number): Session {
+  if (!open(s) || s.speaking.recordingKeys.includes(key)) return s;
+  return changed(s, now, {
+    speaking: { ...s.speaking, recordingKeys: [...s.speaking.recordingKeys, key] },
+  });
+}
+
 /** Highlighter marks in the audioscript, by line index (single-part mode only). */
 export function toggleScriptMark(s: Session, line: number, now: number): Session {
   if (!open(s)) return s;
@@ -242,6 +281,7 @@ export function toAttempt(s: Session, now: number): AttemptRecord {
     revealUsed: s.revealUsed,
     ...(s.score ? { score: s.score } : {}),
     ...(s.module === 'writing' ? { writing: { ...s.essays, ai: s.feedback } } : {}),
+    ...(s.module === 'speaking' ? { speaking: s.speaking } : {}),
   };
 }
 
@@ -261,6 +301,7 @@ export function fromAttempt(a: AttemptRecord): Session {
     audioPositions: {},
     essays: { task1: a.writing?.task1 ?? '', task2: a.writing?.task2 ?? '' },
     feedback: a.writing?.ai ?? {},
+    speaking: a.speaking ?? { selfScores: {}, covered: [], recordingKeys: [] },
     revealUsed: a.revealUsed,
     paused: false,
     status: a.status,
