@@ -89,12 +89,69 @@ describe('workbook round trip', () => {
 });
 
 describe('the template', () => {
-  it('has every sheet, with only headers', () => {
+  it('has every sheet, with a header and one sample row in each table', () => {
     const book = templateBook();
     expect(book.map((g) => g.name)).toEqual(Object.values(SHEETS));
-    for (const name of [SHEETS.listening, SHEETS.script, SHEETS.groups, SHEETS.questions]) {
-      expect(sheet(book, name).rows).toHaveLength(1);
+    for (const name of [
+      SHEETS.listening,
+      SHEETS.script,
+      SHEETS.passages,
+      SHEETS.groups,
+      SHEETS.questions,
+      SHEETS.speaking,
+    ]) {
+      const rows = sheet(book, name).rows;
+      expect(rows).toHaveLength(2);
+      expect(String(rows[1]![0])).toMatch(/^e\.g\. /);
     }
+    expect(sheet(book, SHEETS.test).rows[0]).toEqual(['Field', 'Value', 'Example']);
+    expect(sheet(book, SHEETS.writing).rows[2]).toEqual(['Task 1 image', '', 'b22t1-w1.png']);
+  });
+
+  it('skips the sample rows when the template is uploaded as it is', () => {
+    const { draft, problems } = bookToTest(filled({}), manifest);
+    expect(Object.keys(draft!.sections)).toEqual([]);
+    expect(problems.map((p) => p.message)).toEqual([
+      'The file has no sections: fill in at least one sheet.',
+    ]);
+  });
+
+  it('reads the sample rows as a small test once "e.g." is typed over', () => {
+    const book = filled({});
+    for (const g of book) {
+      const first = g.rows[1]?.[0];
+      if (typeof first === 'string' && first.startsWith('e.g. ')) g.rows[1]![0] = first.slice(5);
+    }
+    sheet(book, SHEETS.writing).rows = sheet(book, SHEETS.writing).rows.map((r, i) =>
+      i === 0 ? r : [r[0]!, r[2]!],
+    );
+    const { draft, problems } = bookToTest(book, manifest);
+    expect(problems).toEqual([]);
+    expect(Object.keys(draft!.sections)).toEqual([
+      'listening-1',
+      'reading-1',
+      'writing',
+      'speaking',
+    ]);
+    expect(draft!.sections['reading-1']).toMatchObject({
+      title: 'Urban Bees',
+      groups: [
+        {
+          groupId: 'R1-A',
+          questions: [
+            {
+              numbers: [1],
+              acceptedAnswers: [['TRUE']],
+              location: { paragraph: 'A', sentence: 2 },
+            },
+          ],
+        },
+      ],
+    });
+    expect(draft!.sections['listening-1']).toMatchObject({
+      durationSec: 400,
+      script: [{ start: 14, speaker: 'Woman', answer: { question: 1, highlight: 'Morgan' } }],
+    });
   });
 
   it('marks time columns as text', () => {
@@ -275,6 +332,7 @@ describe('filling it in', () => {
     });
   });
 
+  // Row 2 of each sheet is the template's sample row, so these rows start at 3.
   it('reports what it can’t read, by sheet and row', () => {
     const { problems } = bookToTest(
       filled({
@@ -293,28 +351,28 @@ describe('filling it in', () => {
       manifest,
     );
     expect(problems).toEqual([
-      { sheet: 'Groups', row: 2, message: 'Part needs a number from 1 to 3.' },
+      { sheet: 'Groups', row: 3, message: 'Part needs a number from 1 to 3.' },
       {
         sheet: 'Groups',
-        row: 3,
+        row: 4,
         message: '"Crossword" isn\'t a question type: see the list on How to fill.',
       },
-      { sheet: 'Groups', row: 4, message: 'Max words is a number from 1 to 5.' },
-      { sheet: 'Groups', row: 4, message: 'Numbers allowed is Yes or No.' },
-      { sheet: 'Questions', row: 2, message: "Group R1-Z isn't on the Groups sheet." },
+      { sheet: 'Groups', row: 5, message: 'Max words is a number from 1 to 5.' },
+      { sheet: 'Groups', row: 5, message: 'Numbers allowed is Yes or No.' },
+      { sheet: 'Questions', row: 3, message: "Group R1-Z isn't on the Groups sheet." },
       {
         sheet: 'Questions',
-        row: 3,
+        row: 4,
         message: 'Number is like 7, or 21-22 for a question with two answers.',
       },
       {
         sheet: 'Questions',
-        row: 4,
+        row: 5,
         message: 'Answer needs 2 parts separated by ";", one for each number.',
       },
       {
         sheet: 'Questions',
-        row: 5,
+        row: 6,
         message:
           'Paragraph, Sentence and Answer words go together (or write Not given in Paragraph).',
       },

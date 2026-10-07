@@ -146,7 +146,8 @@ add the real recording.
 ## Entering tests in the admin
 
 **Bulk upload from Excel.** On **Admin → Tests**, **Download the template**, fill it in with
-Excel or Google Sheets (its **How to fill** sheet explains every column), and upload one or more
+Excel or Google Sheets (its **How to fill** sheet explains every column, and each sheet has a
+sample row starting with `e.g.`, skipped on upload: type over it or delete it), and upload one or more
 `.xlsx` files under **Bulk upload**. Each becomes a draft; anything that can't be read is listed
 by sheet and row, and nothing from that file is saved. A file for a test that already exists
 offers to replace its draft. Upload a test's audio first (above) so the sheet's file names are

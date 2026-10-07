@@ -345,6 +345,9 @@ interface Table {
   rows: { row: number; get: (col: string) => Cell }[];
 }
 
+/** The template's sample rows start with "e.g." and are skipped; typing over the first cell makes one real. */
+export const EXAMPLE_ROW = /^e\.g\./i;
+
 function table(
   grid: Grid | undefined,
   name: string,
@@ -363,7 +366,7 @@ function table(
   const rows = grid.rows
     .slice(1)
     .flatMap((cells, i) =>
-      cells.some((c) => cellText(c) !== '')
+      cells.some((c) => cellText(c) !== '') && !EXAMPLE_ROW.test(cellText(cells[0] ?? null))
         ? [{ row: i + 2, get: (col: string) => cells[index.get(col) ?? -1] ?? null }]
         : [],
     );
@@ -737,6 +740,9 @@ const HELP_ROWS: Cell[][] = [
   [''],
   ['Fill the sheets you need and leave the others empty. Upload the file on Admin → Tests.'],
   [
+    'Each sheet has a sample row starting with "e.g.". It is skipped: type over it or delete it. The Test and Writing sheets show samples in their Example column.',
+  ],
+  [
     'Each uploaded file becomes a draft: preview it, finish the Before publishing list, then publish.',
   ],
   [''],
@@ -975,9 +981,100 @@ export function testToBook(test: TestFile): Grid[] {
 }
 
 /** The empty workbook offered as "Download the template". */
+/** One sample row per sheet, under the header (EXAMPLE_ROW). It's a tiny test of its own. */
+const EXAMPLE_ROWS: Partial<Record<string, Cell[]>> = {
+  [SHEETS.listening]: [
+    'e.g. 1',
+    'b22t1-p1.mp3',
+    '6:40',
+    'You will hear a woman phoning a sports centre.',
+  ],
+  [SHEETS.script]: [
+    'e.g. 1',
+    '0:14',
+    'Woman',
+    'My surname is Morgan, that’s M-O-R-G-A-N.',
+    1,
+    'Morgan',
+  ],
+  [SHEETS.passages]: [
+    'e.g. 1',
+    'Urban Bees',
+    'How cities became refuges for bees',
+    'A',
+    'Cities are becoming refuges for bees. Rooftop hives now produce honey in many capitals.',
+  ],
+  [SHEETS.groups]: [
+    'e.g. R1-A',
+    'Reading',
+    1,
+    TYPE_LABELS.TRUE_FALSE_NOT_GIVEN,
+    'Do the following statements agree with the information given in Reading Passage 1?',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+  ],
+  [SHEETS.questions]: [
+    'e.g. R1-A',
+    1,
+    'Bees are kept on roofs in big cities.',
+    '',
+    'TRUE',
+    'Paragraph A says rooftop hives produce honey in many capitals.',
+    'A',
+    2,
+    'Rooftop hives now produce honey in many capitals.',
+  ],
+  [SHEETS.speaking]: [
+    'e.g. 2',
+    'Topic',
+    'Describe a public place in your city that you enjoy visiting.',
+  ],
+};
+
+/** Samples beside the Field/Value sheets' values, in a third column the upload ignores. */
+const EXAMPLE_VALUES: Record<string, Record<string, Cell>> = {
+  [SHEETS.test]: {
+    Book: 'Book 22',
+    'Test number': 1,
+    Track: 'Academic or General Training',
+    'Students can show answers': 'Yes or No',
+  },
+  [SHEETS.writing]: {
+    'Task 1 question':
+      'The chart below shows the number of visitors to three museums between 2010 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
+    'Task 1 image': 'b22t1-w1.png',
+    'Task 1 image description':
+      'Bar chart: visitors to the Science, Art and History museums, 2010–2020.',
+    'Task 1 minimum words': 150,
+    'Task 2 question':
+      'Some people believe that cities should spend more on public transport than on building new roads. To what extent do you agree or disagree?',
+    'Task 2 minimum words': 250,
+    'Task 2 model answer': '(optional) A model answer students see after writing.',
+  },
+};
+
+/** The empty workbook offered as "Download the template", with a sample row in each sheet. */
 export function templateBook(): Grid[] {
   const blank = blankTest('', 1, 'academic');
-  return testToBook(blank);
+  return testToBook(blank).map((g) => {
+    const example = EXAMPLE_ROWS[g.name];
+    if (example) return { ...g, rows: [g.rows[0]!, [...example], ...g.rows.slice(1)] };
+    const values = EXAMPLE_VALUES[g.name];
+    if (values) {
+      return {
+        ...g,
+        rows: g.rows.map((r, i) => [...r, i === 0 ? 'Example' : (values[cellText(r[0])] ?? '')]),
+        widths: [...(g.widths ?? []), 60],
+      };
+    }
+    return g;
+  });
 }
 
 /** The file name for a test's workbook. */
