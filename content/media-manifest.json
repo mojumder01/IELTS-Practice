@@ -1,6 +1,30 @@
 {
   "files": [
     {
+      "path": "/media/audio/b10t1-p1.5be3e1f5.mp3",
+      "kind": "audio",
+      "bytes": 3648409,
+      "durationSec": 456
+    },
+    {
+      "path": "/media/audio/b10t1-p2.732550fb.mp3",
+      "kind": "audio",
+      "bytes": 3042786,
+      "durationSec": 380.3
+    },
+    {
+      "path": "/media/audio/b10t1-p3.75288c98.mp3",
+      "kind": "audio",
+      "bytes": 3121363,
+      "durationSec": 390.1
+    },
+    {
+      "path": "/media/audio/b10t1-p4.a3262c9a.mp3",
+      "kind": "audio",
+      "bytes": 3198476,
+      "durationSec": 399.8
+    },
+    {
       "path": "/media/audio/b21t1-p1.28d1e3ca.mp3",
       "kind": "audio",
       "bytes": 880684,
