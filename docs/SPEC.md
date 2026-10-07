@@ -613,6 +613,10 @@ Start times must increase. A time out of order gets an orange border.
 3. Images under 700 KB may instead be stored inline in the section document as a data URL if you
    want to skip the deploy.
 
+Without a laptop (added after Phase 10): upload the file to `media-inbox/` on GitHub. The Media
+workflow runs step 1 and commits, then starts Deploy; each deploy writes `media/manifest` and
+relinks tests and drafts that name a replaced file or its upload name (`scripts/media-sync.ts`).
+
 **Before publishing** (all must pass; Publish stays disabled until they do)
 
 - [ ] Every question has at least one accepted answer
@@ -629,6 +633,13 @@ Start times must increase. A time out of order gets an orange border.
 **Publish** sets `status: 'live'` and writes `tests/{testId}` and its sections in one batched
 write. **Import** accepts a test JSON file, validates it, shows a diff and only then replaces the
 draft. **Export** downloads the test as JSON so you can commit it to `content/tests/`.
+
+**Bulk upload** (added after Phase 10): an Excel template with one sheet per kind of row (Test,
+Listening, Script, Passages, Groups, Questions, Writing, Speaking, plus How to fill). Uploaded
+workbooks become drafts; rows that can't be read are reported by sheet and row and nothing from
+that file is saved. Completeness is left to Before publishing, as for a typed draft. Each test
+page can download itself as a workbook. Logic: `src/admin/sheets.ts`; files: `src/admin/xlsx.ts`
+(`read-excel-file`, `write-excel-file`, loaded only in the admin).
 
 ## 9. Design system
 

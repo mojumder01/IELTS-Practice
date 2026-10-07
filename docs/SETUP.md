@@ -86,8 +86,10 @@ Then:
 3. The service account can deploy Hosting but not Firestore rules. In the
    [Google Cloud console](https://console.cloud.google.com/iam-admin/iam), select the project,
    find the principal that starts with `github-action-`, choose **Edit**, and add these roles:
-   **Firebase Rules Admin**, **Cloud Datastore Index Admin** and **Service Usage Consumer**.
-   If a deploy still stops with a 403, its log names the missing permission.
+   **Firebase Rules Admin**, **Cloud Datastore Index Admin**, **Service Usage Consumer** and
+   **Cloud Datastore User** (each deploy updates the media list in Firestore, and the Seed
+   workflow writes content). If a deploy still stops with a 403, its log names the missing
+   permission. A role can take a few minutes to start working.
 
 ## 7. Deploy
 
@@ -128,13 +130,28 @@ sections, writes `media/manifest`, and adds the starter vocabulary to your accou
 `FIREBASE_SERVICE_ACCOUNT` and `VITE_OWNER_UID` secrets. Run it after the deploy that carries your
 content or media changes.
 
-**New audio or images:** put the file in `public/media/audio/` or `public/media/img/`, run
-`npm run media` (needs ffmpeg), then commit. A file named like an existing one (for example a
+**New audio or images, from a phone:** on GitHub open the `media-inbox` folder, **Add file →
+Upload files**, and commit to `main`. The **Media** workflow converts and renames them, commits
+the result and starts **Deploy**; each deploy also writes the media list to Firestore and points
+tests and drafts that name a replaced file (or its upload name, from an Excel sheet) at the new
+one. About 10 minutes later the files are in the pickers. Name files by test (`b22t1-p1.mp3`):
+a name that's already used replaces that file. The website takes files up to 25 MB.
+
+**New audio or images, on a laptop:** put the file in `public/media/audio/` or `public/media/img/`,
+run `npm run media` (needs ffmpeg), then commit. A file named like an existing one (for example a
 real `b21t1-p1.mp3` recording replacing the placeholder) replaces it and updates the paths in
 `content/`. The Book 21 Test 1 Listening audio in the repo is 110 s of near-silence until you
 add the real recording.
 
 ## Entering tests in the admin
+
+**Bulk upload from Excel.** On **Admin → Tests**, **Download the template**, fill it in with
+Excel or Google Sheets (its **How to fill** sheet explains every column), and upload one or more
+`.xlsx` files under **Bulk upload**. Each becomes a draft; anything that can't be read is listed
+by sheet and row, and nothing from that file is saved. A file for a test that already exists
+offers to replace its draft. Upload a test's audio first (above) so the sheet's file names are
+found; otherwise the next deploy links them. Any test page's **Download this test as Excel**
+gives a filled-in example.
 
 Open **Admin** from the top bar. Create a test, fill each tab, and watch **Before publishing** in
 the right column; **Publish test** unlocks when every line passes. Drafts save themselves. To keep

@@ -148,15 +148,16 @@ export function AdminHome() {
             Media files
           </h2>
           <p className="m-0 text-sm text-muted">
-            To add one, put it in public/media/audio or public/media/img, run npm run media, then
-            commit and push. After the deploy and npm run seed, it shows here and in the pickers.
+            To add audio or an image, upload it to the media-inbox folder of the GitHub repository
+            (Add file → Upload files). About 10 minutes later it’s listed here and in the pickers.
+            Name files by test, like b22t1-p1.mp3: a name that’s already used replaces that file.
           </p>
         </div>
         {manifest === undefined ? (
           <p className="m-0 text-sm text-muted">Loading…</p>
         ) : !manifest ? (
           <p className="m-0 text-sm text-warn-text">
-            No media manifest in Firestore yet: run npm run seed.
+            No media list in Firestore yet: the next deploy writes it.
           </p>
         ) : (
           <ul className="m-0 flex list-none flex-col gap-1 p-0 font-mono text-[13px]">

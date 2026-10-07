@@ -46,7 +46,7 @@ test('download the template, upload a filled-in workbook, and get a draft', asyn
   await expect(
     files.getByText('This isn’t an Excel workbook (.xlsx).', { exact: false }),
   ).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Book 98 · Test 3' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Book 98 · Test 3', exact: true })).toBeVisible();
   // Every page works at 390px, results included.
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
     page.viewportSize()!.width,
@@ -80,5 +80,5 @@ test('lists what to fix, by sheet and row', async ({ page }) => {
   const files = page.getByRole('list', { name: 'Uploaded files' });
   await expect(files.getByText('Not uploaded: fix', { exact: false })).toBeVisible();
   await expect(files.getByText('Groups row 2:')).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Book 98 · Test 3' })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Book 98 · Test 3', exact: true })).toHaveCount(0);
 });

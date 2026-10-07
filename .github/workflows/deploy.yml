@@ -3,6 +3,8 @@ name: Deploy
 on:
   push:
     branches: [main]
+    # Uploads to media-inbox/ go through media.yml first, which starts this when it's done.
+    paths-ignore: ['media-inbox/**']
   workflow_dispatch:
 
 concurrency:
@@ -35,6 +37,7 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
+          cache: npm
 
       - name: Check deploy secrets
         run: |
@@ -74,4 +77,14 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS="$key" npx --yes firebase-tools@15.32.1 deploy \
             --only hosting,firestore:rules,firestore:indexes \
             --project "$PROJECT_ID" --non-interactive --message "${GITHUB_SHA::7}"
+          rm -f "$key"
+
+      # Needs the service account's Cloud Datastore User role (docs/SETUP.md, step 6).
+      - name: Update the media list and links in Firestore
+        run: |
+          npm ci
+          key="$RUNNER_TEMP/service-account.json"
+          printf '%s' "$SERVICE_ACCOUNT" > "$key"
+          GOOGLE_APPLICATION_CREDENTIALS="$key" VITE_FIREBASE_PROJECT_ID="$PROJECT_ID" \
+            npx tsx scripts/media-sync.ts
           rm -f "$key"
