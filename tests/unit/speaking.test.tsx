@@ -111,7 +111,9 @@ afterEach(() => {
   Reflect.deleteProperty(globalThis, 'jest');
 });
 
-describe('Speaking page', () => {
+// Two tests play out minutes of recording under fake timers; every tick of the level meter
+// re-renders, so they take a few seconds of real time and need more than the default 5 s.
+describe('Speaking page', { timeout: 20_000 }, () => {
   it('shows the part tabs and the cue card, with no timer or mode switch', async () => {
     const { user } = await renderSpeaking();
     expect(screen.getByText('Book 21 · Test 1 · Speaking')).toBeInTheDocument();
