@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { diffTests, type DiffLine } from '../../admin/draft';
+import { bookFileName, testToBook } from '../../admin/sheets';
+import { downloadBook } from '../../admin/xlsx';
 import { TestFileSchema, type TestFile } from '../../schema/test';
 import { zodIssues } from '../../schema/validate';
 import { primaryButton, smallButton } from './ui';
@@ -114,6 +116,21 @@ export function ImportExport({ draft, onReplace }: ImportExportProps) {
       >
         Download this test as JSON
       </button>
+      <button
+        type="button"
+        onClick={() => {
+          setError(null);
+          downloadBook(testToBook(draft), bookFileName(draft)).catch(() =>
+            setError('The Excel file couldn’t be made. Reload the page and try again.'),
+          );
+        }}
+        className={smallButton}
+      >
+        Download this test as Excel
+      </button>
+      <p className="m-0 text-xs text-muted">
+        To change it in Excel, edit the file and upload it under Bulk upload on the Tests page.
+      </p>
     </section>
   );
 }

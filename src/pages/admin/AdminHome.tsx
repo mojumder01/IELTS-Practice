@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { blankTest, testIdFor } from '../../admin/draft';
+import { BulkUpload } from '../../components/admin/BulkUpload';
 import { useAdminTests } from '../../components/admin/useAdminTests';
 import { input, label, panel, primaryButton } from '../../components/admin/ui';
 import { useServices } from '../../lib/services';
@@ -11,7 +12,8 @@ import type { Track } from '../../schema/test';
 export function AdminHome() {
   const services = useServices();
   const navigate = useNavigate();
-  const rows = useAdminTests();
+  const [version, setVersion] = useState(0);
+  const rows = useAdminTests(version);
   const [book, setBook] = useState('');
   const [number, setNumber] = useState('1');
   const [track, setTrack] = useState<Track>('academic');
@@ -133,6 +135,12 @@ export function AdminHome() {
           )}
         </form>
       </section>
+
+      <BulkUpload
+        manifest={manifest}
+        existing={new Set(rows?.map((r) => r.testId))}
+        onSaved={() => setVersion((v) => v + 1)}
+      />
 
       <section aria-labelledby="media-h" className={panel}>
         <div className="flex flex-col gap-1">
