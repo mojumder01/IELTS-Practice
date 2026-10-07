@@ -159,6 +159,22 @@ export async function publishTest(db: Firestore, draft: TestFile): Promise<void>
   await batch.commit();
 }
 
+/**
+ * Deletes a test for good: the live test, its draft and every section of both, in one batch.
+ * Attempts at it are kept; their results can no longer be opened.
+ */
+export async function deleteTest(db: Firestore, testId: string): Promise<void> {
+  const [live, draft] = await Promise.all([
+    getDocs(collection(db, 'tests', testId, 'sections')),
+    getDocs(collection(db, 'drafts', testId, 'sections')),
+  ]);
+  const batch = writeBatch(db);
+  for (const d of [...live.docs, ...draft.docs]) batch.delete(d.ref);
+  batch.delete(doc(db, 'tests', testId));
+  batch.delete(doc(db, 'drafts', testId));
+  await batch.commit();
+}
+
 /** users/{uid}: target band and exam date; the defaults until the owner sets them. */
 export async function getProfile(db: Firestore, uid: string): Promise<Profile> {
   const snapshot = await getDoc(doc(db, 'users', uid));

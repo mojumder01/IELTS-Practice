@@ -1,11 +1,18 @@
 import { useEffect, useRef } from 'react';
-import { currentLine, formatAudioTime } from '../../engine/audio';
+import {
+  currentLine,
+  currentWord,
+  formatAudioTime,
+  splitWords,
+  spokenChars,
+} from '../../engine/audio';
 import type { ScriptLine } from '../../schema/test';
 
 interface AudioscriptProps {
   part: number;
   script: ScriptLine[];
   time: number;
+  durationSec: number;
   /** Questions whose answers are showing: their words are marked in the script. */
   revealed: Set<number>;
   marks: number[];
@@ -20,6 +27,7 @@ export function Audioscript({
   part,
   script,
   time,
+  durationSec,
   revealed,
   marks,
   highlighter,
@@ -55,6 +63,15 @@ export function Audioscript({
           <span className="inline-flex items-center gap-1.5">
             <span
               aria-hidden="true"
+              className="text-[13px] font-semibold text-navy underline decoration-now-playing-border decoration-2 underline-offset-2"
+            >
+              Ab
+            </span>
+            Word being said
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <span
+              aria-hidden="true"
               className="size-3.5 rounded-[4px] bg-answer-hl ring-[1.5px] ring-answer-hl-outline"
             />
             Answer
@@ -73,23 +90,13 @@ export function Audioscript({
           const isNow = i === now;
           const marked = marks.includes(i);
           const answer = line.answer && revealed.has(line.answer.question) ? line.answer : null;
-          const at = answer ? line.text.indexOf(answer.highlight) : -1;
-          const body =
-            answer && at >= 0 ? (
-              <>
-                {line.text.slice(0, at)}
-                <mark className="rounded-[3px] bg-answer-hl px-0.5 text-inherit ring-[1.5px] ring-answer-hl-outline">
-                  {answer.highlight}
-                </mark>
-                <span className="mx-1 inline-flex size-5 items-center justify-center rounded-full bg-navy align-[2px] text-[11px] font-bold text-on-navy">
-                  <span className="sr-only">answer to question </span>
-                  {answer.question}
-                </span>
-                {line.text.slice(at + answer.highlight.length)}
-              </>
-            ) : (
-              line.text
-            );
+          const body = (
+            <LineText
+              text={line.text}
+              answer={answer}
+              spoken={isNow ? spokenChars(script, i, time, durationSec) : null}
+            />
+          );
           const style = `grid w-full grid-cols-[44px_1fr] items-start gap-2.5 rounded-control border-[1.5px] px-2.5 py-2 text-left ${
             isNow
               ? 'border-now-playing-border bg-now-playing'
@@ -133,5 +140,99 @@ export function Audioscript({
         })}
       </ol>
     </div>
+  );
+}
+
+interface LineTextProps {
+  text: string;
+  answer: { question: number; highlight: string } | null;
+  /** Characters already said, for the line now playing; null for every other line. */
+  spoken: number | null;
+}
+
+const markStyle =
+  'rounded-[3px] bg-answer-hl px-0.5 text-inherit ring-[1.5px] ring-answer-hl-outline';
+
+/** A word piece: part of one word, split where the answer mark starts or ends. */
+interface Piece {
+  text: string;
+  /** Its character offset in the line. */
+  from: number;
+  word: number;
+  inAnswer: boolean;
+}
+
+/**
+ * A line's words. On the line now playing, the word being said is underlined and shaded, words
+ * already said are in full colour and the rest are muted, so the student can follow along.
+ */
+function LineText({ text, answer, spoken }: LineTextProps) {
+  const at = answer ? text.indexOf(answer.highlight) : -1;
+  if (spoken === null && at < 0) return <>{text}</>;
+  const badge = answer && (
+    <span className="mx-1 inline-flex size-5 items-center justify-center rounded-full bg-navy align-[2px] text-[11px] font-bold text-on-navy">
+      <span className="sr-only">answer to question </span>
+      {answer.question}
+    </span>
+  );
+  if (spoken === null) {
+    return (
+      <>
+        {text.slice(0, at)}
+        <mark className={markStyle}>{answer!.highlight}</mark>
+        {badge}
+        {text.slice(at + answer!.highlight.length)}
+      </>
+    );
+  }
+
+  const words = splitWords(text);
+  const now = currentWord(words, spoken);
+  const markStart = at;
+  const markEnd = at < 0 ? -1 : at + answer!.highlight.length;
+  const pieces: Piece[] = [];
+  words.forEach((w, word) => {
+    const cuts = [w.start, w.end];
+    for (const c of [markStart, markEnd]) if (c > w.start && c < w.end) cuts.push(c);
+    cuts.sort((a, b) => a - b);
+    for (let k = 0; k < cuts.length - 1; k++) {
+      const [from, to] = [cuts[k]!, cuts[k + 1]!];
+      pieces.push({
+        text: text.slice(from, to),
+        from,
+        word,
+        inAnswer: from >= markStart && to <= markEnd,
+      });
+    }
+  });
+
+  const render = (p: Piece, key: number) => {
+    const word = p.text.trimEnd();
+    const space = p.text.slice(word.length);
+    const style =
+      p.word === now
+        ? 'rounded-[3px] bg-now-playing font-semibold text-navy underline decoration-now-playing-border decoration-2 underline-offset-[3px]'
+        : p.word > now
+          ? 'text-muted'
+          : '';
+    return (
+      <span key={key}>
+        <span className={style}>{word}</span>
+        {space}
+      </span>
+    );
+  };
+
+  if (!answer || at < 0) return <>{pieces.map(render)}</>;
+  const before = pieces.filter((p) => p.from < markStart);
+  const inside = pieces.filter((p) => p.inAnswer);
+  const after = pieces.filter((p) => p.from >= markEnd);
+  return (
+    <>
+      {before.map(render)}
+      <mark className={markStyle}>{inside.map((p, k) => render(p, before.length + k))}</mark>
+      {badge}
+      {after.map((p, k) => render(p, before.length + inside.length + k))}
+    </>
   );
 }

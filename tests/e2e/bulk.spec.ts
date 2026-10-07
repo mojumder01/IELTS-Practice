@@ -82,3 +82,30 @@ test('lists what to fix, by sheet and row', async ({ page }) => {
   await expect(files.getByText('Groups row 2:')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Book 98 · Test 3', exact: true })).toHaveCount(0);
 });
+
+test('delete a test after the warning, and it leaves Firestore', async ({ page }) => {
+  await page.getByLabel('Upload filled-in files (.xlsx)').setInputFiles({
+    name: 'book98.xlsx',
+    mimeType: 'application/octet-stream',
+    buffer: await filledWorkbook(),
+  });
+  const files = page.getByRole('list', { name: 'Uploaded files' });
+  await files.getByRole('link', { name: 'Open Book 98 · Test 3' }).click();
+  await page.getByRole('button', { name: 'Delete test' }).click();
+  const dialog = page.getByRole('alertdialog', { name: 'Delete Book 98 · Test 3?' });
+  await expect(dialog.getByText('Warning: this can’t be undone.')).toBeVisible();
+  // The dialog fits a phone screen.
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
+    page.viewportSize()!.width,
+  );
+  await dialog.getByLabel('Type DELETE to confirm').fill('DELETE');
+  await dialog.getByRole('button', { name: 'Delete test' }).click();
+
+  await expect(
+    page.getByRole('status').filter({ hasText: 'Book 98 · Test 3 was deleted.' }),
+  ).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Book 98 · Test 3', exact: true })).toHaveCount(0);
+  const { db } = admin();
+  expect((await db.doc(`drafts/${ID}`).get()).exists).toBe(false);
+  expect((await db.collection(`drafts/${ID}/sections`).get()).size).toBe(0);
+});

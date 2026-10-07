@@ -4,7 +4,10 @@ import {
   audioRules,
   clampTime,
   currentLine,
+  currentWord,
   formatAudioTime,
+  splitWords,
+  spokenChars,
 } from '../../../src/engine/audio';
 import { sample } from '../examHarness';
 
@@ -19,6 +22,41 @@ describe('audio engine', () => {
     expect(currentLine(script, 14)).toBe(3);
     expect(currentLine(script, 109)).toBe(16);
     expect(currentLine([{ start: 2, speaker: 'A', text: 'x' }], 1)).toBe(-1);
+  });
+
+  it('splits a line into words that join back into it', () => {
+    const words = splitWords('My surname is Morgan.');
+    expect(words.map((w) => w.text)).toEqual(['My ', 'surname ', 'is ', 'Morgan.']);
+    expect(words[1]).toEqual({ text: 'surname ', start: 3, end: 11 });
+    expect(
+      splitWords('  Hi there')
+        .map((w) => w.text)
+        .join(''),
+    ).toBe('  Hi there');
+  });
+
+  it('shares a line’s time out by characters', () => {
+    const lines = [
+      { start: 10, speaker: 'A', text: 'abcdefghij' },
+      { start: 20, speaker: 'B', text: 'xyz' },
+    ];
+    expect(spokenChars(lines, 0, 10, 60)).toBe(0);
+    expect(spokenChars(lines, 0, 15, 60)).toBe(5);
+    expect(spokenChars(lines, 0, 25, 60)).toBe(10);
+    expect(spokenChars(lines, 0, 5, 60)).toBe(0);
+    // The last line runs to the end of the audio.
+    expect(spokenChars(lines, 1, 40, 60)).toBe(2);
+    expect(spokenChars(lines, 5, 40, 60)).toBe(0);
+  });
+
+  it('finds the word being said', () => {
+    const words = splitWords('My surname is Morgan.');
+    expect(currentWord(words, 0)).toBe(0);
+    expect(currentWord(words, 3)).toBe(1);
+    expect(currentWord(words, 10)).toBe(1);
+    expect(currentWord(words, 11)).toBe(2);
+    expect(currentWord(words, 99)).toBe(3);
+    expect(currentWord(splitWords('  Hi'), 0)).toBe(1);
   });
 
   it('clamps seeking to the audio', () => {

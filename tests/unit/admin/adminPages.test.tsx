@@ -171,3 +171,36 @@ describe('Preview as student', () => {
     expect(router.state.location.search).toContain('preview=draft');
   });
 });
+
+describe('Deleting a test', () => {
+  it('warns, needs DELETE typed, then removes the test and says so', async () => {
+    const draft = blankTest('Book 30', 1, 'academic');
+    const { user, router, drafts } = renderAdmin('/admin/tests/book30-test1/settings', [draft]);
+    await screen.findByRole('heading', { name: 'Book 30 · Test 1' });
+    await user.click(screen.getByRole('button', { name: 'Delete test' }));
+
+    const dialog = screen.getByRole('alertdialog', { name: 'Delete Book 30 · Test 1?' });
+    expect(dialog).toHaveAccessibleDescription(/this can’t be undone/);
+    expect(within(dialog).getByRole('button', { name: 'Cancel' })).toHaveFocus();
+    const confirm = within(dialog).getByRole('button', { name: 'Delete test' });
+    expect(confirm).toBeDisabled();
+    await user.type(within(dialog).getByLabelText('Type DELETE to confirm'), 'delet');
+    expect(confirm).toBeDisabled();
+    await user.type(within(dialog).getByLabelText('Type DELETE to confirm'), 'e');
+    await user.click(confirm);
+
+    expect(drafts.has('book30-test1')).toBe(false);
+    expect(router.state.location.pathname).toBe('/admin');
+    expect(await screen.findByRole('status')).toHaveTextContent('Book 30 · Test 1 was deleted.');
+  });
+
+  it('keeps the test when cancelled', async () => {
+    const draft = blankTest('Book 30', 1, 'academic');
+    const { user, drafts } = renderAdmin('/admin/tests/book30-test1/settings', [draft]);
+    await screen.findByRole('heading', { name: 'Book 30 · Test 1' });
+    await user.click(screen.getByRole('button', { name: 'Delete test' }));
+    await user.keyboard('{Escape}');
+    expect(screen.queryByRole('alertdialog')).not.toBeInTheDocument();
+    expect(drafts.has('book30-test1')).toBe(true);
+  });
+});

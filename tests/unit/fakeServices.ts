@@ -65,6 +65,11 @@ export function fakeServices(
       listAllTests: () => Promise.resolve([...published.values()].map((t): TestMeta => t.meta)),
       manifest: () => Promise.resolve(MediaManifestSchema.parse(manifestJson)),
       publish,
+      deleteTest: (id) => {
+        drafts.delete(id);
+        published.delete(id);
+        return Promise.resolve();
+      },
     },
     ...options.over,
   };

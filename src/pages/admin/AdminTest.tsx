@@ -1,7 +1,9 @@
+import { Trash2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router';
 import { canPublish, checklist } from '../../admin/draft';
 import { Checklist } from '../../components/admin/Checklist';
+import { DeleteTestDialog } from '../../components/admin/DeleteTestDialog';
 import { ImportExport } from '../../components/admin/ImportExport';
 import { ListeningTab } from '../../components/admin/ListeningTab';
 import { ReadingTab } from '../../components/admin/ReadingTab';
@@ -53,11 +55,13 @@ export function AdminTest() {
   const { testId = '', tab = 'settings' } = useParams();
   const services = useServices();
   const navigate = useNavigate();
-  const { state, saveStatus, update, replace, save, publish } = useDraft(testId);
+  const { state, saveStatus, update, replace, save, publish, remove } = useDraft(testId);
   const [manifest, setManifest] = useState<MediaManifest | null>(null);
   const [rev, setRev] = useState(0);
   const [confirming, setConfirming] = useState(false);
   const [published, setPublished] = useState<string | null>(null);
+  const [deleting, setDeleting] = useState<'asking' | 'working' | null>(null);
+  const [deleteError, setDeleteError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -138,6 +142,17 @@ export function AdminTest() {
               className={primaryButton}
             >
               Publish test
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setDeleteError(null);
+                setDeleting('asking');
+              }}
+              className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control border border-warn-text bg-surface px-3.5 text-sm font-semibold text-warn-text"
+            >
+              <Trash2 aria-hidden="true" className="size-4" />
+              Delete test
             </button>
           </div>
         </div>
@@ -221,6 +236,31 @@ export function AdminTest() {
         </aside>
       </main>
 
+      {deleting && (
+        <DeleteTestDialog
+          name={`${draft.meta.book} · Test ${draft.meta.testNumber}`}
+          live={live}
+          deleting={deleting === 'working'}
+          error={deleteError}
+          onCancel={() => deleting !== 'working' && setDeleting(null)}
+          onConfirm={() => {
+            setDeleting('working');
+            setDeleteError(null);
+            remove()
+              .then(() =>
+                navigate('/admin', {
+                  state: { deleted: `${draft.meta.book} · Test ${draft.meta.testNumber}` },
+                }),
+              )
+              .catch(() => {
+                setDeleting('asking');
+                setDeleteError(
+                  'The test couldn’t be deleted. Check your connection and try again.',
+                );
+              });
+          }}
+        />
+      )}
       {confirming && (
         <ConfirmDialog
           title={live ? 'Publish the changes?' : 'Publish this test?'}

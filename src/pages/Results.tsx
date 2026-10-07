@@ -12,6 +12,7 @@ import { markParts, scoreResults, type QuestionResult, type Score } from '../eng
 import type { AttemptRecord } from '../engine/session';
 import { durationSec, formatClock } from '../engine/timer';
 import { useAuth } from '../lib/auth';
+import { NotFoundError } from '../lib/db';
 import { examHref, formatDate, testName } from '../lib/links';
 import { useServices } from '../lib/services';
 import type { Profile } from '../schema/profile';
@@ -41,7 +42,11 @@ export function Results() {
       const attempt = await services.attempts(uid).get(attemptId);
       if (!attempt) throw new Error('This attempt doesn’t exist.');
       const [test, profile] = await Promise.all([
-        services.loadTest(attempt.testId),
+        services.loadTest(attempt.testId).catch((e: unknown) => {
+          throw e instanceof NotFoundError
+            ? new Error('This test was deleted, so these results can’t be shown any more.')
+            : e;
+        }),
         services.profile(uid).get(),
       ]);
       let marked: Loaded['marked'] = null;

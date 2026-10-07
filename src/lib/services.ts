@@ -15,6 +15,7 @@ import {
   listAllTests,
   listTests,
   publishTest,
+  deleteTest,
   saveProfile,
   type DraftStore,
   type VocabStore,
@@ -37,6 +38,8 @@ export interface Services {
     listAllTests: () => Promise<TestMeta[]>;
     manifest: () => Promise<MediaManifest | null>;
     publish: (draft: TestFile) => Promise<void>;
+    /** Removes the live test and its draft; attempts at it stay. */
+    deleteTest: (testId: string) => Promise<void>;
   };
   attempts: (uid: string) => RemoteAttempts;
   local: LocalAttempts;
@@ -69,6 +72,7 @@ export function firebaseServices(): Services {
         listAllTests: () => listAllTests(firestore()),
         manifest: () => getManifest(firestore()),
         publish: (draft: TestFile) => publishTest(firestore(), draft),
+        deleteTest: (testId: string) => deleteTest(firestore(), testId),
       };
     },
     profile: (uid) => ({

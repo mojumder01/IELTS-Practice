@@ -96,5 +96,13 @@ export function useDraft(testId: string) {
     setState((s) => (s.status === 'ready' ? { ...s, live: true } : s));
   }, [services, save]);
 
-  return { state, saveStatus, update, replace, save, publish };
+  /** Deletes the test; a pending autosave is dropped first so it can't bring the draft back. */
+  const remove = useCallback(async () => {
+    if (timer.current !== null) window.clearTimeout(timer.current);
+    timer.current = null;
+    latest.current = null;
+    await services.admin.deleteTest(testId);
+  }, [services, testId]);
+
+  return { state, saveStatus, update, replace, save, publish, remove };
 }

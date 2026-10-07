@@ -634,6 +634,14 @@ relinks tests and drafts that name a replaced file or its upload name (`scripts/
 write. **Import** accepts a test JSON file, validates it, shows a diff and only then replaces the
 draft. **Export** downloads the test as JSON so you can commit it to `content/tests/`.
 
+**Delete** (added after Phase 10): a warning dialog that needs DELETE typed removes `tests/{id}`,
+`drafts/{id}` and their sections in one batch (`deleteTest` in `src/lib/db.ts`). Attempts are kept;
+Results says the test was deleted.
+
+**Audioscript follow-along** (added after Phase 10): on the line now playing, the word being said
+is underlined and shaded and words not yet said are muted. Scripts only time lines, so a line's
+time is shared out by characters (`spokenChars` and `currentWord` in `src/engine/audio.ts`).
+
 **Bulk upload** (added after Phase 10): an Excel template with one sheet per kind of row (Test,
 Listening, Script, Passages, Groups, Questions, Writing, Speaking, plus How to fill). Uploaded
 workbooks become drafts; rows that can't be read are reported by sheet and row and nothing from

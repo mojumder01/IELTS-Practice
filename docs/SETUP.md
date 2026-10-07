@@ -145,6 +145,11 @@ add the real recording.
 
 ## Entering tests in the admin
 
+**Deleting a test.** On the test's page, **Delete test** opens a warning; type DELETE to confirm.
+It removes the live test and its draft for good. Attempts stay in History but their results can't
+be opened, and audio and images stay. A test that's also in `content/tests/` comes back the next
+time the Seed workflow runs, so delete its file from the repo too.
+
 **Bulk upload from Excel.** On **Admin → Tests**, **Download the template**, fill it in with
 Excel or Google Sheets (its **How to fill** sheet explains every column, and each sheet has a
 sample row starting with `e.g.`, skipped on upload: type over it or delete it), and upload one or more

@@ -80,6 +80,7 @@ export function ListeningContent({ section }: { section: ListeningSection }) {
         part={section.part}
         script={section.script}
         time={audio.time}
+        durationSec={section.durationSec}
         revealed={revealed}
         marks={session.scriptMarks}
         highlighter={highlighter}

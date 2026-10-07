@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { blankTest, testIdFor } from '../../admin/draft';
 import { BulkUpload } from '../../components/admin/BulkUpload';
 import { useAdminTests } from '../../components/admin/useAdminTests';
@@ -12,6 +12,7 @@ import type { Track } from '../../schema/test';
 export function AdminHome() {
   const services = useServices();
   const navigate = useNavigate();
+  const deleted = (useLocation().state as { deleted?: string } | null)?.deleted;
   const [version, setVersion] = useState(0);
   const rows = useAdminTests(version);
   const [book, setBook] = useState('');
@@ -37,6 +38,14 @@ export function AdminHome() {
   return (
     <main className="mx-auto flex w-full max-w-[1000px] flex-col gap-6 px-4 py-8 sm:px-8">
       <h1 className="m-0 text-[28px] font-semibold text-navy">Tests</h1>
+      {deleted && (
+        <p
+          role="status"
+          className="m-0 rounded-control bg-surface-muted px-3 py-2 text-sm text-navy"
+        >
+          {deleted} was deleted.
+        </p>
+      )}
 
       <section aria-labelledby="tests-h" className={panel}>
         <h2 id="tests-h" className="m-0 text-lg font-semibold text-navy">

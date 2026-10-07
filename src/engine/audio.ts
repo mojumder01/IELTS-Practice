@@ -14,6 +14,53 @@ export function currentLine(script: ScriptLine[], seconds: number): number {
   return current;
 }
 
+/** A word of a script line with the space after it; `start` and `end` are character offsets. */
+export interface WordSpan {
+  text: string;
+  start: number;
+  end: number;
+}
+
+/** A line's text as words, each keeping its following space, so joining them gives the text back. */
+export function splitWords(text: string): WordSpan[] {
+  const out: WordSpan[] = [];
+  const re = /\S+\s*/g;
+  const lead = /^\s*/.exec(text)![0].length;
+  if (lead) out.push({ text: text.slice(0, lead), start: 0, end: lead });
+  for (let m = re.exec(text); m; m = re.exec(text)) {
+    out.push({ text: m[0], start: m.index, end: m.index + m[0].length });
+  }
+  return out;
+}
+
+/**
+ * How far into line `index` the speaker is, as a character offset. Scripts only time lines, so
+ * the line's time (its start to the next line's start, or the audio's end) is shared out by
+ * characters: long words take longer to say than short ones.
+ */
+export function spokenChars(
+  script: ScriptLine[],
+  index: number,
+  seconds: number,
+  durationSec: number,
+): number {
+  const line = script[index];
+  if (!line) return 0;
+  const end = Math.min(script[index + 1]?.start ?? durationSec, durationSec);
+  const length = line.text.length;
+  if (end <= line.start) return length;
+  const share = (seconds - line.start) / (end - line.start);
+  return Math.round(Math.min(Math.max(share, 0), 1) * length);
+}
+
+/** The word being said: the one holding the spoken position, or the last word once it's past. */
+export function currentWord(words: WordSpan[], chars: number): number {
+  for (let i = words.length - 1; i >= 0; i--) {
+    if (words[i]!.start <= chars && words[i]!.text.trim()) return i;
+  }
+  return words.findIndex((w) => w.text.trim());
+}
+
 export function clampTime(seconds: number, durationSec: number): number {
   return Math.min(Math.max(0, seconds), durationSec);
 }

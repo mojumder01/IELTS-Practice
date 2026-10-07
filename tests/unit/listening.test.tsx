@@ -65,6 +65,23 @@ describe('Listening', () => {
     expect(nowPlaying()).toHaveTextContent('Swimming, mostly');
   });
 
+  it('follows the words within the line being said', async () => {
+    const { user, playTo } = await renderListening();
+    await user.click(screen.getByRole('button', { name: 'Show audioscript' }));
+    // "It’s Morgan. That’s M-O-R-G-A-N." runs from 0:14 to 0:21.
+    const word = () => nowPlaying()!.querySelector('.underline')!.textContent;
+    playTo(14);
+    expect(word()).toBe('It’s');
+    playTo(16);
+    expect(word()).toBe('Morgan.');
+    playTo(17.2);
+    expect(word()).toBe('That’s');
+    playTo(20.9);
+    expect(word()).toBe('M-O-R-G-A-N.');
+    // Lines not playing are plain text.
+    expect(screen.getByText('Lovely. And your surname?').querySelector('.underline')).toBeNull();
+  });
+
   it('seeks to a line when you select it', async () => {
     const { user, audio } = await renderListening();
     await user.click(screen.getByRole('button', { name: 'Show audioscript' }));
