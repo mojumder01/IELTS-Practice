@@ -272,7 +272,8 @@ describe('filling it in', () => {
     const listening = draft!.sections['listening-1'];
     expect(listening).toMatchObject({
       audio: '/media/audio/b21t1-p1.28d1e3ca.mp3',
-      durationSec: manifest.files.find((f) => f.kind === 'audio')!.durationSec,
+      durationSec: manifest.files.find((f) => f.path === '/media/audio/b21t1-p1.28d1e3ca.mp3')!
+        .durationSec,
       context: 'A phone call',
       script: [
         { start: 0, speaker: 'Anna', text: 'Hello.' },
