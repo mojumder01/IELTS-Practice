@@ -1,0 +1,47 @@
+name: Seed
+
+# Runs npm run seed from GitHub, for when there's no laptop at hand (docs/SETUP.md, step 9).
+# Start it from Actions → Seed → Run workflow after a deploy that changed content/ or media.
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: seed
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  seed:
+    name: Publish content/ to Firestore
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+      VITE_OWNER_UID: ${{ secrets.VITE_OWNER_UID }}
+      SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+
+      - name: Check seed secrets
+        run: |
+          missing=()
+          [ -n "$VITE_FIREBASE_PROJECT_ID" ] || missing+=(VITE_FIREBASE_PROJECT_ID)
+          [ -n "$SERVICE_ACCOUNT" ] || missing+=(FIREBASE_SERVICE_ACCOUNT)
+          if [ ${#missing[@]} -gt 0 ]; then
+            echo "::error::Missing repository secrets: ${missing[*]} (see docs/SETUP.md)"
+            exit 1
+          fi
+
+      - name: Seed
+        run: |
+          key="$RUNNER_TEMP/service-account.json"
+          printf '%s' "$SERVICE_ACCOUNT" > "$key"
+          GOOGLE_APPLICATION_CREDENTIALS="$key" npm run seed
+          rm -f "$key"

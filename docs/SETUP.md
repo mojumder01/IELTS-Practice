@@ -124,6 +124,10 @@ sections, writes `media/manifest`, and adds the starter vocabulary to your accou
 (`VITE_OWNER_UID` in `.env.local`) without touching words you already have.
 `npm run seed -- --dry-run` lists the documents without writing.
 
+**No laptop?** **Actions → Seed → Run workflow** on GitHub runs the same `npm run seed` with the
+`FIREBASE_SERVICE_ACCOUNT` and `VITE_OWNER_UID` secrets. Run it after the deploy that carries your
+content or media changes.
+
 **New audio or images:** put the file in `public/media/audio/` or `public/media/img/`, run
 `npm run media` (needs ffmpeg), then commit. A file named like an existing one (for example a
 real `b21t1-p1.mp3` recording replacing the placeholder) replaces it and updates the paths in
