@@ -25,6 +25,102 @@
       "durationSec": 399.8
     },
     {
+      "path": "/media/audio/b17t1-p1.34c55e26.mp3",
+      "kind": "audio",
+      "bytes": 3321774,
+      "durationSec": 415.2
+    },
+    {
+      "path": "/media/audio/b17t1-p2.63b831ab.mp3",
+      "kind": "audio",
+      "bytes": 3307981,
+      "durationSec": 413.5
+    },
+    {
+      "path": "/media/audio/b17t1-p3.04601e35.mp3",
+      "kind": "audio",
+      "bytes": 3554577,
+      "durationSec": 444.3
+    },
+    {
+      "path": "/media/audio/b17t1-p4.da379594.mp3",
+      "kind": "audio",
+      "bytes": 3646110,
+      "durationSec": 455.7
+    },
+    {
+      "path": "/media/audio/b17t2-p1.d3d16d78.mp3",
+      "kind": "audio",
+      "bytes": 3796994,
+      "durationSec": 474.6
+    },
+    {
+      "path": "/media/audio/b17t2-p2.bc916534.mp3",
+      "kind": "audio",
+      "bytes": 3561265,
+      "durationSec": 445.1
+    },
+    {
+      "path": "/media/audio/b17t2-p3.bbc6ef78.mp3",
+      "kind": "audio",
+      "bytes": 3220001,
+      "durationSec": 402.5
+    },
+    {
+      "path": "/media/audio/b17t2-p4.f763efcb.mp3",
+      "kind": "audio",
+      "bytes": 3475583,
+      "durationSec": 434.4
+    },
+    {
+      "path": "/media/audio/b17t3-p1.030376d9.mp3",
+      "kind": "audio",
+      "bytes": 3323028,
+      "durationSec": 415.3
+    },
+    {
+      "path": "/media/audio/b17t3-p2.87961d8a.mp3",
+      "kind": "audio",
+      "bytes": 3603479,
+      "durationSec": 450.4
+    },
+    {
+      "path": "/media/audio/b17t3-p3.2bfdbaa4.mp3",
+      "kind": "audio",
+      "bytes": 3622496,
+      "durationSec": 452.8
+    },
+    {
+      "path": "/media/audio/b17t3-p4.9a9c0aa1.mp3",
+      "kind": "audio",
+      "bytes": 3895005,
+      "durationSec": 486.8
+    },
+    {
+      "path": "/media/audio/b17t4-p1.3be952a3.mp3",
+      "kind": "audio",
+      "bytes": 3065356,
+      "durationSec": 383.1
+    },
+    {
+      "path": "/media/audio/b17t4-p2.e564e6ce.mp3",
+      "kind": "audio",
+      "bytes": 3781529,
+      "durationSec": 472.7
+    },
+    {
+      "path": "/media/audio/b17t4-p3.ac6dd89b.mp3",
+      "kind": "audio",
+      "bytes": 3293353,
+      "durationSec": 411.6
+    },
+    {
+      "path": "/media/audio/b17t4-p4.8bb7ceb4.mp3",
+      "kind": "audio",
+      "bytes": 4127599,
+      "durationSec": 515.9
+    },
+    {
       "path": "/media/audio/b19t1-p1.60822e10.mp3",
       "kind": "audio",
       "bytes": 3781529,
