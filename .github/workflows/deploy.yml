@@ -4,7 +4,8 @@ on:
   push:
     branches: [main]
     # Uploads to media-inbox/ go through media.yml first, which starts this when it's done.
-    paths-ignore: ['media-inbox/**']
+    # books/ holds source PDFs for Claude to read; the site doesn't use them.
+    paths-ignore: ['media-inbox/**', 'books/**']
   workflow_dispatch:
 
 concurrency:
