@@ -1,0 +1,2175 @@
+{
+  "meta": {
+    "testId": "cambridge19-test4",
+    "book": "Cambridge 19",
+    "testNumber": 4,
+    "track": "academic",
+    "status": "live",
+    "timing": {
+      "listening": {
+        "singlePartMin": 8,
+        "fullMockMin": 30,
+        "checkMin": 2
+      },
+      "reading": {
+        "singlePartMin": 20,
+        "fullMockMin": 60
+      },
+      "writing": {
+        "task1Min": 20,
+        "task2Min": 40,
+        "fullMockMin": 60
+      }
+    },
+    "studentHelp": {
+      "allowReveal": true,
+      "showScriptInSinglePart": true,
+      "lockAudioInFullMock": true
+    }
+  },
+  "sections": {
+    "listening-1": {
+      "kind": "listening",
+      "part": 1,
+      "audio": "/media/audio/b19t4-p1.52e14b47.mp3",
+      "durationSec": 405.2,
+      "context": "Charlotte is starting a new job at a supermarket, and her supervisor, Kaeden, is explaining what she needs to do on her first day.",
+      "script": [
+        {
+          "start": 94.4,
+          "speaker": "Kaeden",
+          "text": "Hello Charlotte. I’m Kaeden, one of the supervisors. Welcome to the team."
+        },
+        {
+          "start": 98.8,
+          "speaker": "Charlotte",
+          "text": "Hi Aiden."
+        },
+        {
+          "start": 100.3,
+          "speaker": "Kaeden",
+          "text": "It’s Kaeden.",
+          "answer": {
+            "question": 1,
+            "highlight": "Kaeden"
+          }
+        },
+        {
+          "start": 101.8,
+          "speaker": "Charlotte",
+          "text": "I’m so sorry."
+        },
+        {
+          "start": 103.1,
+          "speaker": "Kaeden",
+          "text": "Don’t worry. People often get my name wrong; they never know how to spell it. It’s K-A-E-D-E-N, in case you ever need to write it."
+        },
+        {
+          "start": 114.8,
+          "speaker": "Charlotte",
+          "text": "I’ll try and remember."
+        },
+        {
+          "start": 116.3,
+          "speaker": "Kaeden",
+          "text": "So, there are a few practical things you need to sort out this morning. Then I’ll show you what you’re going to do today."
+        },
+        {
+          "start": 124.2,
+          "speaker": "Charlotte",
+          "text": "The email I received said to go to the front desk, to show my letter of appointment and pick up my badge."
+        },
+        {
+          "start": 132.1,
+          "speaker": "Kaeden",
+          "text": "You’ll need that for the staffroom and other areas of the supermarket where shoppers aren’t allowed. So, after you’ve finished at the front desk, I’ll take you to the staffroom. Put your coat and rucksack in one of the lockers there. Take whichever one is free.",
+          "answer": {
+            "question": 2,
+            "highlight": "lockers"
+          }
+        },
+        {
+          "start": 148.5,
+          "speaker": "Charlotte",
+          "text": "Will I have a key?"
+        },
+        {
+          "start": 151.0,
+          "speaker": "Kaeden",
+          "text": "Yes. Try not to lose it. At the end of the day, leave it in the door for the next person to use."
+        },
+        {
+          "start": 157.4,
+          "speaker": "Charlotte",
+          "text": "Will do."
+        },
+        {
+          "start": 158.7,
+          "speaker": "Kaeden",
+          "text": "You also need to go to the HR department to see Tiffany. She’s really helpful."
+        },
+        {
+          "start": 164.2,
+          "speaker": "Charlotte",
+          "text": "I was told to bring my passport with me. HR need to take a note of the number in it.",
+          "answer": {
+            "question": 3,
+            "highlight": "passport"
+          }
+        },
+        {
+          "start": 170.4,
+          "speaker": "Kaeden",
+          "text": "That’s right. Or you can show your ID card."
+        },
+        {
+          "start": 173.2,
+          "speaker": "Charlotte",
+          "text": "I don’t have one of those."
+        },
+        {
+          "start": 175.4,
+          "speaker": "Kaeden",
+          "text": "OK. Tiffany will give you a uniform. They have lots in different sizes, so you just tell her what you need. I won’t come with you to HR – I’ve got to go and sort something else out. Problem with a bread slicer.",
+          "answer": {
+            "question": 4,
+            "highlight": "uniform"
+          }
+        },
+        {
+          "start": 189.3,
+          "speaker": "Charlotte",
+          "text": "Is the HR office near the staffroom?"
+        },
+        {
+          "start": 191.7,
+          "speaker": "Kaeden",
+          "text": "The staffroom’s on the first floor, and HR are a couple of floors above that, on the third floor. There’s a staircase outside the staffroom.",
+          "answer": {
+            "question": 5,
+            "highlight": "third floor"
+          }
+        },
+        {
+          "start": 200.2,
+          "speaker": "Charlotte",
+          "text": "OK."
+        },
+        {
+          "start": 200.6,
+          "speaker": "Kaeden",
+          "text": "When you’ve finished with HR, come and find me in the bakery section of the shop."
+        },
+        {
+          "start": 206.1,
+          "speaker": "Charlotte",
+          "text": "I’m looking forward to getting started."
+        },
+        {
+          "start": 208.0,
+          "speaker": "Kaeden",
+          "text": "I’ll just give you my phone number, in case you can’t find me. Have you got your phone there?"
+        },
+        {
+          "start": 217.2,
+          "speaker": "Charlotte",
+          "text": "Yes … OK, ready."
+        },
+        {
+          "start": 218.9,
+          "speaker": "Kaeden",
+          "text": "It’s oh-four-one-two double-six-five nine-oh-three.",
+          "answer": {
+            "question": 6,
+            "highlight": "oh-four-one-two double-six-five nine-oh-three"
+          }
+        },
+        {
+          "start": 238.0,
+          "speaker": "Charlotte",
+          "text": "OK, done."
+        },
+        {
+          "start": 247.6,
+          "speaker": "Kaeden",
+          "text": "So, Charlotte, your tasks today are in the bakery section, on the sushi counter, and on the meat and fish counters. The first job is to check sell-by dates on the bread and cakes. If any of the dates are today’s, put a new price label on the packaging."
+        },
+        {
+          "start": 283.3,
+          "speaker": "Charlotte",
+          "text": "What if any of the labels are yesterday’s dates, or older? Do I throw those items away?"
+        },
+        {
+          "start": 290.4,
+          "speaker": "Kaeden",
+          "text": "Yes, but that shouldn’t happen – we check the stock every day. When something needs a new price label, put a yellow one on the package, next to the original price.",
+          "answer": {
+            "question": 7,
+            "highlight": "yellow"
+          }
+        },
+        {
+          "start": 299.2,
+          "speaker": "Charlotte",
+          "text": "OK."
+        },
+        {
+          "start": 299.8,
+          "speaker": "Kaeden",
+          "text": "After that, you’ll go to the sushi takeaway counter."
+        },
+        {
+          "start": 303.9,
+          "speaker": "Charlotte",
+          "text": "Will I be preparing boxes of food?"
+        },
+        {
+          "start": 307.6,
+          "speaker": "Kaeden",
+          "text": "For today, you’ll just be helping the staff."
+        },
+        {
+          "start": 310.1,
+          "speaker": "Charlotte",
+          "text": "Yes, of course."
+        },
+        {
+          "start": 310.9,
+          "speaker": "Kaeden",
+          "text": "You’ll see lots of flat cardboard boxes at one end of the counter. Beneath those is where we keep the plastic boxes – we run out of those really quickly, so you should bring more from the storeroom.",
+          "answer": {
+            "question": 8,
+            "highlight": "plastic"
+          }
+        },
+        {
+          "start": 322.9,
+          "speaker": "Charlotte",
+          "text": "Is that my only task on the sushi counter?"
+        },
+        {
+          "start": 326.3,
+          "speaker": "Kaeden",
+          "text": "No. You also need to clean the area where they prepare the dishes. There are cloths and bottles of spray by the sink. Oh, and please make sure you clean that too."
+        },
+        {
+          "start": 336.4,
+          "speaker": "Charlotte",
+          "text": "Sure. That’s important, isn’t it?"
+        },
+        {
+          "start": 338.8,
+          "speaker": "Kaeden",
+          "text": "Absolutely. But you mustn’t wash up knives. You have to do some training before you’re allowed to touch sharp objects."
+        },
+        {
+          "start": 345.7,
+          "speaker": "Charlotte",
+          "text": "What should I do if there are any?"
+        },
+        {
+          "start": 348.3,
+          "speaker": "Kaeden",
+          "text": "Ask someone to put them in the dishwasher."
+        },
+        {
+          "start": 350.3,
+          "speaker": "Charlotte",
+          "text": "OK, thanks. I don’t want to get anything wrong."
+        },
+        {
+          "start": 353.6,
+          "speaker": "Kaeden",
+          "text": "Don’t worry. You’ll be fine. And I’ll be around to help."
+        },
+        {
+          "start": 357.1,
+          "speaker": "Charlotte",
+          "text": "Right."
+        },
+        {
+          "start": 358.0,
+          "speaker": "Kaeden",
+          "text": "Finally, the meat and fish counters. You need to clean the area where staff serve customers, including wiping the weighing scales."
+        },
+        {
+          "start": 365.9,
+          "speaker": "Charlotte",
+          "text": "OK. Anything else?"
+        },
+        {
+          "start": 367.1,
+          "speaker": "Kaeden",
+          "text": "The fish is laid on ice, but when that starts to melt, you’ll need to get more from the cold-room.",
+          "answer": {
+            "question": 9,
+            "highlight": "ice"
+          }
+        },
+        {
+          "start": 375.3,
+          "speaker": "Charlotte",
+          "text": "I know the staff on the food counters wear a hat. Will that be the same for me?"
+        },
+        {
+          "start": 381.8,
+          "speaker": "Kaeden",
+          "text": "You won’t be serving customers directly, so no. But make sure you put on thermal gloves when you take anything out of the cold-room. The temperature’s low enough in there to get frostbite from touching things.",
+          "answer": {
+            "question": 10,
+            "highlight": "gloves"
+          }
+        },
+        {
+          "start": 392.5,
+          "speaker": "Charlotte",
+          "text": "Understood."
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-1",
+          "type": "GAP_FILL",
+          "instructions": "Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": "ONE WORD AND/OR A NUMBER",
+          "allowNumber": true,
+          "layout": {
+            "kind": "notes",
+            "title": "First day at work",
+            "body": "- Name of supervisor: {{1}}\n- Where to leave coat and bag: use {{2}} in staffroom\n- See Tiffany in HR: to give {{3}} number; to collect {{4}}\n- Location of HR office: on {{5}} floor\n- Supervisor’s mobile number: {{6}}"
+          },
+          "questions": [
+            {
+              "numbers": [1],
+              "prompt": "Name of supervisor",
+              "acceptedAnswers": [["Kaeden"]]
+            },
+            {
+              "numbers": [2],
+              "prompt": "Where to leave coat and bag: use ___ in staffroom",
+              "acceptedAnswers": [["locker(s)"]]
+            },
+            {
+              "numbers": [3],
+              "prompt": "See Tiffany in HR: to give ___ number",
+              "acceptedAnswers": [["passport"]]
+            },
+            {
+              "numbers": [4],
+              "prompt": "See Tiffany in HR: to collect ___",
+              "acceptedAnswers": [["uniform"]]
+            },
+            {
+              "numbers": [5],
+              "prompt": "Location of HR office: on ___ floor",
+              "acceptedAnswers": [["third", "3rd"]]
+            },
+            {
+              "numbers": [6],
+              "prompt": "Supervisor’s mobile number",
+              "acceptedAnswers": [["0412 665 903", "0412665903", "0412-665-903"]],
+              "explanation": "A phone number counts as one number, so it can be written with or without spaces."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-2",
+          "type": "GAP_FILL",
+          "instructions": "Complete the table below. Write ONE WORD ONLY for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "table",
+            "title": "Responsibilities",
+            "body": "| | Task 1 | Task 2 | Notes |\n| --- | --- | --- | --- |\n| Bakery section | Check sell-by dates | Change price labels | Use {{7}} labels |\n| Sushi takeaway counter | Re-stock with {{8}} boxes if needed | Wipe preparation area and clean the sink | Do not clean any knives |\n| Meat and fish counters | Clean the serving area, including the weighing scales | Collect {{9}} for the fish from the cold-room | Must wear special {{10}} |"
+          },
+          "questions": [
+            {
+              "numbers": [7],
+              "prompt": "Bakery section: use ___ labels",
+              "acceptedAnswers": [["yellow"]]
+            },
+            {
+              "numbers": [8],
+              "prompt": "Sushi takeaway counter: re-stock with ___ boxes if needed",
+              "acceptedAnswers": [["plastic"]]
+            },
+            {
+              "numbers": [9],
+              "prompt": "Meat and fish counters: collect ___ for the fish from the cold-room",
+              "acceptedAnswers": [["ice"]]
+            },
+            {
+              "numbers": [10],
+              "prompt": "Meat and fish counters: must wear special ___",
+              "acceptedAnswers": [["gloves"]]
+            }
+          ]
+        }
+      ]
+    },
+    "listening-2": {
+      "kind": "listening",
+      "part": 2,
+      "audio": "/media/audio/b19t4-p2.14923356.mp3",
+      "durationSec": 389.1,
+      "context": "Liz Fuller, a running coach with Compton Park Runners Club, gives advice to new runners in a podcast.",
+      "script": [
+        {
+          "start": 45.5,
+          "speaker": "Liz",
+          "text": "My name’s Liz Fuller and I’m a running coach with Compton Park Runners Club."
+        },
+        {
+          "start": 50.4,
+          "speaker": "Liz",
+          "text": "Welcome to my podcast. If you’re thinking about taking up running – I’m here to help."
+        },
+        {
+          "start": 55.6,
+          "speaker": "Liz",
+          "text": "There are many training programmes available online which aim to help people build up to running 5 kilometres. Some of them are great and thousands of people of all ages are taking part in 5-kilometre races across the country as a result. People like them because they’re easy to follow and don’t push them too hard. However, they don’t work for everyone – especially if you suffer from something like a heart condition or asthma, because they’re aimed at people with average fitness and running ability.",
+          "answer": {
+            "question": 11,
+            "highlight": "they don’t work for everyone – especially if you suffer from something like a heart condition or asthma"
+          }
+        },
+        {
+          "start": 90.4,
+          "speaker": "Liz",
+          "text": "Another thing is that everyone is different – and if you have any specific questions related to your needs, there’s no one to provide any answers.",
+          "answer": {
+            "question": 12,
+            "highlight": "if you have any specific questions related to your needs, there’s no one to provide any answers"
+          }
+        },
+        {
+          "start": 101.4,
+          "speaker": "Liz",
+          "text": "I have a couple of simple tips I always give to new runners. I expect you’ve been told to run very slowly until your fitness increases – well, I find that can prevent progress. You should run at a speed that feels comfortable, but time yourself and try to run a bit faster each time. Listening to music can be very helpful – it takes your mind off things and helps your body get into a rhythm.",
+          "answer": {
+            "question": 13,
+            "highlight": "Listening to music can be very helpful – it takes your mind off things and helps your body get into a rhythm"
+          }
+        },
+        {
+          "start": 132.4,
+          "speaker": "Liz",
+          "text": "I’d say that is better than running with a friend – especially as most people are competitive and that’s not what you want when you’re just starting. I don’t think the time of day is especially important – some people are better in the evening, while others are morning people – but you need to be consistent, so aim to train regularly – twice a week is enough to begin with.",
+          "answer": {
+            "question": 14,
+            "highlight": "aim to train regularly – twice a week is enough to begin with"
+          }
+        },
+        {
+          "start": 173.4,
+          "speaker": "Liz",
+          "text": "New members often say to me that they’ve been put off running either because they lack confidence, or they don’t have time, or they think they dislike running. Ceri, for example, joined the club two years ago at the age of 40. She’d always enjoyed running at school but wasn’t sure if she’d be able to do it. She was worried about being left behind and being the slowest runner. But she says she was made to feel so welcome she soon forgot all about that.",
+          "answer": {
+            "question": 15,
+            "highlight": "wasn’t sure if she’d be able to do it. She was worried about being left behind and being the slowest runner"
+          }
+        },
+        {
+          "start": 237.0,
+          "speaker": "Liz",
+          "text": "James had always hated the idea of running but a friend encouraged him to come along for a taster session and he hasn’t looked back. He never misses a training session despite having a really demanding job.",
+          "answer": {
+            "question": 16,
+            "highlight": "James had always hated the idea of running"
+          }
+        },
+        {
+          "start": 252.5,
+          "speaker": "Liz",
+          "text": "Leo was worried about having to commit himself to training sessions every week and wasn’t sure he’d be able to fit training into his busy schedule. But after experiencing a lot of stress at work he came along to us and gave it a go. Now he says he feels much more relaxed and he looks forward to his weekly run.",
+          "answer": {
+            "question": 17,
+            "highlight": "wasn’t sure he’d be able to fit training into his busy schedule"
+          }
+        },
+        {
+          "start": 277.4,
+          "speaker": "Liz",
+          "text": "Mark is quite typical of our new members. He’s never considered himself to be a sporty person and it was only when he retired that he decided to take up the challenge of trying to run 5 kilometres. It took him months to find the courage to contact us but felt reassured immediately as there were other people his age who were only just taking up running for the first time.",
+          "answer": {
+            "question": 18,
+            "highlight": "It took him months to find the courage to contact us"
+          }
+        },
+        {
+          "start": 304.7,
+          "speaker": "Liz",
+          "text": "My own journey hasn’t been easy. I did my first marathon when I was 37, after having had two kids. My husband had been running marathons for years, but I never dreamed I’d be doing one with him. I managed to complete it in four hours, but I felt like giving up halfway through – it was only the support of the spectators that kept me going.",
+          "answer": {
+            "question": 19,
+            "highlight": "I felt like giving up halfway through – it was only the support of the spectators that kept me going"
+          }
+        },
+        {
+          "start": 331.4,
+          "speaker": "Liz",
+          "text": "I do think signing up for a race of whatever length is motivating – whether it’s 5K or 25K – because it’s good to have something to work towards and it gives you a sense of achievement. I did my first 10K after only six months, which was certainly very challenging and not something I’d necessarily recommend. But after you’ve been training for a few weeks, it’s worth putting your name down for a 5K – some people find they only need a few practice runs before taking part in a race, but I’d give yourself a couple of months at least.",
+          "answer": {
+            "question": 20,
+            "highlight": "after you’ve been training for a few weeks, it’s worth putting your name down for a 5K"
+          }
+        },
+        {
+          "start": 367.9,
+          "speaker": "Liz",
+          "text": "Well, I hope that’s given …"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-3",
+          "type": "MULTIPLE_CHOICE_MULTIPLE",
+          "instructions": "Choose TWO letters, A–E.",
+          "answersPerItem": 2,
+          "options": [
+            {
+              "key": "A",
+              "text": "There is a risk of serious injury."
+            },
+            {
+              "key": "B",
+              "text": "They are unsuitable for certain age groups."
+            },
+            {
+              "key": "C",
+              "text": "They are unsuitable for people with health issues."
+            },
+            {
+              "key": "D",
+              "text": "It is difficult to stay motivated."
+            },
+            {
+              "key": "E",
+              "text": "There is a lack of individual support."
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [11, 12],
+              "prompt": "Which TWO problems with some training programmes for new runners does Liz mention?",
+              "acceptedAnswers": [["C"], ["E"]],
+              "explanation": "C: they don’t work for people with a heart condition or asthma. E: if you have specific questions, there’s no one to answer them. Either order."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-4",
+          "type": "MULTIPLE_CHOICE_MULTIPLE",
+          "instructions": "Choose TWO letters, A–E.",
+          "answersPerItem": 2,
+          "options": [
+            {
+              "key": "A",
+              "text": "doing two runs a week"
+            },
+            {
+              "key": "B",
+              "text": "running in the evening"
+            },
+            {
+              "key": "C",
+              "text": "going on runs with a friend"
+            },
+            {
+              "key": "D",
+              "text": "listening to music during runs"
+            },
+            {
+              "key": "E",
+              "text": "running very slowly"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [13, 14],
+              "prompt": "Which TWO tips does Liz recommend for new runners?",
+              "acceptedAnswers": [["A"], ["D"]],
+              "explanation": "D: listening to music can be very helpful. A: twice a week is enough to begin with. Either order. Running slowly can prevent progress, and music is better than running with a friend."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-5",
+          "type": "MATCHING_FEATURES",
+          "instructions": "What reason prevented each of the following members of the Compton Park Runners Club from joining until recently? Write the correct letter, A, B or C, next to Questions 15–18.",
+          "options": [
+            {
+              "key": "A",
+              "text": "a lack of confidence"
+            },
+            {
+              "key": "B",
+              "text": "a dislike of running"
+            },
+            {
+              "key": "C",
+              "text": "a lack of time"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [15],
+              "prompt": "Ceri",
+              "acceptedAnswers": [["A"]],
+              "explanation": "She wasn’t sure she’d be able to do it and was worried about being the slowest runner."
+            },
+            {
+              "numbers": [16],
+              "prompt": "James",
+              "acceptedAnswers": [["B"]],
+              "explanation": "He had always hated the idea of running."
+            },
+            {
+              "numbers": [17],
+              "prompt": "Leo",
+              "acceptedAnswers": [["C"]],
+              "explanation": "He wasn’t sure he could fit training into his busy schedule."
+            },
+            {
+              "numbers": [18],
+              "prompt": "Mark",
+              "acceptedAnswers": [["A"]],
+              "explanation": "It took him months to find the courage to contact the club."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-6",
+          "type": "MULTIPLE_CHOICE_SINGLE",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "numbers": [19],
+              "prompt": "What does Liz say about running her first marathon?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "It had always been her ambition."
+                },
+                {
+                  "key": "B",
+                  "text": "Her husband persuaded her to do it."
+                },
+                {
+                  "key": "C",
+                  "text": "She nearly gave up before the end."
+                }
+              ],
+              "acceptedAnswers": [["C"]],
+              "explanation": "She felt like giving up halfway through; only the spectators kept her going."
+            },
+            {
+              "numbers": [20],
+              "prompt": "Liz says new runners should sign up for a race",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "every six months."
+                },
+                {
+                  "key": "B",
+                  "text": "within a few weeks of taking up running."
+                },
+                {
+                  "key": "C",
+                  "text": "after completing several practice runs."
+                }
+              ],
+              "acceptedAnswers": [["B"]],
+              "explanation": "After training for a few weeks, it’s worth putting your name down for a 5K."
+            }
+          ]
+        }
+      ]
+    },
+    "listening-3": {
+      "kind": "listening",
+      "part": 3,
+      "audio": "/media/audio/b19t4-p3.c8527d13.mp3",
+      "durationSec": 429.4,
+      "context": "Two students, Jane and Kieran, talk about looking after books and about the bookshop where Jane’s grandfather works.",
+      "script": [
+        {
+          "start": 56.3,
+          "speaker": "Kieran",
+          "text": "So Jane – you’ll be off to Denmark soon to do your work placement."
+        },
+        {
+          "start": 60.9,
+          "speaker": "Jane",
+          "text": "Yes, I’m really looking forward to it and I’ve just started packing up all my books to put in storage."
+        },
+        {
+          "start": 67.9,
+          "speaker": "Kieran",
+          "text": "Well, I hope they don’t get spoilt."
+        },
+        {
+          "start": 70.3,
+          "speaker": "Jane",
+          "text": "It’s OK – my grandfather works in a bookshop and he told me how to pack them."
+        },
+        {
+          "start": 75.8,
+          "speaker": "Kieran",
+          "text": "Oh, that’s helpful."
+        },
+        {
+          "start": 77.3,
+          "speaker": "Jane",
+          "text": "He says you have to support the spine otherwise the paper can come away from the cover."
+        },
+        {
+          "start": 82.9,
+          "speaker": "Kieran",
+          "text": "Yeah – that’s obvious.",
+          "answer": {
+            "question": 21,
+            "highlight": "that’s obvious"
+          }
+        },
+        {
+          "start": 84.2,
+          "speaker": "Jane",
+          "text": "He also told me to pack them flat in the box not on their side – again because they can bend and if you leave them like that for, say, a year, it’s quite hard to get them back to their normal shape."
+        },
+        {
+          "start": 98.9,
+          "speaker": "Kieran",
+          "text": "Well, it’s pretty clear that ruins them, but a lot of people just can’t be bothered to protect their books."
+        },
+        {
+          "start": 105.4,
+          "speaker": "Jane",
+          "text": "He always says it’s such a shame that publishers don’t use better-quality paper."
+        },
+        {
+          "start": 109.7,
+          "speaker": "Kieran",
+          "text": "It’s the acid in the paper that causes the problem, isn’t it?"
+        },
+        {
+          "start": 113.4,
+          "speaker": "Jane",
+          "text": "Yeah – that’s why old books go yellow. You know some of the books my grandfather’s given me are like that already."
+        },
+        {
+          "start": 121.2,
+          "speaker": "Kieran",
+          "text": "Oh …"
+        },
+        {
+          "start": 121.6,
+          "speaker": "Jane",
+          "text": "I should dump them really if they’re going to deteriorate further, but I’d feel bad. They’ll always remind me of him. He’s quite a collector, you know.",
+          "answer": {
+            "question": 22,
+            "highlight": "They’ll always remind me of him"
+          }
+        },
+        {
+          "start": 132.5,
+          "speaker": "Kieran",
+          "text": "Well, if they’re important to you …"
+        },
+        {
+          "start": 134.3,
+          "speaker": "Jane",
+          "text": "Yeah – I’d regret just throwing them away."
+        },
+        {
+          "start": 137.6,
+          "speaker": "Kieran",
+          "text": "You know, maybe it’s because I was taught to treasure books … but I hate seeing students force open the pages – of paperbacks. They press so hard they end up breaking the spine."
+        },
+        {
+          "start": 148.2,
+          "speaker": "Jane",
+          "text": "I know, but unfortunately, paperbacks aren’t designed to last a long time and people know that. Hardbacks aren’t quite as weak."
+        },
+        {
+          "start": 157.6,
+          "speaker": "Kieran",
+          "text": "Yeah, they’re different, I suppose. But I still don’t think people value hardbacks like they used to."
+        },
+        {
+          "start": 164.9,
+          "speaker": "Jane",
+          "text": "Well, they aren’t decorative, are they, like other objects. Plus, nowadays, people don’t keep them out on shelves as much as they used to."
+        },
+        {
+          "start": 174.6,
+          "speaker": "Kieran",
+          "text": "That’s such a pity. When I visit someone – if they have, say, a colourful book on a table, it’s the first thing I’m drawn to.",
+          "answer": {
+            "question": 23,
+            "highlight": "That’s such a pity"
+          }
+        },
+        {
+          "start": 183.7,
+          "speaker": "Jane",
+          "text": "I agree – and book covers can be a work of art in themselves. Some are really eye-catching."
+        },
+        {
+          "start": 190.5,
+          "speaker": "Kieran",
+          "text": "I’ve always been taught to handle books carefully. If you watch someone take a book off a shelf, well, they usually do it wrong."
+        },
+        {
+          "start": 198.4,
+          "speaker": "Jane",
+          "text": "Ah, my grandfather says, you should put your hand right over the top of the book … or if you can’t do that, pull the other books on the shelf aside so that you can hold the whole cover."
+        },
+        {
+          "start": 212.2,
+          "speaker": "Kieran",
+          "text": "When did you learn all this?"
+        },
+        {
+          "start": 213.8,
+          "speaker": "Jane",
+          "text": "He watched me pull a heavy book off the shelf when I was small, and it fell on the floor and broke apart.",
+          "answer": {
+            "question": 24,
+            "highlight": "He watched me pull a heavy book off the shelf when I was small"
+          }
+        },
+        {
+          "start": 220.7,
+          "speaker": "Kieran",
+          "text": "Oh dear!"
+        },
+        {
+          "start": 221.6,
+          "speaker": "Jane",
+          "text": "I can still remember it!"
+        },
+        {
+          "start": 223.7,
+          "speaker": "Kieran",
+          "text": "You know what I really like?"
+        },
+        {
+          "start": 226.2,
+          "speaker": "Jane",
+          "text": "What?"
+        },
+        {
+          "start": 226.6,
+          "speaker": "Kieran",
+          "text": "The smell of new books."
+        },
+        {
+          "start": 228.3,
+          "speaker": "Jane",
+          "text": "Me too."
+        },
+        {
+          "start": 229.0,
+          "speaker": "Kieran",
+          "text": "My parents used to laugh at me when I was a kid because I loved putting books up to my nose. Almost as much as reading them!"
+        },
+        {
+          "start": 237.3,
+          "speaker": "Jane",
+          "text": "New books aren’t cheap, though, are they?",
+          "answer": {
+            "question": 25,
+            "highlight": "New books aren’t cheap"
+          }
+        },
+        {
+          "start": 248.6,
+          "speaker": "Kieran",
+          "text": "I guess we’re lucky we can buy them."
+        },
+        {
+          "start": 261.5,
+          "speaker": "Jane",
+          "text": "My grandfather stocks second-hand books as well as new ones and they don’t smell quite as good."
+        },
+        {
+          "start": 290.4,
+          "speaker": "Kieran",
+          "text": "I’d love to have a bookshop like your grandfather. What’s it like?"
+        },
+        {
+          "start": 295.0,
+          "speaker": "Jane",
+          "text": "Well, it’s quite big – it’s got two floors and an attic, and he stocks all kinds of books really."
+        },
+        {
+          "start": 303.6,
+          "speaker": "Kieran",
+          "text": "I guess he treasures things like first editions and other rare books."
+        },
+        {
+          "start": 307.9,
+          "speaker": "Jane",
+          "text": "Yeah – you might think he’d keep those in the attic or somewhere."
+        },
+        {
+          "start": 312.0,
+          "speaker": "Kieran",
+          "text": "… so they’d be hidden?"
+        },
+        {
+          "start": 313.4,
+          "speaker": "Jane",
+          "text": "Yeah. But he likes people to know that he has them. So, he puts them out in the shop but makes sure you need a ladder to get them.",
+          "answer": {
+            "question": 26,
+            "highlight": "makes sure you need a ladder to get them"
+          }
+        },
+        {
+          "start": 322.8,
+          "speaker": "Kieran",
+          "text": "Right. That would prevent any thefts!"
+        },
+        {
+          "start": 324.8,
+          "speaker": "Jane",
+          "text": "Uhuh."
+        },
+        {
+          "start": 325.2,
+          "speaker": "Kieran",
+          "text": "Does he stock books for children?"
+        },
+        {
+          "start": 327.4,
+          "speaker": "Jane",
+          "text": "He does. He particularly likes to encourage kids to read; he always says that he used to sit under the stairs as a child with a pile of books and read them all."
+        },
+        {
+          "start": 339.4,
+          "speaker": "Kieran",
+          "text": "Is that where he keeps them, then?"
+        },
+        {
+          "start": 341.8,
+          "speaker": "Jane",
+          "text": "Not exactly – he’s got a dedicated area on the ground floor with cushions so that parents can enter with their toddlers, go there and spend some time reading to them.",
+          "answer": {
+            "question": 27,
+            "highlight": "he’s got a dedicated area on the ground floor"
+          }
+        },
+        {
+          "start": 352.7,
+          "speaker": "Kieran",
+          "text": "Oh cool."
+        },
+        {
+          "start": 353.4,
+          "speaker": "Jane",
+          "text": "And then there’s a place for pushchairs by the front door. And a café if anyone needs refreshments."
+        },
+        {
+          "start": 360.4,
+          "speaker": "Kieran",
+          "text": "That’s good to know."
+        },
+        {
+          "start": 361.4,
+          "speaker": "Jane",
+          "text": "As I said, it’s a big shop and there’s a storage area out the back as well."
+        },
+        {
+          "start": 367.2,
+          "speaker": "Kieran",
+          "text": "Oh, what does he keep there? Books he wants to throw away?"
+        },
+        {
+          "start": 370.7,
+          "speaker": "Jane",
+          "text": "He hardly ever throws anything away – he just leaves unwanted books by the front door for customers to take.",
+          "answer": {
+            "question": 28,
+            "highlight": "he just leaves unwanted books by the front door"
+          }
+        },
+        {
+          "start": 378.5,
+          "speaker": "Kieran",
+          "text": "Well, that’s very nice."
+        },
+        {
+          "start": 380.4,
+          "speaker": "Jane",
+          "text": "Yeah – and books people or institutions have requested, they all go at the far end.",
+          "answer": {
+            "question": 29,
+            "highlight": "books people or institutions have requested, they all go at the far end"
+          }
+        },
+        {
+          "start": 386.6,
+          "speaker": "Kieran",
+          "text": "Oh."
+        },
+        {
+          "start": 387.0,
+          "speaker": "Jane",
+          "text": "He thinks it’s best to keep these out of the main shopping area as they’re boxed and new."
+        },
+        {
+          "start": 393.6,
+          "speaker": "Kieran",
+          "text": "Did you get your coursebooks from him?"
+        },
+        {
+          "start": 396.4,
+          "speaker": "Jane",
+          "text": "Naturally. He stocks books for a lot of the colleges. He used to keep these books on the first floor, but now there’s a new university in my hometown, he’s moved them downstairs to attract the students. They’re actually part of the coffee shop, on low shelves all around it.",
+          "answer": {
+            "question": 30,
+            "highlight": "They’re actually part of the coffee shop"
+          }
+        },
+        {
+          "start": 414.4,
+          "speaker": "Kieran",
+          "text": "Pretty central then. You’ll have to take me there some time!"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-7",
+          "type": "MULTIPLE_CHOICE_SINGLE",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "numbers": [21],
+              "prompt": "Kieran thinks the packing advice given by Jane’s grandfather is",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "common sense."
+                },
+                {
+                  "key": "B",
+                  "text": "hard to follow."
+                },
+                {
+                  "key": "C",
+                  "text": "over-protective."
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "Kieran says “Yeah – that’s obvious” and “it’s pretty clear that ruins them”."
+            },
+            {
+              "numbers": [22],
+              "prompt": "How does Jane feel about the books her grandfather has given her?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "They are not worth keeping."
+                },
+                {
+                  "key": "B",
+                  "text": "They should go to a collector."
+                },
+                {
+                  "key": "C",
+                  "text": "They have sentimental value for her."
+                }
+              ],
+              "acceptedAnswers": [["C"]],
+              "explanation": "She would feel bad throwing them away because they will always remind her of him."
+            },
+            {
+              "numbers": [23],
+              "prompt": "Jane and Kieran agree that hardback books should be",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "put out on display."
+                },
+                {
+                  "key": "B",
+                  "text": "given as gifts to visitors."
+                },
+                {
+                  "key": "C",
+                  "text": "more attractively designed."
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "Kieran says it’s a pity people don’t keep them out on shelves; a colourful book on a table is the first thing he’s drawn to, and Jane agrees."
+            },
+            {
+              "numbers": [24],
+              "prompt": "While talking about taking a book from a shelf, Jane",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "describes the mistakes other people make doing it."
+                },
+                {
+                  "key": "B",
+                  "text": "reflects on a significant childhood experience."
+                },
+                {
+                  "key": "C",
+                  "text": "explains why some books are easier to remove than others."
+                }
+              ],
+              "acceptedAnswers": [["B"]],
+              "explanation": "As a small child she pulled a heavy book off a shelf and it broke apart; she still remembers it."
+            },
+            {
+              "numbers": [25],
+              "prompt": "What do Jane and Kieran suggest about new books?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Their parents liked buying them as presents."
+                },
+                {
+                  "key": "B",
+                  "text": "They would like to buy more of them."
+                },
+                {
+                  "key": "C",
+                  "text": "Not everyone can afford them."
+                }
+              ],
+              "acceptedAnswers": [["C"]],
+              "explanation": "“New books aren’t cheap” – “I guess we’re lucky we can buy them.”"
+            }
+          ]
+        },
+        {
+          "groupId": "qg-8",
+          "type": "MATCHING_FEATURES",
+          "instructions": "Where does Jane’s grandfather keep each of the following types of books in his shop? Choose FIVE answers from the box and write the correct letter, A–G, next to Questions 26–30.",
+          "options": [
+            {
+              "key": "A",
+              "text": "near the entrance"
+            },
+            {
+              "key": "B",
+              "text": "in the attic"
+            },
+            {
+              "key": "C",
+              "text": "at the back of the shop"
+            },
+            {
+              "key": "D",
+              "text": "on a high shelf"
+            },
+            {
+              "key": "E",
+              "text": "near the stairs"
+            },
+            {
+              "key": "F",
+              "text": "in a specially designed space"
+            },
+            {
+              "key": "G",
+              "text": "within the café"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [26],
+              "prompt": "rare books",
+              "acceptedAnswers": [["D"]],
+              "explanation": "He puts them out in the shop but you need a ladder to get them."
+            },
+            {
+              "numbers": [27],
+              "prompt": "children’s books",
+              "acceptedAnswers": [["F"]],
+              "explanation": "A dedicated area on the ground floor with cushions for parents and toddlers."
+            },
+            {
+              "numbers": [28],
+              "prompt": "unwanted books",
+              "acceptedAnswers": [["A"]],
+              "explanation": "He leaves them by the front door for customers to take."
+            },
+            {
+              "numbers": [29],
+              "prompt": "requested books",
+              "acceptedAnswers": [["C"]],
+              "explanation": "They all go at the far end, out of the main shopping area."
+            },
+            {
+              "numbers": [30],
+              "prompt": "coursebooks",
+              "acceptedAnswers": [["G"]],
+              "explanation": "They are part of the coffee shop, on low shelves all around it."
+            }
+          ]
+        }
+      ]
+    },
+    "listening-4": {
+      "kind": "listening",
+      "part": 4,
+      "audio": "/media/audio/b19t4-p4.d60829d6.mp3",
+      "durationSec": 518.9,
+      "context": "A lecture about how to plan successful tree-planting and reforestation projects.",
+      "script": [
+        {
+          "start": 73.1,
+          "speaker": "Lecturer",
+          "text": "Tree planting now dominates political and popular agendas and is often presented as an easy answer to the climate crisis, as well as a way for business corporations to offset their carbon emissions. But unfortunately, tree planting isn’t as straightforward as some people think. When the wrong trees are planted in the wrong place, it can do considerably more damage than good, failing to help either people or the environment."
+        },
+        {
+          "start": 102.1,
+          "speaker": "Lecturer",
+          "text": "Reforestation projects are currently being undertaken on a huge scale in many countries and it’s crucial that the right trees are selected. A mix of species should always be planted, typical of the local natural forest ecosystem and including rare and endangered species in order to create a rich ecosystem. It’s important to avoid non-native species that could become invasive. Invasive species are a significant contributor to the current global biodiversity crisis and are often in competition with native species and may threaten their long-term survival.",
+          "answer": {
+            "question": 31,
+            "highlight": "are often in competition with native species"
+          }
+        },
+        {
+          "start": 149.8,
+          "speaker": "Lecturer",
+          "text": "Restoring biodiversity that will maximise carbon capture is key when reforesting an area, but ideally any reforestation project should have several goals. These could include selecting trees that can contribute to wildlife conservation, improve the availability of food for the local community and maintain the stability of soil systems. Meeting as many of these goals as possible, whilst doing no harm to local communities, native ecosystems and vulnerable species, is the sign of a highly successful tree-planting scheme.",
+          "answer": {
+            "question": 32,
+            "highlight": "improve the availability of food for the local community"
+          }
+        },
+        {
+          "start": 194.2,
+          "speaker": "Lecturer",
+          "text": "To ensure the survival and resilience of a planted forest, it’s vital to use tree seeds with appropriate levels of genetic diversity: the amount of genetic variation found within a species essential for their survival. Using seeds with low genetic diversity generally lowers the resilience of restored forests which can make them vulnerable to disease and unable to adapt to climate change.",
+          "answer": {
+            "question": 33,
+            "highlight": "vulnerable to disease"
+          }
+        },
+        {
+          "start": 227.6,
+          "speaker": "Lecturer",
+          "text": "Choosing the right location for reforestation projects is as important as choosing the right trees. Ultimately, the best area for planting trees would be in formerly forested areas that are in poor condition. It’s better to avoid non-forested landscapes such as natural grasslands, savannas or wetlands as these ecosystems already contribute greatly to capturing carbon. It would also be advantageous to choose an area where trees could provide other benefits, such as recreational spaces. Reforesting areas which are currently exploited for agriculture should be avoided as this often leads to other areas being deforested.",
+          "answer": {
+            "question": 34,
+            "highlight": "Reforesting areas which are currently exploited for agriculture should be avoided"
+          }
+        },
+        {
+          "start": 285.1,
+          "speaker": "Lecturer",
+          "text": "Large-scale reforestation projects require careful planning. Making the right decisions about where to plant trees depends on having the right information. Having detailed and up-to-date maps identifying high-priority areas for intervention is essential.",
+          "answer": {
+            "question": 35,
+            "highlight": "Having detailed and up-to-date maps"
+          }
+        },
+        {
+          "start": 308.0,
+          "speaker": "Lecturer",
+          "text": "Drone technology is a useful tool in helping to prioritise and monitor areas of degraded forest for restoration. In Brazil, it’s being used to identify and quantify how parts of the Amazon are being devastated by human activities such as rearing cattle and illegal logging.",
+          "answer": {
+            "question": 36,
+            "highlight": "rearing cattle and illegal logging"
+          }
+        },
+        {
+          "start": 333.8,
+          "speaker": "Lecturer",
+          "text": "A good example of where the right trees were picked to achieve a restored forest is in Lampang Province in Northern Thailand. A previously forested site which had been degraded through mining was reforested by a cement company together with Chiang Mai University. After spreading 60 cm of topsoil, they planted 14 different native tree species which included several species of fig. Figs are a keystone species because of the critical role they play in maintaining wildlife populations. They are central to tropical reforestation projects as they accelerate the speed of the recovery process by attracting animals and birds which act as natural seed dispersers. This helps to promote diversity through the healthy regrowth of a wide range of plant species.",
+          "answer": {
+            "question": 37,
+            "highlight": "accelerate the speed of the recovery process"
+          }
+        },
+        {
+          "start": 399.9,
+          "speaker": "Lecturer",
+          "text": "Unlike the majority of fruit trees, figs bear fruit all year round, providing a reliable food source for many species. At this site, for example, after only three rainy seasons, monkeys started visiting to eat the fig fruits, naturally dispersing seeds through defecation.",
+          "answer": {
+            "question": 38,
+            "highlight": "monkeys started visiting to eat the fig fruits"
+          }
+        },
+        {
+          "start": 423.6,
+          "speaker": "Lecturer",
+          "text": "Reforestation projects should always aim to make sure that local communities are consulted and involved in the decision-making process."
+        },
+        {
+          "start": 434.2,
+          "speaker": "Lecturer",
+          "text": "The restoration of mangrove forests in Madagascar is an example of a project which has succeeded in creating real benefits for the community. Destruction of the mangrove forests had a terrible impact on plant and animal life, and also badly affected the fishing industry, which was a major source of employment for local people living in coastal areas.",
+          "answer": {
+            "question": 39,
+            "highlight": "badly affected the fishing industry"
+          }
+        },
+        {
+          "start": 462.0,
+          "speaker": "Lecturer",
+          "text": "The reforestation project involved hiring local people to plant and care for the new mangrove trees. Millions of mangrove trees have now been planted which has resulted in the return of a healthy aquatic ecosystem. The mangroves also act as a defence against the increased threat of flooding caused by climate change. What’s more, the local economy is more stable and thousands more Madagascans are now able to send their children to school.",
+          "answer": {
+            "question": 40,
+            "highlight": "the increased threat of flooding"
+          }
+        },
+        {
+          "start": 499.3,
+          "speaker": "Lecturer",
+          "text": "One other important point to consider …"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-9",
+          "type": "GAP_FILL",
+          "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "notes",
+            "title": "Tree planting",
+            "body": "# Reforestation projects should:\n- include a range of tree species\n- not include invasive species because of possible {{31}} with native species\n- aim to capture carbon, protect the environment and provide sustainable sources of {{32}} for local people\n- use tree seeds with a high genetic diversity to increase resistance to {{33}} and climate change\n- plant trees on previously forested land which is in a bad condition, not select land which is being used for {{34}}\n# Large-scale reforestation projects\n- Base planning decisions on information from accurate {{35}}.\n- Drones are useful for identifying areas in Brazil which are endangered by keeping {{36}} and illegal logging.\n# Lampang Province, Northern Thailand\n- A forest was restored in an area damaged by mining.\n- A variety of native fig trees were planted, which are important for\n– supporting many wildlife species\n– increasing the {{37}} of recovery by attracting animals and birds, e.g., {{38}} were soon attracted to the area.\n# Involving local communities\n- Destruction of mangrove forests in Madagascar made it difficult for people to make a living from {{39}}.\n- The mangrove reforestation project:\n– provided employment for local people\n– restored a healthy ecosystem\n– protects against the higher risk of {{40}}."
+          },
+          "questions": [
+            {
+              "numbers": [31],
+              "prompt": "not include invasive species because of possible ___ with native species",
+              "acceptedAnswers": [["competition"]]
+            },
+            {
+              "numbers": [32],
+              "prompt": "provide sustainable sources of ___ for local people",
+              "acceptedAnswers": [["food"]]
+            },
+            {
+              "numbers": [33],
+              "prompt": "increase resistance to ___ and climate change",
+              "acceptedAnswers": [["disease"]]
+            },
+            {
+              "numbers": [34],
+              "prompt": "not select land which is being used for ___",
+              "acceptedAnswers": [["agriculture"]]
+            },
+            {
+              "numbers": [35],
+              "prompt": "Base planning decisions on information from accurate ___",
+              "acceptedAnswers": [["maps"]]
+            },
+            {
+              "numbers": [36],
+              "prompt": "areas in Brazil endangered by keeping ___ and illegal logging",
+              "acceptedAnswers": [["cattle"]]
+            },
+            {
+              "numbers": [37],
+              "prompt": "increasing the ___ of recovery by attracting animals and birds",
+              "acceptedAnswers": [["speed"]]
+            },
+            {
+              "numbers": [38],
+              "prompt": "e.g. ___ were soon attracted to the area",
+              "acceptedAnswers": [["monkeys"]]
+            },
+            {
+              "numbers": [39],
+              "prompt": "difficult for people to make a living from ___",
+              "acceptedAnswers": [["fishing"]]
+            },
+            {
+              "numbers": [40],
+              "prompt": "protects against the higher risk of ___",
+              "acceptedAnswers": [["flooding"]]
+            }
+          ]
+        }
+      ]
+    },
+    "reading-1": {
+      "kind": "reading",
+      "part": 1,
+      "title": "The impact of climate change on butterflies in Britain",
+      "paragraphs": [
+        {
+          "label": "A",
+          "text": "According to conservationists, populations of around two thirds of butterfly species have declined in Britain over the past 40 years. If this trend continues, it might have unpredictable knock-on effects for other species in the ecosystem. Butterfly eggs develop into caterpillars and these insects, which are the second stage in a new butterfly’s lifecycle, consume vast quantities of plant material, and in turn act as prey for birds as well as bats and other small mammals. Only by arming themselves with an understanding of why butterfly numbers are down can conservationists hope to halt or reverse the decline."
+        },
+        {
+          "label": "B",
+          "text": "Butterflies prefer outdoor conditions to be ‘just right’, which means neither too hot nor too cold. Under the conditions of climate change, the temperature at any given time in summer is generally getting warmer, leaving butterflies with the challenge of how to deal with this. One of the main ways in which species are ensuring conditions suit them is by changing the time of year at which they are active and reproduce. Scientists refer to the timing of such lifecycle events as ‘phenology’, so when an animal or plant starts to do something earlier in the year than it usually does, it is said to be ‘advancing its phenology’."
+        },
+        {
+          "label": "C",
+          "text": "These advances have been observed already in a wide range of butterflies – indeed, most species are advancing their phenology to some extent. In Britain, as the average spring temperature has increased by roughly 0.5 °C over the past 20 years, species have advanced by between three days and a week on average, to keep in line with cooler temperatures. Is this a sign that butterflies are well equipped to cope with climate change, and readily adjust to new temperatures? Or are these populations under stress, being dragged along unwillingly by unnaturally fast changes? The answer is still unknown, but a new study is seeking to answer these questions."
+        },
+        {
+          "label": "D",
+          "text": "First, the researchers pulled together data from millions of records that had been submitted by butterfly enthusiasts – people who spend their free time observing the activities of different species. This provided information on 130 species of butterflies in Great Britain every year for a 20-year period. They then estimated the abundance and distribution of each species across this time, along with how far north in the country they had moved. The data also, crucially, allowed researchers to estimate subtle changes in what time of the year each species was changing into an adult butterfly."
+        },
+        {
+          "label": "E",
+          "text": "Analysing the trends in each variable, the researchers discovered that species with more flexible lifecycles were more likely to be able to benefit from an earlier emergence driven by climate change. Some species are able to go from caterpillar to butterfly twice or more per year, so that the individual butterflies you see flying in the spring are the grandchildren or great-grandchildren of the individuals seen a year previously."
+        },
+        {
+          "label": "F",
+          "text": "Among these species, researchers observed that those which have been advancing their phenology the most over the 20-year study period also had the most positive trends in abundance, distribution and northwards extent. For these species, such as Britain’s tiniest butterfly, the dainty Small Blue, whose colonies are up to a hundred strong, some develop into butterflies early in spring, allowing their summer generations to complete another reproductive cycle by autumn so that more population growth occurs."
+        },
+        {
+          "label": "G",
+          "text": "Other species, however, are less flexible and restricted to a single reproductive cycle per year. For these species, there was no evidence of any benefit to emerging earlier. Indeed, worryingly, it was found that the species in this group that specialise in very specific habitat types, often related to the caterpillar’s preferred diet, actually tended to be most at harm from advancing phenology. The beautiful High Brown Fritillary, often described as Britain’s most endangered butterfly, is in this group. It is found only in coppiced woodland and limestone pavement habitats. It is also a single-generation butterfly that has advanced its phenology. This suggests that climate change, while undoubtedly not the sole cause, might have played a part in the downfall of this species."
+        },
+        {
+          "label": "H",
+          "text": "All is not lost, however. Many of Britain’s single-generation species show the capacity, in continental Europe, to add a second generation in years that are sufficiently warm. Therefore, as the climate continues to warm, species like the Silver-studded Blue might be able to switch to multiple generations in the UK as well, and so begin to extract benefits from the additional warmth, potentially leading to population increases."
+        },
+        {
+          "label": "I",
+          "text": "More immediately, conservationists can arm themselves with all this knowledge to spot the warning signs of species that may be at risk. The White Admiral of southern England, a much sought-after butterfly, experienced a significant increase in numbers from the 1920s but has shown a considerable decline in the past 20 years. This may be because the caterpillar exists solely on a diet of a plant called honeysuckle. But it is also likely to be due to climate change."
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-1",
+          "type": "TRUE_FALSE_NOT_GIVEN",
+          "instructions": "Do the following statements agree with the information given in Reading Passage 1?",
+          "questions": [
+            {
+              "numbers": [1],
+              "prompt": "Forty years ago, there were fewer butterflies in Britain than at present.",
+              "acceptedAnswers": [["FALSE"]],
+              "explanation": "Numbers have declined over the past 40 years, so there were more butterflies then, not fewer.",
+              "location": {
+                "paragraph": "A",
+                "sentence": 1,
+                "highlight": "populations of around two thirds of butterfly species have declined in Britain over the past 40 years"
+              }
+            },
+            {
+              "numbers": [2],
+              "prompt": "Caterpillars are eaten by a number of different predators.",
+              "acceptedAnswers": [["TRUE"]],
+              "explanation": "Caterpillars are prey for birds, bats and other small mammals.",
+              "location": {
+                "paragraph": "A",
+                "sentence": 3,
+                "highlight": "act as prey for birds as well as bats and other small mammals"
+              }
+            },
+            {
+              "numbers": [3],
+              "prompt": "‘Phenology’ is a term used to describe a creature’s ability to alter the location of a lifecycle event.",
+              "acceptedAnswers": [["FALSE"]],
+              "explanation": "Phenology refers to the timing of lifecycle events, not their location.",
+              "location": {
+                "paragraph": "B",
+                "sentence": 4,
+                "highlight": "Scientists refer to the timing of such lifecycle events as ‘phenology’"
+              }
+            },
+            {
+              "numbers": [4],
+              "prompt": "Some species of butterfly have a reduced lifespan due to spring temperature increases.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "The passage says species have advanced their phenology as spring temperatures rose, but says nothing about lifespan.",
+              "location": null
+            },
+            {
+              "numbers": [5],
+              "prompt": "There is a clear reason for the adaptations that butterflies are making to climate change.",
+              "acceptedAnswers": [["FALSE"]],
+              "explanation": "Whether butterflies are coping well or are under stress is still unknown.",
+              "location": {
+                "paragraph": "C",
+                "sentence": 5,
+                "highlight": "The answer is still unknown"
+              }
+            },
+            {
+              "numbers": [6],
+              "prompt": "The data used in the study was taken from the work of amateur butterfly watchers.",
+              "acceptedAnswers": [["TRUE"]],
+              "explanation": "The records came from enthusiasts who observe butterflies in their free time.",
+              "location": {
+                "paragraph": "D",
+                "sentence": 1,
+                "highlight": "submitted by butterfly enthusiasts – people who spend their free time observing the activities of different species"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-2",
+          "type": "GAP_FILL",
+          "instructions": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "notes",
+            "title": "Butterflies in the UK",
+            "body": "# The Small Blue\n- lives in large {{7}}\n- first appears at the start of {{8}}\n- completes more than one reproductive cycle per year\n# The High Brown Fritillary\n- has one reproductive cycle\n- is considered to be more {{9}} than other species\n- its caterpillars occupy a limited range of {{10}}\n# The Silver-studded Blue\n- is already able to reproduce twice a year in warm areas of {{11}}\n# The White Admiral\n- is found in {{12}} areas of England\n- both climate change and the {{13}} of the caterpillar are possible reasons for decline"
+          },
+          "questions": [
+            {
+              "numbers": [7],
+              "prompt": "The Small Blue lives in large ___",
+              "acceptedAnswers": [["colonies"]],
+              "location": {
+                "paragraph": "F",
+                "sentence": 2,
+                "highlight": "whose colonies are up to a hundred strong"
+              }
+            },
+            {
+              "numbers": [8],
+              "prompt": "The Small Blue first appears at the start of ___",
+              "acceptedAnswers": [["spring"]],
+              "location": {
+                "paragraph": "F",
+                "sentence": 2,
+                "highlight": "some develop into butterflies early in spring"
+              }
+            },
+            {
+              "numbers": [9],
+              "prompt": "The High Brown Fritillary is considered to be more ___ than other species",
+              "acceptedAnswers": [["endangered"]],
+              "location": {
+                "paragraph": "G",
+                "sentence": 4,
+                "highlight": "often described as Britain’s most endangered butterfly"
+              }
+            },
+            {
+              "numbers": [10],
+              "prompt": "Its caterpillars occupy a limited range of ___",
+              "acceptedAnswers": [["habitat(s)"]],
+              "explanation": "Species in this group specialise in very specific habitat types; the High Brown Fritillary is found only in coppiced woodland and limestone pavement habitats.",
+              "location": {
+                "paragraph": "G",
+                "sentence": 3,
+                "highlight": "specialise in very specific habitat types"
+              }
+            },
+            {
+              "numbers": [11],
+              "prompt": "The Silver-studded Blue is already able to reproduce twice a year in warm areas of ___",
+              "acceptedAnswers": [["Europe"]],
+              "location": {
+                "paragraph": "H",
+                "sentence": 2,
+                "highlight": "in continental Europe, to add a second generation in years that are sufficiently warm"
+              }
+            },
+            {
+              "numbers": [12],
+              "prompt": "The White Admiral is found in ___ areas of England",
+              "acceptedAnswers": [["southern"]],
+              "location": {
+                "paragraph": "I",
+                "sentence": 2,
+                "highlight": "The White Admiral of southern England"
+              }
+            },
+            {
+              "numbers": [13],
+              "prompt": "Both climate change and the ___ of the caterpillar are possible reasons for decline",
+              "acceptedAnswers": [["diet"]],
+              "location": {
+                "paragraph": "I",
+                "sentence": 3,
+                "highlight": "the caterpillar exists solely on a diet of a plant called honeysuckle"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reading-2": {
+      "kind": "reading",
+      "part": 2,
+      "title": "Deep-sea mining",
+      "subtitle": "Bacteria from the ocean floor can beat superbugs and cancer. But habitats are at risk from the hunger for marine minerals",
+      "paragraphs": [
+        {
+          "label": "A",
+          "text": "When Professor Mat Upton found that a microbe from a deep-sea sponge was killing pathogenic bugs in his laboratory, he realised it could be a breakthrough in the fight against antibiotic-resistant superbugs, which are responsible for thousands of deaths a year in the UK alone. Further tests confirmed that an antibiotic from the sponge bacteria, found living more than 700 metres under the sea at the Rockall trough in the north-east Atlantic, was previously unknown to science, boosting its potential as a life-saving medicine. But Upton, and other scientists who view the deep ocean and its wealth of unique and undocumented species as a prospecting ground for new medicines, fear such potential will be lost in the rush to exploit the deep sea’s equally rich metal and mineral resources."
+        },
+        {
+          "label": "B",
+          "text": "‘We’re looking at the bioactive potential of marine resources, to see if there are any more medicines or drugs down there before we destroy it for ever,’ says Upton, a medical microbiologist at the University of Plymouth. He is among many scientists urging a halt to deep-sea mining, asking for time to weigh up the pros and cons. ‘In sustainability terms, this could be a better way of exploiting the economic potential of the deep sea,’ he argues. Oceanographers using remotely operated vehicles have spotted many new species. Among them have been sea cucumbers with tails allowing them to sail along the ocean floor, and a rare ‘Dumbo’ octopus, found 3,000 metres under the Pacific Ocean, off the coast of California. Any one of these could offer lifesaving potential. Upton estimates it could take up to a decade for a newly discovered antibiotic to become a medicine – but the race towards commercial mining in the ocean abyss has already begun."
+        },
+        {
+          "label": "C",
+          "text": "The deep sea contains more nickel, cobalt and rare earth metals than all land reserves combined, according to the US Geological Survey. Mining corporations argue that deep-sea exploration could help diversify the supply of metals and point to the fact that demand for resources such as copper, aluminium, cobalt for electric car batteries and other metals to power technology and smartphones, is soaring. They say that deep-sea mining could yield far superior ore to land mining with little, if any, waste. Different methods of extraction exist, but most involve employing some form of converted machinery previously used in terrestrial mining to excavate materials from the sea floor, at depths of up to 6,000 metres, then drawing a seawater slurry, containing rock and other solid particles, from the sea floor to ships on the surface. The slurry is then ‘de-watered’ and transferred to another vessel for shipping. Extracted seawater is pumped back down and discharged close to the sea floor."
+        },
+        {
+          "label": "D",
+          "text": "But environmental and legal groups have urged caution, arguing there are potentially massive and unknown ramifications for the environment and for nearby communities, and that the global regulatory framework is not yet drafted. ‘Despite arising in the last half century, the “new global gold rush” of deep-sea mining shares many features with past resource scrambles – including a general disregard for environmental and social impacts, and the marginalisation of indigenous peoples and their rights,’ a paper, written by Julie Hunter and Julian Aguon, from Blue Ocean Law, and Pradeep Singh, from the Center for Marine Environmental Sciences, Bremen, argues. The authors say that knowledge of the deep seabed remains extremely limited. ‘The surface of the Moon, Mars and even Venus have all been mapped and studied in much greater detail, leading marine scientists to commonly remark that, with respect to the deep sea, “We don’t yet know what we need to know”.’"
+        },
+        {
+          "label": "E",
+          "text": "Scientific research – including a recent paper in Marine Policy journal – has suggested the deep seabed, and hydrothermal vents, which are created when seawater meets volcanic magma, have crucial impacts upon biodiversity and the global climate. The mineral-rich vents and their surrounds are also home to many well-known animals including crustaceans, tubeworms, clams, slugs, anemones and fish. ‘It is becoming increasingly clear that deep-sea mining poses a grave threat to these vital seabed functions,’ the paper says. ‘Extraction methods would produce large sediment plumes and involve the discharge of waste back into the ocean, significantly disturbing seafloor environments,’ the paper continues. ‘On deep sea vents, scientists are clear,’ says Dr Jon Copley of the National Oceanography Centre, Southampton: ‘we don’t want mining on them.’"
+        },
+        {
+          "label": "F",
+          "text": "The oceans occupy around 70% of the planet and are relatively unexplored, says Mike Johnston, chief executive of Nautilus, a Canadian underwater exploration company: ‘It makes sense to explore this untapped potential in an environmentally sustainable way, instead of continually looking at the fast depleting land resources of the planet to meet society’s rising needs.’ Those leading the global rush to place giant mining machines thousands of metres below the sea surface say the environmental impacts will be far lower than on land. But critics say exotic and little-known ecosystems in the deep oceans could be destroyed and must be protected. ‘Mining will be the greatest assault on deep-sea ecosystems ever inflicted by humans,’ according to hydrothermal vent expert Verena Tunnicliffe, at the University of Victoria in Canada. She argues that active vents must be off-limits for mining to protect the new knowledge and biotechnology spin-offs they can deliver, and that strict controls must be in place elsewhere."
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-3",
+          "type": "MATCHING_PARAGRAPH_INFO",
+          "instructions": "Reading Passage 2 has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F.",
+          "options": [
+            {
+              "key": "A",
+              "text": "Paragraph A"
+            },
+            {
+              "key": "B",
+              "text": "Paragraph B"
+            },
+            {
+              "key": "C",
+              "text": "Paragraph C"
+            },
+            {
+              "key": "D",
+              "text": "Paragraph D"
+            },
+            {
+              "key": "E",
+              "text": "Paragraph E"
+            },
+            {
+              "key": "F",
+              "text": "Paragraph F"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [14],
+              "prompt": "reference to the rapidly increasing need for one raw material in the transport industry",
+              "acceptedAnswers": [["C"]],
+              "explanation": "Demand for cobalt for electric car batteries “is soaring”.",
+              "location": {
+                "paragraph": "C",
+                "sentence": 2,
+                "highlight": "cobalt for electric car batteries"
+              }
+            },
+            {
+              "numbers": [15],
+              "prompt": "a rough estimate of the area of the Earth covered by the oceans",
+              "acceptedAnswers": [["F"]],
+              "location": {
+                "paragraph": "F",
+                "sentence": 1,
+                "highlight": "The oceans occupy around 70% of the planet"
+              }
+            },
+            {
+              "numbers": [16],
+              "prompt": "how a particular underwater habitat, where minerals and organisms co-exist, is formed",
+              "acceptedAnswers": [["E"]],
+              "explanation": "Hydrothermal vents form when seawater meets volcanic magma; the mineral-rich vents are home to many animals.",
+              "location": {
+                "paragraph": "E",
+                "sentence": 1,
+                "highlight": "hydrothermal vents, which are created when seawater meets volcanic magma"
+              }
+            },
+            {
+              "numbers": [17],
+              "prompt": "reference to the fact that the countries of the world have yet to agree on rules for the exploration of the seabed",
+              "acceptedAnswers": [["D"]],
+              "location": {
+                "paragraph": "D",
+                "sentence": 1,
+                "highlight": "the global regulatory framework is not yet drafted"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-4",
+          "type": "MATCHING_FEATURES",
+          "instructions": "Look at the following statements (Questions 18–23) and the list of people below. Match each statement with the correct person or people, A–E. NB You may use any letter more than once.",
+          "options": [
+            {
+              "key": "A",
+              "text": "Professor Mat Upton"
+            },
+            {
+              "key": "B",
+              "text": "Julie Hunter, Julian Aguon and Pradeep Singh"
+            },
+            {
+              "key": "C",
+              "text": "Dr Jon Copley"
+            },
+            {
+              "key": "D",
+              "text": "Mike Johnston"
+            },
+            {
+              "key": "E",
+              "text": "Verena Tunnicliffe"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [18],
+              "prompt": "A move away from the exploration of heavily mined reserves on land is a good idea.",
+              "acceptedAnswers": [["D"]],
+              "location": {
+                "paragraph": "F",
+                "sentence": 1,
+                "highlight": "instead of continually looking at the fast depleting land resources of the planet"
+              }
+            },
+            {
+              "numbers": [19],
+              "prompt": "The negative effects of undersea exploration on local areas and their inhabitants are being ignored.",
+              "acceptedAnswers": [["B"]],
+              "location": {
+                "paragraph": "D",
+                "sentence": 2,
+                "highlight": "a general disregard for environmental and social impacts"
+              }
+            },
+            {
+              "numbers": [20],
+              "prompt": "There are more worthwhile things to extract from the sea than minerals.",
+              "acceptedAnswers": [["A"]],
+              "explanation": "Upton argues that looking for new medicines could be a better way of exploiting the deep sea than mining.",
+              "location": {
+                "paragraph": "B",
+                "sentence": 3,
+                "highlight": "this could be a better way of exploiting the economic potential of the deep sea"
+              }
+            },
+            {
+              "numbers": [21],
+              "prompt": "No other form of human exploration will have such a destructive impact on marine life as deep-sea mining.",
+              "acceptedAnswers": [["E"]],
+              "location": {
+                "paragraph": "F",
+                "sentence": 4,
+                "highlight": "Mining will be the greatest assault on deep-sea ecosystems ever inflicted by humans"
+              }
+            },
+            {
+              "numbers": [22],
+              "prompt": "More is known about outer space than about what lies beneath the oceans.",
+              "acceptedAnswers": [["B"]],
+              "location": {
+                "paragraph": "D",
+                "sentence": 4,
+                "highlight": "The surface of the Moon, Mars and even Venus have all been mapped and studied in much greater detail"
+              }
+            },
+            {
+              "numbers": [23],
+              "prompt": "There is one marine life habitat where experts agree mining should not take place.",
+              "acceptedAnswers": [["C"]],
+              "location": {
+                "paragraph": "E",
+                "sentence": 5,
+                "highlight": "On deep sea vents, scientists are clear"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-5",
+          "type": "GAP_FILL",
+          "instructions": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "summary",
+            "title": "Mining the sea floor",
+            "body": "Mining corporations believe that the mineral resources lying under the sea may be superior to those found in the earth. They also say that these can be removed without producing much {{24}}.\n\nThe extraction is often done by adapting the {{25}} that has already been used to work on land. The method of excavation involves removing the seawater from the slurry that is brought up to ships and returning it to the seabed. However, concerned groups strongly believe that {{26}} is necessary due to the possible number of unidentified consequences."
+          },
+          "questions": [
+            {
+              "numbers": [24],
+              "prompt": "These can be removed without producing much ___",
+              "acceptedAnswers": [["waste"]],
+              "location": {
+                "paragraph": "C",
+                "sentence": 3,
+                "highlight": "with little, if any, waste"
+              }
+            },
+            {
+              "numbers": [25],
+              "prompt": "The extraction is often done by adapting the ___ that has already been used to work on land",
+              "acceptedAnswers": [["machinery"]],
+              "location": {
+                "paragraph": "C",
+                "sentence": 4,
+                "highlight": "converted machinery previously used in terrestrial mining"
+              }
+            },
+            {
+              "numbers": [26],
+              "prompt": "Concerned groups strongly believe that ___ is necessary",
+              "acceptedAnswers": [["caution"]],
+              "location": {
+                "paragraph": "D",
+                "sentence": 1,
+                "highlight": "environmental and legal groups have urged caution"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reading-3": {
+      "kind": "reading",
+      "part": 3,
+      "title": "The Unselfish Gene",
+      "subtitle": "A psychologist gives his view on how humans became self-centred",
+      "paragraphs": [
+        {
+          "label": "A",
+          "text": "There has long been a general assumption that human beings are essentially selfish. We’re apparently ruthless, with strong impulses to compete against each other for resources and to accumulate power and possessions. If we are kind to one another, it’s usually because we have ulterior motives. If we are good, it’s only because we have managed to control and transcend our innate selfishness and brutality."
+        },
+        {
+          "label": "B",
+          "text": "This bleak view of human nature is closely associated with the science writer Richard Dawkins, whose 1976 book The Selfish Gene became popular because it fitted so well with – and helped to justify – the competitive and individualistic ethos that was so prevalent in late 20th-century societies. Like many others, Dawkins justifies his views with reference to the field of evolutionary psychology. Evolutionary psychology theorises that present-day human traits developed in prehistoric times, during what is termed the ‘environment of evolutionary adaptedness’."
+        },
+        {
+          "label": "C",
+          "text": "Prehistory is usually seen as a period of intense competition, when life was such a brutal battle that only those with traits such as selfishness, aggression and ruthlessness survived. And because survival depended on access to resources – such as rivers, forests and animals – there was bound to be conflict between rival groups, which led to the development of traits such as racism and warfare. This seems logical. But, in fact, the assumption on which this all rests – that prehistoric life was a desperate struggle for survival – is false."
+        },
+        {
+          "label": "D",
+          "text": "It’s important to remember that in the prehistoric era, the world was very sparsely populated. According to some estimates, around 15,000 years ago, the population of Europe was only 29,000, and the population of the whole world was less than half a million. Humans at that time were hunter-gatherers: people who lived by hunting wild animals and collecting wild plants. With such small population densities, it seems unlikely that prehistoric hunter-gatherer groups had to compete against each other for resources or had any need to develop ruthlessness and competitiveness, or to go to war."
+        },
+        {
+          "label": "E",
+          "text": "There is significant evidence to back this notion from contemporary hunter-gatherer groups, who live in the same way as prehistoric humans did. As the anthropologist Bruce Knauft has remarked, hunter-gatherers are characterised by ‘extreme political and sexual egalitarianism’. Knauft has observed that individuals in such groups don’t accumulate property or possessions and have an ethical obligation to share everything. They also have methods of preserving egalitarianism by ensuring that disparities of status don’t arise."
+        },
+        {
+          "label": "F",
+          "text": "The !Kung people of southern Africa, for example, swap arrows before going hunting and when an animal is killed, the acclaim does not go to the person who fired the arrow, but to the person the arrow belongs to. And if a person becomes too domineering, the other members of the group ostracise them, exiling the offender from society. Typically in such groups, men do not dictate what women do. Women in hunter-gatherer groups worldwide often benefit from a high level of autonomy, being able to select their own marriage partners, decide what work they do and work whenever they choose to. And if a marriage breaks down, they have custody rights over their children."
+        },
+        {
+          "label": "G",
+          "text": "Many anthropologists believe that societies such as the !Kung were normal until a few thousand years ago, when population growth led to the development of agriculture and a settled lifestyle. In view of the above, there seems little reason to assume that traits such as racism, warfare and male domination should have been selected by evolution – as they would have been of little benefit in the prehistoric era. Individuals who behaved selfishly and ruthlessly would be less likely to survive, since they would have been ostracised from their groups."
+        },
+        {
+          "label": "H",
+          "text": "It makes more sense, then, to see traits such as cooperation, egalitarianism, altruism and peacefulness as innate characteristics of human beings. These were the traits that were prevalent in human life for tens of thousands of years. So presumably these traits are still strong in us now."
+        },
+        {
+          "label": "I",
+          "text": "But if prehistoric life wasn’t really as brutal as has often been assumed, why do modern humans behave so selfishly and ruthlessly? Perhaps these negative traits should be seen as a later development, the result of environmental and psychological factors. Research has shown repeatedly that when the natural habitats of primates such as apes and gorillas are disrupted, they tend to become more violent and hierarchical."
+        },
+        {
+          "label": "J",
+          "text": "So, it could well be that the same thing has happened to us. I believe that the end of the hunter-gatherer lifestyle and the advent of farming was connected to a psychological change that occurred in some groups of people. There was a new sense of individuality and separateness, which led to a new selfishness, and ultimately to hierarchical societies, patriarchy and warfare. At any rate, these negative traits appear to have developed so recently that it doesn’t seem feasible to explain them in adaptive or evolutionary terms."
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-6",
+          "type": "MULTIPLE_CHOICE_SINGLE",
+          "instructions": "Choose the correct letter, A, B, C or D.",
+          "questions": [
+            {
+              "numbers": [27],
+              "prompt": "What is the writer doing in the first paragraph?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "setting out two opposing views about human nature"
+                },
+                {
+                  "key": "B",
+                  "text": "justifying his opinion about our tendency to be greedy"
+                },
+                {
+                  "key": "C",
+                  "text": "describing a commonly held belief about people’s behaviour"
+                },
+                {
+                  "key": "D",
+                  "text": "explaining why he thinks that humans act in a selfish manner"
+                }
+              ],
+              "acceptedAnswers": [["C"]],
+              "explanation": "The paragraph describes the general assumption that humans are selfish; the writer goes on to argue against it.",
+              "location": {
+                "paragraph": "A",
+                "sentence": 1,
+                "highlight": "There has long been a general assumption that human beings are essentially selfish"
+              }
+            },
+            {
+              "numbers": [28],
+              "prompt": "What point is made about Richard Dawkins’ book The Selfish Gene?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Its appeal lay in the radical nature of its ideas."
+                },
+                {
+                  "key": "B",
+                  "text": "Its success was due to the scientific support it offered."
+                },
+                {
+                  "key": "C",
+                  "text": "It presented a view that was in line with the attitudes of its time."
+                },
+                {
+                  "key": "D",
+                  "text": "It took an innovative approach to the analysis of human psychology."
+                }
+              ],
+              "acceptedAnswers": [["C"]],
+              "explanation": "It became popular because it matched the competitive, individualistic attitudes of late 20th-century societies.",
+              "location": {
+                "paragraph": "B",
+                "sentence": 1,
+                "highlight": "it fitted so well with – and helped to justify – the competitive and individualistic ethos that was so prevalent in late 20th-century societies"
+              }
+            },
+            {
+              "numbers": [29],
+              "prompt": "What does the writer suggest about the prehistoric era in the fourth paragraph?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Societies were more complex than many people believe."
+                },
+                {
+                  "key": "B",
+                  "text": "Supplies of natural resources were probably relatively plentiful."
+                },
+                {
+                  "key": "C",
+                  "text": "Most estimates about population sizes are likely to be inaccurate."
+                },
+                {
+                  "key": "D",
+                  "text": "Humans moved across continents more than was previously thought."
+                }
+              ],
+              "acceptedAnswers": [["B"]],
+              "explanation": "With so few people, groups were unlikely to have to compete for resources, so resources were probably plentiful.",
+              "location": {
+                "paragraph": "D",
+                "sentence": 4,
+                "highlight": "it seems unlikely that prehistoric hunter-gatherer groups had to compete against each other for resources"
+              }
+            },
+            {
+              "numbers": [30],
+              "prompt": "The writer refers to Bruce Knauft’s work as support for the idea that",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "selfishness is a relatively recent development in human societies."
+                },
+                {
+                  "key": "B",
+                  "text": "only people in isolated communities can live in an unselfish manner."
+                },
+                {
+                  "key": "C",
+                  "text": "very few lifestyles have survived unchanged since prehistoric times."
+                },
+                {
+                  "key": "D",
+                  "text": "hunter-gatherer cultures worldwide are declining in number."
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "Knauft’s observations of egalitarian hunter-gatherers support the writer’s view that prehistoric people did not need to be selfish, so selfishness developed later.",
+              "location": {
+                "paragraph": "E",
+                "sentence": 1,
+                "highlight": "There is significant evidence to back this notion from contemporary hunter-gatherer groups"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-7",
+          "type": "GAP_FILL",
+          "instructions": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "summary",
+            "title": "Contemporary hunter-gatherer societies",
+            "body": "Bruce Knauft’s research shows that contemporary hunter-gatherer societies tend to exhibit a high level of {{31}} in all areas of life. In these cultures, distributing resources fairly among all members is a moral obligation. These societies also employ strategies to prevent differences in {{32}} occurring: for example, the !Kung follow a custom whereby the credit for one person’s success at {{33}} is given to another member of the group. Individuals who behave in a {{34}} manner are punished by being excluded from the group, and women have a considerable amount of {{35}} in choices regarding work and marriage."
+          },
+          "questions": [
+            {
+              "numbers": [31],
+              "prompt": "contemporary hunter-gatherer societies tend to exhibit a high level of ___",
+              "acceptedAnswers": [["egalitarianism"]],
+              "location": {
+                "paragraph": "E",
+                "sentence": 2,
+                "highlight": "extreme political and sexual egalitarianism"
+              }
+            },
+            {
+              "numbers": [32],
+              "prompt": "strategies to prevent differences in ___ occurring",
+              "acceptedAnswers": [["status"]],
+              "location": {
+                "paragraph": "E",
+                "sentence": 4,
+                "highlight": "ensuring that disparities of status don’t arise"
+              }
+            },
+            {
+              "numbers": [33],
+              "prompt": "the credit for one person’s success at ___ is given to another member of the group",
+              "acceptedAnswers": [["hunting"]],
+              "location": {
+                "paragraph": "F",
+                "sentence": 1,
+                "highlight": "swap arrows before going hunting"
+              }
+            },
+            {
+              "numbers": [34],
+              "prompt": "Individuals who behave in a ___ manner are punished by being excluded",
+              "acceptedAnswers": [["domineering"]],
+              "location": {
+                "paragraph": "F",
+                "sentence": 2,
+                "highlight": "if a person becomes too domineering"
+              }
+            },
+            {
+              "numbers": [35],
+              "prompt": "women have a considerable amount of ___ in choices regarding work and marriage",
+              "acceptedAnswers": [["autonomy"]],
+              "location": {
+                "paragraph": "F",
+                "sentence": 4,
+                "highlight": "benefit from a high level of autonomy"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-8",
+          "type": "YES_NO_NOT_GIVEN",
+          "instructions": "Do the following statements agree with the views of the writer in Reading Passage 3?",
+          "questions": [
+            {
+              "numbers": [36],
+              "prompt": "Some anthropologists are mistaken about the point when the number of societies such as the !Kung began to decline.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "The writer reports what many anthropologists believe but does not say whether any of them are mistaken.",
+              "location": null
+            },
+            {
+              "numbers": [37],
+              "prompt": "Humans who developed warlike traits in prehistory would have had an advantage over those who did not.",
+              "acceptedAnswers": [["NO"]],
+              "explanation": "Traits such as warfare would have been of little benefit, and selfish individuals would be less likely to survive.",
+              "location": {
+                "paragraph": "G",
+                "sentence": 2,
+                "highlight": "as they would have been of little benefit in the prehistoric era"
+              }
+            },
+            {
+              "numbers": [38],
+              "prompt": "Being peaceful and cooperative is a natural way for people to behave.",
+              "acceptedAnswers": [["YES"]],
+              "location": {
+                "paragraph": "H",
+                "sentence": 1,
+                "highlight": "to see traits such as cooperation, egalitarianism, altruism and peacefulness as innate characteristics of human beings"
+              }
+            },
+            {
+              "numbers": [39],
+              "prompt": "Negative traits are more apparent in some modern cultures than in others.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "The writer says the psychological change happened in some groups of people, but does not compare negative traits in modern cultures.",
+              "location": null
+            },
+            {
+              "numbers": [40],
+              "prompt": "Animal research has failed to reveal a link between changes in the environment and the emergence of aggressive tendencies.",
+              "acceptedAnswers": [["NO"]],
+              "explanation": "Research has repeatedly shown that primates become more violent when their habitats are disrupted.",
+              "location": {
+                "paragraph": "I",
+                "sentence": 3,
+                "highlight": "when the natural habitats of primates such as apes and gorillas are disrupted, they tend to become more violent and hierarchical"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "kind": "writing",
+      "task1": {
+        "prompt": "The charts below give information on the location and types of dance classes young people in a town in Australia are currently attending. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+        "image": "/media/img/b19t4-w1.0ed4a4d2.png",
+        "imageDescription": "Two charts about dance classes currently attended by young people in a town in Australia. 1) Pie chart, “Location of dance classes”: private studios 48%, school halls (after-school) 24%, community halls & other 18%, college-based studios 10%. 2) Horizontal bar chart, “Types of dance classes (by age group)”, showing the number of students (axis 0 to 700) in two age groups, under 11 and 11–16. Ballet: under 11 about 600, 11–16 about 300. Tap: under 11 about 450, 11–16 about 420. Modern: under 11 about 300, 11–16 about 520. Ballet is the most popular class for under-11s and modern dance the most popular for 11- to 16-year-olds; tap is similarly popular with both groups.",
+        "minWords": 150
+      },
+      "task2": {
+        "prompt": "In many countries nowadays, consumers can go to a supermarket and buy food produced all over the world. Do you think this is a positive or negative development? Give reasons for your answer and include any relevant examples from your own knowledge or experience.",
+        "minWords": 250
+      }
+    },
+    "speaking": {
+      "kind": "speaking",
+      "part1": [
+        "Do you have a favourite café? Why/Why not?",
+        "Do you often go to cafés by yourself? Why/Why not?",
+        "What do you think helps to make a café very popular? Why?",
+        "Why do some people prefer cafés that are part of large chains, rather than small, local cafés?"
+      ],
+      "part2": {
+        "topic": "Describe a place you visited that has beautiful views.",
+        "points": [
+          "where this place is",
+          "when and why you visited it",
+          "what views you can see from this place"
+        ],
+        "closing": "and explain why you think these views are so beautiful.",
+        "prepSec": 60,
+        "speakSec": 120
+      },
+      "part3": [
+        "Do you agree that most beauty products are a waste of money?",
+        "How does the beauty industry advertise its products so successfully?",
+        "What do you think of the view that beauty products should not be advertised to children?",
+        "Why do many people equate youth with beauty?",
+        "Do you think that being beautiful could affect a person’s success in life?",
+        "Why might society’s ideas about beauty change over time?"
+      ]
+    }
+  }
+}

@@ -1,0 +1,2152 @@
+{
+  "meta": {
+    "testId": "cambridge19-test2",
+    "book": "Cambridge 19",
+    "testNumber": 2,
+    "track": "academic",
+    "status": "live",
+    "timing": {
+      "listening": {
+        "singlePartMin": 8,
+        "fullMockMin": 30,
+        "checkMin": 2
+      },
+      "reading": {
+        "singlePartMin": 20,
+        "fullMockMin": 60
+      },
+      "writing": {
+        "task1Min": 20,
+        "task2Min": 40,
+        "fullMockMin": 60
+      }
+    },
+    "studentHelp": {
+      "allowReveal": true,
+      "showScriptInSinglePart": true,
+      "lockAudioInFullMock": true
+    }
+  },
+  "sections": {
+    "listening-1": {
+      "kind": "listening",
+      "part": 1,
+      "audio": "/media/audio/b19t2-p1.2c79944d.mp3",
+      "durationSec": 481.9,
+      "context": "A woman is asking her friend Coleman about the guitar group he has joined.",
+      "script": [
+        {
+          "start": 91.0,
+          "speaker": "Woman",
+          "text": "Hi Coleman, how are you?"
+        },
+        {
+          "start": 92.5,
+          "speaker": "Coleman",
+          "text": "Good, thanks."
+        },
+        {
+          "start": 93.3,
+          "speaker": "Woman",
+          "text": "I wanted to have a chat with you because our friend Josh told me that you’ve joined a guitar group and it sounds interesting. I’d really like to learn myself."
+        },
+        {
+          "start": 107.4,
+          "speaker": "Coleman",
+          "text": "Why don’t you come along? I’m sure there’s room for another person."
+        },
+        {
+          "start": 114.5,
+          "speaker": "Woman",
+          "text": "Really? So – who runs the classes?"
+        },
+        {
+          "start": 118.0,
+          "speaker": "Coleman",
+          "text": "He’s called a ‘coordinator’ – his name’s Gary Mathieson.",
+          "answer": {
+            "question": 1,
+            "highlight": "Mathieson"
+          }
+        },
+        {
+          "start": 122.7,
+          "speaker": "Woman",
+          "text": "Let me note that down. Gary. . . . How do you spell his surname?"
+        },
+        {
+          "start": 129.6,
+          "speaker": "Coleman",
+          "text": "It’s M-A-T-H-I-E-S-O-N."
+        },
+        {
+          "start": 139.2,
+          "speaker": "Woman",
+          "text": "Right, thanks."
+        },
+        {
+          "start": 141.1,
+          "speaker": "Coleman",
+          "text": "He’s retired, actually, but he’s a really nice guy and he used to play in a lot of bands."
+        },
+        {
+          "start": 151.1,
+          "speaker": "Woman",
+          "text": "Thanks. So how long have you been going?"
+        },
+        {
+          "start": 154.9,
+          "speaker": "Coleman",
+          "text": "About a month now."
+        },
+        {
+          "start": 156.7,
+          "speaker": "Woman",
+          "text": "And could you play anything before you started?"
+        },
+        {
+          "start": 160.6,
+          "speaker": "Coleman",
+          "text": "I knew a few chords, but that’s all."
+        },
+        {
+          "start": 163.3,
+          "speaker": "Woman",
+          "text": "I’m sure everyone will be better than me."
+        },
+        {
+          "start": 166.5,
+          "speaker": "Coleman",
+          "text": "That’s what I thought, too. When I first spoke to Gary on the phone, he said it was a class for beginners, but I was still worried that everyone would be better than me, but we were all equally hopeless!",
+          "answer": {
+            "question": 2,
+            "highlight": "a class for beginners"
+          }
+        },
+        {
+          "start": 181.4,
+          "speaker": "Woman",
+          "text": "Oh, that’s reassuring. So where do you meet?"
+        },
+        {
+          "start": 187.1,
+          "speaker": "Coleman",
+          "text": "Well, when I joined the group, they were meeting in Gary’s home, but as the group got bigger, he decided to book a room at the college in town. I prefer going there.",
+          "answer": {
+            "question": 3,
+            "highlight": "a room at the college in town"
+          }
+        },
+        {
+          "start": 200.2,
+          "speaker": "Woman",
+          "text": "I know that place. I used to go to tap dancing classes there when I was at secondary school. I haven’t been since, though and I can’t remember what road it’s in . . . is it Lock Street?"
+        },
+        {
+          "start": 216.5,
+          "speaker": "Coleman",
+          "text": "It’s just beyond there at the bottom of New Street near the city roundabout.",
+          "answer": {
+            "question": 4,
+            "highlight": "at the bottom of New Street"
+          }
+        },
+        {
+          "start": 223.2,
+          "speaker": "Woman",
+          "text": "Yes, of course."
+        },
+        {
+          "start": 225.0,
+          "speaker": "Coleman",
+          "text": "The guitar club is on the first floor in Room T347."
+        },
+        {
+          "start": 230.7,
+          "speaker": "Woman",
+          "text": "Right. And when do you meet? Is it at the weekend?"
+        },
+        {
+          "start": 236.9,
+          "speaker": "Coleman",
+          "text": "We meet on Thursdays. It used to be 10.30 and that suited me well, but now we meet at 11. The class that’s in there before us asked if they could have the room for another 30 minutes.",
+          "answer": {
+            "question": 5,
+            "highlight": "now we meet at 11"
+          }
+        },
+        {
+          "start": 255.1,
+          "speaker": "Woman",
+          "text": "Oh, I see. Well, I’d love to come, but I don’t have a guitar."
+        },
+        {
+          "start": 262.4,
+          "speaker": "Coleman",
+          "text": "Well, you can always buy a second-hand one. There’s a website called ‘The perfect instrument’ that sells all kinds of guitars, violins and so on. I’m sure you’ll find something there.",
+          "answer": {
+            "question": 6,
+            "highlight": "‘The perfect instrument’"
+          }
+        },
+        {
+          "start": 284.9,
+          "speaker": "Woman",
+          "text": "So what’s a typical lesson like with Gary?"
+        },
+        {
+          "start": 318.7,
+          "speaker": "Coleman",
+          "text": "Well, he always starts by getting us to tune our guitars. That takes about five minutes."
+        },
+        {
+          "start": 326.5,
+          "speaker": "Woman",
+          "text": "Uhuh."
+        },
+        {
+          "start": 327.6,
+          "speaker": "Coleman",
+          "text": "Some people have an app they use, but others do it by ear. Gary goes round and helps them. And while he’s doing that, he tells us what he’s going to do during the lesson.",
+          "answer": {
+            "question": 7,
+            "highlight": "others do it by ear"
+          }
+        },
+        {
+          "start": 342.8,
+          "speaker": "Woman",
+          "text": "Right."
+        },
+        {
+          "start": 343.8,
+          "speaker": "Coleman",
+          "text": "First, we usually spend about ten minutes doing some strumming."
+        },
+        {
+          "start": 349.1,
+          "speaker": "Woman",
+          "text": "So is that using . . . what are they called . . . plectrums?"
+        },
+        {
+          "start": 354.8,
+          "speaker": "Coleman",
+          "text": "No – we just use our thumbs."
+        },
+        {
+          "start": 358.7,
+          "speaker": "Woman",
+          "text": "Much easier."
+        },
+        {
+          "start": 359.9,
+          "speaker": "Coleman",
+          "text": "Gary reminds us where to put our fingers for each chord and then we play them together. Sometimes we all just start laughing because we’re so bad at keeping time, so Gary starts clapping to help us.",
+          "answer": {
+            "question": 8,
+            "highlight": "Gary starts clapping to help us"
+          }
+        },
+        {
+          "start": 379.9,
+          "speaker": "Woman",
+          "text": "Do you learn to play any songs?"
+        },
+        {
+          "start": 382.6,
+          "speaker": "Coleman",
+          "text": "Yes – we do at least one song with words and chords. I mean that’s harder than you think."
+        },
+        {
+          "start": 391.0,
+          "speaker": "Woman",
+          "text": "Oh, I’m sure it is!"
+        },
+        {
+          "start": 393.6,
+          "speaker": "Coleman",
+          "text": "That part of the lesson takes about 15 minutes. He often brings a recording of the song and plays it to us first. Then he hands out the song and if there’s a new chord in it, we practise that before we play it together – but really slowly.",
+          "answer": {
+            "question": 9,
+            "highlight": "He often brings a recording of the song"
+          }
+        },
+        {
+          "start": 414.3,
+          "speaker": "Woman",
+          "text": "Do you do any finger picking?"
+        },
+        {
+          "start": 417.3,
+          "speaker": "Coleman",
+          "text": "That’s the last ten minutes of the lesson, when we pick out the individual notes from a tune he’s made up. It’s always quite simple."
+        },
+        {
+          "start": 428.8,
+          "speaker": "Woman",
+          "text": "That must be hard, though."
+        },
+        {
+          "start": 431.2,
+          "speaker": "Coleman",
+          "text": "It is, but people like it because they can really concentrate and if we’re all playing well, it sounds quite impressive. The only trouble is that he sometimes gets us to play one at a time – you know, alone.",
+          "answer": {
+            "question": 10,
+            "highlight": "play one at a time – you know, alone"
+          }
+        },
+        {
+          "start": 449.5,
+          "speaker": "Woman",
+          "text": "That’s scary."
+        },
+        {
+          "start": 451.1,
+          "speaker": "Coleman",
+          "text": "It is, but I’ve got used to it now. At the end he spends about five minutes telling us what to practise for the following week."
+        },
+        {
+          "start": 462.6,
+          "speaker": "Woman",
+          "text": "Well, thanks Coleman. I’ll go and have a look at that website, I think."
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-1",
+          "type": "GAP_FILL",
+          "instructions": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": "ONE WORD AND/OR A NUMBER",
+          "maxWords": 2,
+          "allowNumber": true,
+          "layout": {
+            "kind": "form",
+            "title": "Guitar Group",
+            "body": "Coordinator: Gary {{1}}\nLevel: {{2}}\nPlace: the {{3}}\n{{4}} Street\nFirst floor, Room T347\nTime: Thursday morning at {{5}}\nRecommended website: ‘The perfect {{6}}’"
+          },
+          "questions": [
+            {
+              "numbers": [1],
+              "prompt": "Coordinator: Gary ___",
+              "acceptedAnswers": [["Mathieson"]],
+              "explanation": "Coleman spells the surname: M-A-T-H-I-E-S-O-N."
+            },
+            {
+              "numbers": [2],
+              "prompt": "Level",
+              "acceptedAnswers": [["beginners"]],
+              "explanation": "Gary said on the phone that it was a class for beginners."
+            },
+            {
+              "numbers": [3],
+              "prompt": "Place: the ___",
+              "acceptedAnswers": [["college"]],
+              "explanation": "They used to meet at Gary’s home but now book a room at the college in town."
+            },
+            {
+              "numbers": [4],
+              "prompt": "___ Street",
+              "acceptedAnswers": [["New"]],
+              "explanation": "Lock Street is wrong: the college is just beyond it, at the bottom of New Street."
+            },
+            {
+              "numbers": [5],
+              "prompt": "Time: Thursday morning at ___",
+              "acceptedAnswers": [["11 (am)", "eleven (am)", "11am", "11.00 (am)", "11:00 (am)"]],
+              "explanation": "It used to be 10.30, but now they meet at 11."
+            },
+            {
+              "numbers": [6],
+              "prompt": "Recommended website: ‘The perfect ___’",
+              "acceptedAnswers": [["instrument"]],
+              "explanation": "The website is called ‘The perfect instrument’."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-2",
+          "type": "GAP_FILL",
+          "instructions": "Complete the table below. Write ONE WORD ONLY for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "table",
+            "title": "A typical 45-minute guitar lesson",
+            "body": "| Time | Activity | Notes |\n| --- | --- | --- |\n| 5 minutes | tuning guitars | using an app or by {{7}} |\n| 10 minutes | strumming chords using our thumbs | keeping time while the teacher is {{8}} |\n| 15 minutes | playing songs | often listening to a {{9}} of a song |\n| 10 minutes | playing single notes and simple tunes | playing together, then {{10}} |\n| 5 minutes | noting things to practise at home | |"
+          },
+          "questions": [
+            {
+              "numbers": [7],
+              "prompt": "Tuning guitars: using an app or by ___",
+              "acceptedAnswers": [["ear"]],
+              "explanation": "Some people use an app, but others tune by ear."
+            },
+            {
+              "numbers": [8],
+              "prompt": "Strumming: keeping time while the teacher is ___",
+              "acceptedAnswers": [["clapping"]],
+              "explanation": "They are bad at keeping time, so Gary starts clapping to help them."
+            },
+            {
+              "numbers": [9],
+              "prompt": "Playing songs: often listening to a ___ of a song",
+              "acceptedAnswers": [["recording"]],
+              "explanation": "Gary often brings a recording of the song and plays it first."
+            },
+            {
+              "numbers": [10],
+              "prompt": "Single notes: playing together, then ___",
+              "acceptedAnswers": [["alone"]],
+              "explanation": "He sometimes gets them to play one at a time, alone."
+            }
+          ]
+        }
+      ]
+    },
+    "listening-2": {
+      "kind": "listening",
+      "part": 2,
+      "audio": "/media/audio/b19t2-p2.49d08423.mp3",
+      "durationSec": 384.2,
+      "context": "David talks about his work as a lifeboat volunteer in the town of Northsea.",
+      "script": [
+        {
+          "start": 69.6,
+          "speaker": "David",
+          "text": "I never really planned to be a lifeboat volunteer when I came to live in Northsea. I’d been working in London as a website designer, but although that was interesting, I didn’t like city life. I’d been really keen on boats as a teenager, and I thought if I went to live by the sea, I might be able to pursue that interest a bit more in my free time. Then I found that the Lifeboat Institution was looking for volunteers, so I decided to apply.",
+          "answer": {
+            "question": 11,
+            "highlight": "I might be able to pursue that interest a bit more in my free time"
+          }
+        },
+        {
+          "start": 98.6,
+          "speaker": "David",
+          "text": "The Lifeboat Institution building here in Northsea’s hard to miss, it’s one of the largest in the country. It was built 15 years ago with funds provided by a generous member of the public who’d lived here all her life. As the Lifeboat Institution is a charity that relies on that kind of donation, rather than funding provided by the government, that was a huge help to us.",
+          "answer": {
+            "question": 12,
+            "highlight": "funds provided by a generous member of the public who’d lived here all her life"
+          }
+        },
+        {
+          "start": 123.8,
+          "speaker": "David",
+          "text": "When I applied, I had to have a health assessment. The doctors were particularly interested in my vision. I used to be short-sighted, so I’d had to wear glasses, but I’d had laser eye surgery two years earlier so that was OK. They gave me tests for colour blindness and they thought I might have a problem there, but it turned out I was OK.",
+          "answer": {
+            "question": 13,
+            "highlight": "They gave me tests for colour blindness and they thought I might have a problem there"
+          }
+        },
+        {
+          "start": 148.1,
+          "speaker": "David",
+          "text": "When the coastguard gets an alert, all the volunteers are contacted and rush to the lifeboat station. Our target’s to get there in five minutes, then we try to get the boat off the dock and out to sea in another six to eight minutes. Our team’s proud that we usually achieve that – the average time across the country’s eight and a half minutes.",
+          "answer": {
+            "question": 14,
+            "highlight": "we try to get the boat off the dock and out to sea in another six to eight minutes"
+          }
+        },
+        {
+          "start": 172.3,
+          "speaker": "David",
+          "text": "I’ve recently qualified as what’s called a ‘helmsman’, which means I have the ultimate responsibility for the lifeboat. I have to check that the equipment we use is in working order – the crew have special life jackets that can support up to four people in the water. And it’s ultimately my decision whether it’s safe to launch the boat. But it’s very rare not to launch it, even in the worst weather.",
+          "answer": {
+            "question": 15,
+            "highlight": "it’s ultimately my decision whether it’s safe to launch the boat"
+          }
+        },
+        {
+          "start": 199.5,
+          "speaker": "David",
+          "text": "As well as going out on the lifeboat, my work involves other things too. A lot of people underestimate how quickly conditions can change at sea, so I speak to youth groups and sailing clubs in the area about the sorts of problems that sailors and swimmers can have if the weather suddenly gets bad. We also have a lot of volunteers who organise activities to raise money for us, and we couldn’t manage without them.",
+          "answer": {
+            "question": 16,
+            "highlight": "I speak to youth groups and sailing clubs in the area about the sorts of problems that sailors and swimmers can have"
+          }
+        },
+        {
+          "start": 264.6,
+          "speaker": "David",
+          "text": "The training we get is a continuous process, focusing on technical competence and safe handling techniques, and it’s given me the confidence to deal with extreme situations without panicking.",
+          "answer": {
+            "question": 17,
+            "highlight": "it’s given me the confidence to deal with extreme situations without panicking"
+          }
+        },
+        {
+          "start": 278.9,
+          "speaker": "David",
+          "text": "I was glad I’d done a first aid course before I started, as that’s a big help with the casualty care activities we do. We’ve done a lot on how to deal with ropes and tie knots – that’s an essential skill. After a year, I did a one-week residential course, led by specialists. They had a wave-tank where they could create extreme weather conditions – so we could get experience at what to do if the boat turned over in a storm at night, for example.",
+          "answer": {
+            "question": 18,
+            "highlight": "we could get experience at what to do if the boat turned over in a storm at night"
+          }
+        },
+        {
+          "start": 311.1,
+          "speaker": "David",
+          "text": "Since I started, I’ve had to deal with a range of emergency situations."
+        },
+        {
+          "start": 316.5,
+          "speaker": "David",
+          "text": "But the work’s hugely motivating. It’s not just about saving lives – I’ve learned a lot about the technology involved. My background in IT’s been useful here, and I can use my expertise to help other volunteers. They’re a great group – we’re like a family really, which helps when you’re dragging yourself out of bed on a cold stormy night.",
+          "answer": {
+            "question": 19,
+            "highlight": "They’re a great group – we’re like a family really"
+          }
+        },
+        {
+          "start": 340.9,
+          "speaker": "David",
+          "text": "But actually, it’s the colder months that can be the most rewarding time. That’s when the incidents tend to be more serious, and you realise that you can make a huge difference to the outcome.",
+          "answer": {
+            "question": 20,
+            "highlight": "it’s the colder months that can be the most rewarding time"
+          }
+        },
+        {
+          "start": 353.8,
+          "speaker": "David",
+          "text": "So if any of you listeners are interested . . ."
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-3",
+          "type": "MULTIPLE_CHOICE_SINGLE",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "numbers": [11],
+              "prompt": "What made David leave London and move to Northsea?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "He was eager to develop a hobby."
+                },
+                {
+                  "key": "B",
+                  "text": "He wanted to work shorter hours."
+                },
+                {
+                  "key": "C",
+                  "text": "He found his job in website design unsatisfying."
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "He had been keen on boats as a teenager and hoped to pursue that interest in his free time by the sea. His design job was interesting; he disliked city life."
+            },
+            {
+              "numbers": [12],
+              "prompt": "The Lifeboat Institution in Northsea was built with money provided by",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "a local organisation."
+                },
+                {
+                  "key": "B",
+                  "text": "a local resident."
+                },
+                {
+                  "key": "C",
+                  "text": "the local council."
+                }
+              ],
+              "acceptedAnswers": [["B"]],
+              "explanation": "It was built with funds from a generous member of the public who had lived there all her life, not with government funding."
+            },
+            {
+              "numbers": [13],
+              "prompt": "In his health assessment, the doctor was concerned about the fact that David",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "might be colour blind."
+                },
+                {
+                  "key": "B",
+                  "text": "was rather short-sighted."
+                },
+                {
+                  "key": "C",
+                  "text": "had undergone eye surgery."
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "His short sight had been corrected by surgery, which was OK; the doctors thought he might have a problem with colour blindness."
+            },
+            {
+              "numbers": [14],
+              "prompt": "After arriving at the lifeboat station, they aim to launch the boat within",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "five minutes."
+                },
+                {
+                  "key": "B",
+                  "text": "six to eight minutes."
+                },
+                {
+                  "key": "C",
+                  "text": "eight and a half minutes."
+                }
+              ],
+              "acceptedAnswers": [["B"]],
+              "explanation": "Five minutes is the target for getting to the station; launching takes another six to eight minutes. Eight and a half is the national average."
+            },
+            {
+              "numbers": [15],
+              "prompt": "As a ‘helmsman’, David has the responsibility of deciding",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "who will be the members of his crew."
+                },
+                {
+                  "key": "B",
+                  "text": "what equipment it will be necessary to take."
+                },
+                {
+                  "key": "C",
+                  "text": "if the lifeboat should be launched."
+                }
+              ],
+              "acceptedAnswers": [["C"]],
+              "explanation": "It is ultimately his decision whether it is safe to launch the boat. He only checks that the equipment works."
+            },
+            {
+              "numbers": [16],
+              "prompt": "As well as going out on the lifeboat, David",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "gives talks on safety at sea."
+                },
+                {
+                  "key": "B",
+                  "text": "helps with fundraising."
+                },
+                {
+                  "key": "C",
+                  "text": "recruits new volunteers."
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "He speaks to youth groups and sailing clubs about problems at sea in bad weather. Other volunteers do the fundraising."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-4",
+          "type": "MULTIPLE_CHOICE_MULTIPLE",
+          "instructions": "Choose TWO letters, A–E. Which TWO things does David say about the lifeboat volunteer training?",
+          "answersPerItem": 2,
+          "options": [
+            {
+              "key": "A",
+              "text": "The residential course developed his leadership skills."
+            },
+            {
+              "key": "B",
+              "text": "The training in use of ropes and knots was quite brief."
+            },
+            {
+              "key": "C",
+              "text": "The training exercises have built up his mental strength."
+            },
+            {
+              "key": "D",
+              "text": "The casualty care activities were particularly challenging for him."
+            },
+            {
+              "key": "E",
+              "text": "The wave tank activities provided practice in survival techniques."
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [17, 18],
+              "prompt": "Which TWO things does David say about the lifeboat volunteer training?",
+              "acceptedAnswers": [["C"], ["E"]],
+              "explanation": "C: the training has given him the confidence to deal with extreme situations without panicking. E: the wave tank gave experience of what to do if the boat turned over in a storm. Casualty care was easy thanks to his first aid course, and rope work was extensive."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-5",
+          "type": "MULTIPLE_CHOICE_MULTIPLE",
+          "instructions": "Choose TWO letters, A–E. Which TWO things does David find most motivating about the work he does?",
+          "answersPerItem": 2,
+          "options": [
+            {
+              "key": "A",
+              "text": "working as part of a team"
+            },
+            {
+              "key": "B",
+              "text": "experiences when working in winter"
+            },
+            {
+              "key": "C",
+              "text": "being thanked by those he has helped"
+            },
+            {
+              "key": "D",
+              "text": "the fact that it keeps him fit"
+            },
+            {
+              "key": "E",
+              "text": "the chance to develop new equipment"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [19, 20],
+              "prompt": "Which TWO things does David find most motivating about the work he does?",
+              "acceptedAnswers": [["A"], ["B"]],
+              "explanation": "A: “They’re a great group – we’re like a family really.” B: “it’s the colder months that can be the most rewarding time.” He mentions technology, but not developing new equipment."
+            }
+          ]
+        }
+      ]
+    },
+    "listening-3": {
+      "kind": "listening",
+      "part": 3,
+      "audio": "/media/audio/b19t2-p3.00adf543.mp3",
+      "durationSec": 410.8,
+      "context": "Two students, Bella and Don, are discussing an article on recycling footwear for their presentation.",
+      "script": [
+        {
+          "start": 47.6,
+          "speaker": "Bella",
+          "text": "Hi Don – did you get the copy of the article on recycling footwear that I emailed you?"
+        },
+        {
+          "start": 54.2,
+          "speaker": "Don",
+          "text": "Yeah – it’s here . . . I’ve had a look at it."
+        },
+        {
+          "start": 57.1,
+          "speaker": "Bella",
+          "text": "So do you think it’s a good topic for our presentation?"
+        },
+        {
+          "start": 61.0,
+          "speaker": "Don",
+          "text": "Well, before I started reading it, I thought recycling footwear, well, although it’s quite interesting, perhaps there isn’t enough to say about it, cos we put shoes in recycling bins, they go to charity shops and that’s about it.",
+          "answer": {
+            "question": 21,
+            "highlight": "perhaps there isn’t enough to say about it"
+          }
+        },
+        {
+          "start": 77.5,
+          "speaker": "Bella",
+          "text": ". . . but there’s much more to it than that."
+        },
+        {
+          "start": 80.0,
+          "speaker": "Don",
+          "text": "I realise that now and I’m keen to research the topic more."
+        },
+        {
+          "start": 84.8,
+          "speaker": "Bella",
+          "text": "That’s great."
+        },
+        {
+          "start": 85.6,
+          "speaker": "Don",
+          "text": "One of the things I didn’t realise until I read the article was just how many pairs of trainers get recycled!"
+        },
+        {
+          "start": 92.1,
+          "speaker": "Bella",
+          "text": "Well, a lot of young people wear them all the time now. They’ve become more popular than ordinary shoes."
+        },
+        {
+          "start": 99.9,
+          "speaker": "Don",
+          "text": "I know. I guess they are very hard-wearing, but don’t they look a bit casual for school uniform? I don’t think they’re right for that.",
+          "answer": {
+            "question": 22,
+            "highlight": "don’t they look a bit casual for school uniform? I don’t think they’re right for that."
+          }
+        },
+        {
+          "start": 109.0,
+          "speaker": "Bella",
+          "text": "Actually, I think some of them look quite smart on pupils . . . better than a scruffy old pair of shoes. So do you keep shoes a long time?"
+        },
+        {
+          "start": 120.2,
+          "speaker": "Don",
+          "text": "Yes. Though I do tend to wear my old pairs for doing dirty jobs like cleaning my bike."
+        },
+        {
+          "start": 126.5,
+          "speaker": "Bella",
+          "text": "I must admit, I’ve recycled some perfectly good shoes, that haven’t gone out of fashion and still fit, just because they don’t look great on me any more. That’s awful isn’t it?",
+          "answer": {
+            "question": 23,
+            "highlight": "just because they don’t look great on me any more"
+          }
+        },
+        {
+          "start": 138.6,
+          "speaker": "Don",
+          "text": "I think it’s common because there’s so much choice. The article did say that recent sales of footwear have increased enormously."
+        },
+        {
+          "start": 147.6,
+          "speaker": "Bella",
+          "text": "That didn’t surprise me."
+        },
+        {
+          "start": 149.7,
+          "speaker": "Don",
+          "text": "No. But then it said that the amount of recycled footwear has fallen: it’s 6 percent now compared to a previous level of 11 percent. That doesn’t seem to make sense.",
+          "answer": {
+            "question": 24,
+            "highlight": "the amount of recycled footwear has fallen: it’s 6 percent now compared to a previous level of 11 percent"
+          }
+        },
+        {
+          "start": 162.0,
+          "speaker": "Bella",
+          "text": "That’s because not everything goes through the recycling process. Some footwear just isn’t good enough to re-sell, for one reason or another, and gets rejected."
+        },
+        {
+          "start": 180.7,
+          "speaker": "Bella",
+          "text": "So let’s find some examples in the article of footwear that was rejected for recycling."
+        },
+        {
+          "start": 227.6,
+          "speaker": "Don",
+          "text": "OK. I think there are some in the interview with the recycling manager. Yeah – here it is."
+        },
+        {
+          "start": 235.3,
+          "speaker": "Bella",
+          "text": "Mmm. Let’s start with the ladies’ high-heeled shoes. What did he say about those?"
+        },
+        {
+          "start": 243.2,
+          "speaker": "Don",
+          "text": "He said they were probably expensive – the material was suede and they were beige in colour – it looked like someone had only worn them once, but in a very wet field so the heels were too stained with mud and grass to re-sell them.",
+          "answer": {
+            "question": 25,
+            "highlight": "the heels were too stained with mud and grass to re-sell them"
+          }
+        },
+        {
+          "start": 262.7,
+          "speaker": "Bella",
+          "text": "OK . . . and the leather ankle boots. What was wrong with them?"
+        },
+        {
+          "start": 267.3,
+          "speaker": "Don",
+          "text": "Apparently, the heels were worn – but that wasn’t the problem. One of the shoes was a much lighter shade than the other one – it had obviously been left in the sun. I suppose even second-hand shoes should look the same!",
+          "answer": {
+            "question": 26,
+            "highlight": "One of the shoes was a much lighter shade than the other one"
+          }
+        },
+        {
+          "start": 282.3,
+          "speaker": "Bella",
+          "text": "Sure. Then there were the red baby shoes."
+        },
+        {
+          "start": 286.5,
+          "speaker": "Don",
+          "text": "Oh yes – we’re told to tie shoes together when we put them in a recycling bin, but people often don’t bother."
+        },
+        {
+          "start": 294.3,
+          "speaker": "Bella",
+          "text": "You’d think it would have been easy to find the other, but it wasn’t. That was a shame because they were obviously new.",
+          "answer": {
+            "question": 27,
+            "highlight": "You’d think it would have been easy to find the other, but it wasn’t."
+          }
+        },
+        {
+          "start": 303.8,
+          "speaker": "Don",
+          "text": "The trainers were interesting. He said they looked like they’d been worn by a marathon runner."
+        },
+        {
+          "start": 311.4,
+          "speaker": "Bella",
+          "text": "Yeah – weren’t they split?"
+        },
+        {
+          "start": 313.4,
+          "speaker": "Don",
+          "text": "Not exactly. One of the soles was so worn under the foot that you could put your finger through it. Well, we could certainly use some of those examples in our presentation to explain why 90 percent of shoes that people take to recycling centres or bins get thrown into landfill.",
+          "answer": {
+            "question": 28,
+            "highlight": "One of the soles was so worn under the foot that you could put your finger through it."
+          }
+        },
+        {
+          "start": 332.9,
+          "speaker": "Bella",
+          "text": "Mmm. What did you think about the project his team set up to avoid this by making new shoes out of the good parts of old shoes?"
+        },
+        {
+          "start": 342.7,
+          "speaker": "Don",
+          "text": "It sounded like a good idea. They get so many shoes, they should be able to match parts. I wasn’t surprised that it failed, though. I mean who wants to buy second-hand shoes really? Think of all the germs you could catch!"
+        },
+        {
+          "start": 359.5,
+          "speaker": "Bella",
+          "text": "Well, people didn’t refuse them for that reason, did they? It was because the pairs of shoes weren’t identical.",
+          "answer": {
+            "question": 29,
+            "highlight": "It was because the pairs of shoes weren’t identical."
+          }
+        },
+        {
+          "start": 367.1,
+          "speaker": "Don",
+          "text": "They still managed to ship them overseas, though."
+        },
+        {
+          "start": 370.1,
+          "speaker": "Bella",
+          "text": "That’s another area we need to discuss."
+        },
+        {
+          "start": 372.3,
+          "speaker": "Don",
+          "text": "You know I used to consider this topic just from my own perspective, by thinking about my own recycling behaviour without looking at the bigger picture. So much happens once shoes leave the recycling area."
+        },
+        {
+          "start": 387.3,
+          "speaker": "Bella",
+          "text": "It’s not as simple as you first think, and we can show that by taking a very different approach to it.",
+          "answer": {
+            "question": 30,
+            "highlight": "we can show that by taking a very different approach to it"
+          }
+        },
+        {
+          "start": 393.9,
+          "speaker": "Don",
+          "text": "Absolutely. So let’s discuss . . ."
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-6",
+          "type": "MULTIPLE_CHOICE_SINGLE",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "numbers": [21],
+              "prompt": "At first, Don thought the topic of recycling footwear might be too",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "limited in scope."
+                },
+                {
+                  "key": "B",
+                  "text": "hard to research."
+                },
+                {
+                  "key": "C",
+                  "text": "boring for listeners."
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "He thought there perhaps wasn’t enough to say about it. He says it is quite interesting."
+            },
+            {
+              "numbers": [22],
+              "prompt": "When discussing trainers, Bella and Don disagree about",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "how popular they are among young people."
+                },
+                {
+                  "key": "B",
+                  "text": "how suitable they are for school."
+                },
+                {
+                  "key": "C",
+                  "text": "how quickly they wear out."
+                }
+              ],
+              "acceptedAnswers": [["B"]],
+              "explanation": "Don thinks trainers look too casual for school uniform; Bella thinks some look quite smart on pupils."
+            },
+            {
+              "numbers": [23],
+              "prompt": "Bella says that she sometimes recycles shoes because",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "they no longer fit."
+                },
+                {
+                  "key": "B",
+                  "text": "she no longer likes them."
+                },
+                {
+                  "key": "C",
+                  "text": "they are no longer in fashion."
+                }
+              ],
+              "acceptedAnswers": [["B"]],
+              "explanation": "Her shoes still fit and are still in fashion; she recycles them because they don’t look great on her any more."
+            },
+            {
+              "numbers": [24],
+              "prompt": "What did the article say that confused Don?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Public consumption of footwear has risen."
+                },
+                {
+                  "key": "B",
+                  "text": "Less footwear is recycled now than in the past."
+                },
+                {
+                  "key": "C",
+                  "text": "People dispose of more footwear than they used to."
+                }
+              ],
+              "acceptedAnswers": [["B"]],
+              "explanation": "Recycled footwear has fallen from 11 percent to 6 percent, which doesn’t seem to make sense to him. Rising sales did not surprise them."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-7",
+          "type": "MATCHING_FEATURES",
+          "instructions": "What reasons did the recycling manager give for rejecting footwear, according to the students? Choose FOUR answers from the box and write the correct letter, A–F, next to Questions 25–28.",
+          "options": [
+            {
+              "key": "A",
+              "text": "one shoe was missing"
+            },
+            {
+              "key": "B",
+              "text": "the colour of one shoe had faded"
+            },
+            {
+              "key": "C",
+              "text": "one shoe had a hole in it"
+            },
+            {
+              "key": "D",
+              "text": "the shoes were brand new"
+            },
+            {
+              "key": "E",
+              "text": "the shoes were too dirty"
+            },
+            {
+              "key": "F",
+              "text": "the stitching on the shoes was broken"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [25],
+              "prompt": "the high-heeled shoes",
+              "acceptedAnswers": [["E"]],
+              "explanation": "The heels were too stained with mud and grass to re-sell."
+            },
+            {
+              "numbers": [26],
+              "prompt": "the ankle boots",
+              "acceptedAnswers": [["B"]],
+              "explanation": "One boot was a much lighter shade than the other after being left in the sun."
+            },
+            {
+              "numbers": [27],
+              "prompt": "the baby shoes",
+              "acceptedAnswers": [["A"]],
+              "explanation": "They were not tied together and the other shoe couldn’t be found. Being new was not the reason."
+            },
+            {
+              "numbers": [28],
+              "prompt": "the trainers",
+              "acceptedAnswers": [["C"]],
+              "explanation": "One sole was so worn you could put your finger through it."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-8",
+          "type": "MULTIPLE_CHOICE_SINGLE",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "numbers": [29],
+              "prompt": "Why did the project to make ‘new’ shoes out of old shoes fail?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "People believed the ‘new’ pairs of shoes were unhygienic."
+                },
+                {
+                  "key": "B",
+                  "text": "There were not enough good parts to use in the old shoes."
+                },
+                {
+                  "key": "C",
+                  "text": "The shoes in the ‘new’ pairs were not completely alike."
+                }
+              ],
+              "acceptedAnswers": [["C"]],
+              "explanation": "Bella corrects Don about germs: people refused them because the pairs of shoes weren’t identical."
+            },
+            {
+              "numbers": [30],
+              "prompt": "Bella and Don agree that they can present their topic",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "from a new angle."
+                },
+                {
+                  "key": "B",
+                  "text": "with relevant images."
+                },
+                {
+                  "key": "C",
+                  "text": "in a straightforward way."
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "Bella: “we can show that by taking a very different approach to it.” Don: “Absolutely.”"
+            }
+          ]
+        }
+      ]
+    },
+    "listening-4": {
+      "kind": "listening",
+      "part": 4,
+      "audio": "/media/audio/b19t2-p4.73c87598.mp3",
+      "durationSec": 427,
+      "context": "A student gives a presentation on tardigrades for a project on invertebrates.",
+      "script": [
+        {
+          "start": 74.3,
+          "speaker": "Student",
+          "text": "For my project on invertebrates, I chose to study tardigrades. These are microscopic – or to be more precise – near-microscopic animals. There are well over a thousand known species of these tiny animals, which belong to the phylum Tardigrada. Most tardigrades range in length from 0.05 to 1 millimetre, though the largest species can grow to be 1.2 millimetres in length. They are also sometimes called ‘water bears’: ‘water’ because that’s where they thrive best, and ‘bear’ because of the way they move.",
+          "answer": {
+            "question": 31,
+            "highlight": "‘bear’ because of the way they move"
+          }
+        },
+        {
+          "start": 110.7,
+          "speaker": "Student",
+          "text": "‘Moss piglet’ is another name for tardigrades because of the way they look when viewed from the front. They were first discovered in Germany in 1773 by Johann Goeze, who coined the name Tardigrada."
+        },
+        {
+          "start": 127.7,
+          "speaker": "Student",
+          "text": "As I say, there are many different species of tardigrade – too many to describe here – but, generally speaking, the different species share similar physical traits. They have a body which is short, and also rounded – a bit like a barrel – and the body comprises four segments. Each segment has a pair of legs, at the end of which are between four and eight sharp claws.",
+          "answer": {
+            "question": 32,
+            "highlight": "They have a body which is short"
+          }
+        },
+        {
+          "start": 156.1,
+          "speaker": "Student",
+          "text": "I should also say that some species don’t have any claws; what they have are discs, and these work by means of suction. They enable the tardigrade to cling on to surfaces or to grip its prey.",
+          "answer": {
+            "question": 33,
+            "highlight": "what they have are discs"
+          }
+        },
+        {
+          "start": 171.9,
+          "speaker": "Student",
+          "text": "Within the body, there are no lungs, or any organs for breathing at all. Instead, oxygen and also blood are transported in a fluid that fills the cavity of the body.",
+          "answer": {
+            "question": 34,
+            "highlight": "oxygen and also blood are transported in a fluid that fills the cavity of the body"
+          }
+        },
+        {
+          "start": 185.6,
+          "speaker": "Student",
+          "text": "As far as the tardigrade’s head is concerned, the best way I can describe this is that it looks rather strange – a bit squashed even – though many of the websites I looked at described its appearance as cute, which isn’t exactly very scientific. The tardigrade’s mouth is a kind of tube that can open outwards to reveal teeth-like structures known as ‘stylets’. These are sharp enough to pierce plant or animal cells.",
+          "answer": {
+            "question": 35,
+            "highlight": "The tardigrade’s mouth is a kind of tube"
+          }
+        },
+        {
+          "start": 215.8,
+          "speaker": "Student",
+          "text": "So, where are tardigrades found? Well, they live in every part of the world, in a variety of habitats: most commonly, on the bed of a lake, or on many kinds of plants or in very wet environments. There’s been some interesting research which has found that tardigrades are capable of surviving radiation and very high pressure, and they’re also able to withstand temperatures as cold as –200 degrees centigrade, or highs of more than 148 degrees centigrade, which is incredibly hot.",
+          "answer": {
+            "question": 36,
+            "highlight": "they’re also able to withstand temperatures as cold as –200 degrees centigrade, or highs of more than 148 degrees centigrade"
+          }
+        },
+        {
+          "start": 260.0,
+          "speaker": "Student",
+          "text": "It has been said that tardigrades could survive long after human beings have been wiped out, even in the event of an asteroid hitting the earth. If conditions become too extreme and tardigrades are at risk of drying out, they enter a state called cryptobiosis. They curl into a ball, called a tun – that’s T-U-N – by retracting their head and legs, and their metabolism drops to less than one percent of normal levels. They can remain like this until they are re-introduced to water, when they will come back to life in a matter of a few hours. While in a state of cryptobiosis, tardigrades produce a protein that protects their DNA.",
+          "answer": {
+            "question": 37,
+            "highlight": "tardigrades produce a protein that protects their DNA"
+          }
+        },
+        {
+          "start": 308.3,
+          "speaker": "Student",
+          "text": "In 2016, scientists revived two tardigrades that had been tuns for more than 30 years. There was a report that, in 1948, a 120-year-old tun was revived, but this experiment has never been repeated. There are currently several tests taking place in space, to determine how long tardigrades might be able to survive there. I believe the record so far is 10 days.",
+          "answer": {
+            "question": 38,
+            "highlight": "tests taking place in space, to determine how long tardigrades might be able to survive there"
+          }
+        },
+        {
+          "start": 338.6,
+          "speaker": "Student",
+          "text": "So, erm, moving on. In terms of their diet, tardigrades consume liquids in order to survive. Although they have teeth, they don’t use these for chewing. They suck the juices from moss, or extract fluid from seaweed, but some species prey on other tardigrades, from other species or within their own. I suppose this isn’t surprising, given that tardigrades are mainly comprised of liquid and are coated with a type of gel.",
+          "answer": {
+            "question": 39,
+            "highlight": "They suck the juices from moss, or extract fluid from seaweed"
+          }
+        },
+        {
+          "start": 372.2,
+          "speaker": "Student",
+          "text": "Finally, I’d like to mention the conservation status of tardigrades. It is estimated that they have been in existence for approximately half a billion years and, in that time, they have survived five mass extinctions. So, it will probably come as no surprise to you, that tardigrades have not been evaluated by the International Union for Conservation of Nature and are not on any endangered list. Some researchers have described them as thriving.",
+          "answer": {
+            "question": 40,
+            "highlight": "tardigrades have not been evaluated by the International Union for Conservation of Nature and are not on any endangered list"
+          }
+        },
+        {
+          "start": 405.8,
+          "speaker": "Student",
+          "text": "Does anyone have any questions they’d like to ask?"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-9",
+          "type": "GAP_FILL",
+          "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "notes",
+            "title": "Tardigrades",
+            "body": "- more than 1,000 species, 0.05–1.2 millimetres long\n- also known as water ‘bears’ (due to how they {{31}}) and ‘moss piglets’\n# Physical appearance\n- a {{32}} round body and four pairs of legs\n- claws or {{33}} for gripping\n- absence of respiratory organs\n- body filled with a liquid that carries both {{34}} and blood\n- mouth shaped like a {{35}} with teeth called stylets\n# Habitat\n- often found at the bottom of a lake or on plants\n- very resilient and can exist in very low or high {{36}}\n# Cryptobiosis\n- In dry conditions, they roll into a ball called a ‘tun’.\n- They stay alive with a much lower metabolism than usual.\n- A type of {{37}} ensures their DNA is not damaged.\n- Research is underway to find out how many days they can stay alive in {{38}}.\n# Feeding\n- consume liquids, e.g., those found in moss or {{39}}\n- may eat other tardigrades\n# Conservation status\n- They are not considered to be {{40}}."
+          },
+          "questions": [
+            {
+              "numbers": [31],
+              "prompt": "water ‘bears’ (due to how they ___)",
+              "acceptedAnswers": [["move"]],
+              "explanation": "‘Bear’ because of the way they move."
+            },
+            {
+              "numbers": [32],
+              "prompt": "a ___ round body",
+              "acceptedAnswers": [["short"]],
+              "explanation": "They have a body which is short, and also rounded."
+            },
+            {
+              "numbers": [33],
+              "prompt": "claws or ___ for gripping",
+              "acceptedAnswers": [["discs", "disks"]],
+              "explanation": "Some species have discs instead of claws, which work by suction."
+            },
+            {
+              "numbers": [34],
+              "prompt": "a liquid that carries both ___ and blood",
+              "acceptedAnswers": [["oxygen"]],
+              "explanation": "Oxygen and blood are transported in a fluid that fills the body cavity."
+            },
+            {
+              "numbers": [35],
+              "prompt": "mouth shaped like a ___",
+              "acceptedAnswers": [["tube"]],
+              "explanation": "The mouth is a kind of tube that opens to reveal stylets."
+            },
+            {
+              "numbers": [36],
+              "prompt": "can exist in very low or high ___",
+              "acceptedAnswers": [["temperatures"]],
+              "explanation": "They withstand temperatures as cold as –200°C or above 148°C."
+            },
+            {
+              "numbers": [37],
+              "prompt": "A type of ___ ensures their DNA is not damaged",
+              "acceptedAnswers": [["protein"]],
+              "explanation": "In cryptobiosis they produce a protein that protects their DNA."
+            },
+            {
+              "numbers": [38],
+              "prompt": "how many days they can stay alive in ___",
+              "acceptedAnswers": [["space"]],
+              "explanation": "Tests are taking place in space to see how long they survive there."
+            },
+            {
+              "numbers": [39],
+              "prompt": "liquids found in moss or ___",
+              "acceptedAnswers": [["seaweed"]],
+              "explanation": "They suck juices from moss or extract fluid from seaweed."
+            },
+            {
+              "numbers": [40],
+              "prompt": "They are not considered to be ___",
+              "acceptedAnswers": [["endangered"]],
+              "explanation": "They are not on any endangered list."
+            }
+          ]
+        }
+      ]
+    },
+    "reading-1": {
+      "kind": "reading",
+      "part": 1,
+      "title": "The Industrial Revolution in Britain",
+      "paragraphs": [
+        {
+          "label": "A",
+          "text": "The Industrial Revolution began in Britain in the mid-1700s and by the 1830s and 1840s had spread to many other parts of the world, including the United States. In Britain, it was a period when a largely rural, agrarian* society was transformed into an industrialised, urban one. Goods that had once been crafted by hand started to be produced in mass quantities by machines in factories, thanks to the invention of steam power and the introduction of new machines and manufacturing techniques in textiles, iron-making and other industries."
+        },
+        {
+          "label": "B",
+          "text": "The foundations of the Industrial Revolution date back to the early 1700s, when the English inventor Thomas Newcomen designed the first modern steam engine. Called the ‘atmospheric steam engine’, Newcomen’s invention was originally used to power machines that pumped water out of mines. In the 1760s, the Scottish engineer James Watt started to adapt one of Newcomen’s models, and succeeded in making it far more efficient. Watt later worked with the English manufacturer Matthew Boulton to invent a new steam engine driven by both the forward and backward strokes of the piston, while the gear mechanism it was connected to produced rotary motion. It was a key innovation that would allow steam power to spread across British industries."
+        },
+        {
+          "label": "C",
+          "text": "The demand for coal, which was a relatively cheap energy source, grew rapidly during the Industrial Revolution, as it was needed to run not only the factories used to produce manufactured goods, but also steam-powered transportation. In the early 1800s, the English engineer Richard Trevithick built a steam-powered locomotive, and by 1830 goods and passengers were being transported between the industrial centres of Manchester and Liverpool. In addition, steam-powered boats and ships were widely used to carry goods along Britain’s canals as well as across the Atlantic."
+        },
+        {
+          "label": "D",
+          "text": "Britain had produced textiles like wool, linen and cotton, for hundreds of years, but prior to the Industrial Revolution, the British textile business was a true ‘cottage industry’, with the work performed in small workshops or even homes by individual spinners, weavers and dyers. Starting in the mid-1700s, innovations like the spinning jenny and the power loom made weaving cloth and spinning yarn and thread much easier. With these machines, relatively little labour was required to produce cloth, and the new, mechanised textile factories that opened around the country were quickly able to meet customer demand for cloth both at home and abroad."
+        },
+        {
+          "label": "E",
+          "text": "The British iron industry also underwent major change as it adopted new innovations. Chief among the new techniques was the smelting of iron ore with coke (a material made by heating coal) instead of the traditional charcoal. This method was cheaper and produced metals that were of a higher quality, enabling Britain’s iron and steel production to expand in response to demand created by the Napoleonic Wars (1803–15) and the expansion of the railways from the 1830s."
+        },
+        {
+          "label": "F",
+          "text": "The latter part of the Industrial Revolution also saw key advances in communication methods, as people increasingly saw the need to communicate efficiently over long distances. In 1837, British inventors William Cooke and Charles Wheatstone patented the first commercial telegraphy system. In the 1830s and 1840s, Samuel Morse and other inventors worked on their own versions in the United States. Cooke and Wheatstone’s system was soon used for railway signalling in the UK. As the speed of the new locomotives increased, it was essential to have a fast and effective means of avoiding collisions."
+        },
+        {
+          "label": "G",
+          "text": "The impact of the Industrial Revolution on people’s lives was immense. Although many people in Britain had begun moving to the cities from rural areas before the Industrial Revolution, this accelerated dramatically with industrialisation, as the rise of large factories turned smaller towns into major cities in just a few decades. This rapid urbanisation brought significant challenges, as overcrowded cities suffered from pollution and inadequate sanitation."
+        },
+        {
+          "label": "H",
+          "text": "Although industrialisation increased the country’s economic output overall and improved the standard of living for the middle and upper classes, many poor people continued to struggle. Factory workers had to work long hours in dangerous conditions for extremely low wages. These conditions along with the rapid pace of change fuelled opposition to industrialisation. A group of British workers who became known as ‘Luddites’ were British weavers and textile workers who objected to the increased use of mechanised looms and knitting frames. Many had spent years learning their craft, and they feared that unskilled machine operators were robbing them of their livelihood. A few desperate weavers began breaking into factories and smashing textile machines. They called themselves Luddites after Ned Ludd, a young apprentice who was rumoured to have wrecked a textile machine in 1779."
+        },
+        {
+          "label": "I",
+          "text": "The first major instances of machine breaking took place in 1811 in the city of Nottingham, and the practice soon spread across the country. Machine-breaking Luddites attacked and burned factories, and in some cases they even exchanged gunfire with company guards and soldiers. The workers wanted employers to stop installing new machinery, but the British government responded to the uprisings by making machine-breaking punishable by death. The unrest finally reached its peak in April 1812, when a few Luddites were shot during an attack on a mill near Huddersfield. In the days that followed, other Luddites were arrested, and dozens were hanged or transported to Australia. By 1813, the Luddite resistance had all but vanished."
+        },
+        {
+          "label": "*",
+          "text": "agrarian: relating to the land, especially the use of land for farming"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-1",
+          "type": "GAP_FILL",
+          "instructions": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "notes",
+            "title": "Britain’s Industrial Revolution",
+            "body": "# Steam power\n- Newcomen’s steam engine was used in mines to remove water.\n- In Watt and Boulton’s steam engine, the movement of the {{1}} was linked to a gear system.\n- A greater supply of {{2}} was required to power steam engines.\n# Textile industry\n- Before the Industrial Revolution, spinners and weavers worked at home and in {{3}}.\n- Not as much {{4}} was needed to produce cloth once the spinning jenny and power loom were invented.\n# Iron industry\n- Smelting of iron ore with coke resulted in material that was better {{5}}.\n- Demand for iron increased with the growth of the {{6}}.\n# Communications\n- Cooke and Wheatstone patented the first telegraphy system.\n- The telegraphy system was used to prevent locomotives colliding.\n# Urbanisation\n- Small towns turned into cities very quickly.\n- The new cities were dirty, crowded and lacked sufficient {{7}}."
+          },
+          "questions": [
+            {
+              "numbers": [1],
+              "prompt": "the movement of the ___ was linked to a gear system",
+              "acceptedAnswers": [["piston"]],
+              "explanation": "The engine was driven by the forward and backward strokes of the piston, connected to a gear mechanism.",
+              "location": {
+                "paragraph": "B",
+                "sentence": 4,
+                "highlight": "the forward and backward strokes of the piston"
+              }
+            },
+            {
+              "numbers": [2],
+              "prompt": "A greater supply of ___ was required to power steam engines",
+              "acceptedAnswers": [["coal"]],
+              "explanation": "Demand for coal grew rapidly because it was needed to run factories and steam-powered transport.",
+              "location": {
+                "paragraph": "C",
+                "sentence": 1,
+                "highlight": "The demand for coal"
+              }
+            },
+            {
+              "numbers": [3],
+              "prompt": "spinners and weavers worked at home and in ___",
+              "acceptedAnswers": [["workshops"]],
+              "explanation": "Work was performed in small workshops or even homes.",
+              "location": {
+                "paragraph": "D",
+                "sentence": 1,
+                "highlight": "small workshops or even homes"
+              }
+            },
+            {
+              "numbers": [4],
+              "prompt": "Not as much ___ was needed to produce cloth",
+              "acceptedAnswers": [["labour", "labor"]],
+              "explanation": "With the new machines, relatively little labour was required to produce cloth.",
+              "location": {
+                "paragraph": "D",
+                "sentence": 3,
+                "highlight": "relatively little labour was required to produce cloth"
+              }
+            },
+            {
+              "numbers": [5],
+              "prompt": "material that was better ___",
+              "acceptedAnswers": [["quality"]],
+              "explanation": "Smelting with coke produced metals of a higher quality.",
+              "location": {
+                "paragraph": "E",
+                "sentence": 3,
+                "highlight": "of a higher quality"
+              }
+            },
+            {
+              "numbers": [6],
+              "prompt": "Demand for iron increased with the growth of the ___",
+              "acceptedAnswers": [["railway(s)"]],
+              "explanation": "Production expanded in response to demand from the expansion of the railways.",
+              "location": {
+                "paragraph": "E",
+                "sentence": 3,
+                "highlight": "the expansion of the railways"
+              }
+            },
+            {
+              "numbers": [7],
+              "prompt": "lacked sufficient ___",
+              "acceptedAnswers": [["sanitation"]],
+              "explanation": "Overcrowded cities suffered from pollution and inadequate sanitation.",
+              "location": {
+                "paragraph": "G",
+                "sentence": 3,
+                "highlight": "inadequate sanitation"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-2",
+          "type": "TRUE_FALSE_NOT_GIVEN",
+          "instructions": "Do the following statements agree with the information given in Reading Passage 1?",
+          "questions": [
+            {
+              "numbers": [8],
+              "prompt": "Britain’s canal network grew rapidly so that more goods could be transported around the country.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "Steam boats carried goods along the canals, but nothing is said about the canal network growing.",
+              "location": null
+            },
+            {
+              "numbers": [9],
+              "prompt": "Costs in the iron industry rose when the technique of smelting iron ore with coke was introduced.",
+              "acceptedAnswers": [["FALSE"]],
+              "explanation": "The coke method was cheaper.",
+              "location": {
+                "paragraph": "E",
+                "sentence": 3,
+                "highlight": "This method was cheaper"
+              }
+            },
+            {
+              "numbers": [10],
+              "prompt": "Samuel Morse’s communication system was more reliable than that developed by William Cooke and Charles Wheatstone.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "Morse worked on his own version, but the systems’ reliability is not compared.",
+              "location": null
+            },
+            {
+              "numbers": [11],
+              "prompt": "The economic benefits of industrialisation were limited to certain sectors of society.",
+              "acceptedAnswers": [["TRUE"]],
+              "explanation": "It improved living standards for the middle and upper classes, while many poor people continued to struggle.",
+              "location": {
+                "paragraph": "H",
+                "sentence": 1,
+                "highlight": "improved the standard of living for the middle and upper classes, many poor people continued to struggle"
+              }
+            },
+            {
+              "numbers": [12],
+              "prompt": "Some skilled weavers believed that the introduction of the new textile machines would lead to job losses.",
+              "acceptedAnswers": [["TRUE"]],
+              "explanation": "Weavers who had spent years learning their craft feared unskilled machine operators were robbing them of their livelihood.",
+              "location": {
+                "paragraph": "H",
+                "sentence": 5,
+                "highlight": "they feared that unskilled machine operators were robbing them of their livelihood"
+              }
+            },
+            {
+              "numbers": [13],
+              "prompt": "There was some sympathy among local people for the Luddites who were arrested near Huddersfield.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "The arrests and punishments are described, but not local people’s feelings about them.",
+              "location": null
+            }
+          ]
+        }
+      ]
+    },
+    "reading-2": {
+      "kind": "reading",
+      "part": 2,
+      "title": "Athletes and stress",
+      "paragraphs": [
+        {
+          "label": "A",
+          "text": "It isn’t easy being a professional athlete. Not only are the physical demands greater than most people could handle, athletes also face intense psychological pressure during competition. This is something that British tennis player Emma Raducanu wrote about on social media following her withdrawal from the 2021 Wimbledon tournament. Though the young player had been doing well in the tournament, she began having difficulty regulating her breathing and heart rate during a match, which she later attributed to ‘the accumulation of the excitement and the buzz’."
+        },
+        {
+          "label": "B",
+          "text": "For athletes, some level of performance stress is almost unavoidable. But there are many different factors that dictate just how people’s minds and bodies respond to stressful events. Typically, stress is the result of an exchange between two factors: demands and resources. An athlete may feel stressed about an event if they feel the demands on them are greater than they can handle. These demands include the high level of physical and mental effort required to succeed, and also the athlete’s concerns about the difficulty of the event, their chance of succeeding, and any potential dangers such as injury. Resources, on the other hand, are a person’s ability to cope with these demands. These include factors such as the competitor’s degree of confidence, how much they believe they can control the situation’s outcome, and whether they’re looking forward to the event or not."
+        },
+        {
+          "label": "C",
+          "text": "Each new demand or change in circumstances affects whether a person responds positively or negatively to stress. Typically, the more resources a person feels they have in handling the situation, the more positive their stress response. This positive stress response is called a challenge state. But should the person feel there are too many demands placed on them, the more likely they are to experience a negative stress response – known as a threat state. Research shows that the challenge states lead to good performance, while threat states lead to poorer performance. So, in Emma Raducanu’s case, a much larger audience, higher expectations and facing a more skilful opponent, may all have led her to feel there were greater demands being placed on her at Wimbledon – but she didn’t have the resources to tackle them. This led to her experiencing a threat response."
+        },
+        {
+          "label": "D",
+          "text": "Our challenge and threat responses essentially influence how our body responds to stressful situations, as both affect the production of adrenaline and cortisol – also known as ‘stress hormones’. During a challenge state, adrenaline increases the amount of blood pumped from the heart and expands the blood vessels, which allows more energy to be delivered to the muscles and brain. This increase of blood and decrease of pressure in the blood vessels has been consistently related to superior sport performance in everything from cricket batting, to golf putting and football penalty taking. But during a threat state, cortisol inhibits the positive effect of adrenaline, resulting in tighter blood vessels, higher blood pressure, slower psychological responses, and a faster heart rate. In short, a threat state makes people more anxious – they make worse decisions and perform more poorly. In tennis players, cortisol has been associated with more unsuccessful serves and greater anxiety."
+        },
+        {
+          "label": "E",
+          "text": "That said, anxiety is also a common experience for athletes when they’re under pressure. Anxiety can increase heart rate and perspiration, cause heart palpitations, muscle tremors and shortness of breath, as well as headaches, nausea, stomach pain, weakness and a desire to escape in more extreme cases. Anxiety can also reduce concentration and self-control and cause overthinking. The intensity with which a person experiences anxiety depends on the demands and resources they have. Anxiety may also manifest itself in the form of excitement or nervousness depending on the stress response. Negative stress responses can be damaging to both physical and mental health – and repeated episodes of anxiety coupled with negative responses can increase risk of heart disease and depression."
+        },
+        {
+          "label": "F",
+          "text": "But there are many ways athletes can ensure they respond positively under pressure. Positive stress responses can be promoted through the language that they and others – such as coaches or parents – use. Psychologists can also help athletes change how they see their physiological responses – such as helping them see a higher heart rate as excitement, rather than nerves. Developing psychological skills, such as visualisation, can also help decrease physiological responses to threat. Visualisation may involve the athlete recreating a mental picture of a time when they performed well, or picturing themselves doing well in the future. This can help create a feeling of control over the stressful event. Recreating competitive pressure during training can also help athletes learn how to deal with stress. An example of this might be scoring athletes against their peers to create a sense of competition. This would increase the demands which players experience compared to a normal training session, while still allowing them to practise coping with stress."
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-3",
+          "type": "MATCHING_PARAGRAPH_INFO",
+          "instructions": "Reading Passage 2 has six paragraphs, A–F. Which paragraph contains the following information? NB You may use any letter more than once.",
+          "options": [
+            {
+              "key": "A",
+              "text": "Paragraph A"
+            },
+            {
+              "key": "B",
+              "text": "Paragraph B"
+            },
+            {
+              "key": "C",
+              "text": "Paragraph C"
+            },
+            {
+              "key": "D",
+              "text": "Paragraph D"
+            },
+            {
+              "key": "E",
+              "text": "Paragraph E"
+            },
+            {
+              "key": "F",
+              "text": "Paragraph F"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [14],
+              "prompt": "reference to two chemical compounds which impact on performance",
+              "acceptedAnswers": [["D"]],
+              "explanation": "Adrenaline and cortisol, the ‘stress hormones’, and their effects on performance.",
+              "location": {
+                "paragraph": "D",
+                "sentence": 1,
+                "highlight": "both affect the production of adrenaline and cortisol"
+              }
+            },
+            {
+              "numbers": [15],
+              "prompt": "examples of strategies for minimising the effects of stress",
+              "acceptedAnswers": [["F"]],
+              "explanation": "Paragraph F lists ways to respond positively: language, reframing, visualisation and recreating pressure in training.",
+              "location": {
+                "paragraph": "F",
+                "sentence": 1,
+                "highlight": "But there are many ways athletes can ensure they respond positively under pressure."
+              }
+            },
+            {
+              "numbers": [16],
+              "prompt": "how a sportsperson accounted for their own experience of stress",
+              "acceptedAnswers": [["A"]],
+              "explanation": "Raducanu attributed her difficulties to ‘the accumulation of the excitement and the buzz’.",
+              "location": {
+                "paragraph": "A",
+                "sentence": 4,
+                "highlight": "which she later attributed to ‘the accumulation of the excitement and the buzz’"
+              }
+            },
+            {
+              "numbers": [17],
+              "prompt": "study results indicating links between stress responses and performance",
+              "acceptedAnswers": [["C"]],
+              "explanation": "Research shows challenge states lead to good performance and threat states to poorer performance.",
+              "location": {
+                "paragraph": "C",
+                "sentence": 5,
+                "highlight": "Research shows that the challenge states lead to good performance, while threat states lead to poorer performance."
+              }
+            },
+            {
+              "numbers": [18],
+              "prompt": "mention of people who can influence how athletes perceive their stress responses",
+              "acceptedAnswers": [["F"]],
+              "explanation": "Psychologists can help athletes change how they see their physiological responses (coaches and parents are also mentioned).",
+              "location": {
+                "paragraph": "F",
+                "sentence": 3,
+                "highlight": "Psychologists can also help athletes change how they see their physiological responses"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-4",
+          "type": "GAP_FILL",
+          "instructions": "Complete the sentences below. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "summary",
+            "body": "Performance stress involves many demands on the athlete, for example, coping with the possible risk of {{19}}.\n\nCortisol can cause tennis players to produce fewer good {{20}}.\n\nPsychologists can help athletes to view their physiological responses as the effect of a positive feeling such as {{21}}.\n\n{{22}} is an example of a psychological technique which can reduce an athlete’s stress responses."
+          },
+          "questions": [
+            {
+              "numbers": [19],
+              "prompt": "coping with the possible risk of ___",
+              "acceptedAnswers": [["injury"]],
+              "explanation": "Demands include concerns about potential dangers such as injury.",
+              "location": {
+                "paragraph": "B",
+                "sentence": 5,
+                "highlight": "any potential dangers such as injury"
+              }
+            },
+            {
+              "numbers": [20],
+              "prompt": "Cortisol can cause tennis players to produce fewer good ___",
+              "acceptedAnswers": [["serves"]],
+              "explanation": "Cortisol has been associated with more unsuccessful serves.",
+              "location": {
+                "paragraph": "D",
+                "sentence": 6,
+                "highlight": "more unsuccessful serves"
+              }
+            },
+            {
+              "numbers": [21],
+              "prompt": "a positive feeling such as ___",
+              "acceptedAnswers": [["excitement"]],
+              "explanation": "Psychologists help athletes see a higher heart rate as excitement, rather than nerves.",
+              "location": {
+                "paragraph": "F",
+                "sentence": 3,
+                "highlight": "see a higher heart rate as excitement"
+              }
+            },
+            {
+              "numbers": [22],
+              "prompt": "___ is an example of a psychological technique",
+              "acceptedAnswers": [["visualisation", "visualization"]],
+              "explanation": "Psychological skills such as visualisation can decrease physiological responses to threat.",
+              "location": {
+                "paragraph": "F",
+                "sentence": 4,
+                "highlight": "Developing psychological skills, such as visualisation"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-5",
+          "type": "MULTIPLE_CHOICE_MULTIPLE",
+          "instructions": "Choose TWO letters, A–E. Which TWO facts about Emma Raducanu’s withdrawal from the Wimbledon tournament are mentioned in the text?",
+          "answersPerItem": 2,
+          "options": [
+            {
+              "key": "A",
+              "text": "the stage at which she dropped out of the tournament"
+            },
+            {
+              "key": "B",
+              "text": "symptoms of her performance stress at the tournament"
+            },
+            {
+              "key": "C",
+              "text": "measures which she had taken to manage her stress levels"
+            },
+            {
+              "key": "D",
+              "text": "aspects of the Wimbledon tournament which increased her stress levels"
+            },
+            {
+              "key": "E",
+              "text": "reactions to her social media posts about her experience at Wimbledon"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [23, 24],
+              "prompt": "Which TWO facts about Emma Raducanu’s withdrawal from the Wimbledon tournament are mentioned in the text?",
+              "acceptedAnswers": [["B"], ["D"]],
+              "explanation": "B: she had difficulty regulating her breathing and heart rate (paragraph A). D: a much larger audience, higher expectations and a more skilful opponent increased the demands on her (paragraph C).",
+              "location": {
+                "paragraph": "A",
+                "sentence": 4,
+                "highlight": "she began having difficulty regulating her breathing and heart rate during a match"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-6",
+          "type": "MULTIPLE_CHOICE_MULTIPLE",
+          "instructions": "Choose TWO letters, A–E. Which TWO facts about anxiety are mentioned in Paragraph E of the text?",
+          "answersPerItem": 2,
+          "options": [
+            {
+              "key": "A",
+              "text": "the factors which determine how severe it may be"
+            },
+            {
+              "key": "B",
+              "text": "how long it takes for its effects to become apparent"
+            },
+            {
+              "key": "C",
+              "text": "which of its symptoms is most frequently encountered"
+            },
+            {
+              "key": "D",
+              "text": "the types of athletes who are most likely to suffer from it"
+            },
+            {
+              "key": "E",
+              "text": "the harm that can result if athletes experience it too often"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [25, 26],
+              "prompt": "Which TWO facts about anxiety are mentioned in Paragraph E of the text?",
+              "acceptedAnswers": [["A"], ["E"]],
+              "explanation": "A: its intensity depends on the demands and resources a person has. E: repeated episodes coupled with negative responses can increase the risk of heart disease and depression.",
+              "location": {
+                "paragraph": "E",
+                "sentence": 4,
+                "highlight": "The intensity with which a person experiences anxiety depends on the demands and resources they have."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reading-3": {
+      "kind": "reading",
+      "part": 3,
+      "title": "An inquiry into the existence of the gifted child",
+      "paragraphs": [
+        {
+          "label": "A",
+          "text": "Let us start by looking at a modern ‘genius’, Maryam Mirzakhani, who died at the early age of 40. She was the only woman to win the Fields Medal – the mathematical equivalent of a Nobel prize. It would be easy to assume that someone as special as Mirzakhani must have been one of those ‘gifted’ children, those who have an extraordinary ability in a specific sphere of activity or knowledge. But look closer and a different story emerges. Mirzakhani was born in Tehran, Iran. She went to a highly selective girls’ school but maths wasn’t her interest – reading was. She loved novels and would read anything she could lay her hands on. As for maths, she did rather poorly at it for the first couple of years in her middle school, but became interested when her elder brother told her about what he’d learned. He shared a famous maths problem from a magazine that fascinated her – and she was hooked."
+        },
+        {
+          "label": "B",
+          "text": "In adult life it is clear that she was curious, excited by what she did and also resolute in the face of setbacks. One of her comments sums it up. ‘Of course, the most rewarding part is the “Aha” moment, the excitement of discovery and enjoyment of understanding something new . . . But most of the time, doing mathematics for me is like being on a long hike with no trail and no end in sight.’ That trail took her to the heights of original research into mathematics."
+        },
+        {
+          "label": "C",
+          "text": "Is her background unusual? Apparently not. Most Nobel prize winners were unexceptional in childhood. Einstein was slow to talk as a baby. He failed the general part of the entry test to Zurich Polytechnic – though they let him in because of high physics and maths scores. He struggled at work initially, but he kept plugging away and eventually rewrote the laws of Newtonian mechanics with his theory of relativity."
+        },
+        {
+          "label": "D",
+          "text": "There has been a considerable amount of research on high performance over the last century that suggests it goes way beyond tested intelligence. On top of that, research is clear that brains are flexible, new neural pathways can be created, and IQ isn’t fixed. For example, just because you can read stories with hundreds of pages at the age of five doesn’t mean you will still be ahead of your contemporaries in your teens."
+        },
+        {
+          "label": "E",
+          "text": "While the jury is out on giftedness being innate and other factors potentially making the difference, what is certain is that the behaviours associated with high levels of performance are replicable and most can be taught – even traits such as curiosity."
+        },
+        {
+          "label": "F",
+          "text": "According to my colleague Prof Deborah Eyre, with whom I’ve collaborated on the book Great Minds and How to Grow Them, the latest neuroscience and psychological research suggests most individuals can reach levels of performance associated in school with the gifted and talented. However, they must be taught the right attitudes and approaches to their learning and develop the attributes of high performers – curiosity, persistence and hard work, for example – an approach Eyre calls ‘high performance learning’. Critically, they need the right support in developing those approaches at home as well as at school."
+        },
+        {
+          "label": "G",
+          "text": "Prof Anders Ericsson, an eminent education psychologist at Florida State University, US, is the co-author of Peak: Secrets from the New Science of Expertise. After research going back to 1980 into diverse achievements, from music to memory to sport, he doesn’t think unique and innate talents are at the heart of performance. Deliberate practice, that stretches you every step of the way, and around 10,000 hours of it, is what produces the goods. It’s not a magic number – the highest performers move on to doing a whole lot more, of course. Ericsson’s memory research is particularly interesting because random students, trained in memory techniques for the study, went on to outperform others thought to have innately superior memories – those who you might call gifted."
+        },
+        {
+          "label": "H",
+          "text": "But it is perhaps the work of Benjamin Bloom, another distinguished American educationist working in the 1980s, that gives the most pause for thought. Bloom’s team looked at a group of extraordinarily high achieving people in disciplines as varied as ballet, swimming, piano, tennis, maths, sculpture and neurology. He found a pattern of parents encouraging and supporting their children, often in areas they enjoyed themselves. Bloom’s outstanding people had worked very hard and consistently at something they had become hooked on when at a young age, and their parents all emerged as having strong work ethics themselves."
+        },
+        {
+          "label": "I",
+          "text": "Eyre says we know how high performers learn. From that she has developed a high performing learning approach. She is working on this with a group of schools, both in Britain and abroad. Some spin-off research, which looked in detail at 24 of the 3,000 children being studied who were succeeding despite difficult circumstances, found something remarkable. Half were getting free school meals because of poverty, more than half were living with a single parent, and four in five were living in disadvantaged areas. Interviews uncovered strong evidence of an adult or adults in the child’s life who valued and supported education, either in the immediate or extended family or in the child’s wider community. Children talked about the need to work hard at school, to listen in class and keep trying."
+        },
+        {
+          "label": "J",
+          "text": "Let us end with Einstein, the epitome of a genius. He clearly had curiosity, character and determination. He struggled against rejection in early life but was undeterred. Did he think he was a genius or even gifted? He once wrote: ‘It’s not that I’m so smart, it’s just that I stay with problems longer. Most people say it is the intellect which makes a great scientist. They are wrong: it is character.’"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-7",
+          "type": "GAP_FILL",
+          "instructions": "Complete the summary using the list of phrases, A–K, below. Write the correct letter, A–K, for each answer.",
+          "options": [
+            {
+              "key": "A",
+              "text": "appeal"
+            },
+            {
+              "key": "B",
+              "text": "determined"
+            },
+            {
+              "key": "C",
+              "text": "intrigued"
+            },
+            {
+              "key": "D",
+              "text": "single"
+            },
+            {
+              "key": "E",
+              "text": "achievement"
+            },
+            {
+              "key": "F",
+              "text": "devoted"
+            },
+            {
+              "key": "G",
+              "text": "involved"
+            },
+            {
+              "key": "H",
+              "text": "unique"
+            },
+            {
+              "key": "I",
+              "text": "innovative"
+            },
+            {
+              "key": "J",
+              "text": "satisfaction"
+            },
+            {
+              "key": "K",
+              "text": "intent"
+            }
+          ],
+          "layout": {
+            "kind": "summary",
+            "title": "Maryam Mirzakhani",
+            "body": "Maryam Mirzakhani is regarded as {{27}} in the field of mathematics because she was the only female holder of the prestigious Fields Medal – a record that she retained at the time of her death. However, maths held little {{28}} for her as a child and in fact her performance was below average until she was {{29}} by a difficult puzzle that one of her siblings showed her.\n\nLater, as a professional mathematician, she had an inquiring mind and proved herself to be {{30}} when things did not go smoothly. She said she got the greatest {{31}} from making ground-breaking discoveries and in fact she was responsible for some extremely {{32}} mathematical studies."
+          },
+          "questions": [
+            {
+              "numbers": [27],
+              "prompt": "regarded as ___ in the field of mathematics",
+              "acceptedAnswers": [["H"]],
+              "explanation": "H unique: she was the only woman to win the Fields Medal.",
+              "location": {
+                "paragraph": "A",
+                "sentence": 2,
+                "highlight": "She was the only woman to win the Fields Medal"
+              }
+            },
+            {
+              "numbers": [28],
+              "prompt": "maths held little ___ for her as a child",
+              "acceptedAnswers": [["A"]],
+              "explanation": "A appeal: maths wasn’t her interest – reading was.",
+              "location": {
+                "paragraph": "A",
+                "sentence": 6,
+                "highlight": "maths wasn’t her interest – reading was"
+              }
+            },
+            {
+              "numbers": [29],
+              "prompt": "until she was ___ by a difficult puzzle",
+              "acceptedAnswers": [["C"]],
+              "explanation": "C intrigued: a famous maths problem from a magazine fascinated her.",
+              "location": {
+                "paragraph": "A",
+                "sentence": 9,
+                "highlight": "He shared a famous maths problem from a magazine that fascinated her"
+              }
+            },
+            {
+              "numbers": [30],
+              "prompt": "proved herself to be ___ when things did not go smoothly",
+              "acceptedAnswers": [["B"]],
+              "explanation": "B determined: she was resolute in the face of setbacks.",
+              "location": {
+                "paragraph": "B",
+                "sentence": 1,
+                "highlight": "resolute in the face of setbacks"
+              }
+            },
+            {
+              "numbers": [31],
+              "prompt": "got the greatest ___ from making ground-breaking discoveries",
+              "acceptedAnswers": [["J"]],
+              "explanation": "J satisfaction: the most rewarding part is the “Aha” moment, the excitement of discovery.",
+              "location": {
+                "paragraph": "B",
+                "sentence": 3,
+                "highlight": "the most rewarding part is the “Aha” moment"
+              }
+            },
+            {
+              "numbers": [32],
+              "prompt": "responsible for some extremely ___ mathematical studies",
+              "acceptedAnswers": [["I"]],
+              "explanation": "I innovative: her path took her to the heights of original research into mathematics.",
+              "location": {
+                "paragraph": "B",
+                "sentence": 7,
+                "highlight": "the heights of original research into mathematics"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-8",
+          "type": "YES_NO_NOT_GIVEN",
+          "instructions": "Do the following statements agree with the claims of the writer in Reading Passage 3?",
+          "questions": [
+            {
+              "numbers": [33],
+              "prompt": "Many people who ended up winning prestigious intellectual prizes only reached an average standard when young.",
+              "acceptedAnswers": [["YES"]],
+              "explanation": "Most Nobel prize winners were unexceptional in childhood.",
+              "location": {
+                "paragraph": "C",
+                "sentence": 3,
+                "highlight": "Most Nobel prize winners were unexceptional in childhood."
+              }
+            },
+            {
+              "numbers": [34],
+              "prompt": "Einstein’s failures as a young man were due to his lack of confidence.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "His early failures are described, but not their cause.",
+              "location": null
+            },
+            {
+              "numbers": [35],
+              "prompt": "It is difficult to reach agreement on whether some children are actually born gifted.",
+              "acceptedAnswers": [["YES"]],
+              "explanation": "‘The jury is out’ on whether giftedness is innate.",
+              "location": {
+                "paragraph": "E",
+                "sentence": 1,
+                "highlight": "While the jury is out on giftedness being innate"
+              }
+            },
+            {
+              "numbers": [36],
+              "prompt": "Einstein was upset by the public’s view of his life’s work.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "The public’s view of his work is not mentioned.",
+              "location": null
+            },
+            {
+              "numbers": [37],
+              "prompt": "Einstein put his success down to the speed at which he dealt with scientific questions.",
+              "acceptedAnswers": [["NO"]],
+              "explanation": "He said the opposite: he stays with problems longer.",
+              "location": {
+                "paragraph": "J",
+                "sentence": 5,
+                "highlight": "it’s just that I stay with problems longer"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-9",
+          "type": "MULTIPLE_CHOICE_SINGLE",
+          "instructions": "Choose the correct letter, A, B, C or D.",
+          "questions": [
+            {
+              "numbers": [38],
+              "prompt": "What does Eyre believe is needed for children to equal ‘gifted’ standards?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "strict discipline from the teaching staff"
+                },
+                {
+                  "key": "B",
+                  "text": "assistance from their peers in the classroom"
+                },
+                {
+                  "key": "C",
+                  "text": "the development of a spirit of inquiry towards their studies"
+                },
+                {
+                  "key": "D",
+                  "text": "the determination to surpass everyone else’s achievements"
+                }
+              ],
+              "acceptedAnswers": [["C"]],
+              "explanation": "They must develop the attributes of high performers, such as curiosity, persistence and hard work.",
+              "location": {
+                "paragraph": "F",
+                "sentence": 2,
+                "highlight": "develop the attributes of high performers – curiosity, persistence and hard work"
+              }
+            },
+            {
+              "numbers": [39],
+              "prompt": "What is the result of Ericsson’s research?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Very gifted students do not need to work on improving memory skills."
+                },
+                {
+                  "key": "B",
+                  "text": "Being born with a special gift is not the key factor in becoming expert."
+                },
+                {
+                  "key": "C",
+                  "text": "Including time for physical exercise is crucial in raising performance."
+                },
+                {
+                  "key": "D",
+                  "text": "10,000 hours of relevant and demanding work will create a genius."
+                }
+              ],
+              "acceptedAnswers": [["B"]],
+              "explanation": "He doesn’t think unique and innate talents are at the heart of performance. He says 10,000 hours is not a magic number.",
+              "location": {
+                "paragraph": "G",
+                "sentence": 2,
+                "highlight": "he doesn’t think unique and innate talents are at the heart of performance"
+              }
+            },
+            {
+              "numbers": [40],
+              "prompt": "In the penultimate paragraph, it is stated the key to some deprived children’s success is",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "a regular and nourishing diet at home."
+                },
+                {
+                  "key": "B",
+                  "text": "the loving support of more than one parent."
+                },
+                {
+                  "key": "C",
+                  "text": "a community which has well-funded facilities for learning."
+                },
+                {
+                  "key": "D",
+                  "text": "the guidance of someone who recognises the benefits of learning."
+                }
+              ],
+              "acceptedAnswers": [["D"]],
+              "explanation": "Interviews found an adult in each child’s life who valued and supported education.",
+              "location": {
+                "paragraph": "I",
+                "sentence": 6,
+                "highlight": "an adult or adults in the child’s life who valued and supported education"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "kind": "writing",
+      "task1": {
+        "prompt": "The plans below show a harbour in 2000 and how it looks today. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+        "image": "/media/img/b19t2-w1.977c26c4.png",
+        "imageDescription": "Two plans of Porth Harbour, one in 2000 and one today, each with a compass (north at the top). In both, a main road runs north–south along the west (left) edge, and a road branches east from it along the southern shore to the lifeboat station. The harbour water lies in the middle, opening to the sea in the north-east; a public beach lies off the plan to the north-east in both years. In 2000: on the west side, from north to south, there were showers and toilets, a small car park, then a larger car park further south, connected to the road. Along the western edge of the water, the marina for private yachts was in the north-west and the fishing boats were moored in a larger area to the south of it. In the north-east of the harbour there was one dock (a pier) used by passenger ferries and other boats moored alongside it. The lifeboat station stood at the end of the southern road, on the harbour’s southern edge. On the headland in the south-east stood a disused castle, and along the southern shore of the headland was a public beach. Today: the fishing boats and the marina have swapped places, so the fishing boats are now in the smaller north-western area and the marina for private yachts is in the larger south-western area. A second set of showers and toilets has been added south of the first car park, and the southern car park remains, so there are now two blocks of showers and toilets and two car parks. A second pier has been added to the dock, west of the original one, so the dock is larger, with boats moored alongside both piers and passenger ferries still using it. A row of cafés and shops has been built on the southern edge of the harbour, just west of the lifeboat station, which is unchanged. The southern road now also branches off to continue east towards the headland. The disused castle has been replaced by a hotel, and the public beach on the southern shore has become a private beach for the hotel.",
+        "minWords": 150
+      },
+      "task2": {
+        "prompt": "The working week should be shorter and workers should have a longer weekend. Do you agree or disagree? Give reasons for your answer and include any relevant examples from your own knowledge or experience.",
+        "minWords": 250
+      }
+    },
+    "speaking": {
+      "kind": "speaking",
+      "part1": [
+        "Have you travelled a lot by plane? [To where?/Why not?]",
+        "Why do you think some people enjoy travelling by plane?",
+        "Would you like to live near an airport? [Why/Why not?]",
+        "In the future, do you think that you will travel by plane more often? [Why/Why not?]"
+      ],
+      "part2": {
+        "topic": "Describe a person from your country who has won a prize, award or medal.",
+        "points": [
+          "who this person is",
+          "which prize, award or medal they received",
+          "what they did to win this"
+        ],
+        "closing": "and explain whether you think it was right that this person received this prize, award or medal.",
+        "prepSec": 60,
+        "speakSec": 120
+      },
+      "part3": [
+        "What types of school prizes do children in your country receive?",
+        "What do you think are the advantages of rewarding schoolchildren for good work?",
+        "Do you agree that it’s more important for children to receive rewards from their parents than from teachers?",
+        "Do you think that some sportspeople (e.g., top footballers) are paid too much money?",
+        "Should everyone on a team get the same prize money when they win?",
+        "Do you agree with the view that, in sport, taking part is more important than winning?"
+      ]
+    }
+  }
+}
