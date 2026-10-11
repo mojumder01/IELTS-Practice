@@ -85,6 +85,8 @@ const GROUP_COLS = [
   'Options',
   'Answers per item',
 ] as const;
+/** Added later; older templates without them still upload. */
+const GROUP_IMAGE_COLS = ['Image', 'Image description'] as const;
 const QUESTION_COLS = [
   'Group',
   'Number',
@@ -353,10 +355,15 @@ function table(
   name: string,
   columns: readonly string[],
   problems: SheetProblem[],
+  optional: readonly string[] = [],
 ): Table {
   if (!grid) return { name, rows: [] };
   const header = (grid.rows[0] ?? []).map((c) => normalise(cellText(c)));
   const index = new Map<string, number>();
+  for (const col of optional) {
+    const i = header.indexOf(normalise(col));
+    if (i !== -1) index.set(col, i);
+  }
   for (const col of columns) {
     const i = header.indexOf(normalise(col));
     if (i === -1)
@@ -525,7 +532,7 @@ export function bookToTest(
   }
 
   // Groups
-  const gt = table(sheet(SHEETS.groups), SHEETS.groups, GROUP_COLS, problems);
+  const gt = table(sheet(SHEETS.groups), SHEETS.groups, GROUP_COLS, problems, GROUP_IMAGE_COLS);
   const groups = new Map<string, QuestionGroup>();
   for (const r of gt.rows) {
     const id = cellText(r.get('Group'));
@@ -601,6 +608,10 @@ export function bookToTest(
       if (n !== 2 && n !== 3) problem(gt.name, r.row, 'Answers per item is 2 or 3.');
       else group.answersPerItem = n;
     }
+    const image = cellText(r.get('Image'));
+    if (image) group.image = resolveMedia(image, 'img', manifest);
+    const imageDescription = cellText(r.get('Image description'));
+    if (imageDescription) group.imageDescription = imageDescription;
     groups.set(id, group);
     (module === 'listening'
       ? listening(part as 1 | 2 | 3 | 4)
@@ -776,6 +787,10 @@ const HELP_ROWS: Cell[][] = [
     "Layout: summary, notes, table, form or flow, with Layout text in Markdown and {{7}} where question 7's gap goes.",
   ],
   [
+    '',
+    'Image: a map, plan or diagram shown above the group (its file name as uploaded), with a description for screen readers. Options with a layout turn the gaps into drop-downs.',
+  ],
+  [
     'Questions',
     'One row per question. Number is like 7, or 21-22 for one question with two answers.',
   ],
@@ -903,7 +918,7 @@ export function testToBook(test: TestFile): Grid[] {
     {
       name: SHEETS.groups,
       rows: [
-        [...GROUP_COLS],
+        [...GROUP_COLS, ...GROUP_IMAGE_COLS],
         ...allGroups.flatMap(({ module, part, groups }) =>
           groups.map((g): Cell[] => [
             groupName.get(g)!,
@@ -919,10 +934,12 @@ export function testToBook(test: TestFile): Grid[] {
             g.layout?.body ?? '',
             g.options ? formatOptions(g.options) : '',
             g.answersPerItem ?? '',
+            g.image && !g.image.startsWith('data:') ? mediaName(g.image) : '',
+            g.imageDescription ?? '',
           ]),
         ),
       ],
-      widths: [10, 11, 6, 34, 50, 18, 10, 10, 10, 20, 50, 40, 10],
+      widths: [10, 11, 6, 34, 50, 18, 10, 10, 10, 20, 50, 40, 10, 22, 40],
     },
     {
       name: SHEETS.questions,

@@ -71,15 +71,26 @@ describe('npm run validate', () => {
 
 describe('planSeed', () => {
   it('writes the test, each section, the manifest and new words only', async () => {
-    const plan = planSeed(await loadContent(root), 'owner123');
-    expect(plan.writes.map((w) => `${w.mode} ${w.path}`)).toEqual([
+    const content = await loadContent(root);
+    const plan = planSeed(content, 'owner123');
+    const writes = plan.writes.map((w) => `${w.mode} ${w.path}`);
+    expect(writes.filter((w) => w.includes('tests/book21-test1'))).toEqual([
       'set tests/book21-test1',
       'set tests/book21-test1/sections/listening-1',
       'set tests/book21-test1/sections/reading-1',
       'set tests/book21-test1/sections/writing',
       'set tests/book21-test1/sections/speaking',
-      'set media/manifest',
-      ...[
+    ]);
+    // Every test writes its own document, then one per section.
+    for (const { test } of content.tests) {
+      const id = test!.meta.testId;
+      expect(writes.filter((w) => w.startsWith(`set tests/${id}`))).toHaveLength(
+        1 + Object.keys(test!.sections).length,
+      );
+    }
+    expect(writes.filter((w) => w === 'set media/manifest')).toHaveLength(1);
+    expect(writes.filter((w) => w.startsWith('create users/'))).toEqual(
+      [
         'sustainable',
         'mitigate',
         'embodied',
@@ -92,7 +103,7 @@ describe('planSeed', () => {
         'well-being',
         'remuneration',
       ].map((id) => `create users/owner123/vocab/${id}`),
-    ]);
+    );
   });
 
   it('skips vocabulary without an owner UID', async () => {

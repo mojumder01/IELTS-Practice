@@ -64,6 +64,29 @@ describe('workbook round trip', () => {
     expect(draft).toEqual(asImported(sample));
   });
 
+  it('carries a group’s map or diagram and a box of options', () => {
+    const test = structuredClone(sample);
+    const section = test.sections['listening-1'];
+    if (section?.kind !== 'listening') throw new Error('sample has listening-1');
+    section.groups[0]!.image = '/media/img/b21t1-w1.2e4b8323.png';
+    section.groups[0]!.imageDescription = 'A map of the sports centre.';
+    const book = testToBook(test);
+    expect(sheet(book, SHEETS.groups).rows[1]!.slice(-2)).toEqual([
+      'b21t1-w1.png',
+      'A map of the sports centre.',
+    ]);
+    const { draft, problems } = bookToTest(book, manifest);
+    expect(problems).toEqual([]);
+    expect(draft).toEqual(asImported(test));
+  });
+
+  it('still reads a Groups sheet without the Image columns', () => {
+    const book = testToBook(sample);
+    const groups = sheet(book, SHEETS.groups);
+    groups.rows = groups.rows.map((r) => r.slice(0, -2));
+    expect(bookToTest(book, manifest).problems).toEqual([]);
+  });
+
   it('gives the round-tripped sample a clean publish checklist', () => {
     const { draft } = bookToTest(testToBook(sample), manifest);
     expect(checklist(draft!, manifest).every((i) => i.ok)).toBe(true);

@@ -9,6 +9,8 @@ interface GapInputProps {
   /** When answers are showing, the border says right or wrong (the reveal line says it in words). */
   result?: QuestionResult;
   showNumber?: boolean;
+  /** Letters to choose from (a box of options): the gap becomes a drop-down. */
+  choices?: string[];
 }
 
 /** A gap to type into, with an inline warning as soon as the answer passes the word limit. */
@@ -18,6 +20,7 @@ export function GapInput({
   wordLimit,
   result,
   showNumber = true,
+  choices,
 }: GapInputProps) {
   const q = useQuestionState();
   const value = q.value(number);
@@ -43,20 +46,40 @@ export function GapInput({
             {number}
           </span>
         )}
-        <input
-          aria-label={`Question ${number}`}
-          data-question={number}
-          aria-invalid={tooLong || undefined}
-          aria-describedby={tooLong ? `limit-${number}` : undefined}
-          value={value}
-          onChange={(e) => q.answer(number, e.target.value)}
-          onFocus={() => q.goTo(number)}
-          autoComplete="off"
-          spellCheck={false}
-          className={`h-10 w-[140px] rounded-[6px] border-[1.5px] px-2.5 text-[15px] leading-normal text-navy ${border} ${
-            value.trim() ? 'bg-now-playing' : 'bg-surface'
-          }`}
-        />
+        {choices ? (
+          <select
+            aria-label={`Question ${number}`}
+            data-question={number}
+            value={value}
+            onChange={(e) => q.answer(number, e.target.value)}
+            onFocus={() => q.goTo(number)}
+            className={`h-10 min-w-20 rounded-[6px] border-[1.5px] px-2 text-[15px] leading-normal text-navy ${border} ${
+              value.trim() ? 'bg-now-playing' : 'bg-surface'
+            }`}
+          >
+            <option value="">–</option>
+            {choices.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+        ) : (
+          <input
+            aria-label={`Question ${number}`}
+            data-question={number}
+            aria-invalid={tooLong || undefined}
+            aria-describedby={tooLong ? `limit-${number}` : undefined}
+            value={value}
+            onChange={(e) => q.answer(number, e.target.value)}
+            onFocus={() => q.goTo(number)}
+            autoComplete="off"
+            spellCheck={false}
+            className={`h-10 w-[140px] rounded-[6px] border-[1.5px] px-2.5 text-[15px] leading-normal text-navy ${border} ${
+              value.trim() ? 'bg-now-playing' : 'bg-surface'
+            }`}
+          />
+        )}
       </span>
       {tooLong && (
         <span

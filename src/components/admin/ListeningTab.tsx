@@ -367,6 +367,7 @@ export function ListeningTab({ draft, update, manifest }: ListeningTabProps) {
             start={(part - 1) * 10 + 1}
             onChange={(fn) => edit((s) => fn(s.groups))}
             allowLayout
+            images={manifest?.files.filter((f) => f.kind === 'image').map((f) => f.path)}
           />
         </section>
       )}

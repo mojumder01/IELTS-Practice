@@ -28,30 +28,44 @@ export function currentFile(path: string, manifest: MediaManifest) {
 
 /**
  * A section as stored (a test's section document, or a draft's parsed JSON) with its audio or
- * image pointed at the current file, and a listening part's length set from that file. Returns
+ * images pointed at the current files, and a listening part's length set from its file. Returns
  * null when nothing changes.
  */
 export function relinkSection(
   section: Record<string, unknown>,
   manifest: MediaManifest,
 ): Record<string, unknown> | null {
+  let next = section;
   if (section.kind === 'listening' && typeof section.audio === 'string') {
     const file = currentFile(section.audio, manifest);
-    if (!file) return null;
-    const length = typeof section.durationSec === 'number' ? section.durationSec : 0;
-    // A length within a second of the file's is a rounding, not a new recording.
-    const durationSec =
-      file.durationSec !== undefined && Math.abs(file.durationSec - length) >= 1
-        ? file.durationSec
-        : section.durationSec;
-    if (file.path === section.audio && durationSec === section.durationSec) return null;
-    return { ...section, audio: file.path, durationSec };
+    if (file) {
+      const length = typeof section.durationSec === 'number' ? section.durationSec : 0;
+      // A length within a second of the file's is a rounding, not a new recording.
+      const durationSec =
+        file.durationSec !== undefined && Math.abs(file.durationSec - length) >= 1
+          ? file.durationSec
+          : section.durationSec;
+      if (file.path !== section.audio || durationSec !== section.durationSec) {
+        next = { ...next, audio: file.path, durationSec };
+      }
+    }
+  }
+  // Maps and diagrams shown with a group of questions.
+  if (Array.isArray(section.groups)) {
+    let changed = false;
+    const groups = (section.groups as Record<string, unknown>[]).map((g) => {
+      const file = typeof g.image === 'string' ? currentFile(g.image, manifest) : undefined;
+      if (!file || file.path === g.image) return g;
+      changed = true;
+      return { ...g, image: file.path };
+    });
+    if (changed) next = { ...next, groups };
   }
   const task1 = section.task1 as Record<string, unknown> | undefined;
   if (section.kind === 'writing' && typeof task1?.image === 'string') {
     const file = currentFile(task1.image, manifest);
-    if (!file || file.path === task1.image) return null;
-    return { ...section, task1: { ...task1, image: file.path } };
+    if (file && file.path !== task1.image)
+      next = { ...next, task1: { ...task1, image: file.path } };
   }
-  return null;
+  return next === section ? null : next;
 }

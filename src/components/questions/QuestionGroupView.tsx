@@ -47,7 +47,6 @@ export function QuestionGroupView({ group }: { group: QuestionGroup }) {
   const range =
     numbers.length > 1 ? `${numbers[0]}–${numbers[numbers.length - 1]}` : String(numbers[0]);
   const shownGroup = q.isShown(group.groupId);
-  const isMatching = group.type.startsWith('MATCHING_');
 
   const resultsFor = (nums: number[]) => results.filter((r) => nums.includes(r.number));
   const whereFor = (questionIndex: number) => (n: number) =>
@@ -89,7 +88,15 @@ export function QuestionGroupView({ group }: { group: QuestionGroup }) {
         </dl>
       )}
 
-      {isMatching && group.options && (
+      {group.image && (
+        <img
+          src={group.image}
+          alt={group.imageDescription || `Diagram for questions ${range}`}
+          className="h-auto max-w-full self-start rounded-[10px] border border-border"
+        />
+      )}
+
+      {group.options && !group.type.startsWith('MULTIPLE_CHOICE') && (
         <dl className="m-0 grid grid-cols-[auto_1fr] gap-x-3.5 gap-y-1 rounded-[10px] border border-border bg-surface px-4 py-3 text-sm text-navy-3">
           {group.options.map((o) => (
             <Fragment key={o.key}>

@@ -33,6 +33,7 @@ export function GapLayoutBlock({ group, results, where }: GapLayoutBlockProps) {
             number={Number(part)}
             maxWords={group.maxWords}
             wordLimit={group.wordLimit}
+            choices={group.options?.map((o) => o.key)}
             result={shown ? resultFor(Number(part)) : undefined}
           />
         ) : (

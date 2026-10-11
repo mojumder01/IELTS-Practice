@@ -54,6 +54,8 @@ interface GroupsEditorProps {
   renderExtra?: (question: Question, type: QuestionType, g: number, q: number) => ReactNode;
   /** Listening forms and tables put their gaps in a layout. */
   allowLayout?: boolean;
+  /** Images in the media manifest, for a group's map or diagram. */
+  images?: string[];
 }
 
 /** Question groups: type, instructions, word limit and options, then each question's answers. */
@@ -63,6 +65,7 @@ export function GroupsEditor({
   onChange,
   renderExtra,
   allowLayout,
+  images = [],
 }: GroupsEditorProps) {
   const [newType, setNewType] = useState<QuestionType>('TRUE_FALSE_NOT_GIVEN');
   const [newCount, setNewCount] = useState('5');
@@ -169,7 +172,51 @@ export function GroupsEditor({
                 </div>
               </div>
             )}
-            {CHOICE.includes(group.type) && (
+            <div className="grid gap-3 sm:grid-cols-[16rem_1fr]">
+              <div className="flex flex-col gap-1">
+                <label htmlFor={`${id}-image`} className={label}>
+                  Map or diagram (optional)
+                </label>
+                <select
+                  id={`${id}-image`}
+                  value={group.image ?? ''}
+                  onChange={(e) =>
+                    onChange((gs) => {
+                      gs[g]!.image = e.target.value || undefined;
+                    })
+                  }
+                  className={input}
+                >
+                  <option value="">None</option>
+                  {group.image && !images.includes(group.image) && (
+                    <option value={group.image}>{group.image.split('/').pop()}</option>
+                  )}
+                  {images.map((path) => (
+                    <option key={path} value={path}>
+                      {path.split('/').pop()}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {group.image && (
+                <div className="flex flex-col gap-1">
+                  <label htmlFor={`${id}-image-text`} className={label}>
+                    What the image shows (for screen readers)
+                  </label>
+                  <LocalTextArea
+                    id={`${id}-image-text`}
+                    initial={group.imageDescription ?? ''}
+                    onText={(text) =>
+                      onChange((gs) => {
+                        gs[g]!.imageDescription = text || undefined;
+                      })
+                    }
+                    className={`${input} min-h-16 py-2`}
+                  />
+                </div>
+              )}
+            </div>
+            {(CHOICE.includes(group.type) || group.type === 'GAP_FILL') && (
               <div className="grid gap-3 sm:grid-cols-[1fr_10rem]">
                 <div className="flex flex-col gap-1">
                   <label htmlFor={`${id}-options`} className={label}>

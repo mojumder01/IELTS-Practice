@@ -62,6 +62,12 @@ export const AnswerLocationSchema = z.strictObject({
   highlight: text, // exact words; must occur in that sentence
 });
 
+/** A Hosting path from npm run media, or an inline data URL for images under 700 KB. */
+const imageRef = z.union([
+  z.string().startsWith('/media/img/'),
+  z.string().regex(/^data:image\/(png|jpeg|webp|svg\+xml);base64,/, 'expected an image data URL'),
+]);
+
 const OptionSchema = z.strictObject({ key: text, text: text });
 
 export const QuestionSchema = z
@@ -90,6 +96,10 @@ export const QuestionGroupSchema = z.strictObject({
   layout: GapLayoutSchema.optional(),
   options: z.array(OptionSchema).min(2).optional(), // shared list: A–G, i–x, headings, features
   answersPerItem: z.number().int().min(2).max(3).optional(),
+  // A map, plan or diagram shown above the questions (labelling questions), with a text
+  // description for screen readers.
+  image: imageRef.optional(),
+  imageDescription: z.string().optional(),
   questions: z.array(QuestionSchema).min(1),
 });
 
@@ -118,12 +128,6 @@ export const ListeningSectionSchema = z.strictObject({
   script: z.array(ScriptLineSchema).min(1),
   groups: z.array(QuestionGroupSchema).min(1),
 });
-
-/** A Hosting path from npm run media, or an inline data URL for images under 700 KB. */
-const imageRef = z.union([
-  z.string().startsWith('/media/img/'),
-  z.string().regex(/^data:image\/(png|jpeg|webp|svg\+xml);base64,/, 'expected an image data URL'),
-]);
 
 export const WritingSectionSchema = z.strictObject({
   kind: z.literal('writing'),

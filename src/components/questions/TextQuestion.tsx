@@ -23,6 +23,7 @@ export function TextQuestion({ group, question, results, where }: TextQuestionPr
       number={n}
       maxWords={group.maxWords}
       wordLimit={group.wordLimit}
+      choices={group.options?.map((o) => o.key)}
       result={shown ? results[0] : undefined}
       showNumber={false}
     />

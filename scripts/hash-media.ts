@@ -1,6 +1,7 @@
 // npm run media: prepares files dropped into public/media/audio or public/media/img.
 // Audio becomes 64 kbps mono MP3; every file gets a content hash in its name; a file
-// that replaces an older version of the same name updates content/**/*.json to match;
+// that replaces an older version of the same name updates content/**/*.json to match, as
+// does content that names a file as uploaded;
 // content/media-manifest.json is rebuilt from what's on disk. Needs ffmpeg and ffprobe.
 import { execFile } from 'node:child_process';
 import { createHash } from 'node:crypto';
@@ -109,6 +110,9 @@ async function prepare(dir: 'audio' | 'img') {
     const finalName = hashedName(parsed.stem, sha256(bytes), ext);
     await writeFile(path.join(folder, finalName), bytes);
     if (name !== finalName) await rm(source);
+    // Content written before the file was hashed can name it as uploaded ("b19t1-w1.png").
+    const named = await rewriteReferences(`/media/${dir}/${name}`, `/media/${dir}/${finalName}`);
+    if (named.length) console.log(`  linked ${name} in ${named.join(', ')}`);
 
     for (const old of await visible(folder)) {
       const match = HASHED_MEDIA_NAME.exec(old);

@@ -50,6 +50,19 @@ describe('media relinking', () => {
     });
   });
 
+  it('points a group’s map or diagram at the current image', () => {
+    const section = {
+      kind: 'listening',
+      audio: '/media/audio/b22t1-p1.aaaaaaaa.mp3',
+      durationSec: 402.5,
+      groups: [{ groupId: 'g', image: '/media/img/b22t1-w1.png' }, { groupId: 'h' }],
+    };
+    expect(relinkSection(section, manifest)).toEqual({
+      ...section,
+      groups: [{ groupId: 'g', image: '/media/img/b22t1-w1.bbbbbbbb.png' }, { groupId: 'h' }],
+    });
+  });
+
   it('leaves sections alone when nothing changes', () => {
     expect(
       relinkSection(

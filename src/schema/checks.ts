@@ -64,9 +64,12 @@ export function checkTest(file: TestFile, manifest: MediaManifest | null): Conte
 
   for (const [id, section] of Object.entries(file.sections)) {
     if (section?.kind !== 'reading' && section?.kind !== 'listening') continue;
-    section.groups.forEach((group, g) =>
-      checkGroup(group, `sections.${id}.groups[${g}]`, section.kind, issues),
-    );
+    section.groups.forEach((group, g) => {
+      checkGroup(group, `sections.${id}.groups[${g}]`, section.kind, issues);
+      if (group.image && !group.image.startsWith('data:')) {
+        checkMediaPath(group.image, `sections.${id}.groups[${g}].image`, manifest, issues);
+      }
+    });
   }
 
   const reading = ([1, 2, 3] as const).map((part) => readingPart(file, part));

@@ -198,7 +198,9 @@ export function AdminTest() {
           className="min-w-0"
         >
           {current === 'settings' && <SettingsTab draft={draft} update={update} />}
-          {current === 'reading' && <ReadingTab draft={draft} update={update} />}
+          {current === 'reading' && (
+            <ReadingTab draft={draft} update={update} manifest={manifest} />
+          )}
           {current === 'listening' && (
             <ListeningTab draft={draft} update={update} manifest={manifest} />
           )}

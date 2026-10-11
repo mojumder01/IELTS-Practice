@@ -7,6 +7,7 @@ import {
   passageSentences,
   toggleLocation,
 } from '../../admin/draft';
+import type { MediaManifest } from '../../schema/media';
 import type { Question, QuestionType, ReadingSection, TestFile } from '../../schema/test';
 import { GroupsEditor } from './GroupsEditor';
 import { LocalInput, LocalTextArea } from './LocalText';
@@ -15,6 +16,7 @@ import { input, label, panel, pressable, smallButton } from './ui';
 interface ReadingTabProps {
   draft: TestFile;
   update: (edit: (d: TestFile) => void) => void;
+  manifest?: MediaManifest | null;
 }
 
 const PARTS = [1, 2, 3] as const;
@@ -33,7 +35,7 @@ function startOf(d: TestFile, part: 1 | 2 | 3): number {
 }
 
 /** Passages, their questions, and each answer linked to the sentence that proves it (SPEC section 8). */
-export function ReadingTab({ draft, update }: ReadingTabProps) {
+export function ReadingTab({ draft, update, manifest = null }: ReadingTabProps) {
   const [part, setPart] = useState<1 | 2 | 3>(1);
   const [view, setView] = useState<'edit' | 'link'>('edit');
   const [active, setActive] = useState<number | null>(null);
@@ -309,6 +311,7 @@ export function ReadingTab({ draft, update }: ReadingTabProps) {
             start={startOf(draft, part)}
             onChange={(fn) => edit((s) => fn(s.groups))}
             renderExtra={locationControls}
+            images={manifest?.files.filter((f) => f.kind === 'image').map((f) => f.path)}
           />
         </section>
       )}
