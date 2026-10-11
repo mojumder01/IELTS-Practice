@@ -1,0 +1,2099 @@
+{
+  "meta": {
+    "testId": "cambridge17-test3",
+    "book": "Cambridge 17",
+    "testNumber": 3,
+    "track": "academic",
+    "status": "live",
+    "timing": {
+      "listening": {
+        "singlePartMin": 8,
+        "fullMockMin": 30,
+        "checkMin": 2
+      },
+      "reading": {
+        "singlePartMin": 20,
+        "fullMockMin": 60
+      },
+      "writing": {
+        "task1Min": 20,
+        "task2Min": 40,
+        "fullMockMin": 60
+      }
+    },
+    "studentHelp": {
+      "allowReveal": true,
+      "showScriptInSinglePart": true,
+      "lockAudioInFullMock": true
+    }
+  },
+  "sections": {
+    "listening-1": {
+      "kind": "listening",
+      "part": 1,
+      "audio": "/media/audio/b17t3-p1.030376d9.mp3",
+      "durationSec": 415.3,
+      "context": "A woman asks her friend Jack for advice about a surfing holiday in Ireland.",
+      "script": [
+        {
+          "start": 87.8,
+          "speaker": "Woman",
+          "text": "Jack, I’m thinking of taking the kids to the seaside on a surfing holiday this summer and I wanted to ask your advice – as I know you’re such an expert."
+        },
+        {
+          "start": 98.2,
+          "speaker": "Jack",
+          "text": "Well, I don’t know about that, but yes, I’ve done a bit of surfing over the years. I’d thoroughly recommend it. I think it’s the kind of holiday all the family can enjoy together. The thing about surfing is that it’s great for all ages and all abilities. My youngest started when he was only three!",
+          "answer": {
+            "question": 1,
+            "highlight": "the kind of holiday all the family can enjoy together"
+          }
+        },
+        {
+          "start": 119.2,
+          "speaker": "Woman",
+          "text": "Wow! But it’s quite physically demanding, isn’t it? I’ve heard you need to be pretty fit.",
+          "answer": {
+            "question": 2,
+            "highlight": "need to be pretty fit"
+          }
+        },
+        {
+          "start": 126.4,
+          "speaker": "Jack",
+          "text": "Yes. You’ll certainly learn more quickly and won’t tire as easily."
+        },
+        {
+          "start": 131.4,
+          "speaker": "Woman",
+          "text": "Well – that should be OK for us. You’ve been surfing a few times in Ireland, haven’t you?"
+        },
+        {
+          "start": 138.1,
+          "speaker": "Jack",
+          "text": "Yes. There’s some great surfing there, which people don’t always realise."
+        },
+        {
+          "start": 142.8,
+          "speaker": "Woman",
+          "text": "And which locations would you recommend? – there seem to be quite a few."
+        },
+        {
+          "start": 148.6,
+          "speaker": "Jack",
+          "text": "Yes, there are loads. Last year we went to County Donegal. There are several great places to surf there."
+        },
+        {
+          "start": 155.7,
+          "speaker": "Woman",
+          "text": "What about in County Clare? I read that’s also really good for surfing."
+        },
+        {
+          "start": 161.5,
+          "speaker": "Jack",
+          "text": "Yes, it is. I’ve been there a few times. Most people go to Lahinch. My kids love it there. The waves aren’t too challenging and the town is very lively."
+        },
+        {
+          "start": 172.6,
+          "speaker": "Woman",
+          "text": "Are there good hotels there?",
+          "answer": {
+            "question": 3,
+            "highlight": "Are there good hotels there?"
+          }
+        },
+        {
+          "start": 175.2,
+          "speaker": "Jack",
+          "text": "Yes – some very nice ones and there are also a few basic hostels and campsites. It’s great if you need lessons as the surf schools are excellent."
+        },
+        {
+          "start": 186.0,
+          "speaker": "Woman",
+          "text": "Sounds good."
+        },
+        {
+          "start": 186.9,
+          "speaker": "Jack",
+          "text": "Yes and there’s lots to see in the area – like those well-known cliffs – … I’ve forgotten the name of them …"
+        },
+        {
+          "start": 194.2,
+          "speaker": "Woman",
+          "text": "Oh don’t worry – I can look them up."
+        },
+        {
+          "start": 197.3,
+          "speaker": "Jack",
+          "text": "I’ve also been surfing in County Mayo, which is less well-known for surfing, but we had a really good time. That was a few years ago when the kids were younger. There’s a good surf school at Carrowniskey beach.",
+          "answer": {
+            "question": 4,
+            "highlight": "There’s a good surf school at Carrowniskey beach"
+          }
+        },
+        {
+          "start": 212.5,
+          "speaker": "Woman",
+          "text": "How do you spell that?"
+        },
+        {
+          "start": 215.6,
+          "speaker": "Jack",
+          "text": "C-A-double R-O-W-N-I-S-K-E-Y"
+        },
+        {
+          "start": 223.2,
+          "speaker": "Woman",
+          "text": "OK."
+        },
+        {
+          "start": 223.9,
+          "speaker": "Jack",
+          "text": "I put the kids into the surf camp they run during the summer for 10–16 year olds."
+        },
+        {
+          "start": 230.3,
+          "speaker": "Woman",
+          "text": "Oh right. How long was that for?"
+        },
+        {
+          "start": 233.3,
+          "speaker": "Jack",
+          "text": "Three hours every day for a week. It was perfect – they were so tired out after that.",
+          "answer": {
+            "question": 5,
+            "highlight": "for a week"
+          }
+        },
+        {
+          "start": 240.3,
+          "speaker": "Woman",
+          "text": "I can imagine."
+        },
+        {
+          "start": 241.7,
+          "speaker": "Jack",
+          "text": "One thing we did while the kids were surfing was to rent some kayaks to have a look around the bay which is nearby. It’s really beautiful.",
+          "answer": {
+            "question": 6,
+            "highlight": "have a look around the bay which is nearby"
+          }
+        },
+        {
+          "start": 261.0,
+          "speaker": "Woman",
+          "text": "Oh, I’d love to do that."
+        },
+        {
+          "start": 280.2,
+          "speaker": "Woman",
+          "text": "Now the only time I went to Ireland it rained practically every day."
+        },
+        {
+          "start": 294.1,
+          "speaker": "Jack",
+          "text": "Mmm yes – that can be a problem – but you can surf in the rain, you know."
+        },
+        {
+          "start": 298.9,
+          "speaker": "Woman",
+          "text": "It doesn’t have the same appeal, somehow."
+        },
+        {
+          "start": 302.4,
+          "speaker": "Jack",
+          "text": "Well, the weather’s been fine the last couple of years when I’ve been there, but actually, it tends to rain more in August than in the spring or autumn. September’s my favourite month because the water is warmer then.",
+          "answer": {
+            "question": 7,
+            "highlight": "September’s my favourite month because the water is warmer then"
+          }
+        },
+        {
+          "start": 315.8,
+          "speaker": "Woman",
+          "text": "The only problem is that the kids are back to school then."
+        },
+        {
+          "start": 319.8,
+          "speaker": "Jack",
+          "text": "I know. But one good thing about Irish summers is that it doesn’t get too hot. The average temperature is about 19 degrees and it usually doesn’t go above 25 degrees.",
+          "answer": {
+            "question": 8,
+            "highlight": "The average temperature is about 19 degrees"
+          }
+        },
+        {
+          "start": 333.3,
+          "speaker": "Woman",
+          "text": "That sounds alright. Now what about costs?"
+        },
+        {
+          "start": 337.5,
+          "speaker": "Jack",
+          "text": "Surfing is a pretty cheap holiday really – the only cost is the hire of equipment. You can expect to pay a daily rate of about 30 euros for the hire of a wetsuit and board – but you can save about 40 euros if you hire by the week.",
+          "answer": {
+            "question": 9,
+            "highlight": "a daily rate of about 30 euros for the hire of a wetsuit and board"
+          }
+        },
+        {
+          "start": 355.2,
+          "speaker": "Woman",
+          "text": "That’s not too bad."
+        },
+        {
+          "start": 356.7,
+          "speaker": "Jack",
+          "text": "No. It’s important to make sure you get good quality wetsuits – you’ll all get too cold if you don’t. And make sure you also get boots. They keep your feet warm and it’s easier to surf with them on too.",
+          "answer": {
+            "question": 10,
+            "highlight": "get boots. They keep your feet warm"
+          }
+        },
+        {
+          "start": 371.4,
+          "speaker": "Woman",
+          "text": "OK. Well, thanks very much …"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-1",
+          "type": "GAP_FILL",
+          "instructions": "Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": "ONE WORD AND/OR A NUMBER",
+          "maxWords": 1,
+          "allowNumber": true,
+          "layout": {
+            "kind": "notes",
+            "title": "Advice on surfing holidays",
+            "body": "# Jack’s advice\n- Recommends surfing for {{1}} holidays in the summer\n- Need to be quite {{2}}\n# Irish surfing locations\n- County Clare\n- – Lahinch has some good quality {{3}} and surf schools\n- – There are famous cliffs nearby\n- County Mayo\n- – Good surf school at {{4}} beach\n- – Surf camp lasts for one {{5}}\n- – Can also explore the local {{6}} by kayak\n# Weather\n- Best month to go: {{7}}\n- Average temperature in summer: approx. {{8}} degrees\n# Costs\n- Equipment\n- – Wetsuit and surfboard: {{9}} euros per day\n- – Also advisable to hire {{10}} for warmth"
+          },
+          "questions": [
+            {
+              "numbers": [1],
+              "prompt": "Recommends surfing for ___ holidays in the summer",
+              "acceptedAnswers": [["family"]]
+            },
+            {
+              "numbers": [2],
+              "prompt": "Need to be quite ___",
+              "acceptedAnswers": [["fit"]]
+            },
+            {
+              "numbers": [3],
+              "prompt": "Lahinch has some good quality ___ and surf schools",
+              "acceptedAnswers": [["hotels"]],
+              "explanation": "The woman asks ‘Are there good hotels there?’ and Jack says ‘Yes – some very nice ones’."
+            },
+            {
+              "numbers": [4],
+              "prompt": "Good surf school at ___ beach",
+              "acceptedAnswers": [["Carrowniskey"]],
+              "explanation": "Jack spells it: C-A-double R-O-W-N-I-S-K-E-Y."
+            },
+            {
+              "numbers": [5],
+              "prompt": "Surf camp lasts for one ___",
+              "acceptedAnswers": [["week"]],
+              "explanation": "Three hours every day for a week."
+            },
+            {
+              "numbers": [6],
+              "prompt": "Can also explore the local ___ by kayak",
+              "acceptedAnswers": [["bay"]]
+            },
+            {
+              "numbers": [7],
+              "prompt": "Best month to go: ___",
+              "acceptedAnswers": [["September"]],
+              "explanation": "It rains more in August; ‘September’s my favourite month because the water is warmer then.’"
+            },
+            {
+              "numbers": [8],
+              "prompt": "Average temperature in summer: approx. ___ degrees",
+              "acceptedAnswers": [["19", "nineteen"]],
+              "explanation": "About 19 degrees; 25 is the usual maximum, not the average."
+            },
+            {
+              "numbers": [9],
+              "prompt": "Wetsuit and surfboard: ___ euros per day",
+              "acceptedAnswers": [["30", "thirty"]],
+              "explanation": "About 30 euros a day; 40 euros is the saving if you hire by the week."
+            },
+            {
+              "numbers": [10],
+              "prompt": "Also advisable to hire ___ for warmth",
+              "acceptedAnswers": [["boots"]]
+            }
+          ]
+        }
+      ]
+    },
+    "listening-2": {
+      "kind": "listening",
+      "part": 2,
+      "audio": "/media/audio/b17t3-p2.87961d8a.mp3",
+      "durationSec": 450.4,
+      "context": "Mrs Carter talks to parents about the school’s before and after school childcare service.",
+      "script": [
+        {
+          "start": 61.2,
+          "speaker": "Mrs Carter",
+          "text": "Good afternoon. My name’s Mrs Carter and I run the before and after school extended hours childcare service. I hope you’ve had a chance to have a good look around the school and talk to staff and pupils. I know that many of you are interested in using our childcare service when your child joins the school, and perhaps you already know something about it, but for those that don’t, I’ll go through the main details now."
+        },
+        {
+          "start": 89.0,
+          "speaker": "Mrs Carter",
+          "text": "We offer childcare for children from the ages of four to eleven both before and after school. I know that many parents who work find this service invaluable. You can leave your child with us safe in the knowledge that they will be extremely well cared for."
+        },
+        {
+          "start": 107.3,
+          "speaker": "Mrs Carter",
+          "text": "We are insured to provide care for up to 70 children, although we rarely have this many attending at any one session.",
+          "answer": {
+            "question": 11,
+            "highlight": "We are insured to provide care for up to 70 children"
+          }
+        },
+        {
+          "start": 117.1,
+          "speaker": "Mrs Carter",
+          "text": "I think we generally expect around 50–60 children for the afternoon sessions and about half that number for the breakfast sessions. Although we currently do have 70 children registered with us, not all of these attend every day. It’s ten years since we began offering an extended hours service and we’ve come a long way during that time. When we first opened, we only had about 20 children attending regularly.",
+          "answer": {
+            "question": 12,
+            "highlight": "around 50–60 children for the afternoon sessions and about half that number for the breakfast sessions"
+          }
+        },
+        {
+          "start": 148.0,
+          "speaker": "Mrs Carter",
+          "text": "We try to keep our costs as low as we can and we think we provide very good value for money. For the afternoon sessions, which run from 3.30 until 6 p.m., it’s £7.20. But if you prefer, you can pay for one hour only, which costs £3.50, or two hours which costs £5.70.",
+          "answer": {
+            "question": 13,
+            "highlight": "For the afternoon sessions, which run from 3.30 until 6 p.m., it’s £7.20"
+          }
+        },
+        {
+          "start": 171.4,
+          "speaker": "Mrs Carter",
+          "text": "The cost of the childcare includes food and snacks. They’ll be given breakfast in the morning and in the afternoon, a healthy snack as soon as they finish school. At 5 p.m. children are given something more substantial, such as pasta or a casserole. Please inform us of any allergies that your child might have and we’ll make sure they’re offered a suitable alternative.",
+          "answer": {
+            "question": 14,
+            "highlight": "At 5 p.m. children are given something more substantial, such as pasta or a casserole"
+          }
+        },
+        {
+          "start": 197.8,
+          "speaker": "Mrs Carter",
+          "text": "As you may know, the childcare service runs through the school holidays from 8 a.m. to 6 p.m. We offer a really varied and exciting programme to keep the children entertained – we don’t want them to feel as if they are still at school! It will also feel different because they’ll get the chance to make new friends with children from other schools – spaces are available for them because a lot of our term-time children don’t always attend during the holiday. In the past, parents have asked if children over the age of 11 are allowed to come with their younger brothers and sisters – but I’m afraid we’re unable to do this because of the type of insurance we have.",
+          "answer": {
+            "question": 15,
+            "highlight": "children from other schools – spaces are available for them"
+          }
+        },
+        {
+          "start": 267.9,
+          "speaker": "Mrs Carter",
+          "text": "So now let me tell you about some of the activities that your child can do during the after-school sessions. As well as being able to use the playground equipment, computers and the library, there is usually at least one ‘special’ activity that children can do each day. For example, Spanish. We have a specialist teacher coming in every Thursday to give a basic introduction to the language through games and songs. She does two sessions: one for the over 8s and one for the younger children. This is the only activity which we have to make an extra charge for – but it’s well worth it.",
+          "answer": {
+            "question": 16,
+            "highlight": "This is the only activity which we have to make an extra charge for"
+          }
+        },
+        {
+          "start": 326.2,
+          "speaker": "Mrs Carter",
+          "text": "Once a week the children have the opportunity to do some music. We’re very lucky that one of our staff is a member of a folk band. On Mondays, she teaches singing and percussion to groups of children. We do rely on parental support for this, so if any of you sing or play an instrument and would be prepared to help out at these sessions, we’d be delighted.",
+          "answer": {
+            "question": 17,
+            "highlight": "We do rely on parental support for this"
+          }
+        },
+        {
+          "start": 351.7,
+          "speaker": "Mrs Carter",
+          "text": "Painting continues to be one of the most popular activities. To begin with we weren’t keen on offering this because of the extra mess involved, but children kept asking if they could do some art and so we finally gave in. Art is great for helping the children to relax after working hard at school all day.",
+          "answer": {
+            "question": 18,
+            "highlight": "children kept asking if they could do some art"
+          }
+        },
+        {
+          "start": 373.6,
+          "speaker": "Mrs Carter",
+          "text": "Yoga is something that we’ve been meaning to introduce for some time but haven’t been able to find anyone available to teach it – until now that is. So we’ll see how this goes. Hopefully, children will benefit in all sorts of ways from this.",
+          "answer": {
+            "question": 19,
+            "highlight": "Yoga is something that we’ve been meaning to introduce for some time but haven’t been able to find anyone available to teach it – until now that is"
+          }
+        },
+        {
+          "start": 389.9,
+          "speaker": "Mrs Carter",
+          "text": "Cooking is another popular activity. They make a different sort of cake, or pizza or bread each week. Although the younger children love doing it, we found that the mess was just too much, so we’ve decided to restrict this to the over 8s, as they are better able to clean up after themselves.",
+          "answer": {
+            "question": 20,
+            "highlight": "we’ve decided to restrict this to the over 8s"
+          }
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-2",
+          "type": "MULTIPLE_CHOICE_MULTIPLE",
+          "instructions": "Choose TWO letters, A–E.",
+          "answersPerItem": 2,
+          "options": [
+            {
+              "key": "A",
+              "text": "It started recently."
+            },
+            {
+              "key": "B",
+              "text": "More children attend after school than before school."
+            },
+            {
+              "key": "C",
+              "text": "An average of 50 children attend in the mornings."
+            },
+            {
+              "key": "D",
+              "text": "A child cannot attend both the before and after school sessions."
+            },
+            {
+              "key": "E",
+              "text": "The maximum number of children who can attend is 70."
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [11, 12],
+              "prompt": "Which TWO facts are given about the school’s extended hours childcare service?",
+              "acceptedAnswers": [["B"], ["E"]],
+              "explanation": "They are insured for up to 70 children (E), and expect 50–60 in the afternoons but only about half that for breakfast (B). The service started ten years ago, so it is not recent."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-3",
+          "type": "MULTIPLE_CHOICE_SINGLE",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "numbers": [13],
+              "prompt": "How much does childcare cost for a complete afternoon session per child?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "£3.50"
+                },
+                {
+                  "key": "B",
+                  "text": "£5.70"
+                },
+                {
+                  "key": "C",
+                  "text": "£7.20"
+                }
+              ],
+              "acceptedAnswers": [["C"]],
+              "explanation": "The afternoon session from 3.30 until 6 p.m. costs £7.20; £3.50 and £5.70 are for one and two hours."
+            },
+            {
+              "numbers": [14],
+              "prompt": "What does the manager say about food?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Children with allergies should bring their own food."
+                },
+                {
+                  "key": "B",
+                  "text": "Children may bring healthy snacks with them."
+                },
+                {
+                  "key": "C",
+                  "text": "Children are given a proper meal at 5 p.m."
+                }
+              ],
+              "acceptedAnswers": [["C"]],
+              "explanation": "At 5 p.m. children are given something more substantial, such as pasta or a casserole. The school provides alternatives for allergies."
+            },
+            {
+              "numbers": [15],
+              "prompt": "What is different about arrangements in the school holidays?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Children from other schools can attend."
+                },
+                {
+                  "key": "B",
+                  "text": "Older children can attend."
+                },
+                {
+                  "key": "C",
+                  "text": "A greater number of children can attend."
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "Children from other schools can come because spaces are available. Children over 11 cannot attend because of the insurance."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-4",
+          "type": "MATCHING_FEATURES",
+          "instructions": "What information is given about each of the following activities on offer? Choose FIVE answers from the box and write the correct letter, A–G, next to Questions 16–20.",
+          "options": [
+            {
+              "key": "A",
+              "text": "has limited availability"
+            },
+            {
+              "key": "B",
+              "text": "is no longer available"
+            },
+            {
+              "key": "C",
+              "text": "is for over 8s only"
+            },
+            {
+              "key": "D",
+              "text": "requires help from parents"
+            },
+            {
+              "key": "E",
+              "text": "involves an additional fee"
+            },
+            {
+              "key": "F",
+              "text": "is a new activity"
+            },
+            {
+              "key": "G",
+              "text": "was requested by children"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [16],
+              "prompt": "Spanish",
+              "acceptedAnswers": [["E"]],
+              "explanation": "It is the only activity they have to make an extra charge for."
+            },
+            {
+              "numbers": [17],
+              "prompt": "Music",
+              "acceptedAnswers": [["D"]],
+              "explanation": "They rely on parental support for the music sessions."
+            },
+            {
+              "numbers": [18],
+              "prompt": "Painting",
+              "acceptedAnswers": [["G"]],
+              "explanation": "Children kept asking if they could do some art."
+            },
+            {
+              "numbers": [19],
+              "prompt": "Yoga",
+              "acceptedAnswers": [["F"]],
+              "explanation": "They have only now found someone to teach it."
+            },
+            {
+              "numbers": [20],
+              "prompt": "Cooking",
+              "acceptedAnswers": [["C"]],
+              "explanation": "It is now restricted to the over 8s."
+            }
+          ]
+        }
+      ]
+    },
+    "listening-3": {
+      "kind": "listening",
+      "part": 3,
+      "audio": "/media/audio/b17t3-p3.2bfdbaa4.mp3",
+      "durationSec": 452.8,
+      "context": "Holly’s work placement tutorial: Holly, an events management student, talks to her tutor, Dr Green.",
+      "script": [
+        {
+          "start": 53.7,
+          "speaker": "Holly",
+          "text": "Hello Dr Green – I’m here to talk to you about my work placement."
+        },
+        {
+          "start": 58.3,
+          "speaker": "Tutor",
+          "text": "Oh yes, it’s Holly, isn’t it?"
+        },
+        {
+          "start": 60.8,
+          "speaker": "Holly",
+          "text": "Yes."
+        },
+        {
+          "start": 61.2,
+          "speaker": "Tutor",
+          "text": "So, which work placement have you chosen?"
+        },
+        {
+          "start": 64.3,
+          "speaker": "Holly",
+          "text": "I decided to go for the Orion Stadium placement. The event I’ll be managing is one where I’m helping to set up a sports competition for primary school children."
+        },
+        {
+          "start": 75.1,
+          "speaker": "Tutor",
+          "text": "Yup. That’s always a popular placement – even though it can be tougher than you think working with children."
+        },
+        {
+          "start": 81.4,
+          "speaker": "Holly",
+          "text": "I know, but it’s the fresh air that attracts me – organising something indoors doesn’t have the same appeal, even though it might be fun.",
+          "answer": {
+            "question": 21,
+            "highlight": "it’s the fresh air that attracts me"
+          }
+        },
+        {
+          "start": 91.2,
+          "speaker": "Tutor",
+          "text": "OK, so obviously safety’s going to be one of your key concerns for this event."
+        },
+        {
+          "start": 96.0,
+          "speaker": "Holly",
+          "text": "Yes, I’ve already thought about that. I’ll need to make sure none of the equipment’s damaged."
+        },
+        {
+          "start": 103.0,
+          "speaker": "Tutor",
+          "text": "Ah well, you’ll be working with schools, so the equipment will be their responsibility. However, the grounds and what goes on there will be yours."
+        },
+        {
+          "start": 113.3,
+          "speaker": "Holly",
+          "text": "Oh I see – that’ll include keeping everyone within the boundary once they’re in their kit and on the field?"
+        },
+        {
+          "start": 120.2,
+          "speaker": "Tutor",
+          "text": "Exactly – you’ll need to inspect areas like changing rooms as well for anything someone can trip over, but your main priority will be not to lose anyone!",
+          "answer": {
+            "question": 22,
+            "highlight": "your main priority will be not to lose anyone"
+          }
+        },
+        {
+          "start": 130.6,
+          "speaker": "Holly",
+          "text": "Right. I’ll need staff to help with that."
+        },
+        {
+          "start": 134.8,
+          "speaker": "Tutor",
+          "text": "And don’t forget about the spectators."
+        },
+        {
+          "start": 137.1,
+          "speaker": "Holly",
+          "text": "Mmm. I was thinking that many of them will be parents, who could help run the event."
+        },
+        {
+          "start": 142.4,
+          "speaker": "Tutor",
+          "text": "I wouldn’t rely on that. They’ll be more interested in filming their children than volunteering."
+        },
+        {
+          "start": 148.0,
+          "speaker": "Holly",
+          "text": "I’ll need to make sure they don’t interfere with events doing that!"
+        },
+        {
+          "start": 152.3,
+          "speaker": "Tutor",
+          "text": "And that’s not always easy, especially when a proud parent’s trying to get a snap of their child and you want them to move elsewhere.",
+          "answer": {
+            "question": 23,
+            "highlight": "that’s not always easy"
+          }
+        },
+        {
+          "start": 161.9,
+          "speaker": "Holly",
+          "text": "OK. What about the scheduling?"
+        },
+        {
+          "start": 164.1,
+          "speaker": "Tutor",
+          "text": "With sporting events there are all sorts of things that can alter the timetable – like rain, for instance – though so far, we’ve always been lucky with that."
+        },
+        {
+          "start": 175.2,
+          "speaker": "Holly",
+          "text": "Yeah, and I was thinking about what to do if someone got hurt as well. I know that last year that caused a terrible delay.",
+          "answer": {
+            "question": 24,
+            "highlight": "if someone got hurt"
+          }
+        },
+        {
+          "start": 184.3,
+          "speaker": "Tutor",
+          "text": "You have to be prepared for such things."
+        },
+        {
+          "start": 186.9,
+          "speaker": "Holly",
+          "text": "Oh. What if a match ends in a draw – do you let the teams keep going until someone wins?"
+        },
+        {
+          "start": 193.9,
+          "speaker": "Tutor",
+          "text": "That’ll be up to you – and again, you need to plan for it."
+        },
+        {
+          "start": 198.1,
+          "speaker": "Holly",
+          "text": "Right."
+        },
+        {
+          "start": 206.5,
+          "speaker": "Tutor",
+          "text": "Now, the aim of your work placement is to give you the opportunity to develop the skills that an events manager needs. So, let’s talk about those a bit."
+        },
+        {
+          "start": 257.5,
+          "speaker": "Holly",
+          "text": "Well, I think my communication skills are pretty good. I can talk on the phone to people and book venues and that kind of thing."
+        },
+        {
+          "start": 266.3,
+          "speaker": "Tutor",
+          "text": "Good – just remember it isn’t only about what you say. If you meet someone face-to-face and want to persuade them to be a sponsor, for example …"
+        },
+        {
+          "start": 275.5,
+          "speaker": "Holly",
+          "text": "Oh, I’ll dress up for that! Sure.",
+          "answer": {
+            "question": 25,
+            "highlight": "I’ll dress up for that"
+          }
+        },
+        {
+          "start": 278.4,
+          "speaker": "Tutor",
+          "text": "Good. Let’s go on to think about your organisational skills. You’re working in a very people-based industry and that means things won’t always go to plan."
+        },
+        {
+          "start": 289.7,
+          "speaker": "Holly",
+          "text": "I guess it’s being prepared to make changes that matters.",
+          "answer": {
+            "question": 26,
+            "highlight": "being prepared to make changes"
+          }
+        },
+        {
+          "start": 293.7,
+          "speaker": "Tutor",
+          "text": "That’s right. You may have to make an on-the-spot change to a timetable because of a problem you hadn’t anticipated …"
+        },
+        {
+          "start": 301.0,
+          "speaker": "Holly",
+          "text": "… just do it! OK."
+        },
+        {
+          "start": 302.8,
+          "speaker": "Tutor",
+          "text": "How’s your time management these days?"
+        },
+        {
+          "start": 305.5,
+          "speaker": "Holly",
+          "text": "I’m working on it – I’m certainly better when I have a deadline, which is why this work suits me."
+        },
+        {
+          "start": 311.9,
+          "speaker": "Tutor",
+          "text": "Yes, but it’s how you respond as that deadline approaches!"
+        },
+        {
+          "start": 316.1,
+          "speaker": "Holly",
+          "text": "I know I’ve got to look calm even if I’m in a panic.",
+          "answer": {
+            "question": 27,
+            "highlight": "I’ve got to look calm even if I’m in a panic"
+          }
+        },
+        {
+          "start": 320.0,
+          "speaker": "Tutor",
+          "text": "Just think to yourself – no one must know I’m under pressure."
+        },
+        {
+          "start": 324.0,
+          "speaker": "Holly",
+          "text": "Yeah – even though I’m multi-tasking like crazy!"
+        },
+        {
+          "start": 328.0,
+          "speaker": "Tutor",
+          "text": "Another skill that events managers need is creativity. Often your client has what we call the ‘big picture’ idea, but it’s up to the events manager to think of all the fine points that go to making it work.",
+          "answer": {
+            "question": 28,
+            "highlight": "think of all the fine points that go to making it work"
+          }
+        },
+        {
+          "start": 341.6,
+          "speaker": "Holly",
+          "text": "Right, so I need to listen carefully to that idea and then fill in all the gaps."
+        },
+        {
+          "start": 347.9,
+          "speaker": "Tutor",
+          "text": "That’s right. And you’ll have a team working under you, so another key skill is leadership. Your team may have lots of ideas too, but you’ve got to make the ultimate choices. Do we have refreshments inside or out, for example?"
+        },
+        {
+          "start": 364.3,
+          "speaker": "Holly",
+          "text": "Isn’t it better to be democratic?"
+        },
+        {
+          "start": 367.9,
+          "speaker": "Tutor",
+          "text": "It’s a nice idea, but you have the ultimate responsibility. So, believe in what you think best. Be prepared to say ‘yes’, that’s a good idea but it won’t work here.",
+          "answer": {
+            "question": 29,
+            "highlight": "believe in what you think best"
+          }
+        },
+        {
+          "start": 380.8,
+          "speaker": "Holly",
+          "text": "I see what you mean. What about the networking side of things? I know it’s an area that a lot of students worry about because we don’t have much experience to offer others."
+        },
+        {
+          "start": 393.3,
+          "speaker": "Tutor",
+          "text": "But even without it – you can still be an interesting person with useful ideas. And the more people you impress, the better."
+        },
+        {
+          "start": 401.7,
+          "speaker": "Holly",
+          "text": "I guess that will help me when I apply for a real job."
+        },
+        {
+          "start": 405.5,
+          "speaker": "Tutor",
+          "text": "Exactly – think ahead – remember what your ambitions are and keep them in mind.",
+          "answer": {
+            "question": 30,
+            "highlight": "think ahead"
+          }
+        },
+        {
+          "start": 411.1,
+          "speaker": "Holly",
+          "text": "Definitely."
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-5",
+          "type": "MULTIPLE_CHOICE_SINGLE",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "numbers": [21],
+              "prompt": "Holly has chosen the Orion Stadium placement because",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "it involves children."
+                },
+                {
+                  "key": "B",
+                  "text": "it is outdoors."
+                },
+                {
+                  "key": "C",
+                  "text": "it sounds like fun."
+                }
+              ],
+              "acceptedAnswers": [["B"]],
+              "explanation": "‘it’s the fresh air that attracts me – organising something indoors doesn’t have the same appeal, even though it might be fun.’"
+            },
+            {
+              "numbers": [22],
+              "prompt": "Which aspect of safety does Dr Green emphasise most?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "ensuring children stay in the stadium"
+                },
+                {
+                  "key": "B",
+                  "text": "checking the equipment children will use"
+                },
+                {
+                  "key": "C",
+                  "text": "removing obstacles in changing rooms"
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "Holly mentions keeping everyone within the boundary, and Dr Green says ‘your main priority will be not to lose anyone!’ The equipment is the schools’ responsibility."
+            },
+            {
+              "numbers": [23],
+              "prompt": "What does Dr Green say about the spectators?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "They can be hard to manage."
+                },
+                {
+                  "key": "B",
+                  "text": "They make useful volunteers."
+                },
+                {
+                  "key": "C",
+                  "text": "They shouldn’t take photographs."
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "Parents filming their children can interfere, and moving them is ‘not always easy’. Dr Green would not rely on them as volunteers."
+            },
+            {
+              "numbers": [24],
+              "prompt": "What has affected the schedule in the past?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "bad weather"
+                },
+                {
+                  "key": "B",
+                  "text": "an injury"
+                },
+                {
+                  "key": "C",
+                  "text": "extra time"
+                }
+              ],
+              "acceptedAnswers": [["B"]],
+              "explanation": "Last year someone getting hurt caused a terrible delay. They have always been lucky with the weather."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-6",
+          "type": "MATCHING_FEATURES",
+          "instructions": "What do Holly and her tutor agree is an important aspect of each of the following events management skills? Choose SIX answers from the box and write the correct letter, A–H, next to Questions 25–30.",
+          "options": [
+            {
+              "key": "A",
+              "text": "being flexible"
+            },
+            {
+              "key": "B",
+              "text": "focusing on details"
+            },
+            {
+              "key": "C",
+              "text": "having a smart appearance"
+            },
+            {
+              "key": "D",
+              "text": "hiding your emotions"
+            },
+            {
+              "key": "E",
+              "text": "relying on experts"
+            },
+            {
+              "key": "F",
+              "text": "trusting your own views"
+            },
+            {
+              "key": "G",
+              "text": "doing one thing at a time"
+            },
+            {
+              "key": "H",
+              "text": "thinking of the future"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [25],
+              "prompt": "Communication",
+              "acceptedAnswers": [["C"]],
+              "explanation": "Meeting a possible sponsor face-to-face: ‘I’ll dress up for that!’"
+            },
+            {
+              "numbers": [26],
+              "prompt": "Organisation",
+              "acceptedAnswers": [["A"]],
+              "explanation": "Being prepared to make changes, e.g. an on-the-spot change to a timetable."
+            },
+            {
+              "numbers": [27],
+              "prompt": "Time management",
+              "acceptedAnswers": [["D"]],
+              "explanation": "As a deadline approaches: ‘I’ve got to look calm even if I’m in a panic.’"
+            },
+            {
+              "numbers": [28],
+              "prompt": "Creativity",
+              "acceptedAnswers": [["B"]],
+              "explanation": "The events manager must think of all the fine points and fill in the gaps."
+            },
+            {
+              "numbers": [29],
+              "prompt": "Leadership",
+              "acceptedAnswers": [["F"]],
+              "explanation": "You have the ultimate responsibility, so ‘believe in what you think best’."
+            },
+            {
+              "numbers": [30],
+              "prompt": "Networking",
+              "acceptedAnswers": [["H"]],
+              "explanation": "It will help when applying for a real job: ‘think ahead’."
+            }
+          ]
+        }
+      ]
+    },
+    "listening-4": {
+      "kind": "listening",
+      "part": 4,
+      "audio": "/media/audio/b17t3-p4.9a9c0aa1.mp3",
+      "durationSec": 486.8,
+      "context": "A lecturer talks about the history of theories of bird migration.",
+      "script": [
+        {
+          "start": 71.2,
+          "speaker": "Lecturer",
+          "text": "Scientists believe that a majority of the earth’s bird population migrate in some fashion or other. Some travel seasonally for relatively short distances, such as birds that move from their winter habitats in lowlands to mountain tops for the summers. Others, like the Arctic Tern, travel more than 25,000 miles seasonally between the northern and southern poles. Bird migration has been studied over many centuries through a variety of observations."
+        },
+        {
+          "start": 105.6,
+          "speaker": "Lecturer",
+          "text": "But until relatively recently, where birds went to in the winter was considered something of a mystery. The lack of modern science and technology led to many theories that we now recognize as error-filled and even somewhat amusing. Take hibernation theory for example – two thousand years ago, it was commonly believed that when birds left an area, they went underwater to hibernate in the seas and oceans. Another theory for the regular appearance and disappearance of birds was that they spent winter hidden in mud till the weather changed and food became abundant again. The theory that some birds hibernate persisted until experiments were done on caged birds in the 1940s which demonstrated that birds have no hibernation instinct.",
+          "answer": {
+            "question": 31,
+            "highlight": "they spent winter hidden in mud"
+          }
+        },
+        {
+          "start": 163.4,
+          "speaker": "Lecturer",
+          "text": "One of the earliest naturalists and philosophers from ancient Greece was Aristotle who was the first writer to discuss the disappearance and reappearance of some bird species at certain times of year. He developed the theory of transmutation, the seasonal change of one species into another, by observing redstarts and robins. He observed that in the autumn, small birds called ‘redstarts’ began to lose their feathers, which convinced Aristotle that they changed into robins for the winter, and back into redstarts in the summer.",
+          "answer": {
+            "question": 32,
+            "highlight": "small birds called ‘redstarts’ began to lose their feathers"
+          }
+        },
+        {
+          "start": 205.3,
+          "speaker": "Lecturer",
+          "text": "These assumptions are understandable given that this pair of species are similar in shape, but are a classic example of an incorrect interpretation based on correct observations.",
+          "answer": {
+            "question": 33,
+            "highlight": "this pair of species are similar in shape"
+          }
+        },
+        {
+          "start": 219.0,
+          "speaker": "Lecturer",
+          "text": "The most bizarre theory was put forward by an English amateur scientist, Charles Morton, in the seventeenth century. He wrote a surprisingly well-regarded paper claiming that birds migrate to the moon and back every year. He came to this conclusion as the only logical explanation for the total disappearance of some species.",
+          "answer": {
+            "question": 34,
+            "highlight": "birds migrate to the moon and back every year"
+          }
+        },
+        {
+          "start": 248.8,
+          "speaker": "Lecturer",
+          "text": "One of the key moments in the development of migration theory came in 1822 when a white stork was shot in Germany. This particular stork made history because of the long spear in its neck which incredibly had not killed it – everyone immediately realised this spear was definitely not European. It turned out to be a spear from a tribe in Central Africa.",
+          "answer": {
+            "question": 35,
+            "highlight": "the long spear in its neck"
+          }
+        },
+        {
+          "start": 279.1,
+          "speaker": "Lecturer",
+          "text": "This was a truly defining moment in the history of ornithology because it was the first evidence that storks spend their winters in sub-Saharan Africa. You can still see the ‘arrow stork’ in the Zoological Collection of the University of Rostock in Germany.",
+          "answer": {
+            "question": 36,
+            "highlight": "it was the first evidence that storks spend their winters in sub-Saharan Africa"
+          }
+        },
+        {
+          "start": 299.1,
+          "speaker": "Lecturer",
+          "text": "People gradually became aware that European birds moved south in autumn and north in summer but didn’t know much about it until the practice of catching birds and putting rings on their legs became established. Before this, very little information was available about the actual destinations of particular species and how they travelled there.",
+          "answer": {
+            "question": 37,
+            "highlight": "very little information was available about the actual destinations of particular species"
+          }
+        },
+        {
+          "start": 325.7,
+          "speaker": "Lecturer",
+          "text": "People speculated that larger birds provided a kind of taxi service for smaller birds by carrying them on their backs. This idea came about because it seemed impossible that small birds weighing only a few grams could fly over vast oceans. This idea was supported by observations of bird behaviour such as the harassment of larger birds by smaller birds.",
+          "answer": {
+            "question": 38,
+            "highlight": "it seemed impossible that small birds weighing only a few grams could fly over vast oceans"
+          }
+        },
+        {
+          "start": 355.1,
+          "speaker": "Lecturer",
+          "text": "The development of bird ringing, by a Danish schoolteacher, Hans Christian Cornelius Mortensen, made many discoveries possible. This is still common practice today and relies upon what is known as ‘recovery’ – this is when ringed birds are found dead in the place they have migrated to, and identified.",
+          "answer": {
+            "question": 39,
+            "highlight": "relies upon what is known as ‘recovery’"
+          }
+        },
+        {
+          "start": 377.1,
+          "speaker": "Lecturer",
+          "text": "Huge amounts of data were gathered in the early part of the twentieth century and for the first time in history people understood where birds actually went to in winter. In 1931, an atlas was published showing where the most common species of European birds migrated to. More recent theories about bird migration …",
+          "answer": {
+            "question": 40,
+            "highlight": "In 1931, an atlas was published"
+          }
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-7",
+          "type": "GAP_FILL",
+          "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "notes",
+            "title": "Bird Migration Theory",
+            "body": "Most birds are believed to migrate seasonally.\n# Hibernation theory\n- It was believed that birds hibernated underwater or buried themselves in {{31}}.\n- This theory was later disproved by experiments on caged birds.\n# Transmutation theory\n- Aristotle believed birds changed from one species into another in summer and winter.\n- – In autumn he observed that redstarts experience the loss of {{32}} and thought they then turned into robins.\n- – Aristotle’s assumptions were logical because the two species of birds had a similar {{33}}.\n# 17th century\n- Charles Morton popularised the idea that birds fly to the {{34}} in winter.\n# Scientific developments\n- In 1822, a stork was killed in Germany which had an African spear in its {{35}}.\n- – previously there had been no {{36}} that storks migrate to Africa\n- Little was known about the {{37}} and journeys of migrating birds until the practice of ringing was established.\n- – It was thought large birds carried small birds on some journeys because they were considered incapable of travelling across huge {{38}}.\n- – Ringing depended on what is called the ‘{{39}}’ of dead birds.\n- In 1931, the first {{40}} to show the migration of European birds was printed."
+          },
+          "questions": [
+            {
+              "numbers": [31],
+              "prompt": "birds hibernated underwater or buried themselves in ___",
+              "acceptedAnswers": [["mud"]]
+            },
+            {
+              "numbers": [32],
+              "prompt": "redstarts experience the loss of ___ and thought they then turned into robins",
+              "acceptedAnswers": [["feathers"]]
+            },
+            {
+              "numbers": [33],
+              "prompt": "the two species of birds had a similar ___",
+              "acceptedAnswers": [["shape"]]
+            },
+            {
+              "numbers": [34],
+              "prompt": "Charles Morton popularised the idea that birds fly to the ___ in winter",
+              "acceptedAnswers": [["moon"]]
+            },
+            {
+              "numbers": [35],
+              "prompt": "a stork was killed in Germany which had an African spear in its ___",
+              "acceptedAnswers": [["neck"]]
+            },
+            {
+              "numbers": [36],
+              "prompt": "previously there had been no ___ that storks migrate to Africa",
+              "acceptedAnswers": [["evidence"]]
+            },
+            {
+              "numbers": [37],
+              "prompt": "Little was known about the ___ and journeys of migrating birds",
+              "acceptedAnswers": [["destinations"]]
+            },
+            {
+              "numbers": [38],
+              "prompt": "considered incapable of travelling across huge ___",
+              "acceptedAnswers": [["oceans"]]
+            },
+            {
+              "numbers": [39],
+              "prompt": "Ringing depended on what is called the ‘___’ of dead birds",
+              "acceptedAnswers": [["recovery"]]
+            },
+            {
+              "numbers": [40],
+              "prompt": "In 1931, the first ___ to show the migration of European birds was printed",
+              "acceptedAnswers": [["atlas"]]
+            }
+          ]
+        }
+      ]
+    },
+    "reading-1": {
+      "kind": "reading",
+      "part": 1,
+      "title": "The thylacine",
+      "paragraphs": [
+        {
+          "label": "A",
+          "text": "The extinct thylacine, also known as the Tasmanian tiger, was a marsupial* that bore a superficial resemblance to a dog. Its most distinguishing feature was the 13–19 dark brown stripes over its back, beginning at the rear of the body and extending onto the tail. The thylacine’s average nose-to-tail length for adult males was 162.6 cm, compared to 153.7 cm for females."
+        },
+        {
+          "label": "B",
+          "text": "The thylacine appeared to occupy most types of terrain except dense rainforest, with open eucalyptus forest thought to be its prime habitat. In terms of feeding, it was exclusively carnivorous, and its stomach was muscular with an ability to distend so that it could eat large amounts of food at one time, probably an adaptation to compensate for long periods when hunting was unsuccessful and food scarce. The thylacine was not a fast runner and probably caught its prey by exhausting it during a long pursuit. During long-distance chases, thylacines were likely to have relied more on scent than any other sense. They emerged to hunt during the evening, night and early morning and tended to retreat to the hills and forest for shelter during the day. Despite the common name ‘tiger’, the thylacine had a shy, nervous temperament. Although mainly nocturnal, it was sighted moving during the day and some individuals were even recorded basking in the sun."
+        },
+        {
+          "label": "C",
+          "text": "The thylacine had an extended breeding season from winter to spring, with indications that some breeding took place throughout the year. The thylacine, like all marsupials, was tiny and hairless when born. Newborns crawled into the pouch on the belly of their mother, and attached themselves to one of the four teats, remaining there for up to three months. When old enough to leave the pouch, the young stayed in a lair such as a deep rocky cave, well-hidden nest or hollow log, whilst the mother hunted."
+        },
+        {
+          "label": "D",
+          "text": "Approximately 4,000 years ago, the thylacine was widespread throughout New Guinea and most of mainland Australia, as well as the island of Tasmania. The most recent, well-dated occurrence of a thylacine on the mainland is a carbon-dated fossil from Murray Cave in Western Australia, which is around 3,100 years old. Its extinction coincided closely with the arrival of wild dogs called dingoes in Australia and a similar predator in New Guinea. Dingoes never reached Tasmania, and most scientists see this as the main reason for the thylacine’s survival there."
+        },
+        {
+          "label": "E",
+          "text": "The dramatic decline of the thylacine in Tasmania, which began in the 1830s and continued for a century, is generally attributed to the relentless efforts of sheep farmers and bounty hunters** with shotguns. While this determined campaign undoubtedly played a large part, it is likely that various other factors also contributed to the decline and eventual extinction of the species. These include competition with wild dogs introduced by European settlers, loss of habitat along with the disappearance of prey species, and a distemper-like disease which may also have affected the thylacine."
+        },
+        {
+          "label": "F",
+          "text": "There was only one successful attempt to breed a thylacine in captivity, at Melbourne Zoo in 1899. This was despite the large numbers that went through some zoos, particularly London Zoo and Tasmania’s Hobart Zoo. The famous naturalist John Gould foresaw the thylacine’s demise when he published his Mammals of Australia between 1848 and 1863, writing, ‘The numbers of this singular animal will speedily diminish, extermination will have its full sway, and it will then, like the wolf of England and Scotland, be recorded as an animal of the past.’"
+        },
+        {
+          "label": "G",
+          "text": "However, there seems to have been little public pressure to preserve the thylacine, nor was much concern expressed by scientists at the decline of this species in the decades that followed. A notable exception was T.T. Flynn, Professor of Biology at the University of Tasmania. In 1914, he was sufficiently concerned about the scarcity of the thylacine to suggest that some should be captured and placed on a small island. But it was not until 1929, with the species on the very edge of extinction, that Tasmania’s Animals and Birds Protection Board passed a motion protecting thylacines only for the month of December, which was thought to be their prime breeding season. The last known wild thylacine to be killed was shot by a farmer in the north-east of Tasmania in 1930, leaving just captive specimens. Official protection of the species by the Tasmanian government was introduced in July 1936, 59 days before the last known individual died in Hobart Zoo on 7th September, 1936."
+        },
+        {
+          "label": "H",
+          "text": "There have been numerous expeditions and searches for the thylacine over the years, none of which has produced definitive evidence that thylacines still exist. The species was declared extinct by the Tasmanian government in 1986."
+        },
+        {
+          "label": "*",
+          "text": "marsupial: a mammal, such as a kangaroo, whose young are born incompletely developed and are typically carried and suckled in a pouch on the mother’s belly"
+        },
+        {
+          "label": "**",
+          "text": "bounty hunters: people who are paid a reward for killing a wild animal"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-1",
+          "type": "GAP_FILL",
+          "instructions": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "notes",
+            "title": "The thylacine",
+            "body": "# Appearance and behaviour\n- looked rather like a dog\n- had a series of stripes along its body and tail\n- ate an entirely {{1}} diet\n- probably depended mainly on {{2}} when hunting\n- young spent first months of life inside its mother’s {{3}}\n# Decline and extinction\n- last evidence in mainland Australia is a 3,100-year-old {{4}}\n- probably went extinct in mainland Australia due to animals known as dingoes\n- reduction in {{5}} and available sources of food were partly responsible for decline in Tasmania"
+          },
+          "questions": [
+            {
+              "numbers": [1],
+              "prompt": "ate an entirely ___ diet",
+              "acceptedAnswers": [["carnivorous"]],
+              "explanation": "In terms of feeding, it was exclusively carnivorous.",
+              "location": {
+                "paragraph": "B",
+                "sentence": 2,
+                "highlight": "it was exclusively carnivorous"
+              }
+            },
+            {
+              "numbers": [2],
+              "prompt": "probably depended mainly on ___ when hunting",
+              "acceptedAnswers": [["scent"]],
+              "explanation": "Thylacines were likely to have relied more on scent than any other sense.",
+              "location": {
+                "paragraph": "B",
+                "sentence": 4,
+                "highlight": "relied more on scent than any other sense"
+              }
+            },
+            {
+              "numbers": [3],
+              "prompt": "young spent first months of life inside its mother’s ___",
+              "acceptedAnswers": [["pouch"]],
+              "explanation": "Newborns crawled into the pouch and remained there for up to three months.",
+              "location": {
+                "paragraph": "C",
+                "sentence": 3,
+                "highlight": "Newborns crawled into the pouch on the belly of their mother"
+              }
+            },
+            {
+              "numbers": [4],
+              "prompt": "last evidence in mainland Australia is a 3,100-year-old ___",
+              "acceptedAnswers": [["fossil"]],
+              "explanation": "The most recent well-dated occurrence on the mainland is a carbon-dated fossil from Murray Cave.",
+              "location": {
+                "paragraph": "D",
+                "sentence": 2,
+                "highlight": "a carbon-dated fossil from Murray Cave in Western Australia, which is around 3,100 years old"
+              }
+            },
+            {
+              "numbers": [5],
+              "prompt": "reduction in ___ and available sources of food were partly responsible for decline in Tasmania",
+              "acceptedAnswers": [["habitat"]],
+              "explanation": "Other factors included loss of habitat along with the disappearance of prey species.",
+              "location": {
+                "paragraph": "E",
+                "sentence": 3,
+                "highlight": "loss of habitat along with the disappearance of prey species"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-2",
+          "type": "TRUE_FALSE_NOT_GIVEN",
+          "instructions": "Do the following statements agree with the information given in Reading Passage 1?",
+          "questions": [
+            {
+              "numbers": [6],
+              "prompt": "Significant numbers of thylacines were killed by humans from the 1830s onwards.",
+              "acceptedAnswers": [["TRUE"]],
+              "explanation": "The decline that began in the 1830s is attributed to the relentless efforts of sheep farmers and bounty hunters with shotguns.",
+              "location": {
+                "paragraph": "E",
+                "sentence": 1,
+                "highlight": "which began in the 1830s and continued for a century, is generally attributed to the relentless efforts of sheep farmers and bounty hunters"
+              }
+            },
+            {
+              "numbers": [7],
+              "prompt": "Several thylacines were born in zoos during the late 1800s.",
+              "acceptedAnswers": [["FALSE"]],
+              "explanation": "There was only one successful attempt to breed a thylacine in captivity, in 1899.",
+              "location": {
+                "paragraph": "F",
+                "sentence": 1,
+                "highlight": "There was only one successful attempt to breed a thylacine in captivity"
+              }
+            },
+            {
+              "numbers": [8],
+              "prompt": "John Gould’s prediction about the thylacine surprised some biologists.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "Gould’s prediction is quoted, but nothing is said about how biologists reacted to it.",
+              "location": null
+            },
+            {
+              "numbers": [9],
+              "prompt": "In the early 1900s, many scientists became worried about the possible extinction of the thylacine.",
+              "acceptedAnswers": [["FALSE"]],
+              "explanation": "Not much concern was expressed by scientists; T.T. Flynn was a notable exception.",
+              "location": {
+                "paragraph": "G",
+                "sentence": 1,
+                "highlight": "nor was much concern expressed by scientists at the decline of this species in the decades that followed"
+              }
+            },
+            {
+              "numbers": [10],
+              "prompt": "T.T. Flynn’s proposal to rehome captive thylacines on an island proved to be impractical.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "Flynn suggested capturing some and placing them on a small island, but we are not told what happened to the idea.",
+              "location": null
+            },
+            {
+              "numbers": [11],
+              "prompt": "There were still reasonable numbers of thylacines in existence when a piece of legislation protecting the species during their breeding season was passed.",
+              "acceptedAnswers": [["FALSE"]],
+              "explanation": "The 1929 motion was passed with the species on the very edge of extinction.",
+              "location": {
+                "paragraph": "G",
+                "sentence": 5,
+                "highlight": "with the species on the very edge of extinction"
+              }
+            },
+            {
+              "numbers": [12],
+              "prompt": "From 1930 to 1936, the only known living thylacines were all in captivity.",
+              "acceptedAnswers": [["TRUE"]],
+              "explanation": "The last known wild thylacine was shot in 1930, leaving just captive specimens; the last one died in Hobart Zoo in 1936.",
+              "location": {
+                "paragraph": "G",
+                "sentence": 6,
+                "highlight": "leaving just captive specimens"
+              }
+            },
+            {
+              "numbers": [13],
+              "prompt": "Attempts to find living thylacines are now rarely made.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "There have been numerous expeditions over the years, but nothing is said about how often people search now.",
+              "location": null
+            }
+          ]
+        }
+      ]
+    },
+    "reading-2": {
+      "kind": "reading",
+      "part": 2,
+      "title": "Palm oil",
+      "paragraphs": [
+        {
+          "label": "A",
+          "text": "Palm oil is an edible oil derived from the fruit of the African oil palm tree, and is currently the most consumed vegetable oil in the world. It’s almost certainly in the soap we wash with in the morning, the sandwich we have for lunch, and the biscuits we snack on during the day. Why is palm oil so attractive for manufacturers? Primarily because its unique properties – such as remaining solid at room temperature – make it an ideal ingredient for long-term preservation, allowing many packaged foods on supermarket shelves to have ‘best before’ dates of months, even years, into the future."
+        },
+        {
+          "label": "B",
+          "text": "Many farmers have seized the opportunity to maximise the planting of oil palm trees. Between 1990 and 2012, the global land area devoted to growing oil palm trees grew from 6 to 17 million hectares, now accounting for around ten percent of total cropland in the entire world. From a mere two million tonnes of palm oil being produced annually globally 50 years ago, there are now around 60 million tonnes produced every single year, a figure looking likely to double or even triple by the middle of the century."
+        },
+        {
+          "label": "C",
+          "text": "However, there are multiple reasons why conservationists cite the rapid spread of oil palm plantations as a major concern. There are countless news stories of deforestation, habitat destruction and dwindling species populations, all as a direct result of land clearing to establish oil palm tree monoculture on an industrial scale, particularly in Malaysia and Indonesia. Endangered species – most famously the Sumatran orangutan, but also rhinos, elephants, tigers, and numerous other fauna – have suffered from the unstoppable spread of oil palm plantations."
+        },
+        {
+          "label": "D",
+          "text": "‘Palm oil is surely one of the greatest threats to global biodiversity,’ declares Dr Farnon Ellwood of the University of the West of England, Bristol. ‘Palm oil is replacing rainforest, and rainforest is where all the species are. That’s a problem.’ This has led to some radical questions among environmentalists, such as whether consumers should try to boycott palm oil entirely. Meanwhile Bhavani Shankar, Professor at London’s School of Oriental and African Studies, argues, ‘It’s easy to say that palm oil is the enemy and we should be against it. It makes for a more dramatic story, and it’s very intuitive. But given the complexity of the argument, I think a much more nuanced story is closer to the truth.’"
+        },
+        {
+          "label": "E",
+          "text": "One response to the boycott movement has been the argument for the vital role palm oil plays in lifting many millions of people in the developing world out of poverty. Is it desirable to have palm oil boycotted, replaced, eliminated from the global supply chain, given how many low-income people in developing countries depend on it for their livelihoods? How best to strike a utilitarian balance between these competing factors has become a serious bone of contention."
+        },
+        {
+          "label": "F",
+          "text": "Even the deforestation argument isn’t as straightforward as it seems. Oil palm plantations produce at least four and potentially up to ten times more oil per hectare than soybean, rapeseed, sunflower or other competing oils. That immensely high yield – which is predominantly what makes it so profitable – is potentially also an ecological benefit. If ten times more palm oil can be produced from a patch of land than any competing oil, then ten times more land would need to be cleared in order to produce the same volume of oil from that competitor. As for the question of carbon emissions, the issue really depends on what oil palm trees are replacing. Crops vary in the degree to which they sequester carbon – in other words, the amount of carbon they capture from the atmosphere and store within the plant. The more carbon a plant sequesters, the more it reduces the effect of climate change. As Shankar explains: ‘[Palm oil production] actually sequesters more carbon in some ways than other alternatives. […] Of course, if you’re cutting down virgin forest it’s terrible – that’s what’s happening in Indonesia and Malaysia, it’s been allowed to get out of hand. But if it’s replacing rice, for example, it might actually sequester more carbon.’"
+        },
+        {
+          "label": "G",
+          "text": "The industry is now regulated by a group called the Roundtable on Sustainable Palm Oil (RSPO), consisting of palm growers, retailers, product manufacturers, and other interested parties. Over the past decade or so, an agreement has gradually been reached regarding standards that producers of palm oil have to meet in order for their product to be regarded as officially ‘sustainable’. The RSPO insists upon no virgin forest clearing, transparency and regular assessment of carbon stocks, among other criteria. Only once these requirements are fully satisfied is the oil allowed to be sold as certified sustainable palm oil (CSPO). Recent figures show that the RSPO now certifies around 12 million tonnes of palm oil annually, equivalent to roughly 21 percent of the world’s total palm oil production."
+        },
+        {
+          "label": "H",
+          "text": "There is even hope that oil palm plantations might not need to be such sterile monocultures, or ‘green deserts’, as Ellwood describes them. New research at Ellwood’s lab hints at one plant which might make all the difference. The bird’s nest fern (Asplenium nidus) grows on trees in an epiphytic fashion (meaning it’s dependent on the tree only for support, not for nutrients), and is native to many tropical regions, where as a keystone species it performs a vital ecological role. Ellwood believes that reintroducing the bird’s nest fern into oil palm plantations could potentially allow these areas to recover their biodiversity, providing a home for all manner of species, from fungi and bacteria, to invertebrates such as insects, amphibians, reptiles and even mammals."
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-3",
+          "type": "MATCHING_PARAGRAPH_INFO",
+          "instructions": "Reading Passage 2 has eight sections, A–H. Which section contains the following information? Write the correct letter, A–H.",
+          "options": [
+            {
+              "key": "A",
+              "text": "Section A"
+            },
+            {
+              "key": "B",
+              "text": "Section B"
+            },
+            {
+              "key": "C",
+              "text": "Section C"
+            },
+            {
+              "key": "D",
+              "text": "Section D"
+            },
+            {
+              "key": "E",
+              "text": "Section E"
+            },
+            {
+              "key": "F",
+              "text": "Section F"
+            },
+            {
+              "key": "G",
+              "text": "Section G"
+            },
+            {
+              "key": "H",
+              "text": "Section H"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [14],
+              "prompt": "examples of a range of potential environmental advantages of oil palm tree cultivation",
+              "acceptedAnswers": [["F"]],
+              "explanation": "The high yield means less land needs clearing, and oil palms may sequester more carbon than some crops they replace.",
+              "location": {
+                "paragraph": "F",
+                "sentence": 3,
+                "highlight": "is potentially also an ecological benefit"
+              }
+            },
+            {
+              "numbers": [15],
+              "prompt": "description of an organisation which controls the environmental impact of palm oil production",
+              "acceptedAnswers": [["G"]],
+              "explanation": "The industry is regulated by the Roundtable on Sustainable Palm Oil (RSPO).",
+              "location": {
+                "paragraph": "G",
+                "sentence": 1,
+                "highlight": "The industry is now regulated by a group called the Roundtable on Sustainable Palm Oil (RSPO)"
+              }
+            },
+            {
+              "numbers": [16],
+              "prompt": "examples of the widespread global use of palm oil",
+              "acceptedAnswers": [["A"]],
+              "explanation": "It is in the soap we wash with, the sandwich we have for lunch and the biscuits we snack on.",
+              "location": {
+                "paragraph": "A",
+                "sentence": 2,
+                "highlight": "It’s almost certainly in the soap we wash with in the morning, the sandwich we have for lunch, and the biscuits we snack on during the day"
+              }
+            },
+            {
+              "numbers": [17],
+              "prompt": "reference to a particular species which could benefit the ecosystem of oil palm plantations",
+              "acceptedAnswers": [["H"]],
+              "explanation": "Reintroducing the bird’s nest fern could allow plantations to recover their biodiversity.",
+              "location": {
+                "paragraph": "H",
+                "sentence": 4,
+                "highlight": "reintroducing the bird’s nest fern into oil palm plantations could potentially allow these areas to recover their biodiversity"
+              }
+            },
+            {
+              "numbers": [18],
+              "prompt": "figures illustrating the rapid expansion of the palm oil industry",
+              "acceptedAnswers": [["B"]],
+              "explanation": "Land area grew from 6 to 17 million hectares between 1990 and 2012; production rose from two to around 60 million tonnes a year.",
+              "location": {
+                "paragraph": "B",
+                "sentence": 2,
+                "highlight": "grew from 6 to 17 million hectares"
+              }
+            },
+            {
+              "numbers": [19],
+              "prompt": "an economic justification for not opposing the palm oil industry",
+              "acceptedAnswers": [["E"]],
+              "explanation": "Palm oil lifts many millions of people in the developing world out of poverty.",
+              "location": {
+                "paragraph": "E",
+                "sentence": 1,
+                "highlight": "the vital role palm oil plays in lifting many millions of people in the developing world out of poverty"
+              }
+            },
+            {
+              "numbers": [20],
+              "prompt": "examples of creatures badly affected by the establishment of oil palm plantations",
+              "acceptedAnswers": [["C"]],
+              "explanation": "The Sumatran orangutan, rhinos, elephants and tigers have suffered from the spread of plantations.",
+              "location": {
+                "paragraph": "C",
+                "sentence": 3,
+                "highlight": "most famously the Sumatran orangutan, but also rhinos, elephants, tigers"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-4",
+          "type": "MULTIPLE_CHOICE_MULTIPLE",
+          "instructions": "Choose TWO letters, A–E.",
+          "answersPerItem": 2,
+          "options": [
+            {
+              "key": "A",
+              "text": "Its membership has grown steadily over the course of the last decade."
+            },
+            {
+              "key": "B",
+              "text": "It demands that certified producers be open and honest about their practices."
+            },
+            {
+              "key": "C",
+              "text": "It took several years to establish its set of criteria for sustainable palm oil certification."
+            },
+            {
+              "key": "D",
+              "text": "Its regulations regarding sustainability are stricter than those governing other industries."
+            },
+            {
+              "key": "E",
+              "text": "It was formed at the request of environmentalists concerned about the loss of virgin forests."
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [21, 22],
+              "prompt": "Which TWO statements are made about the Roundtable on Sustainable Palm Oil (RSPO)?",
+              "acceptedAnswers": [["B"], ["C"]],
+              "explanation": "The RSPO insists upon transparency (B), and an agreement on its standards was reached gradually over the past decade or so (C). Nothing is said about its membership growing, comparisons with other industries or why it was formed.",
+              "location": {
+                "paragraph": "G",
+                "sentence": 3,
+                "highlight": "The RSPO insists upon no virgin forest clearing, transparency"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-5",
+          "type": "GAP_FILL",
+          "instructions": "Complete the sentences below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "wordLimit": "NO MORE THAN TWO WORDS",
+          "maxWords": 2,
+          "layout": {
+            "kind": "notes",
+            "body": "One advantage of palm oil for manufacturers is that it stays {{23}} when not refrigerated.\n{{24}} is the best known of the animals suffering habitat loss as a result of the spread of oil palm plantations.\nAs one of its criteria for the certification of sustainable palm oil, the RSPO insists that growers check {{25}} on a routine basis.\nEllwood and his researchers are looking into whether the bird’s nest fern could restore {{26}} in areas where oil palm trees are grown."
+          },
+          "questions": [
+            {
+              "numbers": [23],
+              "prompt": "One advantage of palm oil for manufacturers is that it stays ___ when not refrigerated.",
+              "acceptedAnswers": [["solid"]],
+              "location": {
+                "paragraph": "A",
+                "sentence": 4,
+                "highlight": "remaining solid at room temperature"
+              }
+            },
+            {
+              "numbers": [24],
+              "prompt": "___ is the best known of the animals suffering habitat loss as a result of the spread of oil palm plantations.",
+              "acceptedAnswers": [["(Sumatran) orangutan", "(Sumatran) orang-utan"]],
+              "location": {
+                "paragraph": "C",
+                "sentence": 3,
+                "highlight": "most famously the Sumatran orangutan"
+              }
+            },
+            {
+              "numbers": [25],
+              "prompt": "the RSPO insists that growers check ___ on a routine basis.",
+              "acceptedAnswers": [["carbon stocks"]],
+              "location": {
+                "paragraph": "G",
+                "sentence": 3,
+                "highlight": "regular assessment of carbon stocks"
+              }
+            },
+            {
+              "numbers": [26],
+              "prompt": "whether the bird’s nest fern could restore ___ in areas where oil palm trees are grown.",
+              "acceptedAnswers": [["biodiversity"]],
+              "location": {
+                "paragraph": "H",
+                "sentence": 4,
+                "highlight": "recover their biodiversity"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reading-3": {
+      "kind": "reading",
+      "part": 3,
+      "title": "Building the Skyline: The Birth and Growth of Manhattan’s Skyscrapers",
+      "subtitle": "Katharine L. Shester reviews a book by Jason Barr about the development of New York City",
+      "paragraphs": [
+        {
+          "label": "A",
+          "text": "In Building the Skyline, Jason Barr takes the reader through a detailed history of New York City. The book combines geology, history, economics, and a lot of data to explain why business clusters developed where they did and how the early decisions of workers and firms shaped the skyline we see today. Building the Skyline is organized into two distinct parts. The first is primarily historical and addresses New York’s settlement and growth from 1609 to 1900; the second deals primarily with the 20th century and is a compilation of chapters commenting on different aspects of New York’s urban development. The tone and organization of the book changes somewhat between the first and second parts, as the latter chapters incorporate aspects of Barr’s related research papers."
+        },
+        {
+          "label": "B",
+          "text": "Barr begins chapter one by taking the reader on a ‘helicopter time-machine’ ride – giving a fascinating account of how the New York landscape in 1609 might have looked from the sky. He then moves on to a subterranean walking tour of the city, indicating the location of rock and water below the subsoil, before taking the reader back to the surface. His love of the city comes through as he describes various fun facts about the location of the New York residence of early 19th-century vice-president Aaron Burr as well as a number of legends about the city."
+        },
+        {
+          "label": "C",
+          "text": "Chapters two and three take the reader up to the Civil War (1861–1865), with chapter two focusing on the early development of land and the implementation of a grid system in 1811. Chapter three focuses on land use before the Civil War. Both chapters are informative and well researched and set the stage for the economic analysis that comes later in the book. I would have liked Barr to expand upon his claim that existing tenements* prevented skyscrapers in certain neighborhoods because ‘likely no skyscraper developer was interested in performing the necessary “slum clearance”’. Later in the book, Barr makes the claim that the depth of bedrock** was not a limiting factor for developers, as foundation costs were a small fraction of the cost of development. At first glance, it is not obvious why slum clearance would be limiting, while more expensive foundations would not."
+        },
+        {
+          "label": "D",
+          "text": "Chapter four focuses on immigration and the location of neighborhoods and tenements in the late 19th century. Barr identifies four primary immigrant enclaves and analyzes their locations in terms of the amenities available in the area. Most of these enclaves were located on the least valuable land, between the industries located on the waterfront and the wealthy neighborhoods bordering Central Park."
+        },
+        {
+          "label": "E",
+          "text": "Part two of the book begins with a discussion of the economics of skyscraper height. In chapter five, Barr distinguishes between engineering height, economic height, and developer height — where engineering height is the tallest building that can be safely made at a given time, economic height is the height that is most efficient from society’s point of view, and developer height is the actual height chosen by the developer, who is attempting to maximize return on investment."
+        },
+        {
+          "label": "F",
+          "text": "Chapter five also has an interesting discussion of the technological advances that led to the construction of skyscrapers. For example, the introduction of iron and steel skeletal frames made thick, load-bearing walls unnecessary, expanding the usable square footage of buildings and increasing the use of windows and availability of natural light. Chapter six then presents data on building height throughout the 20th century and uses regression analysis to ‘predict’ building construction. While less technical than the research paper on which the chapter is based, it is probably more technical than would be preferred by a general audience."
+        },
+        {
+          "label": "G",
+          "text": "Chapter seven tackles the ‘bedrock myth’, the assumption that the absence of bedrock close to the surface between Downtown and Midtown New York is the reason for skyscrapers not being built between the two urban centers. Rather, Barr argues that while deeper bedrock does increase foundation costs, these costs were neither prohibitively high nor were they large compared to the overall cost of building a skyscraper. What I enjoyed the most about this chapter was Barr’s discussion of how foundations are actually built. He describes the use of caissons, which enable workers to dig down for considerable distances, often below the water table, until they reach bedrock. Barr’s thorough technological history discusses not only how caissons work, but also the dangers involved. While this chapter references empirical research papers, it is a relatively easy read."
+        },
+        {
+          "label": "H",
+          "text": "Chapters eight and nine focus on the birth of Midtown and the building boom of the 1920s. Chapter eight contains lengthy discussions of urban economic theory that may serve as a distraction to readers primarily interested in New York. However, they would be well-suited for undergraduates learning about the economics of cities. In the next chapter, Barr considers two of the primary explanations for the building boom of the 1920s — the first being exuberance, and the second being financing. He uses data to assess the viability of these two explanations and finds that supply and demand factors explain much of the development of the 1920s; though it enabled the boom, cheap credit was not, he argues, the primary cause."
+        },
+        {
+          "label": "I",
+          "text": "In the final chapter (chapter 10), Barr discusses another of his empirical papers that estimates Manhattan land values from the mid-19th century to the present day. The data work that went into these estimations is particularly impressive. Toward the end of the chapter, Barr assesses ‘whether skyscrapers are a cause or an effect of high land values’. He finds that changes in land values predict future building height, but the reverse is not true. The book ends with an epilogue, in which Barr discusses the impact of climate change on the city and makes policy suggestions for New York going forward."
+        },
+        {
+          "label": "*",
+          "text": "a tenement: a multi-occupancy building of any sort, but particularly a run-down apartment building or slum building"
+        },
+        {
+          "label": "**",
+          "text": "bedrock: the solid, hard rock in the ground that lies under a loose layer of soil"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-6",
+          "type": "MULTIPLE_CHOICE_SINGLE",
+          "instructions": "Choose the correct letter, A, B, C or D.",
+          "questions": [
+            {
+              "numbers": [27],
+              "prompt": "What point does Shester make about Barr’s book in the first paragraph?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "It gives a highly original explanation for urban development."
+                },
+                {
+                  "key": "B",
+                  "text": "Elements of Barr’s research papers are incorporated throughout the book."
+                },
+                {
+                  "key": "C",
+                  "text": "Other books that are available on the subject have taken a different approach."
+                },
+                {
+                  "key": "D",
+                  "text": "It covers a range of factors that affected the development of New York."
+                }
+              ],
+              "acceptedAnswers": [["D"]],
+              "explanation": "The book combines geology, history, economics and data to explain how New York developed. Only the later chapters incorporate his research papers.",
+              "location": {
+                "paragraph": "A",
+                "sentence": 2,
+                "highlight": "The book combines geology, history, economics, and a lot of data"
+              }
+            },
+            {
+              "numbers": [28],
+              "prompt": "How does Shester respond to the information in the book about tenements?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "She describes the reasons for Barr’s interest."
+                },
+                {
+                  "key": "B",
+                  "text": "She indicates a potential problem with Barr’s analysis."
+                },
+                {
+                  "key": "C",
+                  "text": "She compares Barr’s conclusion with that of other writers."
+                },
+                {
+                  "key": "D",
+                  "text": "She provides details about the sources Barr used for his research."
+                }
+              ],
+              "acceptedAnswers": [["B"]],
+              "explanation": "She would have liked Barr to expand on his claim, and says it is not obvious why slum clearance would be limiting while more expensive foundations would not.",
+              "location": {
+                "paragraph": "C",
+                "sentence": 6,
+                "highlight": "it is not obvious why slum clearance would be limiting, while more expensive foundations would not"
+              }
+            },
+            {
+              "numbers": [29],
+              "prompt": "What does Shester say about chapter six of the book?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "It contains conflicting data."
+                },
+                {
+                  "key": "B",
+                  "text": "It focuses too much on possible trends."
+                },
+                {
+                  "key": "C",
+                  "text": "It is too specialised for most readers."
+                },
+                {
+                  "key": "D",
+                  "text": "It draws on research that is out of date."
+                }
+              ],
+              "acceptedAnswers": [["C"]],
+              "explanation": "It is probably more technical than would be preferred by a general audience.",
+              "location": {
+                "paragraph": "F",
+                "sentence": 4,
+                "highlight": "it is probably more technical than would be preferred by a general audience"
+              }
+            },
+            {
+              "numbers": [30],
+              "prompt": "What does Shester suggest about the chapters focusing on the 1920s building boom?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "The information should have been organised differently."
+                },
+                {
+                  "key": "B",
+                  "text": "More facts are needed about the way construction was financed."
+                },
+                {
+                  "key": "C",
+                  "text": "The explanation that is given for the building boom is unlikely."
+                },
+                {
+                  "key": "D",
+                  "text": "Some parts will have limited appeal to certain people."
+                }
+              ],
+              "acceptedAnswers": [["D"]],
+              "explanation": "The urban economic theory may distract readers mainly interested in New York, though it would suit undergraduates.",
+              "location": {
+                "paragraph": "H",
+                "sentence": 2,
+                "highlight": "may serve as a distraction to readers primarily interested in New York"
+              }
+            },
+            {
+              "numbers": [31],
+              "prompt": "What impresses Shester the most about the chapter on land values?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "the broad time period that is covered"
+                },
+                {
+                  "key": "B",
+                  "text": "the interesting questions that Barr asks"
+                },
+                {
+                  "key": "C",
+                  "text": "the nature of the research into the topic"
+                },
+                {
+                  "key": "D",
+                  "text": "the recommendations Barr makes for the future"
+                }
+              ],
+              "acceptedAnswers": [["C"]],
+              "explanation": "The data work that went into these estimations is particularly impressive.",
+              "location": {
+                "paragraph": "I",
+                "sentence": 2,
+                "highlight": "The data work that went into these estimations is particularly impressive"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-7",
+          "type": "YES_NO_NOT_GIVEN",
+          "instructions": "Do the following statements agree with the claims of the writer in Reading Passage 3?",
+          "questions": [
+            {
+              "numbers": [32],
+              "prompt": "The description in the first chapter of how New York probably looked from the air in the early 1600s lacks interest.",
+              "acceptedAnswers": [["NO"]],
+              "explanation": "The writer calls it a fascinating account.",
+              "location": {
+                "paragraph": "B",
+                "sentence": 1,
+                "highlight": "giving a fascinating account of how the New York landscape in 1609 might have looked from the sky"
+              }
+            },
+            {
+              "numbers": [33],
+              "prompt": "Chapters two and three prepare the reader well for material yet to come.",
+              "acceptedAnswers": [["YES"]],
+              "explanation": "Both chapters set the stage for the economic analysis that comes later in the book.",
+              "location": {
+                "paragraph": "C",
+                "sentence": 3,
+                "highlight": "set the stage for the economic analysis that comes later in the book"
+              }
+            },
+            {
+              "numbers": [34],
+              "prompt": "The biggest problem for many nineteenth-century New York immigrant neighbourhoods was a lack of amenities.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "Barr analyses the enclaves’ locations in terms of amenities, but no biggest problem is identified.",
+              "location": null
+            },
+            {
+              "numbers": [35],
+              "prompt": "In the nineteenth century, New York’s immigrant neighbourhoods tended to concentrate around the harbour.",
+              "acceptedAnswers": [["NO"]],
+              "explanation": "Most enclaves were between the industries on the waterfront and the wealthy neighbourhoods bordering Central Park.",
+              "location": {
+                "paragraph": "D",
+                "sentence": 3,
+                "highlight": "between the industries located on the waterfront and the wealthy neighborhoods bordering Central Park"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-8",
+          "type": "GAP_FILL",
+          "instructions": "Complete the summary using the list of phrases, A–J, below. Write the correct letter, A–J.",
+          "options": [
+            {
+              "key": "A",
+              "text": "development plans"
+            },
+            {
+              "key": "B",
+              "text": "deep excavations"
+            },
+            {
+              "key": "C",
+              "text": "great distance"
+            },
+            {
+              "key": "D",
+              "text": "excessive expense"
+            },
+            {
+              "key": "E",
+              "text": "impossible tasks"
+            },
+            {
+              "key": "F",
+              "text": "associated risks"
+            },
+            {
+              "key": "G",
+              "text": "water level"
+            },
+            {
+              "key": "H",
+              "text": "specific areas"
+            },
+            {
+              "key": "I",
+              "text": "total expenditure"
+            },
+            {
+              "key": "J",
+              "text": "construction guidelines"
+            }
+          ],
+          "maxWords": 1,
+          "layout": {
+            "kind": "summary",
+            "title": "The bedrock myth",
+            "body": "In chapter seven, Barr indicates how the lack of bedrock close to the surface does not explain why skyscrapers are absent from {{36}}. He points out that although the cost of foundations increases when bedrock is deep below the surface, this cannot be regarded as {{37}}, especially when compared to {{38}}.\n\nA particularly enjoyable part of the chapter was Barr’s account of how foundations are built. He describes not only how {{39}} are made possible by the use of caissons, but he also discusses their {{40}}. The chapter is well researched but relatively easy to understand."
+          },
+          "questions": [
+            {
+              "numbers": [36],
+              "prompt": "skyscrapers are absent from ___",
+              "acceptedAnswers": [["H"]],
+              "explanation": "The myth is about skyscrapers not being built between Downtown and Midtown (specific areas).",
+              "location": {
+                "paragraph": "G",
+                "sentence": 1,
+                "highlight": "the reason for skyscrapers not being built between the two urban centers"
+              }
+            },
+            {
+              "numbers": [37],
+              "prompt": "this cannot be regarded as ___",
+              "acceptedAnswers": [["D"]],
+              "explanation": "Foundation costs were not prohibitively high (excessive expense).",
+              "location": {
+                "paragraph": "G",
+                "sentence": 2,
+                "highlight": "these costs were neither prohibitively high"
+              }
+            },
+            {
+              "numbers": [38],
+              "prompt": "especially when compared to ___",
+              "acceptedAnswers": [["I"]],
+              "explanation": "Nor were they large compared to the overall cost of building a skyscraper (total expenditure).",
+              "location": {
+                "paragraph": "G",
+                "sentence": 2,
+                "highlight": "compared to the overall cost of building a skyscraper"
+              }
+            },
+            {
+              "numbers": [39],
+              "prompt": "how ___ are made possible by the use of caissons",
+              "acceptedAnswers": [["B"]],
+              "explanation": "Caissons enable workers to dig down for considerable distances (deep excavations).",
+              "location": {
+                "paragraph": "G",
+                "sentence": 4,
+                "highlight": "which enable workers to dig down for considerable distances"
+              }
+            },
+            {
+              "numbers": [40],
+              "prompt": "he also discusses their ___",
+              "acceptedAnswers": [["F"]],
+              "explanation": "He discusses the dangers involved (associated risks).",
+              "location": {
+                "paragraph": "G",
+                "sentence": 5,
+                "highlight": "but also the dangers involved"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "kind": "writing",
+      "task1": {
+        "prompt": "The chart below gives information about how families in one country spent their weekly income in 1968 and in 2018. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+        "image": "/media/img/b17t3-w1.3befc0d9.png",
+        "imageDescription": "Horizontal bar chart titled ‘1968 and 2018: average weekly spending by families’, showing the percentage of weekly income spent on eight categories, with a black bar for 1968 and a grey bar for 2018 for each category. The horizontal axis is ‘% of weekly income’ from 0 to 40. Approximate values (1968 → 2018): Food 35% → 17%; Housing 10% → 19%; Fuel and power 6% → 4%; Clothing and footwear (spelt ‘footware’ on the chart) 10% → 5%; Household goods 8% → 8% (unchanged); Personal goods 8% → 4%; Transport 8% → 14%; Leisure 9% → 22%. In 1968 food was by far the largest expense, at about a third of weekly income, with every other category at 10% or less. By 2018 spending was more evenly spread: leisure was the largest category (22%), followed by housing (19%), food (17%) and transport (14%), while the shares spent on food, fuel and power, clothing and footwear, and personal goods had all fallen, and household goods stayed the same.",
+        "minWords": 150
+      },
+      "task2": {
+        "prompt": "Some people believe that professionals, such as doctors and engineers, should be required to work in the country where they did their training. Others believe they should be free to work in another country if they wish. Discuss both these views and give your own opinion. Give reasons for your answer and include any relevant examples from your own knowledge or experience.",
+        "minWords": 250
+      }
+    },
+    "speaking": {
+      "kind": "speaking",
+      "part1": [
+        "What do you like to drink with your dinner? Why?",
+        "Do you drink a lot of water every day? Why/Why not?",
+        "Do you prefer drinking tea or coffee? Why?",
+        "If people visit you in your home, what do you usually offer them to drink? Why/Why not?"
+      ],
+      "part2": {
+        "topic": "Describe a monument (e.g., a statue or sculpture) that you like.",
+        "points": ["what this monument is", "where this monument is", "what it looks like"],
+        "closing": "and explain why you like this monument.",
+        "prepSec": 60,
+        "speakSec": 120
+      },
+      "part3": [
+        "What kinds of monuments do tourists in your country enjoy visiting?",
+        "Why do you think there are often statues of famous people in public places?",
+        "Do you agree that old monuments and buildings should always be preserved?",
+        "Why is architecture such a popular university subject?",
+        "In what ways has the design of homes changed in recent years?",
+        "To what extent does the design of buildings affect people’s moods?"
+      ]
+    }
+  }
+}

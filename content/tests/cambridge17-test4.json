@@ -1,0 +1,1927 @@
+{
+  "meta": {
+    "testId": "cambridge17-test4",
+    "book": "Cambridge 17",
+    "testNumber": 4,
+    "track": "academic",
+    "status": "live",
+    "timing": {
+      "listening": {
+        "singlePartMin": 8,
+        "fullMockMin": 30,
+        "checkMin": 2
+      },
+      "reading": {
+        "singlePartMin": 20,
+        "fullMockMin": 60
+      },
+      "writing": {
+        "task1Min": 20,
+        "task2Min": 40,
+        "fullMockMin": 60
+      }
+    },
+    "studentHelp": {
+      "allowReveal": true,
+      "showScriptInSinglePart": true,
+      "lockAudioInFullMock": true
+    }
+  },
+  "sections": {
+    "listening-1": {
+      "kind": "listening",
+      "part": 1,
+      "audio": "/media/audio/b17t4-p1.3be952a3.mp3",
+      "durationSec": 383.1,
+      "context": "A client phones Easy Life Cleaning Services to ask about a cleaning service for their apartment.",
+      "script": [
+        {
+          "start": 81.5,
+          "speaker": "Jacinta",
+          "text": "Hello, Easy Life Cleaning Services, Jacinta speaking."
+        },
+        {
+          "start": 85.0,
+          "speaker": "Client",
+          "text": "Oh hello. I’m looking for a cleaning service for my apartment – do you do domestic cleaning?"
+        },
+        {
+          "start": 91.5,
+          "speaker": "Jacinta",
+          "text": "Sure."
+        },
+        {
+          "start": 91.9,
+          "speaker": "Client",
+          "text": "Well, it’s just a one-bedroom flat. Do you have a basic cleaning package?"
+        },
+        {
+          "start": 97.5,
+          "speaker": "Jacinta",
+          "text": "Yes. For a one-bedroom flat we’re probably looking at about two hours for a clean. So we’d do a thorough clean of all surfaces in each room, and polish them where necessary. Does your apartment have carpets?"
+        },
+        {
+          "start": 111.0,
+          "speaker": "Client",
+          "text": "No, I don’t have any, but the floor would need cleaning.",
+          "answer": {
+            "question": 1,
+            "highlight": "the floor would need cleaning"
+          }
+        },
+        {
+          "start": 115.3,
+          "speaker": "Jacinta",
+          "text": "Of course – we’d do that in every room. And we’d do a thorough clean of the kitchen and bathroom."
+        },
+        {
+          "start": 121.0,
+          "speaker": "Client",
+          "text": "OK."
+        },
+        {
+          "start": 121.6,
+          "speaker": "Jacinta",
+          "text": "Then we have some additional services which you can request if you want – so for example, we can clean your oven for you every week."
+        },
+        {
+          "start": 130.7,
+          "speaker": "Client",
+          "text": "Actually, I hardly ever use that, but can you do the fridge?",
+          "answer": {
+            "question": 2,
+            "highlight": "can you do the fridge"
+          }
+        },
+        {
+          "start": 135.6,
+          "speaker": "Jacinta",
+          "text": "Sure. Would you like that done every week?"
+        },
+        {
+          "start": 138.6,
+          "speaker": "Client",
+          "text": "Yes, definitely. And would ironing clothes be an additional service you can do?"
+        },
+        {
+          "start": 143.5,
+          "speaker": "Jacinta",
+          "text": "Yes, of course."
+        },
+        {
+          "start": 144.6,
+          "speaker": "Client",
+          "text": "It wouldn’t be much, just my shirts for work that week.",
+          "answer": {
+            "question": 3,
+            "highlight": "just my shirts"
+          }
+        },
+        {
+          "start": 148.5,
+          "speaker": "Jacinta",
+          "text": "That’s fine. And we could also clean your microwave if you want."
+        },
+        {
+          "start": 152.5,
+          "speaker": "Client",
+          "text": "No, I wipe that out pretty regularly so there’s no need for that."
+        },
+        {
+          "start": 157.3,
+          "speaker": "Jacinta",
+          "text": "We also offer additional services that you might want a bit less often, say every month. So for example, if the inside of your windows need cleaning, we could do that.",
+          "answer": {
+            "question": 4,
+            "highlight": "if the inside of your windows need cleaning"
+          }
+        },
+        {
+          "start": 168.1,
+          "speaker": "Client",
+          "text": "Yes, that’d be good. I’m on the fifteenth floor, so the outside gets done regularly by specialists, but the inside does get a bit grubby."
+        },
+        {
+          "start": 177.4,
+          "speaker": "Jacinta",
+          "text": "And we could arrange for your curtains to get cleaned if necessary."
+        },
+        {
+          "start": 181.5,
+          "speaker": "Client",
+          "text": "No, they’re OK. But would you be able to do something about the balcony? It’s quite small and I don’t use it much, but it could do with a wash every month or so.",
+          "answer": {
+            "question": 5,
+            "highlight": "would you be able to do something about the balcony"
+          }
+        },
+        {
+          "start": 191.8,
+          "speaker": "Jacinta",
+          "text": "Yes, we can get the pressure washer onto that."
+        },
+        {
+          "start": 210.9,
+          "speaker": "Jacinta",
+          "text": "Now if you’re interested, we do offer some other possibilities to do with general maintenance. For example, if you have a problem with water and you need a plumber in a hurry, we can put you in touch with a reliable one who can come out straightaway. And the same thing if you need an electrician.",
+          "answer": {
+            "question": 6,
+            "highlight": "if you need an electrician"
+          }
+        },
+        {
+          "start": 253.5,
+          "speaker": "Client",
+          "text": "Right. That’s good to know. I’ve only just moved here so I don’t have any of those sorts of contacts."
+        },
+        {
+          "start": 261.2,
+          "speaker": "Jacinta",
+          "text": "And I don’t know if this is of interest to you, but we also offer a special vacuum cleaning system which can improve the indoor air quality of your home by capturing up to 99% of all the dust in the air. So if you’re troubled by allergies, this can make a big difference.",
+          "answer": {
+            "question": 7,
+            "highlight": "capturing up to 99% of all the dust in the air"
+          }
+        },
+        {
+          "start": 277.9,
+          "speaker": "Client",
+          "text": "Right. In fact, I don’t have that sort of problem, but I’ll bear it in mind. Now can you tell me a bit about your cleaning staff?"
+        },
+        {
+          "start": 286.4,
+          "speaker": "Jacinta",
+          "text": "Of course. So all our cleaners are very carefully selected. When they apply to us, they have to undergo a security check with the police to make sure they don’t have any sort of criminal background, and, of course, they have to provide references as well.",
+          "answer": {
+            "question": 8,
+            "highlight": "a security check with the police"
+          }
+        },
+        {
+          "start": 302.4,
+          "speaker": "Jacinta",
+          "text": "Then if we think they might be suitable for the job, we give them training for it. That lasts for two weeks so it’s very thorough, and at the end of it, they have a test.",
+          "answer": {
+            "question": 9,
+            "highlight": "we give them training for it"
+          }
+        },
+        {
+          "start": 311.9,
+          "speaker": "Jacinta",
+          "text": "If they pass that, we take them on, but we monitor them very carefully – we ask all our clients to complete a review of their performance after every visit and to email it to us. So we can pick up any problems straightaway and deal with them.",
+          "answer": {
+            "question": 10,
+            "highlight": "complete a review of their performance after every visit"
+          }
+        },
+        {
+          "start": 327.4,
+          "speaker": "Client",
+          "text": "OK, well that all sounds good. And will I always have the same cleaner?"
+        },
+        {
+          "start": 333.3,
+          "speaker": "Jacinta",
+          "text": "Yes, we do our best to organise it that way, and we usually manage it."
+        },
+        {
+          "start": 338.0,
+          "speaker": "Client",
+          "text": "Good. That’s fine. Right, so I’d like to go ahead and …"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-1",
+          "type": "GAP_FILL",
+          "instructions": "Complete the notes below. Write ONE WORD for each answer.",
+          "wordLimit": "ONE WORD",
+          "maxWords": 1,
+          "layout": {
+            "kind": "notes",
+            "title": "Easy Life Cleaning Services",
+            "body": "# Basic cleaning package offered\n- Cleaning all surfaces\n- Cleaning the {{1}} throughout the apartment\n- Cleaning shower, sinks, toilet etc.\n# Additional services agreed\n- Every week\n– Cleaning the {{2}}\n– Ironing clothes – {{3}} only\n- Every month\n– Cleaning all the {{4}} from the inside\n– Washing down the {{5}}\n# Other possibilities\n- They can organise a plumber or an {{6}} if necessary.\n- A special cleaning service is available for customers who are allergic to {{7}}\n# Information on the cleaners\n- Before being hired, all cleaners have a background check carried out by the {{8}}\n- References are required.\n- All cleaners are given {{9}} for two weeks.\n- Customers send a {{10}} after each visit.\n- Usually, each customer has one regular cleaner."
+          },
+          "questions": [
+            {
+              "numbers": [1],
+              "prompt": "Cleaning the ___ throughout the apartment",
+              "acceptedAnswers": [["floor(s)"]]
+            },
+            {
+              "numbers": [2],
+              "prompt": "Every week: cleaning the ___",
+              "acceptedAnswers": [["fridge"]],
+              "explanation": "The client hardly ever uses the oven, so asks for the fridge instead."
+            },
+            {
+              "numbers": [3],
+              "prompt": "Every week: ironing clothes – ___ only",
+              "acceptedAnswers": [["shirts"]]
+            },
+            {
+              "numbers": [4],
+              "prompt": "Every month: cleaning all the ___ from the inside",
+              "acceptedAnswers": [["windows"]],
+              "explanation": "The outside of the windows is cleaned by specialists; the inside gets grubby."
+            },
+            {
+              "numbers": [5],
+              "prompt": "Every month: washing down the ___",
+              "acceptedAnswers": [["balcony"]],
+              "explanation": "The curtains don’t need cleaning, but the balcony could do with a wash every month."
+            },
+            {
+              "numbers": [6],
+              "prompt": "They can organise a plumber or an ___ if necessary.",
+              "acceptedAnswers": [["electrician"]]
+            },
+            {
+              "numbers": [7],
+              "prompt": "A special cleaning service is available for customers who are allergic to ___",
+              "acceptedAnswers": [["dust"]]
+            },
+            {
+              "numbers": [8],
+              "prompt": "All cleaners have a background check carried out by the ___",
+              "acceptedAnswers": [["police"]]
+            },
+            {
+              "numbers": [9],
+              "prompt": "All cleaners are given ___ for two weeks.",
+              "acceptedAnswers": [["training"]]
+            },
+            {
+              "numbers": [10],
+              "prompt": "Customers send a ___ after each visit.",
+              "acceptedAnswers": [["review"]]
+            }
+          ]
+        }
+      ]
+    },
+    "listening-2": {
+      "kind": "listening",
+      "part": 2,
+      "audio": "/media/audio/b17t4-p2.e564e6ce.mp3",
+      "durationSec": 472.7,
+      "context": "A speaker talks to hotel managers about the problem of high staff turnover and ways of reducing it.",
+      "script": [
+        {
+          "start": 53.1,
+          "speaker": "Speaker",
+          "text": "As many of you here today have worked in the hotel industry for some time, I’m sure you have experienced the problem of high staff turnover in your hotels. Every hotel relies on having loyal and experienced members of staff who make sure that everything runs smoothly. If staff are constantly changing, it can make life difficult for everyone. But why do staff leave frequently in many hotels? Of course, many hotel jobs, such as cleaning, are low-skilled and are not well-paid. A lot of managers think it’s this and the long hours that are the main causes of high staff turnover – but what they don’t realise is that it’s the lack of training in many hotel jobs which is a huge factor.",
+          "answer": {
+            "question": 11,
+            "highlight": "it’s the lack of training in many hotel jobs which is a huge factor"
+          }
+        },
+        {
+          "start": 111.4,
+          "speaker": "Speaker",
+          "text": "So, what kind of problems does a high turnover of staff cause? Well, having to recruit new staff all the time can be very time-consuming, and managers may have to cover some duties while waiting for new staff to arrive. This means they don’t have time to think about less immediate problems such as how to improve their service. When staff leave, it can also severely affect the colleagues they leave behind. It has a negative effect on remaining staff, who may start to feel that they too should be thinking about leaving.",
+          "answer": {
+            "question": 12,
+            "highlight": "having to recruit new staff all the time can be very time-consuming, and managers may have to cover some duties"
+          }
+        },
+        {
+          "start": 151.3,
+          "speaker": "Speaker",
+          "text": "So, what can be done to change this situation? Firstly, managers should stop making basic errors which leave their staff feeling upset and resentful. When organising shifts, for example, make sure you never give certain staff preferential treatment. All staff should be given some choice about when they work, and everyone should have to work some evening and weekend shifts. If you treat staff fairly, they’ll be more likely to step in and help when extra staff are needed.",
+          "answer": {
+            "question": 13,
+            "highlight": "make sure you never give certain staff preferential treatment"
+          }
+        },
+        {
+          "start": 188.8,
+          "speaker": "Speaker",
+          "text": "Keeping staff happy has other tangible benefits for the business. Take the Dunwich Hotel as an example. It had been experiencing a problem with staff complaints and in order to deal with this, invested in staff training and improved staff conditions. Not only did the level of complaints fall, but they also noticed a significant increase in the amount each customer spent during their stay. They have now introduced a customer loyalty scheme which is going really well.",
+          "answer": {
+            "question": 14,
+            "highlight": "a significant increase in the amount each customer spent during their stay"
+          }
+        },
+        {
+          "start": 272.9,
+          "speaker": "Speaker",
+          "text": "Now I’d like to look at some ways you can reduce staff turnover in your hotels, and I’ll do this by giving some examples of hotels where I’ve done some training recently."
+        },
+        {
+          "start": 285.2,
+          "speaker": "Speaker",
+          "text": "The Sun Club received feedback which showed that staff thought managers didn’t value their opinions. They weren’t made to feel they were partners who were contributing to the success of the business as a whole. This situation has changed. Junior staff at all levels are regularly invited to meetings where their ideas are welcomed.",
+          "answer": {
+            "question": 15,
+            "highlight": "Junior staff at all levels are regularly invited to meetings where their ideas are welcomed"
+          }
+        },
+        {
+          "start": 310.5,
+          "speaker": "Speaker",
+          "text": "A year ago, The Portland recognised the need to invest in staff retention. Their first step was to introduce a scheme for recognising talent amongst their employees. The hope is that organising training for individuals with management potential will encourage them to stay with the business.",
+          "answer": {
+            "question": 16,
+            "highlight": "organising training for individuals with management potential"
+          }
+        },
+        {
+          "start": 331.6,
+          "speaker": "Speaker",
+          "text": "At Bluewater, managers decided to recognise 50 high achievers from across the company’s huge hotel chain. As a reward, they’re sent on an all-expenses-paid trip abroad every year. Fun is an important element in the trips, but there’s also the opportunity to learn something useful. This year’s trip included a visit to a brewery, where staff learned about the new beer that would be served in the hotel.",
+          "answer": {
+            "question": 17,
+            "highlight": "they’re sent on an all-expenses-paid trip abroad every year"
+          }
+        },
+        {
+          "start": 365.2,
+          "speaker": "Speaker",
+          "text": "Pentlow Hotels identified that retention of junior reception staff was an issue. In order to encourage them to see that working in a hotel could be worthwhile and rewarding, with good prospects, they introduced a management programme. These staff were given additional responsibilities and the chance to work in various roles in the hotel.",
+          "answer": {
+            "question": 18,
+            "highlight": "they introduced a management programme"
+          }
+        },
+        {
+          "start": 392.0,
+          "speaker": "Speaker",
+          "text": "Green Planet wanted to be seen as a caring employer. To make life easier for staff, many of whom had childcare responsibilities, the hotel began issuing vouchers to help cover the cost of childcare.",
+          "answer": {
+            "question": 19,
+            "highlight": "the hotel began issuing vouchers to help cover the cost of childcare"
+          }
+        },
+        {
+          "start": 407.0,
+          "speaker": "Speaker",
+          "text": "Louise Marsh at The Amesbury has one of the best staff retention rates in the business. Since she joined the company, she has made a huge effort to achieve this by creating a co-operative and supportive environment. For her, the staff are part of a large family where everyone is valued.",
+          "answer": {
+            "question": 20,
+            "highlight": "creating a co-operative and supportive environment"
+          }
+        },
+        {
+          "start": 429.4,
+          "speaker": "Speaker",
+          "text": "OK, now I’d like to …"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-2",
+          "type": "MULTIPLE_CHOICE_SINGLE",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "numbers": [11],
+              "prompt": "Many hotel managers are unaware that their staff often leave because of",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "a lack of training."
+                },
+                {
+                  "key": "B",
+                  "text": "long hours."
+                },
+                {
+                  "key": "C",
+                  "text": "low pay."
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "Managers think low pay and long hours are the main causes, but don’t realise that the lack of training is a huge factor."
+            },
+            {
+              "numbers": [12],
+              "prompt": "What is the impact of high staff turnover on managers?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "an increased workload"
+                },
+                {
+                  "key": "B",
+                  "text": "low morale"
+                },
+                {
+                  "key": "C",
+                  "text": "an inability to meet targets"
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "Recruiting is time-consuming and managers may have to cover some duties themselves. Low morale affects the remaining staff, not managers."
+            },
+            {
+              "numbers": [13],
+              "prompt": "What mistake should managers always avoid?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "failing to treat staff equally"
+                },
+                {
+                  "key": "B",
+                  "text": "reorganising shifts without warning"
+                },
+                {
+                  "key": "C",
+                  "text": "neglecting to have enough staff during busy periods"
+                }
+              ],
+              "acceptedAnswers": [["A"]],
+              "explanation": "Never give certain staff preferential treatment; treat staff fairly."
+            },
+            {
+              "numbers": [14],
+              "prompt": "What unexpected benefit did Dunwich Hotel notice after improving staff retention rates?",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "a fall in customer complaints"
+                },
+                {
+                  "key": "B",
+                  "text": "an increase in loyalty club membership"
+                },
+                {
+                  "key": "C",
+                  "text": "a rise in spending per customer"
+                }
+              ],
+              "acceptedAnswers": [["C"]],
+              "explanation": "They noticed a significant increase in the amount each customer spent. The complaints that fell were staff complaints."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-3",
+          "type": "MATCHING_FEATURES",
+          "instructions": "Which way of reducing staff turnover was used in each of the following hotels? Write the correct letter, A, B or C, next to Questions 15–20.",
+          "options": [
+            {
+              "key": "A",
+              "text": "improving relationships and teamwork"
+            },
+            {
+              "key": "B",
+              "text": "offering incentives and financial benefits"
+            },
+            {
+              "key": "C",
+              "text": "providing career opportunities"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [15],
+              "prompt": "The Sun Club",
+              "acceptedAnswers": [["A"]],
+              "explanation": "Staff are now treated as partners and invited to meetings where their ideas are welcomed."
+            },
+            {
+              "numbers": [16],
+              "prompt": "The Portland",
+              "acceptedAnswers": [["C"]],
+              "explanation": "A scheme recognising talent, with training for staff with management potential."
+            },
+            {
+              "numbers": [17],
+              "prompt": "Bluewater Hotels",
+              "acceptedAnswers": [["B"]],
+              "explanation": "High achievers are rewarded with an all-expenses-paid trip abroad."
+            },
+            {
+              "numbers": [18],
+              "prompt": "Pentlow Hotels",
+              "acceptedAnswers": [["C"]],
+              "explanation": "A management programme showing junior reception staff they have good prospects."
+            },
+            {
+              "numbers": [19],
+              "prompt": "Green Planet",
+              "acceptedAnswers": [["B"]],
+              "explanation": "Vouchers to help cover the cost of childcare."
+            },
+            {
+              "numbers": [20],
+              "prompt": "The Amesbury",
+              "acceptedAnswers": [["A"]],
+              "explanation": "A co-operative and supportive environment where staff are like a large family."
+            }
+          ]
+        }
+      ]
+    },
+    "listening-3": {
+      "kind": "listening",
+      "part": 3,
+      "audio": "/media/audio/b17t4-p3.ac6dd89b.mp3",
+      "durationSec": 411.6,
+      "context": "Two sports science students, Jeanne and Thomas, talk about Thomas’s sporting experiences at school and about the development of sporting equipment.",
+      "script": [
+        {
+          "start": 42.0,
+          "speaker": "Jeanne",
+          "text": "Hi Thomas, how are you enjoying the course so far?"
+        },
+        {
+          "start": 45.5,
+          "speaker": "Thomas",
+          "text": "Yeah, I think it’s good."
+        },
+        {
+          "start": 47.2,
+          "speaker": "Jeanne",
+          "text": "Remind me – why did you decide to study sports science? Didn’t you want to be a professional athlete when you were at school?"
+        },
+        {
+          "start": 54.4,
+          "speaker": "Thomas",
+          "text": "Yeah – that was my goal, and all my classmates assumed I would achieve it; they thought I was brilliant.",
+          "answer": {
+            "question": 21,
+            "highlight": "they thought I was brilliant"
+          }
+        },
+        {
+          "start": 60.1,
+          "speaker": "Jeanne",
+          "text": "That must have been a nice feeling."
+        },
+        {
+          "start": 61.9,
+          "speaker": "Thomas",
+          "text": "Mm, I thought I could win anything. There was no one who could run faster than me."
+        },
+        {
+          "start": 68.7,
+          "speaker": "Jeanne",
+          "text": "Exactly – so what happened? Did your mum and dad want you to be more ‘academic’?"
+        },
+        {
+          "start": 74.4,
+          "speaker": "Thomas",
+          "text": "Not at all. Perhaps they should have pushed me harder, though."
+        },
+        {
+          "start": 77.9,
+          "speaker": "Jeanne",
+          "text": "What do you mean?"
+        },
+        {
+          "start": 79.2,
+          "speaker": "Thomas",
+          "text": "I think I should have practised more.",
+          "answer": {
+            "question": 22,
+            "highlight": "I should have practised more"
+          }
+        },
+        {
+          "start": 81.4,
+          "speaker": "Jeanne",
+          "text": "What makes you say that?"
+        },
+        {
+          "start": 83.0,
+          "speaker": "Thomas",
+          "text": "Well, I went out to Kenya for a couple of weeks to train …"
+        },
+        {
+          "start": 86.9,
+          "speaker": "Jeanne",
+          "text": "Really! I didn’t know that."
+        },
+        {
+          "start": 89.2,
+          "speaker": "Thomas",
+          "text": "I was chosen to go there out of loads of kids and run with some of the top teenage athletes in the world. And … I was so calm about it. I just kept thinking how fortunate I was. What a great chance this was! Everyone back home was so proud of me. But once we started competing, I very quickly realised I wasn’t good enough.",
+          "answer": {
+            "question": 23,
+            "highlight": "how fortunate I was"
+          }
+        },
+        {
+          "start": 112.9,
+          "speaker": "Jeanne",
+          "text": "That must have been a huge shock."
+        },
+        {
+          "start": 115.1,
+          "speaker": "Thomas",
+          "text": "I thought ‘this can’t be happening’! I was used to winning.",
+          "answer": {
+            "question": 24,
+            "highlight": "this can’t be happening"
+          }
+        },
+        {
+          "start": 119.1,
+          "speaker": "Jeanne",
+          "text": "I’m sorry to hear that."
+        },
+        {
+          "start": 120.9,
+          "speaker": "Thomas",
+          "text": "It’s OK. I’m over it now and I think it’s much better to do a university course and this one has such a variety of sports-related areas. It’s going to be good."
+        },
+        {
+          "start": 131.8,
+          "speaker": "Jeanne",
+          "text": "Oh, I agree – I chose it because of that."
+        },
+        {
+          "start": 143.0,
+          "speaker": "Thomas",
+          "text": "So Jeanne – have you thought of any ideas for the discussion session next week on technology and sport?"
+        },
+        {
+          "start": 189.1,
+          "speaker": "Jeanne",
+          "text": "We have to cover more than one sport, don’t we?"
+        },
+        {
+          "start": 193.1,
+          "speaker": "Thomas",
+          "text": "Yeah."
+        },
+        {
+          "start": 193.5,
+          "speaker": "Jeanne",
+          "text": "You know – we always think technology is about the future, but we could gather some ideas about past developments in sport."
+        },
+        {
+          "start": 201.8,
+          "speaker": "Thomas",
+          "text": "Look at early types of equipment perhaps? Uh, I remember reading something about table tennis bats once – how they ended up being covered with pimpled rubber."
+        },
+        {
+          "start": 212.7,
+          "speaker": "Jeanne",
+          "text": "Cos they were just wooden at first, I’d imagine."
+        },
+        {
+          "start": 216.0,
+          "speaker": "Thomas",
+          "text": "Yeah. In about the 1920s, a factory was making rolls of the rubber in bulk for something like horse harnesses.",
+          "answer": {
+            "question": 25,
+            "highlight": "a factory was making rolls of the rubber in bulk"
+          }
+        },
+        {
+          "start": 224.3,
+          "speaker": "Jeanne",
+          "text": "Really!"
+        },
+        {
+          "start": 225.2,
+          "speaker": "Thomas",
+          "text": "Yeah – and someone realised that it’d make a perfect covering for the wooden bats."
+        },
+        {
+          "start": 229.7,
+          "speaker": "Jeanne",
+          "text": "So what about cricket – that’s had a few innovative changes. Maybe the pads they wear on their legs?"
+        },
+        {
+          "start": 237.4,
+          "speaker": "Thomas",
+          "text": "I don’t think they’ve changed much but, I’m just looking on the internet … and it says that when the first cricket helmet came in, in 1978, the Australian batsman who first wore it was booed and jeered by people watching because it was so ugly!",
+          "answer": {
+            "question": 26,
+            "highlight": "was booed and jeered by people watching"
+          }
+        },
+        {
+          "start": 255.3,
+          "speaker": "Jeanne",
+          "text": "Wow, players have to protect themselves from getting hurt! I mean everyone wears one now."
+        },
+        {
+          "start": 262.7,
+          "speaker": "Thomas",
+          "text": "Mm, unlike the cycle helmet."
+        },
+        {
+          "start": 265.2,
+          "speaker": "Jeanne",
+          "text": "Well, unless you’re a professional, but you’re right, many ordinary bikers don’t wear a helmet."
+        },
+        {
+          "start": 272.7,
+          "speaker": "Thomas",
+          "text": "Hey, look at these pictures of original helmet designs. This one looks like an upside-down bowl!"
+        },
+        {
+          "start": 279.6,
+          "speaker": "Jeanne",
+          "text": "Yet, the woman’s laughing – she’s so proud to be wearing it!"
+        },
+        {
+          "start": 284.4,
+          "speaker": "Thomas",
+          "text": "It says serious cyclists ended up with wet hair from all the hard exercise.",
+          "answer": {
+            "question": 27,
+            "highlight": "ended up with wet hair from all the hard exercise"
+          }
+        },
+        {
+          "start": 289.8,
+          "speaker": "Jeanne",
+          "text": "I guess that’s why they have large air vents in them now so that the skin can breathe more easily."
+        },
+        {
+          "start": 297.8,
+          "speaker": "Thomas",
+          "text": "OK, so we’ve done helmets. What about golf balls or better still golf clubs – they’ve changed a lot."
+        },
+        {
+          "start": 305.5,
+          "speaker": "Jeanne",
+          "text": "Yeah – I remember my great grandfather telling me that because a club was made entirely of wood, it would easily break and players had to get another.",
+          "answer": {
+            "question": 28,
+            "highlight": "it would easily break and players had to get another"
+          }
+        },
+        {
+          "start": 315.5,
+          "speaker": "Thomas",
+          "text": "There’s no wood at all in them now, is there?"
+        },
+        {
+          "start": 319.0,
+          "speaker": "Jeanne",
+          "text": "No – they’re much more powerful."
+        },
+        {
+          "start": 320.8,
+          "speaker": "Thomas",
+          "text": "The same must be true of hockey sticks."
+        },
+        {
+          "start": 322.9,
+          "speaker": "Jeanne",
+          "text": "I don’t think so because players still use wooden sticks today. What it does say here, though, is that when the game started you had to produce a stick yourself.",
+          "answer": {
+            "question": 29,
+            "highlight": "you had to produce a stick yourself"
+          }
+        },
+        {
+          "start": 336.2,
+          "speaker": "Thomas",
+          "text": "I guess they just weren’t being manufactured. So, one more perhaps. What about football?"
+        },
+        {
+          "start": 343.8,
+          "speaker": "Jeanne",
+          "text": "Well, I know the first balls were made of animal skin."
+        },
+        {
+          "start": 348.4,
+          "speaker": "Thomas",
+          "text": "Yeah, they covered them with pieces of leather that were stitched together, but … the balls let in water when it rained."
+        },
+        {
+          "start": 356.9,
+          "speaker": "Jeanne",
+          "text": "Oh, that would have made them much heavier."
+        },
+        {
+          "start": 360.0,
+          "speaker": "Thomas",
+          "text": "That’s right. You can imagine the damage to players’ necks when the ball was headed.",
+          "answer": {
+            "question": 30,
+            "highlight": "the damage to players’ necks when the ball was headed"
+          }
+        },
+        {
+          "start": 365.1,
+          "speaker": "Jeanne",
+          "text": "How painful that must have been!"
+        },
+        {
+          "start": 367.5,
+          "speaker": "Thomas",
+          "text": "Yeah, well, I think we can put together some useful ideas …"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-4",
+          "type": "MULTIPLE_CHOICE_MULTIPLE",
+          "instructions": "Choose TWO letters, A–E.",
+          "answersPerItem": 2,
+          "options": [
+            {
+              "key": "A",
+              "text": "He should have felt more positive about them."
+            },
+            {
+              "key": "B",
+              "text": "The training was too challenging for him."
+            },
+            {
+              "key": "C",
+              "text": "He could have worked harder at them."
+            },
+            {
+              "key": "D",
+              "text": "His parents were disappointed in him."
+            },
+            {
+              "key": "E",
+              "text": "His fellow students admired him."
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [21, 22],
+              "prompt": "Which TWO points do Thomas and Jeanne make about Thomas’s sporting activities at school?",
+              "acceptedAnswers": [["C"], ["E"]],
+              "explanation": "E: his classmates thought he was brilliant. C: he thinks he should have practised more. Either order. His parents didn’t push him to be more academic, and nothing suggests they were disappointed."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-5",
+          "type": "MULTIPLE_CHOICE_MULTIPLE",
+          "instructions": "Choose TWO letters, A–E.",
+          "answersPerItem": 2,
+          "options": [
+            {
+              "key": "A",
+              "text": "disbelief"
+            },
+            {
+              "key": "B",
+              "text": "relief"
+            },
+            {
+              "key": "C",
+              "text": "stress"
+            },
+            {
+              "key": "D",
+              "text": "gratitude"
+            },
+            {
+              "key": "E",
+              "text": "homesickness"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [23, 24],
+              "prompt": "Which TWO feelings did Thomas experience when he was in Kenya?",
+              "acceptedAnswers": [["A"], ["D"]],
+              "explanation": "D: he kept thinking how fortunate he was. A: when he realised he wasn’t good enough, he thought ‘this can’t be happening’. Either order. He says he was calm, so not stressed."
+            }
+          ]
+        },
+        {
+          "groupId": "qg-6",
+          "type": "MATCHING_FEATURES",
+          "instructions": "What comment do the students make about the development of each of the following items of sporting equipment? Choose SIX answers from the box and write the correct letter, A–H, next to Questions 25–30.",
+          "options": [
+            {
+              "key": "A",
+              "text": "It could cause excessive sweating."
+            },
+            {
+              "key": "B",
+              "text": "The material was being mass produced for another purpose."
+            },
+            {
+              "key": "C",
+              "text": "People often needed to make their own."
+            },
+            {
+              "key": "D",
+              "text": "It often had to be replaced."
+            },
+            {
+              "key": "E",
+              "text": "The material was expensive."
+            },
+            {
+              "key": "F",
+              "text": "It was unpopular among spectators."
+            },
+            {
+              "key": "G",
+              "text": "It caused injuries."
+            },
+            {
+              "key": "H",
+              "text": "No one using it liked it at first."
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [25],
+              "prompt": "the table tennis bat",
+              "acceptedAnswers": [["B"]],
+              "explanation": "A factory was making rolls of the rubber in bulk for horse harnesses."
+            },
+            {
+              "numbers": [26],
+              "prompt": "the cricket helmet",
+              "acceptedAnswers": [["F"]],
+              "explanation": "The first batsman to wear one was booed and jeered by people watching."
+            },
+            {
+              "numbers": [27],
+              "prompt": "the cycle helmet",
+              "acceptedAnswers": [["A"]],
+              "explanation": "Serious cyclists ended up with wet hair from the hard exercise."
+            },
+            {
+              "numbers": [28],
+              "prompt": "the golf club",
+              "acceptedAnswers": [["D"]],
+              "explanation": "Wooden clubs broke easily and players had to get another."
+            },
+            {
+              "numbers": [29],
+              "prompt": "the hockey stick",
+              "acceptedAnswers": [["C"]],
+              "explanation": "When the game started you had to produce a stick yourself."
+            },
+            {
+              "numbers": [30],
+              "prompt": "the football",
+              "acceptedAnswers": [["G"]],
+              "explanation": "Wet leather balls were heavy and damaged players’ necks when headed."
+            }
+          ]
+        }
+      ]
+    },
+    "listening-4": {
+      "kind": "listening",
+      "part": 4,
+      "audio": "/media/audio/b17t4-p4.8bb7ceb4.mp3",
+      "durationSec": 515.9,
+      "context": "A lecture about maple syrup: the maple tree, early maple sugar producers and how maple syrup is produced today.",
+      "script": [
+        {
+          "start": 72.3,
+          "speaker": "Lecturer",
+          "text": "Hello everyone. Today we’re going to look at another natural food product and that’s maple syrup. What is this exactly? Well, maple syrup looks rather like clear honey, but it’s not made by bees; it’s produced from the plant fluid – or sap – inside the maple tree and that makes maple syrup a very natural product. Maple syrup is a thick, golden, sweet-tasting liquid that can be bought in bottles or jars and poured onto food such as waffles and ice cream or used in the baking of cakes and pastries.",
+          "answer": {
+            "question": 31,
+            "highlight": "a thick, golden, sweet-tasting liquid"
+          }
+        },
+        {
+          "start": 114.3,
+          "speaker": "Lecturer",
+          "text": "It contains no preservatives or added ingredients, and it provides a healthy alternative to refined sugar.",
+          "answer": {
+            "question": 32,
+            "highlight": "a healthy alternative to refined sugar"
+          }
+        },
+        {
+          "start": 122.2,
+          "speaker": "Lecturer",
+          "text": "Let’s just talk a bit about the maple tree itself, which is where maple syrup comes from. So, there are many species of maple tree, and they’ll grow without fertilizer in areas where there’s plenty of moisture in the soil. However, they’ll only do this if another important criterion is fulfilled, which is that they must have full or partial sun exposure during the day and very cool nights – and I’ll talk more about that in a minute. There are only certain parts of the world that provide all these conditions: one is Canada, and by that, I mean all parts of Canada, and the other is the north-eastern states of North America. In these areas, the climate suits the trees perfectly. In fact, Canada produces over two-thirds of the world’s maple syrup, which is why the five-pointed maple leaf is a Canadian symbol and has featured on the flag since 1964.",
+          "answer": {
+            "question": 33,
+            "highlight": "the climate suits the trees perfectly"
+          }
+        },
+        {
+          "start": 192.9,
+          "speaker": "Lecturer",
+          "text": "So how did maple syrup production begin? Well, long before Europeans settled in these parts of the world, the indigenous communities had started producing maple sugar. They bored holes in the trunks of maple trees and used containers made of tree bark to collect the liquid sap as it poured out. As they were unable to keep the liquid for any length of time – they didn’t have storage facilities in those days – they boiled the liquid by placing pieces of rock that had become scorching hot from the sun into the sap. They did this until it turned into sugar, and they were then able to use this to sweeten their food and drinks. Since that time, improvements have been made to the process, but it has changed very little overall.",
+          "answer": {
+            "question": 34,
+            "highlight": "placing pieces of rock that had become scorching hot from the sun into the sap"
+          }
+        },
+        {
+          "start": 254.1,
+          "speaker": "Lecturer",
+          "text": "So let’s look at the production of maple syrup today. Clearly, the maple forests are a valuable resource in many Canadian and North American communities. The trees have to be well looked after and they cannot be used to make syrup until the trunks reach a diameter of around 25 centimetres. This can take anything up to 40 years. As I’ve already mentioned, maple trees need the right conditions to grow and also to produce sap. Why is this? Well, what happens is that during a cold night, the tree absorbs water from the soil, and that rises through the tree’s vascular system. But then in the warmer daytime, the change in temperature causes the water to be pushed back down to the bottom of the tree. This continual movement – up and down – leads to the formation of the sap needed for maple syrup production.",
+          "answer": {
+            "question": 35,
+            "highlight": "until the trunks reach a diameter of around 25 centimetres"
+          }
+        },
+        {
+          "start": 319.3,
+          "speaker": "Lecturer",
+          "text": "When the tree is ready, it can be tapped and this involves drilling a small hole into the trunk and inserting a tube into it that ends in a bucket. The trees can often take several taps, though the workers take care not to cause any damage to the healthy growth of the tree itself. The sap that comes out of the trees consists of 98 percent water and 2 percent sugar and other nutrients. It has to be boiled so that much of that water evaporates, and this process has to take place immediately, using what are called evaporators.",
+          "answer": {
+            "question": 36,
+            "highlight": "inserting a tube into it that ends in a bucket"
+          }
+        },
+        {
+          "start": 362.2,
+          "speaker": "Lecturer",
+          "text": "These are basically extremely large pans – the sap is poured into these, a fire is built and the pans are then heated until the sap boils. As it does this, the water evaporates, and the syrup begins to form.",
+          "answer": {
+            "question": 37,
+            "highlight": "a fire is built"
+          }
+        },
+        {
+          "start": 381.4,
+          "speaker": "Lecturer",
+          "text": "The evaporation process creates large quantities of steam, and the sap becomes thicker and denser, and, at just the right moment, when the sap is thick enough to be called maple syrup, the worker removes it from the heat.",
+          "answer": {
+            "question": 38,
+            "highlight": "creates large quantities of steam"
+          }
+        },
+        {
+          "start": 397.3,
+          "speaker": "Lecturer",
+          "text": "After this process, something called ‘sugar sand’ has to be filtered out as this builds up during the boiling and gives the syrup a cloudy appearance and a slightly gritty taste. Once this has been done, the syrup is ready to be packaged so that it can be used for a whole variety of products.",
+          "answer": {
+            "question": 39,
+            "highlight": "gives the syrup a cloudy appearance"
+          }
+        },
+        {
+          "start": 418.3,
+          "speaker": "Lecturer",
+          "text": "It takes 40 litres of sap to produce one litre of maple syrup so you can get an idea of how much is needed!",
+          "answer": {
+            "question": 40,
+            "highlight": "one litre of maple syrup"
+          }
+        },
+        {
+          "start": 429.7,
+          "speaker": "Lecturer",
+          "text": "So that’s the basic process. In places like Quebec where …"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-7",
+          "type": "GAP_FILL",
+          "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "notes",
+            "title": "Maple syrup",
+            "body": "# What is maple syrup?\n- made from the sap of the maple tree\n- added to food or used in cooking\n- colour described as {{31}}\n- very {{32}} compared to refined sugar\n# The maple tree\n- has many species\n- needs sunny days and cool nights\n- maple leaf has been on the Canadian flag since 1964\n- needs moist soil but does not need fertiliser as well\n- best growing conditions and {{33}} are in Canada and North America\n# Early maple sugar producers\n- made holes in the tree trunks\n- used hot {{34}} to heat the sap\n- used tree bark to make containers for collection\n- sweetened food and drink with sugar\n# Today’s maple syrup\nThe trees\n- Tree trunks may not have the correct {{35}} until they have been growing for 40 years.\n- The changing temperature and movement of water within the tree produces the sap.\nThe production\n- A tap is drilled into the trunk and a {{36}} carries the sap into a bucket.\n- Large pans of sap called evaporators are heated by means of a {{37}}.\n- A lot of {{38}} is produced during the evaporation process.\n- ‘Sugar sand’ is removed because it makes the syrup look {{39}} and affects the taste.\n- The syrup is ready for use.\n- A huge quantity of sap is needed to make a {{40}} of maple syrup."
+          },
+          "questions": [
+            {
+              "numbers": [31],
+              "prompt": "colour described as ___",
+              "acceptedAnswers": [["golden"]]
+            },
+            {
+              "numbers": [32],
+              "prompt": "very ___ compared to refined sugar",
+              "acceptedAnswers": [["healthy"]]
+            },
+            {
+              "numbers": [33],
+              "prompt": "best growing conditions and ___ are in Canada and North America",
+              "acceptedAnswers": [["climate"]]
+            },
+            {
+              "numbers": [34],
+              "prompt": "used hot ___ to heat the sap",
+              "acceptedAnswers": [["rock(s)"]]
+            },
+            {
+              "numbers": [35],
+              "prompt": "Tree trunks may not have the correct ___ until they have been growing for 40 years.",
+              "acceptedAnswers": [["diameter"]]
+            },
+            {
+              "numbers": [36],
+              "prompt": "A tap is drilled into the trunk and a ___ carries the sap into a bucket.",
+              "acceptedAnswers": [["tube"]]
+            },
+            {
+              "numbers": [37],
+              "prompt": "Large pans of sap called evaporators are heated by means of a ___.",
+              "acceptedAnswers": [["fire"]]
+            },
+            {
+              "numbers": [38],
+              "prompt": "A lot of ___ is produced during the evaporation process.",
+              "acceptedAnswers": [["steam"]]
+            },
+            {
+              "numbers": [39],
+              "prompt": "‘Sugar sand’ is removed because it makes the syrup look ___ and affects the taste.",
+              "acceptedAnswers": [["cloudy"]]
+            },
+            {
+              "numbers": [40],
+              "prompt": "A huge quantity of sap is needed to make a ___ of maple syrup.",
+              "acceptedAnswers": [["litre", "liter"]]
+            }
+          ]
+        }
+      ]
+    },
+    "reading-1": {
+      "kind": "reading",
+      "part": 1,
+      "title": "Bats to the rescue",
+      "subtitle": "How Madagascar’s bats are helping to save the rainforest",
+      "paragraphs": [
+        {
+          "label": "A",
+          "text": "There are few places in the world where relations between agriculture and conservation are more strained. Madagascar’s forests are being converted to agricultural land at a rate of one percent every year. Much of this destruction is fuelled by the cultivation of the country’s main staple crop: rice. And a key reason for this destruction is that insect pests are destroying vast quantities of what is grown by local subsistence farmers, leading them to clear forest to create new paddy fields. The result is devastating habitat and biodiversity loss on the island, but not all species are suffering. In fact, some of the island’s insectivorous bats are currently thriving and this has important implications for farmers and conservationists alike."
+        },
+        {
+          "label": "B",
+          "text": "Enter University of Cambridge zoologist Ricardo Rocha. He’s passionate about conservation, and bats. More specifically, he’s interested in how bats are responding to human activity and deforestation in particular. Rocha’s new study shows that several species of bats are giving Madagascar’s rice farmers a vital pest control service by feasting on plagues of insects. And this, he believes, can ease the financial pressure on farmers to turn forest into fields."
+        },
+        {
+          "label": "C",
+          "text": "Bats comprise roughly one-fifth of all mammal species in Madagascar and thirty-six recorded bat species are native to the island, making it one of the most important regions for conservation of this animal group anywhere in the world."
+        },
+        {
+          "label": "D",
+          "text": "Co-leading an international team of scientists, Rocha found that several species of indigenous bats are taking advantage of habitat modification to hunt insects swarming above the country’s rice fields. They include the Malagasy mouse-eared bat, Major’s long-fingered bat, the Malagasy white-bellied free-tailed bat and Peters’ wrinkle-lipped bat."
+        },
+        {
+          "label": "E",
+          "text": "‘These winner species are providing a valuable free service to Madagascar as biological pest suppressors,’ says Rocha. ‘We found that six species of bat are preying on rice pests, including the paddy swarming caterpillar and grass webworm. The damage which these insects cause puts the island’s farmers under huge financial pressure and that encourages deforestation.’"
+        },
+        {
+          "label": "F",
+          "text": "The study, now published in the journal Agriculture, Ecosystems and Environment, set out to investigate the feeding activity of insectivorous bats in the farmland bordering the Ranomafana National Park in the southeast of the country."
+        },
+        {
+          "label": "G",
+          "text": "Rocha and his team used state-of-the-art ultrasonic recorders to record over a thousand bat ‘feeding buzzes’ (echolocation sequences used by bats to target their prey) at 54 sites, in order to identify the favourite feeding spots of the bats. They next used DNA barcoding techniques to analyse droppings collected from bats at the different sites."
+        },
+        {
+          "label": "H",
+          "text": "The recordings revealed that bat activity over rice fields was much higher than it was in continuous forest – seven times higher over rice fields which were on flat ground, and sixteen times higher over fields on the sides of hills – leaving no doubt that the animals are preferentially foraging in these man-made ecosystems. The researchers suggest that the bats favour these fields because lack of water and nutrient run-off make these crops more susceptible to insect pest infestations. DNA analysis showed that all six species of bat had fed on economically important insect pests. While the findings indicated that rice farming benefits most from the bats, the scientists also found indications that the bats were consuming pests of other crops, including the black twig borer (which infests coffee plants), the sugarcane cicada, the macadamia nut-borer, and the sober tabby (a pest of citrus fruits)."
+        },
+        {
+          "label": "I",
+          "text": "‘The effectiveness of bats as pest controllers has already been proven in the USA and Catalonia,’ said co-author James Kemp, from the University of Lisbon. ‘But our study is the first to show this happening in Madagascar, where the stakes for both farmers and conservationists are so high.’"
+        },
+        {
+          "label": "J",
+          "text": "Local people may have a further reason to be grateful to their bats. While the animal is often associated with spreading disease, Rocha and his team found evidence that Malagasy bats feed not just on crop pests but also on mosquitoes – carriers of malaria, Rift Valley fever virus and elephantiasis – as well as blackflies, which spread river blindness."
+        },
+        {
+          "label": "K",
+          "text": "Rocha points out that the relationship is complicated. When food is scarce, bats become a crucial source of protein for local people. Even the children will hunt them. And as well as roosting in trees, the bats sometimes roost in buildings, but are not welcomed there because they make them unclean. At the same time, however, they are associated with sacred caves and the ancestors, so they can be viewed as beings between worlds, which makes them very significant in the culture of the people. And one potential problem is that while these bats are benefiting from farming, at the same time deforestation is reducing the places where they can roost, which could have long-term effects on their numbers. Rocha says, ‘With the right help, we hope that farmers can promote this mutually beneficial relationship by installing bat houses.’"
+        },
+        {
+          "label": "L",
+          "text": "Rocha and his colleagues believe that maximising bat populations can help to boost crop yields and promote sustainable livelihoods. The team is now calling for further research to quantify this contribution. ‘I’m very optimistic,’ says Rocha. ‘If we give nature a hand, we can speed up the process of regeneration.’"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-1",
+          "type": "TRUE_FALSE_NOT_GIVEN",
+          "instructions": "Do the following statements agree with the information given in Reading Passage 1?",
+          "questions": [
+            {
+              "numbers": [1],
+              "prompt": "Many Madagascan forests are being destroyed by attacks from insects.",
+              "acceptedAnswers": [["FALSE"]],
+              "explanation": "Insects destroy the farmers’ crops; the farmers then clear forest to create new paddy fields. The insects don’t attack the forests.",
+              "location": {
+                "paragraph": "A",
+                "sentence": 4,
+                "highlight": "insect pests are destroying vast quantities of what is grown by local subsistence farmers, leading them to clear forest to create new paddy fields"
+              }
+            },
+            {
+              "numbers": [2],
+              "prompt": "Loss of habitat has badly affected insectivorous bats in Madagascar.",
+              "acceptedAnswers": [["FALSE"]],
+              "explanation": "Not all species are suffering: some of the island’s insectivorous bats are thriving.",
+              "location": {
+                "paragraph": "A",
+                "sentence": 6,
+                "highlight": "some of the island’s insectivorous bats are currently thriving"
+              }
+            },
+            {
+              "numbers": [3],
+              "prompt": "Ricardo Rocha has carried out studies of bats in different parts of the world.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "The passage mentions only his study in Madagascar; studies in the USA and Catalonia are not said to be his.",
+              "location": null
+            },
+            {
+              "numbers": [4],
+              "prompt": "Habitat modification has resulted in indigenous bats in Madagascar becoming useful to farmers.",
+              "acceptedAnswers": [["TRUE"]],
+              "explanation": "Indigenous bats take advantage of habitat modification to hunt the insects over rice fields, giving farmers a free pest control service.",
+              "location": {
+                "paragraph": "D",
+                "sentence": 1,
+                "highlight": "several species of indigenous bats are taking advantage of habitat modification to hunt insects swarming above the country’s rice fields"
+              }
+            },
+            {
+              "numbers": [5],
+              "prompt": "The Malagasy mouse-eared bat is more common than other indigenous bat species in Madagascar.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "The bat is named in a list of species, but nothing compares how common the species are.",
+              "location": null
+            },
+            {
+              "numbers": [6],
+              "prompt": "Bats may feed on paddy swarming caterpillars and grass webworms.",
+              "acceptedAnswers": [["TRUE"]],
+              "location": {
+                "paragraph": "E",
+                "sentence": 2,
+                "highlight": "six species of bat are preying on rice pests, including the paddy swarming caterpillar and grass webworm"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-2",
+          "type": "GAP_FILL",
+          "instructions": "Complete the table below. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "notes",
+            "title": "The study carried out by Rocha’s team",
+            "body": "# Aim\n- to investigate the feeding habits of bats in farmland near the Ranomafana National Park\n# Method\n- ultrasonic recording to identify favourite feeding spots\n- DNA analysis of bat {{7}}\n# Findings\n- the bats\n– were most active in rice fields located on hills\n– ate pests of rice, {{8}}, sugarcane, nuts and fruit\n– prevent the spread of disease by eating {{9}} and blackflies\n- local attitudes to bats are mixed:\n– they provide food rich in {{10}}\n– the buildings where they roost become {{11}}\n– they play an important role in local {{12}}\n# Recommendation\n- farmers should provide special {{13}} to support the bat population"
+          },
+          "questions": [
+            {
+              "numbers": [7],
+              "prompt": "Method: DNA analysis of bat ___",
+              "acceptedAnswers": [["droppings"]],
+              "location": {
+                "paragraph": "G",
+                "sentence": 2,
+                "highlight": "analyse droppings collected from bats"
+              }
+            },
+            {
+              "numbers": [8],
+              "prompt": "The bats ate pests of rice, ___, sugarcane, nuts and fruit",
+              "acceptedAnswers": [["coffee"]],
+              "explanation": "The black twig borer infests coffee plants.",
+              "location": {
+                "paragraph": "H",
+                "sentence": 4,
+                "highlight": "the black twig borer (which infests coffee plants)"
+              }
+            },
+            {
+              "numbers": [9],
+              "prompt": "The bats prevent the spread of disease by eating ___ and blackflies",
+              "acceptedAnswers": [["mosquitoes"]],
+              "location": {
+                "paragraph": "J",
+                "sentence": 2,
+                "highlight": "also on mosquitoes"
+              }
+            },
+            {
+              "numbers": [10],
+              "prompt": "Bats provide food rich in ___",
+              "acceptedAnswers": [["protein"]],
+              "location": {
+                "paragraph": "K",
+                "sentence": 2,
+                "highlight": "a crucial source of protein for local people"
+              }
+            },
+            {
+              "numbers": [11],
+              "prompt": "The buildings where bats roost become ___",
+              "acceptedAnswers": [["unclean"]],
+              "location": {
+                "paragraph": "K",
+                "sentence": 4,
+                "highlight": "they make them unclean"
+              }
+            },
+            {
+              "numbers": [12],
+              "prompt": "Bats play an important role in local ___",
+              "acceptedAnswers": [["culture"]],
+              "location": {
+                "paragraph": "K",
+                "sentence": 5,
+                "highlight": "very significant in the culture of the people"
+              }
+            },
+            {
+              "numbers": [13],
+              "prompt": "Farmers should provide special ___ to support the bat population",
+              "acceptedAnswers": [["houses"]],
+              "location": {
+                "paragraph": "K",
+                "sentence": 7,
+                "highlight": "by installing bat houses"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reading-2": {
+      "kind": "reading",
+      "part": 2,
+      "title": "Does education fuel economic growth?",
+      "paragraphs": [
+        {
+          "label": "A",
+          "text": "Over the last decade, a huge database about the lives of southwest German villagers between 1600 and 1900 has been compiled by a team led by Professor Sheilagh Ogilvie at Cambridge University’s Faculty of Economics. It includes court records, guild ledgers, parish registers, village censuses, tax lists and – the most recent addition – 9,000 handwritten inventories listing over a million personal possessions belonging to ordinary women and men across three centuries. Ogilvie, who discovered the inventories in the archives of two German communities 30 years ago, believes they may hold the answer to a conundrum that has long puzzled economists: the lack of evidence for a causal link between education and a country’s economic growth."
+        },
+        {
+          "label": "B",
+          "text": "As Ogilvie explains, ‘Education helps us to work more productively, invent better technology, and earn more … surely it must be critical for economic growth? But, if you look back through history, there’s no evidence that having a high literacy rate made a country industrialise earlier.’ Between 1600 and 1900, England had only mediocre literacy rates by European standards, yet its economy grew fast and it was the first country to industrialise. During this period, Germany and Scandinavia had excellent literacy rates, but their economies grew slowly and they industrialised late. ‘Modern cross-country analyses have also struggled to find evidence that education causes economic growth, even though there is plenty of evidence that growth increases education,’ she adds."
+        },
+        {
+          "label": "C",
+          "text": "In the handwritten inventories that Ogilvie is analysing are the belongings of women and men at marriage, remarriage and death. From badger skins to Bibles, sewing machines to scarlet bodices – the villagers’ entire worldly goods are included. Inventories of agricultural equipment and craft tools reveal economic activities; ownership of books and education-related objects like pens and slates suggests how people learned. In addition, the tax lists included in the database record the value of farms, workshops, assets and debts; signatures and people’s estimates of their age indicate literacy and numeracy levels; and court records reveal obstacles (such as the activities of the guilds*) that stifled industry. Previous studies usually had just one way of linking education with economic growth – the presence of schools and printing presses, perhaps, or school enrolment, or the ability to sign names. According to Ogilvie, the database provides multiple indicators for the same individuals, making it possible to analyse links between literacy, numeracy, wealth, and industriousness, for individual women and men over the long term."
+        },
+        {
+          "label": "D",
+          "text": "Ogilvie and her team have been building the vast database of material possessions on top of their full demographic reconstruction of the people who lived in these two German communities. ‘We can follow the same people – and their descendants – across 300 years of educational and economic change,’ she says. Individual lives have unfolded before their eyes. Stories like that of the 24-year-olds Ana Regina and Magdalena Riethmüllerin, who were chastised in 1707 for reading books in church instead of listening to the sermon. ‘This tells us they were continuing to develop their reading skills at least a decade after leaving school,’ explains Ogilvie. The database also reveals the case of Juliana Schweickherdt, a 50-year-old spinster living in the small Black Forest community of Wildberg, who was reprimanded in 1752 by the local weavers’ guild for ‘weaving cloth and combing wool, counter to the guild ordinance’. When Juliana continued taking jobs reserved for male guild members, she was summoned before the guild court and told to pay a fine equivalent to one third of a servant’s annual wage. It was a small act of defiance by today’s standards, but it reflects a time when laws in Germany and elsewhere regulated people’s access to labour markets. The dominance of guilds not only prevented people from using their skills, but also held back even the simplest industrial innovation."
+        },
+        {
+          "label": "E",
+          "text": "The data-gathering phase of the project has been completed and now, according to Ogilvie, it is time ‘to ask the big questions’. One way to look at whether education causes economic growth is to ‘hold wealth constant’. This involves following the lives of different people with the same level of wealth over a period of time. If wealth is constant, it is possible to discover whether education was, for example, linked to the cultivation of new crops, or to the adoption of industrial innovations like sewing machines. The team will also ask what aspect of education helped people engage more with productive and innovative activities. Was it, for instance, literacy, numeracy, book ownership, years of schooling? Was there a threshold level – a tipping point – that needed to be reached to affect economic performance?"
+        },
+        {
+          "label": "F",
+          "text": "Ogilvie hopes to start finding answers to these questions over the next few years. One thing is already clear, she says: the relationship between education and economic growth is far from straightforward. ‘German-speaking central Europe is an excellent laboratory for testing theories of economic growth,’ she explains. Between 1600 and 1900, literacy rates and book ownership were high and yet the region remained poor. It was also the case that local guilds and merchant associations were extremely powerful and legislated against anything that undermined their monopolies. In villages throughout the region, guilds blocked labour migration and resisted changes that might reduce their influence. ‘Early findings suggest that the potential benefits of education for the economy can be held back by other barriers, and this has implications for today,’ says Ogilvie. ‘Huge amounts are spent improving education in developing countries, but this spending can fail to deliver economic growth if restrictions block people – especially women and the poor – from using their education in economically productive ways. If economic institutions are poorly set up, for instance, education can’t lead to growth.’"
+        },
+        {
+          "label": "*",
+          "text": "guild: an association of artisans or merchants which oversees the practice of their craft or trade in a particular area"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-3",
+          "type": "MATCHING_PARAGRAPH_INFO",
+          "instructions": "Reading Passage 2 has six sections, A–F. Which section contains the following information? Write the correct letter, A–F.",
+          "options": [
+            {
+              "key": "A",
+              "text": "Section A"
+            },
+            {
+              "key": "B",
+              "text": "Section B"
+            },
+            {
+              "key": "C",
+              "text": "Section C"
+            },
+            {
+              "key": "D",
+              "text": "Section D"
+            },
+            {
+              "key": "E",
+              "text": "Section E"
+            },
+            {
+              "key": "F",
+              "text": "Section F"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [14],
+              "prompt": "an explanation of the need for research to focus on individuals with a fairly consistent income",
+              "acceptedAnswers": [["E"]],
+              "explanation": "To ‘hold wealth constant’, researchers follow people with the same level of wealth over time.",
+              "location": {
+                "paragraph": "E",
+                "sentence": 3,
+                "highlight": "following the lives of different people with the same level of wealth over a period of time"
+              }
+            },
+            {
+              "numbers": [15],
+              "prompt": "examples of the sources the database has been compiled from",
+              "acceptedAnswers": [["A"]],
+              "location": {
+                "paragraph": "A",
+                "sentence": 2,
+                "highlight": "It includes court records, guild ledgers, parish registers, village censuses, tax lists"
+              }
+            },
+            {
+              "numbers": [16],
+              "prompt": "an account of one individual’s refusal to obey an order",
+              "acceptedAnswers": [["D"]],
+              "explanation": "Juliana Schweickherdt continued taking jobs reserved for male guild members after being reprimanded.",
+              "location": {
+                "paragraph": "D",
+                "sentence": 7,
+                "highlight": "When Juliana continued taking jobs reserved for male guild members"
+              }
+            },
+            {
+              "numbers": [17],
+              "prompt": "a reference to a region being particularly suited to research into the link between education and economic growth",
+              "acceptedAnswers": [["F"]],
+              "location": {
+                "paragraph": "F",
+                "sentence": 3,
+                "highlight": "German-speaking central Europe is an excellent laboratory for testing theories of economic growth"
+              }
+            },
+            {
+              "numbers": [18],
+              "prompt": "examples of the items included in a list of personal possessions",
+              "acceptedAnswers": [["C"]],
+              "location": {
+                "paragraph": "C",
+                "sentence": 2,
+                "highlight": "From badger skins to Bibles, sewing machines to scarlet bodices"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-4",
+          "type": "GAP_FILL",
+          "instructions": "Complete the summary below. Choose ONE WORD from the passage for each answer.",
+          "wordLimit": "ONE WORD",
+          "maxWords": 1,
+          "layout": {
+            "kind": "summary",
+            "title": "Demographic reconstruction of two German communities",
+            "body": "The database that Ogilvie and her team has compiled sheds light on the lives of a range of individuals, as well as those of their {{19}}, over a 300-year period. For example, Ana Regina and Magdalena Riethmüllerin were reprimanded for reading while they should have been paying attention to a {{20}}. There was also Juliana Schweickherdt, who came to the notice of the weavers’ guild in the year 1752 for breaking guild rules. As a punishment, she was later given a {{21}}. Cases like this illustrate how the guilds could prevent {{22}} and stop skilled people from working."
+          },
+          "questions": [
+            {
+              "numbers": [19],
+              "prompt": "the lives of a range of individuals, as well as those of their ___",
+              "acceptedAnswers": [["descendants"]],
+              "location": {
+                "paragraph": "D",
+                "sentence": 2,
+                "highlight": "the same people – and their descendants – across 300 years"
+              }
+            },
+            {
+              "numbers": [20],
+              "prompt": "reading while they should have been paying attention to a ___",
+              "acceptedAnswers": [["sermon"]],
+              "location": {
+                "paragraph": "D",
+                "sentence": 4,
+                "highlight": "instead of listening to the sermon"
+              }
+            },
+            {
+              "numbers": [21],
+              "prompt": "As a punishment, she was later given a ___",
+              "acceptedAnswers": [["fine"]],
+              "location": {
+                "paragraph": "D",
+                "sentence": 7,
+                "highlight": "told to pay a fine"
+              }
+            },
+            {
+              "numbers": [22],
+              "prompt": "the guilds could prevent ___ and stop skilled people from working",
+              "acceptedAnswers": [["innovation"]],
+              "location": {
+                "paragraph": "D",
+                "sentence": 9,
+                "highlight": "held back even the simplest industrial innovation"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-5",
+          "type": "MULTIPLE_CHOICE_MULTIPLE",
+          "instructions": "Choose TWO letters, A–E.",
+          "answersPerItem": 2,
+          "options": [
+            {
+              "key": "A",
+              "text": "Very little research has been done into the link between high literacy rates and improved earnings."
+            },
+            {
+              "key": "B",
+              "text": "Literacy rates in Germany between 1600 and 1900 were very good."
+            },
+            {
+              "key": "C",
+              "text": "There is strong evidence that high literacy rates in the modern world result in economic growth."
+            },
+            {
+              "key": "D",
+              "text": "England is a good example of how high literacy rates helped a country industrialise."
+            },
+            {
+              "key": "E",
+              "text": "Economic growth can help to improve literacy rates."
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [23, 24],
+              "prompt": "Which TWO of the following statements does the writer make about literacy rates in Section B?",
+              "acceptedAnswers": [["B"], ["E"]],
+              "explanation": "B: Germany and Scandinavia had excellent literacy rates. E: there is plenty of evidence that growth increases education. Either order. England had only mediocre literacy rates, and modern analyses struggle to find evidence that education causes growth.",
+              "location": {
+                "paragraph": "B",
+                "sentence": 4,
+                "highlight": "Germany and Scandinavia had excellent literacy rates"
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-6",
+          "type": "MULTIPLE_CHOICE_MULTIPLE",
+          "instructions": "Choose TWO letters, A–E.",
+          "answersPerItem": 2,
+          "options": [
+            {
+              "key": "A",
+              "text": "They helped young people to learn a skill."
+            },
+            {
+              "key": "B",
+              "text": "They were opposed to people moving to an area for work."
+            },
+            {
+              "key": "C",
+              "text": "They kept better records than guilds in other parts of the world."
+            },
+            {
+              "key": "D",
+              "text": "They opposed practices that threatened their control over a trade."
+            },
+            {
+              "key": "E",
+              "text": "They predominantly consisted of wealthy merchants."
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [25, 26],
+              "prompt": "Which TWO of the following statements does the writer make in Section F about guilds in German-speaking Central Europe between 1600 and 1900?",
+              "acceptedAnswers": [["B"], ["D"]],
+              "explanation": "D: guilds legislated against anything that undermined their monopolies. B: guilds blocked labour migration. Either order.",
+              "location": {
+                "paragraph": "F",
+                "sentence": 5,
+                "highlight": "legislated against anything that undermined their monopolies"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reading-3": {
+      "kind": "reading",
+      "part": 3,
+      "title": "Timur Gareyev – blindfold chess champion",
+      "paragraphs": [
+        {
+          "label": "A",
+          "text": "Next month, a chess player named Timur Gareyev will take on nearly 50 opponents at once. But that is not the hard part. While his challengers will play the games as normal, Gareyev himself will be blindfolded. Even by world record standards, it sets a high bar for human performance. The 28-year-old already stands out in the rarefied world of blindfold chess. He has a fondness for bright clothes and unusual hairstyles, and he gets his kicks from the adventure sport of BASE jumping. He has already proved himself a strong chess player, too. In a 10-hour chess marathon in 2013, Gareyev played 33 games in his head simultaneously. He won 29 and lost none. The skill has become his brand: he calls himself the Blindfold King."
+        },
+        {
+          "label": "B",
+          "text": "But Gareyev’s prowess has drawn interest from beyond the chess-playing community. In the hope of understanding how he and others like him can perform such mental feats, researchers at the University of California in Los Angeles (UCLA) called him in for tests. They now have their first results. ‘The ability to play a game of chess with your eyes closed is not a far reach for most accomplished players,’ said Jesse Rissman, who runs a memory lab at UCLA. ‘But the thing that’s so remarkable about Timur and a few other individuals is the number of games they can keep active at once. To me it is simply astonishing.’"
+        },
+        {
+          "label": "C",
+          "text": "Gareyev learned to play chess in his native Uzbekistan when he was six years old. Tutored by his grandfather, he entered his first tournament aged eight and soon became obsessed with competitions. At 16, he was crowned Asia’s youngest ever chess grandmaster. He moved to the US soon after, and as a student helped his university win its first national chess championship. In 2013, Gareyev was ranked the third best chess player in the US."
+        },
+        {
+          "label": "D",
+          "text": "To the uninitiated, blindfold chess seems to call for superhuman skill. But displays of the feat go back centuries. The first recorded game in Europe was played in 13th-century Florence. In 1947, the Argentinian grandmaster Miguel Najdorf played 45 simultaneous games in his mind, winning 39 in the 24-hour session."
+        },
+        {
+          "label": "E",
+          "text": "Accomplished players can develop the skill of playing blind even without realising it. The nature of the game is to run through possible moves in the mind to see how they play out. From this, regular players develop a memory for the patterns the pieces make, the defences and attacks. ‘You recreate it in your mind,’ said Gareyev. ‘A lot of players are capable of doing what I’m doing.’ The real mental challenge comes from playing multiple games at once in the head. Not only must the positions of each piece on every board be memorised, they must be recalled faithfully when needed, updated with each player’s moves, and then reliably stored again, so the brain can move on to the next board. First moves can be tough to remember because they are fairly uninteresting. But the ends of games are taxing too, as exhaustion sets in. When Gareyev is tired, his recall can get patchy. He sometimes makes moves based on only a fragmented memory of the pieces’ positions."
+        },
+        {
+          "label": "F",
+          "text": "The scientists first had Gareyev perform some standard memory tests. These assessed his ability to hold numbers, pictures and words in mind. One classic test measures how many numbers a person can repeat, both forwards and backwards, soon after hearing them. Most people manage about seven. ‘He was not exceptional on any of these standard tests,’ said Rissman. ‘We didn’t find anything other than playing chess that he seems to be supremely gifted at.’ But next came the brain scans. With Gareyev lying down in the machine, Rissman looked at how well connected the various regions of the chess player’s brain were. Though the results are tentative and as yet unpublished, the scans found much greater than average communication between parts of Gareyev’s brain that make up what is called the frontoparietal control network. Of 63 people scanned alongside the chess player, only one or two scored more highly on the measure. ‘You use this network in almost any complex task. It helps you to allocate attention, keep rules in mind, and work out whether you should be responding or not,’ said Rissman."
+        },
+        {
+          "label": "G",
+          "text": "It was not the only hint of something special in Gareyev’s brain. The scans also suggest that Gareyev’s visual network is more highly connected to other brain parts than usual. Initial results suggest that the areas of his brain that process visual images – such as chess boards – may have stronger links to other brain regions, and so be more powerful than normal. While the analyses are not finalised yet, they may hold the first clues to Gareyev’s extraordinary ability."
+        },
+        {
+          "label": "H",
+          "text": "For the world record attempt, Gareyev hopes to play 47 blindfold games at once in about 16 hours. He will need to win 80% to claim the title. ‘I don’t worry too much about the winning percentage, that’s never been an issue for me,’ he said. ‘The most important part of blindfold chess for me is that I have found the one thing that I can fully dedicate myself to. I miss having an obsession.’"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "qg-7",
+          "type": "MATCHING_PARAGRAPH_INFO",
+          "instructions": "Reading Passage 3 has eight paragraphs, A–H. Which paragraph contains the following information? Write the correct letter, A–H. NB You may use any letter more than once.",
+          "options": [
+            {
+              "key": "A",
+              "text": "Paragraph A"
+            },
+            {
+              "key": "B",
+              "text": "Paragraph B"
+            },
+            {
+              "key": "C",
+              "text": "Paragraph C"
+            },
+            {
+              "key": "D",
+              "text": "Paragraph D"
+            },
+            {
+              "key": "E",
+              "text": "Paragraph E"
+            },
+            {
+              "key": "F",
+              "text": "Paragraph F"
+            },
+            {
+              "key": "G",
+              "text": "Paragraph G"
+            },
+            {
+              "key": "H",
+              "text": "Paragraph H"
+            }
+          ],
+          "questions": [
+            {
+              "numbers": [27],
+              "prompt": "a reference to earlier examples of blindfold chess",
+              "acceptedAnswers": [["D"]],
+              "explanation": "Displays go back centuries: 13th-century Florence and Najdorf in 1947.",
+              "location": {
+                "paragraph": "D",
+                "sentence": 2,
+                "highlight": "But displays of the feat go back centuries."
+              }
+            },
+            {
+              "numbers": [28],
+              "prompt": "an outline of what blindfold chess involves",
+              "acceptedAnswers": [["E"]],
+              "location": {
+                "paragraph": "E",
+                "sentence": 2,
+                "highlight": "run through possible moves in the mind to see how they play out"
+              }
+            },
+            {
+              "numbers": [29],
+              "prompt": "a claim that Gareyev’s skill is limited to chess",
+              "acceptedAnswers": [["F"]],
+              "location": {
+                "paragraph": "F",
+                "sentence": 6,
+                "highlight": "We didn’t find anything other than playing chess that he seems to be supremely gifted at"
+              }
+            },
+            {
+              "numbers": [30],
+              "prompt": "why Gareyev’s skill is of interest to scientists",
+              "acceptedAnswers": [["B"]],
+              "location": {
+                "paragraph": "B",
+                "sentence": 2,
+                "highlight": "In the hope of understanding how he and others like him can perform such mental feats"
+              }
+            },
+            {
+              "numbers": [31],
+              "prompt": "an outline of Gareyev’s priorities",
+              "acceptedAnswers": [["H"]],
+              "explanation": "Winning percentage doesn’t worry him; the most important thing is having found something he can fully dedicate himself to.",
+              "location": {
+                "paragraph": "H",
+                "sentence": 4,
+                "highlight": "The most important part of blindfold chess for me is that I have found the one thing that I can fully dedicate myself to"
+              }
+            },
+            {
+              "numbers": [32],
+              "prompt": "a reason why the last part of a game may be difficult",
+              "acceptedAnswers": [["E"]],
+              "location": {
+                "paragraph": "E",
+                "sentence": 9,
+                "highlight": "But the ends of games are taxing too, as exhaustion sets in."
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-8",
+          "type": "TRUE_FALSE_NOT_GIVEN",
+          "instructions": "Do the following statements agree with the information given in Reading Passage 3?",
+          "questions": [
+            {
+              "numbers": [33],
+              "prompt": "In the forthcoming games, all the participants will be blindfolded.",
+              "acceptedAnswers": [["FALSE"]],
+              "explanation": "His challengers will play as normal; only Gareyev will be blindfolded.",
+              "location": {
+                "paragraph": "A",
+                "sentence": 3,
+                "highlight": "While his challengers will play the games as normal, Gareyev himself will be blindfolded."
+              }
+            },
+            {
+              "numbers": [34],
+              "prompt": "Gareyev has won competitions in BASE jumping.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "He enjoys BASE jumping, but nothing is said about competitions.",
+              "location": null
+            },
+            {
+              "numbers": [35],
+              "prompt": "UCLA is the first university to carry out research into blindfold chess players.",
+              "acceptedAnswers": [["NOT GIVEN"]],
+              "explanation": "UCLA tested Gareyev, but the passage doesn’t say whether other universities have done such research.",
+              "location": null
+            },
+            {
+              "numbers": [36],
+              "prompt": "Good chess players are likely to be able to play blindfold chess.",
+              "acceptedAnswers": [["TRUE"]],
+              "explanation": "Accomplished players can develop the skill of playing blind without realising it; Rissman says it is not a far reach for most accomplished players (paragraph B).",
+              "location": {
+                "paragraph": "E",
+                "sentence": 1,
+                "highlight": "Accomplished players can develop the skill of playing blind even without realising it."
+              }
+            }
+          ]
+        },
+        {
+          "groupId": "qg-9",
+          "type": "GAP_FILL",
+          "instructions": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "maxWords": 1,
+          "layout": {
+            "kind": "summary",
+            "title": "How the research was carried out",
+            "body": "The researchers started by testing Gareyev’s {{37}}; for example, he was required to recall a string of {{38}} in order and also in reverse order. Although his performance was normal, scans showed an unusual amount of {{39}} within the areas of Gareyev’s brain that are concerned with directing attention. In addition, the scans raised the possibility of unusual strength in the parts of his brain that deal with {{40}} input."
+          },
+          "questions": [
+            {
+              "numbers": [37],
+              "prompt": "The researchers started by testing Gareyev’s ___",
+              "acceptedAnswers": [["memory"]],
+              "location": {
+                "paragraph": "F",
+                "sentence": 1,
+                "highlight": "some standard memory tests"
+              }
+            },
+            {
+              "numbers": [38],
+              "prompt": "he was required to recall a string of ___ in order and also in reverse order",
+              "acceptedAnswers": [["numbers"]],
+              "location": {
+                "paragraph": "F",
+                "sentence": 3,
+                "highlight": "how many numbers a person can repeat, both forwards and backwards"
+              }
+            },
+            {
+              "numbers": [39],
+              "prompt": "scans showed an unusual amount of ___ within the areas of Gareyev’s brain that are concerned with directing attention",
+              "acceptedAnswers": [["communication"]],
+              "location": {
+                "paragraph": "F",
+                "sentence": 9,
+                "highlight": "much greater than average communication between parts of Gareyev’s brain"
+              }
+            },
+            {
+              "numbers": [40],
+              "prompt": "the parts of his brain that deal with ___ input",
+              "acceptedAnswers": [["visual"]],
+              "location": {
+                "paragraph": "G",
+                "sentence": 3,
+                "highlight": "the areas of his brain that process visual images"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "kind": "writing",
+      "task1": {
+        "prompt": "The graph below shows the number of shops that closed and the number of new shops that opened in one country between 2011 and 2018. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+        "image": "/media/img/b17t4-w1.b540ba57.png",
+        "imageDescription": "Line graph, “Number of shop closures and openings 2011–2018”, with two lines: closures (solid) and openings (dashed). The vertical axis shows the number of shops from 0 to 9,000; the horizontal axis shows the years 2011 to 2018. Approximate values – Closures: 2011 about 6,400; 2012 about 5,900; 2013 about 7,200 (the highest); 2014 about 6,500; 2015 about 600 (a sharp fall, the lowest); 2016 about 5,200; 2017 about 5,000; 2018 about 5,200. Openings: 2011 about 8,500 (the highest); 2012 about 3,900; 2013 about 5,000; 2014 about 6,200; 2015 about 4,000; 2016 about 4,000; 2017 about 4,200; 2018 about 3,000 (the lowest). Openings exceeded closures only in 2011 and 2015; in every other year more shops closed than opened. Overall, openings fell by almost two thirds over the period, while closures ended about 1,200 lower than in 2011 despite the dramatic dip in 2015.",
+        "minWords": 150
+      },
+      "task2": {
+        "prompt": "Nowadays, a growing number of people with health problems are trying alternative medicines and treatments instead of visiting their usual doctor. Do you think this is a positive or a negative development? Give reasons for your answer and include any relevant examples from your own knowledge or experience.",
+        "minWords": 250
+      }
+    },
+    "speaking": {
+      "kind": "speaking",
+      "part1": [
+        "Do you think it’s better to use a paper map or a map on your phone? Why?",
+        "When was the last time you needed to use a map? Why/Why not?",
+        "If you visit a new city, do you always use a map to find your way around? Why/Why not?",
+        "In general, do you find it easy to read maps? Why/Why not?"
+      ],
+      "part2": {
+        "topic": "Describe an occasion when you had to do something in a hurry.",
+        "points": [
+          "what you had to do",
+          "why you had to do this in a hurry",
+          "how well you did this"
+        ],
+        "closing": "and explain how you felt about having to do this in a hurry.",
+        "prepSec": 60,
+        "speakSec": 120
+      },
+      "part3": [
+        "Do you think it’s OK to arrive late when meeting a friend?",
+        "What should happen to people who arrive late for work?",
+        "Can you suggest how people can make sure they don’t arrive late?",
+        "Is it better to study for long periods or in shorter blocks of time?",
+        "What are the likely effects of students not managing their study time well?",
+        "How important is it for students to have enough leisure time?"
+      ]
+    }
+  }
+}
