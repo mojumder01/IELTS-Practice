@@ -49,6 +49,78 @@
       "durationSec": 414.8
     },
     {
+      "path": "/media/audio/b19t2-p1.2c79944d.mp3",
+      "kind": "audio",
+      "bytes": 3855508,
+      "durationSec": 481.9
+    },
+    {
+      "path": "/media/audio/b19t2-p2.49d08423.mp3",
+      "kind": "audio",
+      "bytes": 3073506,
+      "durationSec": 384.2
+    },
+    {
+      "path": "/media/audio/b19t2-p3.00adf543.mp3",
+      "kind": "audio",
+      "bytes": 3286666,
+      "durationSec": 410.8
+    },
+    {
+      "path": "/media/audio/b19t2-p4.73c87598.mp3",
+      "kind": "audio",
+      "bytes": 3416024,
+      "durationSec": 427
+    },
+    {
+      "path": "/media/audio/b19t3-p1.bc600012.mp3",
+      "kind": "audio",
+      "bytes": 3169846,
+      "durationSec": 396.2
+    },
+    {
+      "path": "/media/audio/b19t3-p2.033e5f35.mp3",
+      "kind": "audio",
+      "bytes": 2974868,
+      "durationSec": 371.8
+    },
+    {
+      "path": "/media/audio/b19t3-p3.1f19dee0.mp3",
+      "kind": "audio",
+      "bytes": 3377572,
+      "durationSec": 422.2
+    },
+    {
+      "path": "/media/audio/b19t3-p4.a34f4ea5.mp3",
+      "kind": "audio",
+      "bytes": 3283740,
+      "durationSec": 410.4
+    },
+    {
+      "path": "/media/audio/b19t4-p1.52e14b47.mp3",
+      "kind": "audio",
+      "bytes": 3241526,
+      "durationSec": 405.2
+    },
+    {
+      "path": "/media/audio/b19t4-p2.14923356.mp3",
+      "kind": "audio",
+      "bytes": 3113213,
+      "durationSec": 389.1
+    },
+    {
+      "path": "/media/audio/b19t4-p3.c8527d13.mp3",
+      "kind": "audio",
+      "bytes": 3435459,
+      "durationSec": 429.4
+    },
+    {
+      "path": "/media/audio/b19t4-p4.d60829d6.mp3",
+      "kind": "audio",
+      "bytes": 4151632,
+      "durationSec": 518.9
+    },
+    {
       "path": "/media/audio/b21t1-p1.28d1e3ca.mp3",
       "kind": "audio",
       "bytes": 880684,
