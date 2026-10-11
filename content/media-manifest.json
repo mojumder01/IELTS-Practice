@@ -25,6 +25,30 @@
       "durationSec": 399.8
     },
     {
+      "path": "/media/audio/b19t1-p1.60822e10.mp3",
+      "kind": "audio",
+      "bytes": 3781529,
+      "durationSec": 472.7
+    },
+    {
+      "path": "/media/audio/b19t1-p2.202e5b6c.mp3",
+      "kind": "audio",
+      "bytes": 3498153,
+      "durationSec": 437.2
+    },
+    {
+      "path": "/media/audio/b19t1-p3.800d00db.mp3",
+      "kind": "audio",
+      "bytes": 3362316,
+      "durationSec": 420.3
+    },
+    {
+      "path": "/media/audio/b19t1-p4.8133cb8c.mp3",
+      "kind": "audio",
+      "bytes": 3318639,
+      "durationSec": 414.8
+    },
+    {
       "path": "/media/audio/b21t1-p1.28d1e3ca.mp3",
       "kind": "audio",
       "bytes": 880684,
