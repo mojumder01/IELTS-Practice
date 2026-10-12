@@ -289,6 +289,17 @@ export function sortTests<T extends { book: string; testNumber: number }>(tests:
   );
 }
 
+/** Books in ascending order of their number ("Cambridge 17" before "Cambridge 19" and "Book 21"), then by name. */
+export function booksAscending(books: string[]): string[] {
+  const number = (book: string) => {
+    const m = /(\d+)\s*$/.exec(book.trim());
+    return m ? Number(m[1]) : Number.POSITIVE_INFINITY;
+  };
+  return [...books].sort(
+    (a, b) => number(a) - number(b) || a.localeCompare(b, 'en', { numeric: true }),
+  );
+}
+
 /** Where "Start <module>" goes: the first test this module hasn't been finished on, else the first. */
 export function nextTestFor<T extends { testId: string; book: string; testNumber: number }>(
   module: Module,

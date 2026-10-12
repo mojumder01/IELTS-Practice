@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { ACADEMIC_READING, LISTENING } from '../../../src/engine/bands';
 import {
+  booksAscending,
   attemptBand,
   bandRows,
   countsTowardBands,
@@ -243,5 +244,13 @@ describe('summaries', () => {
     expect(moduleState('t1', 'reading', attempts)).toMatchObject({ kind: 'band', band: 7 });
     expect(moduleState('t1', 'listening', attempts)).toEqual({ kind: 'resume' });
     expect(moduleState('t2', 'reading', attempts)).toEqual({ kind: 'start' });
+  });
+});
+
+describe('booksAscending', () => {
+  it('orders books by their number, smallest first, then by name', () => {
+    expect(
+      booksAscending(['Cambridge 19', 'Book 21', 'Cambridge 17', 'Mock Tests', 'Academic 17']),
+    ).toEqual(['Academic 17', 'Cambridge 17', 'Cambridge 19', 'Book 21', 'Mock Tests']);
   });
 });

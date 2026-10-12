@@ -4,7 +4,7 @@ import { Link, useSearchParams } from 'react-router';
 import { PageSkeleton } from '../components/PageSkeleton';
 import { BookCard } from '../components/library/BookCard';
 import { moduleName, MODULE_ORDER } from '../engine/parts';
-import { byNewest, moduleState, progressLine, sortTests } from '../engine/progress';
+import { booksAscending, byNewest, moduleState, progressLine, sortTests } from '../engine/progress';
 import { formatClock } from '../engine/timer';
 import { examHref, testName } from '../lib/links';
 import { useProgress } from '../lib/useProgress';
@@ -44,7 +44,7 @@ export function Library() {
   const shown = sortTests(tests).filter(
     (t) => t.track === track && (!q || `${t.book} test ${t.testNumber}`.toLowerCase().includes(q)),
   );
-  const books = [...new Set(shown.map((t) => t.book))].map((book) => ({
+  const books = booksAscending([...new Set(shown.map((t) => t.book))]).map((book) => ({
     book,
     tests: shown.filter((t) => t.book === book),
   }));
