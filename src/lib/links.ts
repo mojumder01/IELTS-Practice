@@ -39,3 +39,17 @@ export function coverTitle(book: string): { series: string; number: string } {
     .toUpperCase();
   return { series, number: match ? match[1]! : initials };
 }
+
+/** "Cambridge 19" → "cambridge-19", the book's page in the library. */
+export function bookSlug(book: string): string {
+  return (
+    book
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '') || 'book'
+  );
+}
+
+export function bookHref(book: string): string {
+  return `/library/${bookSlug(book)}`;
+}

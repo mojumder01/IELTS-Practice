@@ -2,32 +2,25 @@ import { ArrowRight, Search } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { PageSkeleton } from '../components/PageSkeleton';
-import { TestBook } from '../components/library/TestBook';
+import { BookCard } from '../components/library/BookCard';
 import { moduleName, MODULE_ORDER } from '../engine/parts';
 import { byNewest, moduleState, progressLine, sortTests } from '../engine/progress';
 import { formatClock } from '../engine/timer';
 import { examHref, testName } from '../lib/links';
 import { useProgress } from '../lib/useProgress';
-import { ModuleSchema, type Module, type Track } from '../schema/test';
+import type { Track } from '../schema/test';
 
 const TRACKS: { id: Track; label: string }[] = [
   { id: 'academic', label: 'Academic' },
   { id: 'general', label: 'General Training' },
 ];
 
-const pill = (on: boolean) =>
-  `min-h-11 rounded-pill border px-4 text-sm font-semibold ${
-    on ? 'border-navy bg-navy text-on-navy' : 'border-border-strong bg-surface text-navy'
-  }`;
-
-/** "/library" — every live test by book, with each module's band or status (Test library artboard). */
+/** "/library": every book as a cover with its progress; a book opens its tests (LibraryBook). */
 export function Library() {
   const { state } = useProgress();
   const [params, setParams] = useSearchParams();
   const [query, setQuery] = useState('');
   const track: Track = params.get('track') === 'general' ? 'general' : 'academic';
-  const parsed = ModuleSchema.safeParse(params.get('module'));
-  const focus: Module | null = parsed.success ? parsed.data : null;
   const setParam = (key: string, value: string | null) => {
     const next = new URLSearchParams(params);
     if (value === null) next.delete(key);
@@ -64,7 +57,7 @@ export function Library() {
         <div className="flex flex-col gap-1.5">
           <h1 className="m-0 text-[30px] leading-tight font-semibold text-navy">Test library</h1>
           <p className="m-0 text-[15px] text-muted">
-            Take a full mock in exam order, or practise one module at a time.
+            Pick a book to see its tests. Take a full mock in exam order, or practise one module.
           </p>
         </div>
         <div className="flex w-full flex-col gap-1 sm:w-[300px]">
@@ -108,27 +101,6 @@ export function Library() {
             </button>
           ))}
         </div>
-        <div role="group" aria-label="Module" className="flex flex-wrap gap-2">
-          <button
-            type="button"
-            aria-pressed={focus === null}
-            onClick={() => setParam('module', null)}
-            className={pill(focus === null)}
-          >
-            All modules
-          </button>
-          {MODULE_ORDER.map((m) => (
-            <button
-              key={m}
-              type="button"
-              aria-pressed={focus === m}
-              onClick={() => setParam('module', m)}
-              className={pill(focus === m)}
-            >
-              {moduleName(m)}
-            </button>
-          ))}
-        </div>
       </div>
 
       {resume && (
@@ -155,28 +127,27 @@ export function Library() {
         </Link>
       )}
 
-      {books.map(({ book, tests: list }) => (
-        <section key={book} aria-labelledby={`book-${book}`} className="flex flex-col gap-3">
-          <div className="flex flex-wrap items-baseline gap-3">
-            <h2 id={`book-${book}`} className="m-0 text-xl font-semibold text-navy">
-              {book}
-            </h2>
-            <span className="text-sm text-muted">
-              {list.length} {list.length === 1 ? 'test' : 'tests'} · full mock about 2 h 45 min
-            </span>
-          </div>
-          <div className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {list.map((t) => (
-              <TestBook
-                key={t.testId}
-                test={t}
-                focus={focus}
-                states={MODULE_ORDER.map((m) => ({ m, s: moduleState(t.testId, m, attempts) }))}
+      {books.length > 0 && (
+        <section
+          aria-label="Books"
+          className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+        >
+          {books.map(({ book, tests: list }) => {
+            const states = list.flatMap((t) =>
+              MODULE_ORDER.map((m) => moduleState(t.testId, m, attempts)),
+            );
+            return (
+              <BookCard
+                key={book}
+                book={book}
+                tests={list.length}
+                done={states.filter((x) => x.kind === 'band').length}
+                started={states.some((x) => x.kind !== 'start')}
               />
-            ))}
-          </div>
+            );
+          })}
         </section>
-      ))}
+      )}
       {books.length === 0 && (
         <p className="m-0 text-[15px] text-muted">
           {tests.length === 0 ? 'No tests are published yet.' : 'No tests match your search.'}

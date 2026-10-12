@@ -184,16 +184,34 @@ describe('Dashboard', () => {
 });
 
 describe('Library', () => {
-  it('shows each module’s band, Resume or Start, and filters', async () => {
-    const { user } = renderAt('/library', { attempts: sampleAttempts() });
-    const test = await screen.findByRole('article', { name: 'Book 21 · Test 1' });
+  it('shows each book as a cover with its progress, and searches and filters by track', async () => {
+    const { user, router } = renderAt('/library', { attempts: sampleAttempts() });
+    const book = await screen.findByRole('article', { name: 'Book 21' });
+    expect(within(book).getByText('In progress')).toBeInTheDocument();
+    expect(within(book).getByText('3 of 4 modules done')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Continue/ })).toBeInTheDocument();
+
+    await user.type(screen.getByRole('searchbox', { name: 'Search tests' }), 'book 20');
+    expect(screen.getByText('No tests match your search.')).toBeInTheDocument();
+    await user.clear(screen.getByRole('searchbox', { name: 'Search tests' }));
+    await user.click(screen.getByRole('button', { name: 'General Training' }));
+    expect(screen.queryByRole('article')).not.toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'Academic' }));
+
+    await user.click(screen.getByRole('link', { name: 'Open Book 21' }));
+    expect(router.state.location.pathname).toBe('/library/book-21');
+  });
+
+  it('opens a book: its tests with each module’s band, Resume or Start', async () => {
+    const { user } = renderAt('/library/book-21', { attempts: sampleAttempts() });
+    expect(await screen.findByRole('heading', { name: 'Book 21' })).toBeInTheDocument();
+    const test = screen.getByRole('article', { name: 'Book 21 · Test 1' });
     expect(within(test).getByText('In progress')).toBeInTheDocument();
     expect(within(test).getByRole('link', { name: 'Listening: Resume' })).toBeInTheDocument();
     expect(within(test).getByRole('link', { name: 'Reading: band 5.0' })).toHaveAttribute(
       'href',
       expect.stringMatching(/^\/results\//),
     );
-    expect(screen.getByRole('link', { name: /Continue/ })).toBeInTheDocument();
     // The cover starts the full mock and shows the book's number and the test number.
     const cover = within(test).getByRole('link', { name: 'Start full mock' });
     expect(cover).toHaveAttribute('href', '/test/book21-test1/listening?mode=full');
@@ -204,11 +222,13 @@ describe('Library', () => {
       'href',
       '/test/book21-test1/writing?mode=full',
     );
-    await user.type(screen.getByRole('searchbox', { name: 'Search tests' }), 'book 20');
-    expect(screen.getByText('No tests match your search.')).toBeInTheDocument();
-    await user.clear(screen.getByRole('searchbox', { name: 'Search tests' }));
-    await user.click(screen.getByRole('button', { name: 'General Training' }));
-    expect(screen.queryByRole('article')).not.toBeInTheDocument();
+    await user.click(screen.getByRole('link', { name: 'All books' }));
+    expect(await screen.findByRole('heading', { name: 'Test library' })).toBeInTheDocument();
+  });
+
+  it('says when a book isn’t in the library', async () => {
+    renderAt('/library/book-99', {});
+    expect(await screen.findByRole('alert')).toHaveTextContent('This book isn’t in the library.');
   });
 });
 

@@ -9,6 +9,7 @@ import { Bands } from './pages/Bands';
 import { Dashboard } from './pages/Dashboard';
 import { History } from './pages/History';
 import { Library } from './pages/Library';
+import { LibraryBook } from './pages/LibraryBook';
 import { Results } from './pages/Results';
 import { RouteError } from './pages/RouteError';
 import { SignIn } from './pages/SignIn';
@@ -25,6 +26,7 @@ export const routes: RouteObject[] = [
         children: [
           { index: true, element: <Dashboard /> },
           { path: '/library', element: <Library /> },
+          { path: '/library/:book', element: <LibraryBook /> },
           { path: '/history', element: <History /> },
           { path: '/bands', element: <Bands /> },
           { path: '/vocabulary', element: <Vocabulary /> },

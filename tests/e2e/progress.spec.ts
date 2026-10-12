@@ -54,6 +54,10 @@ test('a finished test shows on the dashboard, history, bands and library', async
     .getByRole('navigation', { name: 'Main' })
     .getByRole('link', { name: 'Test library' })
     .click();
+  await expect(
+    page.getByRole('article', { name: 'Book 21' }).getByText('In progress'),
+  ).toBeVisible();
+  await page.getByRole('link', { name: 'Open Book 21' }).click();
   const card = page.getByRole('article', { name: 'Book 21 · Test 1' });
   await expect(card.getByRole('link', { name: /Reading: band/ })).toBeVisible();
   await expect(card.getByText('In progress')).toBeVisible();

@@ -68,6 +68,7 @@ test('enter a test from scratch, publish it, and a student sees its highlights',
 
   // The student side: it's in the library, and revealing shows the linked words in the passage.
   await page.goto('/library');
+  await page.getByRole('link', { name: 'Open Book 99' }).click();
   await expect(page.getByRole('article', { name: 'Book 99 · Test 1' })).toBeVisible();
   await page.goto(`/test/${ID}/reading?mode=single&part=1`);
   await expect(page.getByRole('heading', { name: 'Urban Bees' })).toBeVisible();

@@ -17,6 +17,11 @@ const PAGES: { name: string; path: string; ready: (page: Page) => Promise<void> 
     ready: (p) => p.getByRole('heading', { name: 'Test library' }).waitFor(),
   },
   {
+    name: 'Library book',
+    path: '/library/cambridge-19',
+    ready: (p) => p.getByRole('heading', { name: 'Cambridge 19', exact: true }).waitFor(),
+  },
+  {
     name: 'Vocabulary',
     path: '/vocabulary',
     ready: (p) => p.getByRole('heading', { name: 'Vocabulary' }).waitFor(),
