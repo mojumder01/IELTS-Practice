@@ -303,11 +303,14 @@ export function nextTestFor<T extends { testId: string; book: string; testNumber
 }
 
 /** A test's state for one module in the library: its latest band, in progress, or not started. */
+export type ModuleState =
+  { kind: 'band'; band: number; attempt: AttemptRecord } | { kind: 'resume' } | { kind: 'start' };
+
 export function moduleState(
   testId: string,
   module: Module,
   attempts: AttemptRecord[],
-): { kind: 'band'; band: number; attempt: AttemptRecord } | { kind: 'resume' } | { kind: 'start' } {
+): ModuleState {
   const mine = byNewest(attempts.filter((a) => a.testId === testId && a.module === module));
   if (mine.some((a) => a.status === 'in_progress')) return { kind: 'resume' };
   const scored = mine.find(countsTowardBands);

@@ -44,6 +44,31 @@
   --on-chrome: #ffffff;
   --on-chrome-muted: #cbd5e1;
 
+  /* Library book covers, one per test number, deep like the printed Cambridge books (the same
+     in both themes). Ink is the cover text; white keeps 4.5:1 or more on every cover. */
+  --cover-1-from: #24457f;
+  --cover-1-to: #0f1f40;
+  --cover-1-ink: #ffffff;
+  --cover-2-from: #b3263a;
+  --cover-2-to: #6e0f1d;
+  --cover-2-ink: #ffffff;
+  --cover-3-from: #0f766e;
+  --cover-3-to: #083f3a;
+  --cover-3-ink: #ffffff;
+  --cover-4-from: #73348a;
+  --cover-4-to: #3d1748;
+  --cover-4-ink: #ffffff;
+  --cover-5-from: #1f6b3a;
+  --cover-5-to: #0f3d21;
+  --cover-5-ink: #ffffff;
+  --cover-6-from: #a8461a;
+  --cover-6-to: #5e240a;
+  --cover-6-ink: #ffffff;
+  --cover-spine: rgb(0 0 0 / 0.28);
+  --cover-sheen: rgb(255 255 255 / 0.22);
+  --cover-chip: rgb(255 255 255 / 0.92);
+  --cover-chip-ink: #0f172a;
+
   /* Type: Plex Sans for the interface, Source Serif 4 for passages, essays and
      cue cards, Plex Mono for timers, scores and question numbers. */
   --type-ui: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;

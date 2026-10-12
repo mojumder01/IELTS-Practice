@@ -25,3 +25,17 @@ export function formatDate(ms: number): string {
     year: 'numeric',
   });
 }
+
+/** "Cambridge 19" → { series: "CAMBRIDGE IELTS", number: "19" }; "Book 21" → "IELTS" and "21". */
+export function coverTitle(book: string): { series: string; number: string } {
+  const match = /(\d+)\s*$/.exec(book.trim());
+  const name = (match ? book.trim().slice(0, match.index) : book).trim();
+  const series = !name || /^book$/i.test(name) ? 'IELTS' : `${name} IELTS`.toUpperCase();
+  const initials = book
+    .split(/\s+/)
+    .map((w) => w[0])
+    .join('')
+    .slice(0, 3)
+    .toUpperCase();
+  return { series, number: match ? match[1]! : initials };
+}

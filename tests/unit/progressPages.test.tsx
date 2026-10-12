@@ -194,6 +194,10 @@ describe('Library', () => {
       expect.stringMatching(/^\/results\//),
     );
     expect(screen.getByRole('link', { name: /Continue/ })).toBeInTheDocument();
+    // The cover starts the full mock and shows the book's number and the test number.
+    const cover = within(test).getByRole('link', { name: 'Start full mock' });
+    expect(cover).toHaveAttribute('href', '/test/book21-test1/listening?mode=full');
+    expect(cover).toHaveTextContent('21Test 1');
 
     await user.click(screen.getByRole('button', { name: 'Writing' }));
     expect(within(test).getByRole('link', { name: 'Start Writing' })).toHaveAttribute(

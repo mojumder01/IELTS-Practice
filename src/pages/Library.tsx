@@ -2,7 +2,7 @@ import { ArrowRight, Search } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { PageSkeleton } from '../components/PageSkeleton';
-import { card } from '../components/progress/styles';
+import { TestBook } from '../components/library/TestBook';
 import { moduleName, MODULE_ORDER } from '../engine/parts';
 import { byNewest, moduleState, progressLine, sortTests } from '../engine/progress';
 import { formatClock } from '../engine/timer';
@@ -165,79 +165,15 @@ export function Library() {
               {list.length} {list.length === 1 ? 'test' : 'tests'} · full mock about 2 h 45 min
             </span>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {list.map((t) => {
-              const states = MODULE_ORDER.map((m) => ({
-                m,
-                s: moduleState(t.testId, m, attempts),
-              }));
-              const done = states.filter((x) => x.s.kind === 'band').length;
-              const started = done > 0 || states.some((x) => x.s.kind === 'resume');
-              const status = done === 4 ? 'Completed' : started ? 'In progress' : 'Not started';
-              return (
-                <article
-                  key={t.testId}
-                  aria-label={testName(t)}
-                  className={`${card} flex flex-col gap-3 !p-4`}
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex flex-col">
-                      <span className="text-xs text-muted">{t.book}</span>
-                      <span className="text-lg font-semibold text-navy">Test {t.testNumber}</span>
-                    </div>
-                    <span className="rounded-pill bg-surface-muted px-2.5 py-1 text-xs font-semibold text-navy-3">
-                      {status}
-                    </span>
-                  </div>
-                  <ul className="m-0 flex list-none flex-col p-0">
-                    {states.map(({ m, s }) => (
-                      <li key={m}>
-                        <Link
-                          aria-label={`${moduleName(m)}: ${
-                            s.kind === 'band'
-                              ? `band ${s.band.toFixed(1)}`
-                              : s.kind === 'resume'
-                                ? 'Resume'
-                                : 'Start'
-                          }`}
-                          to={
-                            s.kind === 'band'
-                              ? `/results/${s.attempt.attemptId}`
-                              : examHref(t.testId, m)
-                          }
-                          className={`flex min-h-11 items-center justify-between gap-2 rounded-control px-2 text-sm text-navy no-underline hover:text-navy ${
-                            focus === m ? 'bg-now-playing font-semibold' : ''
-                          }`}
-                        >
-                          <span>{moduleName(m)}</span>
-                          <span
-                            className={
-                              s.kind === 'band'
-                                ? 'font-mono font-semibold text-good-text'
-                                : s.kind === 'resume'
-                                  ? 'font-semibold text-answered'
-                                  : 'text-muted'
-                            }
-                          >
-                            {s.kind === 'band'
-                              ? s.band.toFixed(1)
-                              : s.kind === 'resume'
-                                ? 'Resume'
-                                : 'Start'}
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    to={examHref(t.testId, focus ?? 'listening')}
-                    className="mt-auto inline-flex min-h-11 items-center justify-center rounded-control bg-navy px-4 text-sm font-semibold text-on-navy no-underline hover:text-on-navy"
-                  >
-                    {focus ? `Start ${moduleName(focus)}` : 'Start full mock'}
-                  </Link>
-                </article>
-              );
-            })}
+          <div className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {list.map((t) => (
+              <TestBook
+                key={t.testId}
+                test={t}
+                focus={focus}
+                states={MODULE_ORDER.map((m) => ({ m, s: moduleState(t.testId, m, attempts) }))}
+              />
+            ))}
           </div>
         </section>
       ))}
